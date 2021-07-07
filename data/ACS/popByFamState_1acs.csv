@@ -1,0 +1,100 @@
+GEOID,NAME,variable,estimate,moe,year,label,concept,func_label
+19,Iowa,B09002_003,78334,3440,2009,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53369,3064,2009,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,26112,2328,2009,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,8377,1508,2009,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,5419,1313,2009,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2504,781,2009,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,22300,2358,2009,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,13585,1807,2009,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,6429,1309,2009,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,76096,2833,2010,Estimate!!Total!!In married-couple families!!Under 3 years,NA,Under 3 years
+19,Iowa,B09002_004,59343,2762,2010,Estimate!!Total!!In married-couple families!!3 and 4 years,NA,3 and 4 years
+19,Iowa,B09002_005,28740,2064,2010,Estimate!!Total!!In married-couple families!!5 years,NA,5 years
+19,Iowa,B09002_010,7016,1368,2010,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",NA,Under 3 years
+19,Iowa,B09002_011,5637,1376,2010,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",NA,3 and 4 years
+19,Iowa,B09002_012,3014,788,2010,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",NA,5 years
+19,Iowa,B09002_016,21309,2843,2010,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",NA,Under 3 years
+19,Iowa,B09002_017,13910,2074,2010,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",NA,3 and 4 years
+19,Iowa,B09002_018,6665,1156,2010,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",NA,5 years
+19,Iowa,B09002_003,77826,2972,2011,Estimate!!Total!!In married-couple families!!Under 3 years,NA,Under 3 years
+19,Iowa,B09002_004,54924,2876,2011,Estimate!!Total!!In married-couple families!!3 and 4 years,NA,3 and 4 years
+19,Iowa,B09002_005,26295,2322,2011,Estimate!!Total!!In married-couple families!!5 years,NA,5 years
+19,Iowa,B09002_010,7938,1411,2011,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",NA,Under 3 years
+19,Iowa,B09002_011,4361,1057,2011,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",NA,3 and 4 years
+19,Iowa,B09002_012,2597,859,2011,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",NA,5 years
+19,Iowa,B09002_016,19710,2192,2011,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",NA,Under 3 years
+19,Iowa,B09002_017,17175,2226,2011,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",NA,3 and 4 years
+19,Iowa,B09002_018,8272,1396,2011,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",NA,5 years
+19,Iowa,B09002_003,77106,2904,2012,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53914,2735,2012,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,26329,2002,2012,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,8886,1314,2012,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,4687,775,2012,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2867,664,2012,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,18191,1924,2012,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,15962,1961,2012,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,7900,1343,2012,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,73907,3069,2013,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,52547,2445,2013,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,27997,2398,2013,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,8763,1544,2013,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,6377,1317,2013,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,3481,962,2013,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,17926,2338,2013,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,13960,1815,2013,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,9115,1583,2013,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,77149,2903,2014,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53092,2316,2014,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,27221,2081,2014,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,9039,1354,2014,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,6041,1405,2014,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2120,756,2014,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,17182,1901,2014,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,13472,1686,2014,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,6995,1354,2014,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,78874,3031,2015,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,54755,2629,2015,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,28139,2024,2015,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,9056,1628,2015,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,4121,1057,2015,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,3241,918,2015,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,17468,2237,2015,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,13374,1837,2015,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,6563,1170,2015,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,76688,3269,2016,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53321,2649,2016,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,26347,2305,2016,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,8278,1537,2016,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,6171,1542,2016,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2548,645,2016,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,23193,2571,2016,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,13482,1791,2016,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,7709,1366,2016,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,82123,3780,2017,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53979,2964,2017,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,27698,2452,2017,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,9161,1385,2017,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,5499,1177,2017,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2863,864,2017,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,18787,2275,2017,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,12977,2008,2017,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,6900,1357,2017,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,78591,2885,2018,Estimate!!Total!!In married-couple families!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,53495,3393,2018,Estimate!!Total!!In married-couple families!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,26528,2318,2018,Estimate!!Total!!In married-couple families!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,10592,1615,2018,"Estimate!!Total!!In other families!!Male householder, no wife present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,6741,1445,2018,"Estimate!!Total!!In other families!!Male householder, no wife present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,3254,974,2018,"Estimate!!Total!!In other families!!Male householder, no wife present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,18305,2023,2018,"Estimate!!Total!!In other families!!Female householder, no husband present!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,14445,2526,2018,"Estimate!!Total!!In other families!!Female householder, no husband present!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,6734,1262,2018,"Estimate!!Total!!In other families!!Female householder, no husband present!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_003,74895,3648,2019,Estimate!!Total:!!In married-couple families:!!Under 3 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_004,56294,2743,2019,Estimate!!Total:!!In married-couple families:!!3 and 4 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_005,28882,2097,2019,Estimate!!Total:!!In married-couple families:!!5 years,OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_010,7283,1584,2019,"Estimate!!Total:!!In other families:!!Male householder, no spouse present:!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_011,5414,1413,2019,"Estimate!!Total:!!In other families:!!Male householder, no spouse present:!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_012,2257,803,2019,"Estimate!!Total:!!In other families:!!Male householder, no spouse present:!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years
+19,Iowa,B09002_016,17219,2466,2019,"Estimate!!Total:!!In other families:!!Female householder, no spouse present:!!Under 3 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,Under 3 years
+19,Iowa,B09002_017,14089,2189,2019,"Estimate!!Total:!!In other families:!!Female householder, no spouse present:!!3 and 4 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,3 and 4 years
+19,Iowa,B09002_018,7407,1500,2019,"Estimate!!Total:!!In other families:!!Female householder, no spouse present:!!5 years",OWN CHILDREN UNDER 18 YEARS BY FAMILY TYPE AND AGE,5 years

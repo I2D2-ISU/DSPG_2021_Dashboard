@@ -1,0 +1,529 @@
+GEOID,NAME,variable,estimate,moe,year,label,concept,func_label
+19,Iowa,B15001_003,163974,2361,2009,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,2024,598,2009,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,17071,2101,2009,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,45760,3216,2009,"Estimate!!Total!!Male!!18 to 24 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_007,71970,3845,2009,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,12118,1679,2009,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,14592,2229,2009,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,439,285,2009,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,189709,2725,2009,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,5690,1318,2009,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,11248,1349,2009,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,48909,2863,2009,"Estimate!!Total!!Male!!25 to 34 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_015,45527,3501,2009,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,26079,2161,2009,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,41366,2838,2009,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,10890,1609,2009,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,185711,1923,2009,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,5361,1214,2009,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9622,1335,2009,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,54235,3282,2009,"Estimate!!Total!!Male!!35 to 44 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_023,42889,3098,2009,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,21066,1846,2009,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,38061,2741,2009,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,14477,1887,2009,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,154867,1933,2009,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,2213,796,2009,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,11430,1884,2009,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,36234,3091,2009,"Estimate!!Total!!Female!!18 to 24 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_048,74738,3888,2009,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,13284,2232,2009,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,16025,2006,2009,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,943,459,2009,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,184499,2468,2009,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,4143,1073,2009,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,10013,1711,2009,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,32953,2431,2009,"Estimate!!Total!!Female!!25 to 34 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_056,44634,3152,2009,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,27230,2125,2009,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,50835,2936,2009,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,14691,1847,2009,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,182069,1941,2009,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,3535,826,2009,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,6589,1436,2009,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,38511,2650,2009,"Estimate!!Total!!Female!!35 to 44 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_064,46288,2864,2009,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,28870,2284,2009,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,42050,2509,2009,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,16226,1661,2009,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,156576,2702,2010,Estimate!!Total!!Male!!18 to 24 years,NA,18 to 24 years
+19,Iowa,B15001_004,2549,755,2010,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_005,21191,2505,2010,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,42010,3513,2010,"Estimate!!Total!!Male!!18 to 24 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_007,64117,3976,2010,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_008,12332,1766,2010,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_009,13495,1903,2010,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_010,882,564,2010,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_011,194837,2313,2010,Estimate!!Total!!Male!!25 to 34 years,NA,25 to 34 years
+19,Iowa,B15001_012,5769,1208,2010,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_013,13406,1894,2010,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,51417,2803,2010,"Estimate!!Total!!Male!!25 to 34 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_015,46529,2790,2010,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_016,24154,2095,2010,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_017,41432,2811,2010,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_018,12130,1943,2010,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_019,185358,1811,2010,Estimate!!Total!!Male!!35 to 44 years,NA,35 to 44 years
+19,Iowa,B15001_020,5899,1102,2010,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_021,9207,1333,2010,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,55966,2840,2010,"Estimate!!Total!!Male!!35 to 44 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_023,41765,2231,2010,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_024,21874,2074,2010,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_025,35175,2355,2010,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_026,15472,1566,2010,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_044,149848,2152,2010,Estimate!!Total!!Female!!18 to 24 years,NA,18 to 24 years
+19,Iowa,B15001_045,1098,505,2010,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_046,15251,1973,2010,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,32469,2489,2010,"Estimate!!Total!!Female!!18 to 24 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_048,71809,3258,2010,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_049,13593,1867,2010,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_050,14621,1858,2010,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_051,1007,461,2010,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_052,188185,2358,2010,Estimate!!Total!!Female!!25 to 34 years,NA,25 to 34 years
+19,Iowa,B15001_053,3963,984,2010,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_054,7924,1418,2010,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,33375,2837,2010,"Estimate!!Total!!Female!!25 to 34 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_056,45484,2933,2010,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_057,30621,1850,2010,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_058,50875,3095,2010,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_059,15943,1792,2010,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_060,180938,1994,2010,Estimate!!Total!!Female!!35 to 44 years,NA,35 to 44 years
+19,Iowa,B15001_061,6913,1179,2010,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_062,6056,1084,2010,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,37846,2712,2010,"Estimate!!Total!!Female!!35 to 44 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_064,45616,2573,2010,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_065,25763,1996,2010,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_066,41669,2644,2010,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_067,17075,1545,2010,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_003,158683,2127,2011,Estimate!!Total!!Male!!18 to 24 years,NA,18 to 24 years
+19,Iowa,B15001_004,2386,664,2011,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_005,20324,2059,2011,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,44162,2393,2011,"Estimate!!Total!!Male!!18 to 24 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_007,67021,3312,2011,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_008,11247,1726,2011,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_009,12972,1913,2011,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_010,571,391,2011,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_011,196568,2338,2011,Estimate!!Total!!Male!!25 to 34 years,NA,25 to 34 years
+19,Iowa,B15001_012,4419,1060,2011,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_013,11098,1292,2011,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,51896,3313,2011,"Estimate!!Total!!Male!!25 to 34 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_015,44044,3156,2011,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_016,28023,2554,2011,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_017,45252,3197,2011,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_018,11836,1803,2011,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_019,182400,2115,2011,Estimate!!Total!!Male!!35 to 44 years,NA,35 to 44 years
+19,Iowa,B15001_020,4718,969,2011,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_021,9971,1400,2011,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,56248,3236,2011,"Estimate!!Total!!Male!!35 to 44 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_023,42403,2974,2011,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_024,20492,2116,2011,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_025,32863,2663,2011,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_026,15705,1640,2011,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_044,152569,1991,2011,Estimate!!Total!!Female!!18 to 24 years,NA,18 to 24 years
+19,Iowa,B15001_045,1482,521,2011,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_046,13838,1577,2011,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,34934,2722,2011,"Estimate!!Total!!Female!!18 to 24 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_048,72317,3536,2011,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_049,12584,1731,2011,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_050,16189,2110,2011,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_051,1225,478,2011,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_052,190262,2221,2011,Estimate!!Total!!Female!!25 to 34 years,NA,25 to 34 years
+19,Iowa,B15001_053,3664,1044,2011,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_054,8815,1534,2011,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,32051,2699,2011,"Estimate!!Total!!Female!!25 to 34 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_056,45016,2891,2011,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_057,28202,2397,2011,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_058,53124,2938,2011,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_059,19390,1759,2011,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_060,179160,1805,2011,Estimate!!Total!!Female!!35 to 44 years,NA,35 to 44 years
+19,Iowa,B15001_061,5342,1015,2011,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,NA,Less than 9th grade
+19,Iowa,B15001_062,6508,1305,2011,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",NA,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,38443,2318,2011,"Estimate!!Total!!Female!!35 to 44 years!!High school graduate, GED, or alternative",NA,"High school graduate, GED, or alternative"
+19,Iowa,B15001_064,41101,3006,2011,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",NA,"Some college, no degree"
+19,Iowa,B15001_065,27286,2051,2011,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,NA,Associate's degree
+19,Iowa,B15001_066,41459,2872,2011,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,NA,Bachelor's degree
+19,Iowa,B15001_067,19021,1809,2011,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,NA,Graduate or professional degree
+19,Iowa,B15001_003,161247,1673,2012,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,2361,977,2012,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,17169,1752,2012,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,48913,2778,2012,"Estimate!!Total!!Male!!18 to 24 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_007,66074,2834,2012,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,13032,1979,2012,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,13056,2069,2012,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,642,364,2012,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,198168,2278,2012,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,5197,1105,2012,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,11168,1418,2012,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,49543,2777,2012,"Estimate!!Total!!Male!!25 to 34 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_015,46687,2885,2012,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,27997,2361,2012,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,43810,2702,2012,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,13766,1816,2012,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,182080,1820,2012,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,4981,1011,2012,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,10544,1651,2012,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,53091,2729,2012,"Estimate!!Total!!Male!!35 to 44 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_023,39132,2323,2012,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,21708,1911,2012,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,36291,2677,2012,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,16333,2015,2012,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,153280,1672,2012,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,2301,1032,2012,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,14271,1614,2012,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,32837,2454,2012,"Estimate!!Total!!Female!!18 to 24 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_048,73238,2093,2012,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,11702,1234,2012,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,17815,1862,2012,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,1116,448,2012,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,191463,1725,2012,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,3560,915,2012,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,6734,1300,2012,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,32741,2538,2012,"Estimate!!Total!!Female!!25 to 34 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_056,45552,2748,2012,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,32409,2046,2012,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,52013,2656,2012,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,18454,2016,2012,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,178364,2049,2012,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,4017,788,2012,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,6302,1311,2012,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,35383,2227,2012,"Estimate!!Total!!Female!!35 to 44 years!!High school graduate, GED, or alternative",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"High school graduate, GED, or alternative"
+19,Iowa,B15001_064,38904,2385,2012,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,29148,2365,2012,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,45081,2133,2012,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,19529,1918,2012,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,162153,1912,2013,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,2094,631,2013,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,18728,1927,2013,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,45265,2545,2013,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,70274,3587,2013,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,11797,1838,2013,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,13494,2143,2013,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,501,381,2013,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,197788,2282,2013,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,4177,948,2013,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,11992,1550,2013,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,55330,2737,2013,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,45554,2842,2013,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,25223,2288,2013,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,41946,2817,2013,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,13566,1537,2013,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,183641,1868,2013,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,4578,978,2013,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9761,1415,2013,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,54172,3201,2013,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,41265,2906,2013,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,23755,2209,2013,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,34097,2813,2013,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,16013,1599,2013,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,156527,2445,2013,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,2385,996,2013,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,13432,1997,2013,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,33169,2377,2013,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,76801,3350,2013,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,10654,1465,2013,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,19328,2300,2013,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,758,388,2013,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,191962,2574,2013,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,3437,988,2013,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,8823,1609,2013,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,36372,3450,2013,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,41327,2993,2013,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,29347,2200,2013,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,53467,3086,2013,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,19189,1862,2013,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,179905,2105,2013,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,5318,1132,2013,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,5925,972,2013,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,35667,2581,2013,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,38667,2556,2013,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,29599,2110,2013,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,45154,2788,2013,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,19575,1741,2013,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,163142,2138,2014,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,1891,669,2014,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,16403,1875,2014,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,51615,2822,2014,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,69771,2940,2014,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,10091,1472,2014,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,12605,2028,2014,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,766,780,2014,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,198228,2374,2014,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,4286,1069,2014,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,12548,1806,2014,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,55567,3255,2014,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,42281,2889,2014,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,23284,2212,2014,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,47074,2569,2014,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,13188,1611,2014,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,185620,2285,2014,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,4827,1188,2014,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9585,1365,2014,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,51429,2874,2014,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,41811,2675,2014,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,23905,1904,2014,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,36307,2446,2014,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,17756,2103,2014,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,155659,2037,2014,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,1629,669,2014,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,14205,2044,2014,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,37189,3044,2014,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,73208,3178,2014,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,11573,1374,2014,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,16479,1851,2014,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,1376,538,2014,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,191966,2898,2014,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,2648,822,2014,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,7420,1522,2014,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,33194,2225,2014,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,42003,2352,2014,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,28742,2468,2014,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,57786,3179,2014,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,20173,2518,2014,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,180133,2281,2014,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,4746,1074,2014,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,5312,1225,2014,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,34257,2469,2014,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,38167,2384,2014,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,28150,2303,2014,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,47558,2726,2014,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,21943,2403,2014,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,165524,2516,2015,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,2484,706,2015,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,18609,2157,2015,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,47408,3279,2015,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,71741,3715,2015,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,12285,2310,2015,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,12358,1593,2015,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,639,308,2015,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,198783,3117,2015,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,4922,1360,2015,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,9922,1703,2015,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,54843,2968,2015,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,45708,3438,2015,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,26044,2346,2015,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,43178,2979,2015,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,14166,1805,2015,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,186199,2425,2015,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,6188,1249,2015,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9431,1323,2015,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,48237,3081,2015,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,43283,3137,2015,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,23043,2060,2015,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,36910,2757,2015,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,19107,2153,2015,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,155118,2088,2015,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,2054,775,2015,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,11766,1689,2015,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,36239,2988,2015,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,72063,3529,2015,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,14165,1754,2015,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,18312,2198,2015,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,519,328,2015,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,193969,2553,2015,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,4814,1303,2015,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,7142,1286,2015,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,33445,2273,2015,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,44207,3263,2015,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,30062,2448,2015,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,55398,2568,2015,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,18901,1985,2015,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,181860,1814,2015,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,5560,1019,2015,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,6974,1352,2015,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,35976,2725,2015,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,36666,2699,2015,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,29095,2229,2015,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,44600,3212,2015,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,22989,1944,2015,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,163293,2163,2016,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,3043,759,2016,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,19041,2304,2016,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,50387,3205,2016,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,62199,2815,2016,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,14418,2428,2016,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,13391,1803,2016,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,814,401,2016,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,201220,2461,2016,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,5151,1247,2016,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,10317,1572,2016,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,51036,3110,2016,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,47788,2722,2016,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,24122,1911,2016,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,45445,3106,2016,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,17361,1897,2016,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,186458,2332,2016,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,5877,1206,2016,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9937,1580,2016,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,51023,3079,2016,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,39962,2777,2016,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,21365,1926,2016,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,39423,2938,2016,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,18871,1929,2016,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,157413,2444,2016,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,1898,540,2016,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,11883,1599,2016,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,37307,2693,2016,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,71464,3491,2016,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,14526,2071,2016,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,20006,2248,2016,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,329,204,2016,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,193832,2575,2016,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,4402,1151,2016,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,9586,1696,2016,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,33007,2992,2016,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,45328,3214,2016,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,27854,2116,2016,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,54295,2986,2016,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,19360,2018,2016,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,183330,2195,2016,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,4325,944,2016,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,8375,1427,2016,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,32691,2774,2016,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,35566,2497,2016,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,30216,2835,2016,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,46008,2790,2016,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,26149,2488,2016,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,167374,2676,2017,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,1198,534,2017,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,19488,2344,2017,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,53201,3942,2017,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,67445,3278,2017,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,9927,1557,2017,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,15258,2055,2017,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,857,541,2017,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,199914,2830,2017,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,4491,1200,2017,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,10630,1362,2017,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,52392,3019,2017,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,45026,3282,2017,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,26083,2218,2017,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,46405,2732,2017,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,14887,1853,2017,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,190331,2387,2017,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,6968,1179,2017,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,10652,1545,2017,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,46448,2686,2017,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,43000,3063,2017,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,25616,2582,2017,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,39268,2584,2017,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,18379,2300,2017,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,154078,2210,2017,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,627,407,2017,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,12487,1795,2017,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,37920,3057,2017,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,69129,3559,2017,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,13063,1722,2017,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,19715,2374,2017,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,1137,494,2017,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,192873,2450,2017,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,5391,997,2017,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,6404,1138,2017,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,34238,2820,2017,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,41359,2975,2017,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,29165,2174,2017,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,54123,3497,2017,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,22193,2293,2017,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,184142,2393,2017,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,6888,1167,2017,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,5090,1167,2017,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,31186,2412,2017,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,37419,2600,2017,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,28447,2301,2017,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,47301,2627,2017,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,27811,2420,2017,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,162113,2294,2018,Estimate!!Total!!Male!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_004,3003,737,2018,Estimate!!Total!!Male!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,17620,1986,2018,"Estimate!!Total!!Male!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,47983,3882,2018,Estimate!!Total!!Male!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,64215,3710,2018,"Estimate!!Total!!Male!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,11260,1633,2018,Estimate!!Total!!Male!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,17525,2502,2018,Estimate!!Total!!Male!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,507,313,2018,Estimate!!Total!!Male!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,200981,2898,2018,Estimate!!Total!!Male!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_012,4092,960,2018,Estimate!!Total!!Male!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,9593,1476,2018,"Estimate!!Total!!Male!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,57103,3668,2018,Estimate!!Total!!Male!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,43645,2962,2018,"Estimate!!Total!!Male!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,26165,2073,2018,Estimate!!Total!!Male!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,46850,3091,2018,Estimate!!Total!!Male!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,13533,1687,2018,Estimate!!Total!!Male!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,193316,2292,2018,Estimate!!Total!!Male!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_020,6090,1207,2018,Estimate!!Total!!Male!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,9757,1489,2018,"Estimate!!Total!!Male!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,53634,2854,2018,Estimate!!Total!!Male!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,38356,2217,2018,"Estimate!!Total!!Male!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,24578,2001,2018,Estimate!!Total!!Male!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,39163,2515,2018,Estimate!!Total!!Male!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,21738,2237,2018,Estimate!!Total!!Male!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,155851,2318,2018,Estimate!!Total!!Female!!18 to 24 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years
+19,Iowa,B15001_045,2434,763,2018,Estimate!!Total!!Female!!18 to 24 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,12376,1753,2018,"Estimate!!Total!!Female!!18 to 24 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,39686,3593,2018,Estimate!!Total!!Female!!18 to 24 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,68485,4405,2018,"Estimate!!Total!!Female!!18 to 24 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,11678,1622,2018,Estimate!!Total!!Female!!18 to 24 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,20076,1994,2018,Estimate!!Total!!Female!!18 to 24 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,1116,557,2018,Estimate!!Total!!Female!!18 to 24 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,193526,2776,2018,Estimate!!Total!!Female!!25 to 34 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years
+19,Iowa,B15001_053,3377,1054,2018,Estimate!!Total!!Female!!25 to 34 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,6475,1100,2018,"Estimate!!Total!!Female!!25 to 34 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,40117,3040,2018,Estimate!!Total!!Female!!25 to 34 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,40776,2540,2018,"Estimate!!Total!!Female!!25 to 34 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,28255,2396,2018,Estimate!!Total!!Female!!25 to 34 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,55613,3128,2018,Estimate!!Total!!Female!!25 to 34 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,18913,2025,2018,Estimate!!Total!!Female!!25 to 34 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,190301,2434,2018,Estimate!!Total!!Female!!35 to 44 years,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years
+19,Iowa,B15001_061,6470,1418,2018,Estimate!!Total!!Female!!35 to 44 years!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,8427,1596,2018,"Estimate!!Total!!Female!!35 to 44 years!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,32394,2347,2018,Estimate!!Total!!Female!!35 to 44 years!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,35350,2658,2018,"Estimate!!Total!!Female!!35 to 44 years!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,28536,2084,2018,Estimate!!Total!!Female!!35 to 44 years!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,50715,3263,2018,Estimate!!Total!!Female!!35 to 44 years!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,28409,2836,2018,Estimate!!Total!!Female!!35 to 44 years!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_003,159654,3136,2019,Estimate!!Total:!!Male:!!18 to 24 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years:
+19,Iowa,B15001_004,3113,1585,2019,Estimate!!Total:!!Male:!!18 to 24 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_005,16209,1903,2019,"Estimate!!Total:!!Male:!!18 to 24 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_006,53002,3410,2019,Estimate!!Total:!!Male:!!18 to 24 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_007,64109,4151,2019,"Estimate!!Total:!!Male:!!18 to 24 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_008,10461,1582,2019,Estimate!!Total:!!Male:!!18 to 24 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_009,11903,1633,2019,Estimate!!Total:!!Male:!!18 to 24 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_010,857,601,2019,Estimate!!Total:!!Male:!!18 to 24 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_011,204283,3478,2019,Estimate!!Total:!!Male:!!25 to 34 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years:
+19,Iowa,B15001_012,4533,958,2019,Estimate!!Total:!!Male:!!25 to 34 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_013,7976,1192,2019,"Estimate!!Total:!!Male:!!25 to 34 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_014,55428,3236,2019,Estimate!!Total:!!Male:!!25 to 34 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_015,46427,3210,2019,"Estimate!!Total:!!Male:!!25 to 34 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_016,25483,2370,2019,Estimate!!Total:!!Male:!!25 to 34 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_017,50065,3565,2019,Estimate!!Total:!!Male:!!25 to 34 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_018,14371,1809,2019,Estimate!!Total:!!Male:!!25 to 34 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_019,201216,2729,2019,Estimate!!Total:!!Male:!!35 to 44 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years:
+19,Iowa,B15001_020,6008,1025,2019,Estimate!!Total:!!Male:!!35 to 44 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_021,11464,1705,2019,"Estimate!!Total:!!Male:!!35 to 44 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_022,60313,3529,2019,Estimate!!Total:!!Male:!!35 to 44 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_023,36912,2691,2019,"Estimate!!Total:!!Male:!!35 to 44 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_024,25110,2248,2019,Estimate!!Total:!!Male:!!35 to 44 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_025,42152,2994,2019,Estimate!!Total:!!Male:!!35 to 44 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_026,19257,1724,2019,Estimate!!Total:!!Male:!!35 to 44 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_044,150582,2439,2019,Estimate!!Total:!!Female:!!18 to 24 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,18 to 24 years:
+19,Iowa,B15001_045,1625,767,2019,Estimate!!Total:!!Female:!!18 to 24 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_046,11288,1882,2019,"Estimate!!Total:!!Female:!!18 to 24 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_047,38068,2791,2019,Estimate!!Total:!!Female:!!18 to 24 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_048,68994,3769,2019,"Estimate!!Total:!!Female:!!18 to 24 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_049,11938,1854,2019,Estimate!!Total:!!Female:!!18 to 24 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_050,18305,2186,2019,Estimate!!Total:!!Female:!!18 to 24 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_051,364,256,2019,Estimate!!Total:!!Female:!!18 to 24 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_052,196016,2639,2019,Estimate!!Total:!!Female:!!25 to 34 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,25 to 34 years:
+19,Iowa,B15001_053,3786,907,2019,Estimate!!Total:!!Female:!!25 to 34 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_054,6375,1430,2019,"Estimate!!Total:!!Female:!!25 to 34 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_055,38276,2999,2019,Estimate!!Total:!!Female:!!25 to 34 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_056,41426,3004,2019,"Estimate!!Total:!!Female:!!25 to 34 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_057,26243,2421,2019,Estimate!!Total:!!Female:!!25 to 34 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_058,57577,3359,2019,Estimate!!Total:!!Female:!!25 to 34 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_059,22333,2375,2019,Estimate!!Total:!!Female:!!25 to 34 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
+19,Iowa,B15001_060,190881,2257,2019,Estimate!!Total:!!Female:!!35 to 44 years:,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,35 to 44 years:
+19,Iowa,B15001_061,4621,1258,2019,Estimate!!Total:!!Female:!!35 to 44 years:!!Less than 9th grade,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Less than 9th grade
+19,Iowa,B15001_062,7946,1540,2019,"Estimate!!Total:!!Female:!!35 to 44 years:!!9th to 12th grade, no diploma",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"9th to 12th grade, no diploma"
+19,Iowa,B15001_063,32728,2582,2019,Estimate!!Total:!!Female:!!35 to 44 years:!!High school graduate (includes equivalency),SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,High school graduate (includes equivalency)
+19,Iowa,B15001_064,38200,2555,2019,"Estimate!!Total:!!Female:!!35 to 44 years:!!Some college, no degree",SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,"Some college, no degree"
+19,Iowa,B15001_065,31066,2320,2019,Estimate!!Total:!!Female:!!35 to 44 years:!!Associate's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Associate's degree
+19,Iowa,B15001_066,49840,2621,2019,Estimate!!Total:!!Female:!!35 to 44 years:!!Bachelor's degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Bachelor's degree
+19,Iowa,B15001_067,26480,2046,2019,Estimate!!Total:!!Female:!!35 to 44 years:!!Graduate or professional degree,SEX BY AGE BY EDUCATIONAL ATTAINMENT FOR THE POPULATION 18 YEARS AND OVER,Graduate or professional degree
