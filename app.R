@@ -11,31 +11,9 @@ library(scales)
 
 
 source("modules.R")
+source("data.R")
 
 
-
-
-
-
-
-# Data --------------------------------------------------------------------
-
-# read the data
-data <- readxl::read_xlsx("Data/ECI_Needs_Assessment_Data_final_GIO.xlsx") %>%
-  arrange(FIPS)
-
-data_state_wide <- data %>% filter(FIPS == 19000)
-
-varnames <- readxl::read_xlsx("Data/ECI_Needs_Assessment_Data_final_GIO.xlsx", 
-                              sheet = 2, range = readxl::cell_cols("A:B"))
-
-iowa_map <- sf::st_as_sf(map(database = "county", 
-                             regions = "iowa", 
-                             fill = TRUE, 
-                             plot = FALSE)) %>%
-  # add county fips code
-  left_join(county.fips, by = c("ID" = "polyname")) %>%
-  separate(ID, into = c("state", "county"), sep = ",", remove = FALSE)
 
 
 
@@ -97,21 +75,23 @@ body <-
     # set fixed height of valueBox
     tags$head(tags$style(HTML(".small-box {height: 180px}"))),
     
+
+# . Dashboard body ----------------------------------------------------------
     tabItems(
       tabItem(tabName = "dashboard",
               h1("ECI Board Approved Indicators"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
-                               VALUE = .12, FORMAT = "%"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
-                               VALUE = .12, FORMAT = "%"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
-                               VALUE = .12, FORMAT = "%"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Accredited family support programs in the state", 
+                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Quality early learning environments, QRS rating", 
+                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Number of programs in a quality initiative", 
+                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Availability of child care, cost" , 
+                               VALUE = 1250.145, FORMAT = "$", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare providers", 
+                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare spaces", 
+                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
               indicator_box_ui("INDICATORS", INDICATOR = "K students proficient by K literacy assessment", 
                                VALUE = .12, FORMAT = "%", COLOR = "olive"),
               indicator_box_ui("INDICATORS", INDICATOR = "Students entering K with no obvious dental problems", 
@@ -131,26 +111,32 @@ body <-
                                VALUE = .12, FORMAT = "%", COLOR = "black"),
               indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
                                VALUE = .12, FORMAT = "%", COLOR = "black"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Accredited family support programs in the state", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Quality early learning environments, QRS rating", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of programs in a quality initiative", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Availability of child care, cost" , 
-                               VALUE = 1250.145, FORMAT = "$", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare providers", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare spaces", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
+                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
+                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
+                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
+                               VALUE = .12, FORMAT = "%"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
+                               VALUE = .12, FORMAT = "%"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
+                               VALUE = .12, FORMAT = "%"),
               
               fluidRow(),
               fluidRow(
-                box(title = "InfoBox", footer = "This is footer", width = 12,
-                    status = 'primary', solidHeader = TRUE, 
-                    background = "black", collapsible = TRUE, collapsed = TRUE,
+                box(title = "InfoBox", 
+                    width = 12,
+                    status = 'primary', 
+                    solidHeader = TRUE, 
+                    background = "black", 
+                    collapsible = TRUE, 
+                    collapsed = TRUE,
+                    
                     h2("Indicator Boxes with figures and tables"), 
                     br(),
+                    
                     valueBox(tags$p("3,155,070", style = "font-size: 150%;"), 
                              subtitle = tags$p("POPULATION", 
                                                style = "font-size: 150%;"), 
@@ -225,45 +211,129 @@ body <-
                                  href = NULL))
                     )),
               
-              bsModal("modalExample", 
-                      "Name of the Table 1", 
-                      "click_si_UNEMPLOYMENT", 
-                      size = "large",
-                      dataTableOutput("table")),
-              
-              bsModal("modalExample2",
-                      "Name of the Table 2",
-                      "click_si_CRIME",
-                      size = "large",
-                      dataTableOutput("table2")),
-              
-              bsModal("modalExample3",
-                      "Name of the Table 3",
-                      "click_si_POVERTY6",
-                      size = "large",
-                      dataTableOutput("table3")),
-
-              bsModal("modalExample4",
-                      "Data Table",
-                      "click_si_ABUSE6",
-                      size = "large",
-                      plotOutput(outputId = "line")),
-              
-              bsModal("modalExample5",
-                      "Data Table - label to show",
-                      "click_si_RENTER6",
-                      size = "large",
-                      plotOutput(outputId = "line2")),
-              
-              bsModal("modalExample6",
-                      "Figure - label to show",
-                      "click_si_FEMALE",
-                      size = "large",
-                      leafletOutput(outputId = "dataMap"))
-              
+              # bsModal("modalExample", 
+              #         "Name of the Table 1", 
+              #         "click_si_UNEMPLOYMENT", 
+              #         size = "large",
+              #         dataTableOutput("table")),
+              # 
+              # bsModal("modalExample2",
+              #         "Name of the Table 2",
+              #         "click_si_CRIME",
+              #         size = "large",
+              #         dataTableOutput("table2")),
+              # 
+              # bsModal("modalExample3",
+              #         "Name of the Table 3",
+              #         "click_si_POVERTY6",
+              #         size = "large",
+              #         dataTableOutput("table3")),
+              # 
+              # bsModal("modalExample4",
+              #         "Data Table",
+              #         "click_si_ABUSE6",
+              #         size = "large",
+              #         plotOutput(outputId = "line")),
+              # 
+              # bsModal("modalExample5",
+              #         "Data Table - label to show",
+              #         "click_si_RENTER6",
+              #         size = "large",
+              #         plotOutput(outputId = "line2")),
+              # 
+              # bsModal("modalExample6",
+              #         "Figure - label to show",
+              #         "click_si_FEMALE",
+              #         size = "large",
+              #         leafletOutput(outputId = "dataMap"))
+              # 
       ),
+
+
+# . Child and Families body -----------------------------------------------
+
+      tabItem(tabName = "demographics"),
+
       
-      tabItem(tabName = "health",
+# . Employment body -------------------------------------------------------
+
+      tabItem(tabName = "employment"),
+
+      
+# . Education body --------------------------------------------------------
+
+      tabItem(tabName = "education",
+              tabsetPanel(
+                type = "tabs",
+                
+                tabPanel(h4("Educational Attainment of Women"),
+                         fluidRow(
+                           
+                           br(),
+                           
+                           box(width = 7, height = 500,
+                               toggle_button("EDU_plot_line_01_toggle",
+                                             c("Married", "Unmarried", "Both")),
+                               plotOutput("EDU_plot_line_01")
+                               ),
+                           box(width = 5, height = 500,
+                               DT::dataTableOutput("EDU_plot_01_table"))
+                         ),
+                         fluidRow(
+                           column(6,
+                                  h3("Percentage own children Under 6"),
+                                  # display bar chart
+                                  plotOutput("line"),
+                                  radioGroupButtons(
+                                    inputId = "EDU_plot_line_01_toggle2",
+                                    label = "",
+                                    choices = c("Married", 
+                                                "Unmarried"),
+                                    individual = TRUE,
+                                    checkIcon = list(
+                                      yes = tags$i(class = "fa fa-circle", 
+                                                   style = "color: steelblue"),
+                                      no = tags$i(class = "fa fa-circle-o", 
+                                                  style = "color: steelblue"))
+                                  )
+                           ),
+                           
+                           column(6,
+                                  h3("Percentage own children Under 6"),
+                                  box(width = 12,
+                                      textOutput("TEST_INPUT_Statewide"),
+                                    plotOutput("dataPlot33")
+                                  )
+                           )
+                           ),
+                         fluidRow(
+                           plotOutput("line2"),
+                           plotOutput("line3")
+                         )
+                         ),
+                
+                tabPanel(h4("Educational by Sex")),
+                
+                tabPanel(h4("Educational Other")),
+                
+                tabPanel(h4('Add Tab'))
+                )
+              ),
+
+      
+# . Health body------------------------------------------------------------
+
+      tabItem(tabName = "health"),
+
+      
+# . Community body --------------------------------------------------------
+
+      tabItem(tabName = "community"),
+
+      
+# . Services body ---------------------------------------------------------
+
+      tabItem(tabName = "services",
               tabsetPanel(type = "tabs",
                           tabPanel(h3("Child Health"),
                                    pickerInput(
@@ -300,53 +370,7 @@ body <-
                                    )
                           )
               )
-      ),
-      
-      
-      tabItem(tabName = "demographics",
-              h3("This figure is taken from CENSUS website"),
-              tags$div(
-                HTML("<p>You can find it <a href='https://data.census.gov/cedsci/profile?g=0400000US19'>here</a></p>")
-              ),
-              fluidRow(
-                box(width = 6,
-                    tags$iframe(seamless="seamless",
-                                src="https://data.census.gov/cedsci/vizwidget?g=0400000US19&infoSection=Health%20Insurance&type=chart&chartType=line", 
-                                width="100%", height="475px", style="border:0")
-                ),
-                box(width = 6,
-                    tags$iframe(seamless="seamless",
-                                src="https://data.census.gov/cedsci/vizwidget?g=0400000US19&infoSection=Homeownership&type=chart&chartType=line", 
-                                width="100%", height="475px", style="border:0"
-                    )
-                ),
-                box(width = 8, 
-                    tags$iframe(seamless="seamless",
-                                src="https://data.census.gov/cedsci/vizwidget?g=0400000US19&infoSection=Housing%20Value&type=map",
-                                width="100%", height="475px", style="border:0")
-                ),
-                box(width = 4,
-                    tags$iframe(seamless="seamless",
-                                src="https://data.census.gov/cedsci/vizwidget?g=0400000US19&infoSection=Educational%20Attainment&type=chart&chartType=bar", 
-                                width="100%", height="475px", style="border:0")
-                )
               )
-      ),
-      
-      
-      tabItem(tabName = "employment"),
-      
-      
-      tabItem(tabName = "services"),
-      
-      
-      tabItem(tabName = "education"),
-      
-      
-      tabItem(tabName = "community",
-              h1("Testing"),
-              verbatimTextOutput("TEST")
-      )
     )
   )
 
@@ -359,32 +383,130 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
 # Server ------------------------------------------------------------------
 server <- function(input, output) { 
   
+  # Prepare data for Education Attainment tab
+  EDU_data_01 <- reactive({
+    # make a list of counties to plot
+    my_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+        }
+    # calculate percentage and select county of interest 
+    data_ACS %>%
+      select(fips:year, starts_with("var")) %>%
+      gather(var, value, starts_with("var")) %>%
+      mutate(married = ifelse(var %in% c(paste0("var00", 4:8)),
+                              "Married", "Unmarried")) %>%
+      filter(county %in% my_county) %>%
+      mutate(county = factor(county, levels = my_county))
+  })
+  
+  # Prepare data for Education Attainment line plot
+  EDU_data_plot_01 <- reactive({
+    EDU_data_01() %>%
+      filter(var %in% c("var004", "var010"),
+             between(year, input$YEAR[1], input$YEAR[2])) %>%
+      select(-var) %>% 
+      spread(married, value) %>% 
+      mutate(Both = Married + Unmarried)
+  })
+  
+  # Make line plot for Education Attainment tab
+  output$EDU_plot_line_01 <- renderPlot({
+    EDU_data_plot_01() %>%
+      select(county, year, value = input$EDU_plot_line_01_toggle) %>%
+      # filter(married == input$EDU_plot_line_01_toggle) %>%
+      plot_line_year(df = ., PERCENT = TRUE) +
+      labs(
+        title="Proportion of Women Who Has A Birth In The Past 12 Months",
+        subtitle="Proportion of women with less than high schoo education",
+        caption="Source: ACS 5-Year Survey Table B13014")
+  })
+  
+  # Make table to go with the Education Attainment line plot
+  output$EDU_plot_01_table <- DT::renderDataTable({
+    EDU_data_plot_01() %>%
+      select(County = county, Year = year, Married:Both) %>% 
+      datatable() %>%
+      formatPercentage(3:5, 2)
+  })
+  
+  
+  output$TEST_INPUT_Statewide <- renderText({
+    input$EDU_plot_line_01_toggle
+  }) 
+  
+  
   output$table <- renderDataTable({
     head(data) %>% select(1:5)
   })
   
-  output$table2 <- renderDataTable({
-    head(data) %>% select(110:105)
-  })
   
   output$TEST <- renderText(input$COUNTY)
   
-  output$line <- renderPlot({
+  # output$line <- renderPlot({
+  #   data %>%
+  #     filter(county %in% input$COUNTY) %>%
+  #     select(county, var146:var157) %>%
+  #     gather(Var, value, -county) %>%
+  #     left_join(varnames) %>%
+  #     separate(Description, into = c("Var", "Year"), sep = ",", convert = TRUE) %>%
+  #     separate(Var, into = c("key","of", "var"), extra = "merge") %>%
+  #     spread(key, value) %>%
+  #     filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
+  #     ggplot(aes(Year, Percent, col = county)) +
+  #     geom_line(size = 1) +
+  #     geom_point(size = 3) +
+  #     labs(x = NULL, y =  NULL, col = "County") +
+  #     scale_x_continuous(labels = function(x) sprintf("%.0f", x),
+  #                        breaks = seq(input$YEAR[1], input$YEAR[2], 1)) +
+  #     scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  #     theme_minimal() +
+  #     theme(panel.grid.minor.x = element_blank(),
+  #           panel.grid.major.x = element_blank())
+  # })
+  
+  
+  output$line2 <- renderPlot({
     data %>%
-      filter(county %in% input$COUNTY) %>%
+      filter(county %in% c("Story", "Boone")) %>%
       select(county, var146:var157) %>%
       gather(Var, value, -county) %>%
       left_join(varnames) %>%
       separate(Description, into = c("Var", "Year"), sep = ",", convert = TRUE) %>%
       separate(Var, into = c("key","of", "var"), extra = "merge") %>%
       spread(key, value) %>%
-      filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
+      # filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
       ggplot(aes(Year, Percent, col = county)) +
       geom_line(size = 1) +
       geom_point(size = 3) +
       labs(x = NULL, y =  NULL, col = "County") +
       scale_x_continuous(labels = function(x) sprintf("%.0f", x),
-                         breaks = seq(input$YEAR[1], input$YEAR[2], 1)) +
+                         breaks = seq(1990, 2021, 1)) +
+      scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+      theme_minimal() +
+      theme(panel.grid.minor.x = element_blank(),
+            panel.grid.major.x = element_blank())
+  })
+  
+  
+  output$line3 <- renderPlot({
+    data %>%
+      filter(county %in% c("Story", "Dalas")) %>%
+      select(county, var146:var157) %>%
+      gather(Var, value, -county) %>%
+      left_join(varnames) %>%
+      separate(Description, into = c("Var", "Year"), sep = ",", convert = TRUE) %>%
+      separate(Var, into = c("key","of", "var"), extra = "merge") %>%
+      spread(key, value) %>%
+      # filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
+      ggplot(aes(Year, Percent, col = county)) +
+      geom_line(size = 1) +
+      geom_point(size = 3) +
+      labs(x = NULL, y =  NULL, col = "County") +
+      scale_x_continuous(labels = function(x) sprintf("%.0f", x),
+                         breaks = seq(1990, 2021, 1)) +
       scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
       theme_minimal() +
       theme(panel.grid.minor.x = element_blank(),
