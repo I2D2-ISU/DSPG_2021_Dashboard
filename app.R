@@ -27,14 +27,19 @@ sidebar <-
   dashboardSidebar(
     # Menu content
     sidebarMenu(
+      # freezes the side bar
+      #style = "position:fixed;",
       menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Data by Topic", tabName = "topic", icon = icon("database"),
-               # whether statewide data should be included
-               checkboxInput(
-                 inputId = "STATEWIDE",
-                 label = "Include Statewide Data", 
-                 value = FALSE
-               ),
+               # data categories to show
+               p(),
+               p("Explore Data of Interest:", style="margin-left: 15px"),
+               menuSubItem("Children & Families", tabName = "demographics", icon = icon("baby")),
+               menuSubItem("Employment & Income", tabName = "employment", icon = icon("hand-holding-usd")),
+               menuSubItem("Education", tabName = "education", icon = icon("book-open")),
+               menuSubItem("Physical & Mental Health", tabName = "health", icon = icon("heartbeat")),
+               menuSubItem("Community", tabName = "community", icon = icon("users")),
+               menuSubItem("Services", tabName = "services", icon = icon("user-cog")),
                # county to display results for
                pickerInput(
                  inputId = "COUNTY",
@@ -45,6 +50,12 @@ sidebar <-
                  choicesOpt = list(
                    content = data$county)
                ),
+               # whether statewide data should be included
+               checkboxInput(
+                 inputId = "STATEWIDE",
+                 label = "Include Statewide Data", 
+                 value = FALSE
+               ),
                # years to display data for
                sliderTextInput(
                  inputId = "YEAR",
@@ -52,14 +63,6 @@ sidebar <-
                  choices = 2010:2019,
                  selected = c(2010, 2019)
                ),
-               p("Explore Data of Interest:", style="margin-left: 15px"),
-               # data categories to show
-               menuSubItem("Children & Families", tabName = "demographics", icon = icon("baby")),
-               menuSubItem("Employment & Income", tabName = "employment", icon = icon("hand-holding-usd")),
-               menuSubItem("Education", tabName = "education", icon = icon("book-open")),
-               menuSubItem("Physical & Mental Health", tabName = "health", icon = icon("heartbeat")),
-               menuSubItem("Community", tabName = "community", icon = icon("users")),
-               menuSubItem("Services", tabName = "services", icon = icon("user-cog")),
                p()
       ),
       # UNDER DEVELOPMENT
@@ -73,7 +76,7 @@ sidebar <-
 body <-
   dashboardBody(
     # set fixed height of valueBox
-    tags$head(tags$style(HTML(".small-box {height: 180px}"))),
+    tags$head(tags$style(HTML(".small-box {height: 150px}"))),
     
 
 # . Dashboard body ----------------------------------------------------------
@@ -268,53 +271,48 @@ body <-
                 
                 tabPanel(h4("Educational Attainment of Women"),
                          fluidRow(
-                           
                            br(),
-                           
                            box(width = 7, height = 500,
                                toggle_button("EDU_plot_line_01_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotOutput("EDU_plot_line_01")
                                ),
-                           box(width = 5, height = 500,
-                               DT::dataTableOutput("EDU_plot_01_table"))
-                         ),
-                         fluidRow(
-                           column(6,
-                                  h3("Percentage own children Under 6"),
-                                  # display bar chart
-                                  plotOutput("line"),
-                                  radioGroupButtons(
-                                    inputId = "EDU_plot_line_01_toggle2",
-                                    label = "",
-                                    choices = c("Married", 
-                                                "Unmarried"),
-                                    individual = TRUE,
-                                    checkIcon = list(
-                                      yes = tags$i(class = "fa fa-circle", 
-                                                   style = "color: steelblue"),
-                                      no = tags$i(class = "fa fa-circle-o", 
-                                                  style = "color: steelblue"))
-                                  )
-                           ),
                            
-                           column(6,
-                                  h3("Percentage own children Under 6"),
-                                  box(width = 12,
-                                      textOutput("TEST_INPUT_Statewide"),
-                                    plotOutput("dataPlot33")
-                                  )
-                           )
+                           box(width = 5, height = 500,
+                               plotOutput("EDU_plot_bar_01", height = "480px")
+                               )
                            ),
                          fluidRow(
-                           plotOutput("line2"),
-                           plotOutput("line3")
-                         )
+                           box(width = 7, height = 500,
+                               pickerInput(
+                                 inputId = "EDU_plot_map_01_toggle",
+                                 label = "Select Education Level",
+                                 choices = levels(data_ACS$group_3)),  
+                               leafletOutput("EDU_plot_map_01")
+                           ),
+                           box(width = 5, height = 500,
+                               DT::dataTableOutput("EDU_plot_01_table")
+                               )
+                           )
                          ),
                 
                 tabPanel(h4("Educational by Sex")),
                 
-                tabPanel(h4("Educational Other")),
+                tabPanel(h4("Educational Other"),
+                         fluidRow(
+                           plotOutput("line2"),
+                           column(7,
+                                  h3("Percentage own children Under 6"),
+                                  box(width = 12,
+                                      textOutput("TEST_INPUT_Statewide"),
+                                      plotOutput("dataPlot33")
+                                  )
+                           ),
+                           
+                           column(5),
+                           plotOutput("line3")
+                           )
+                         ),
                 
                 tabPanel(h4('Add Tab'))
                 )
@@ -381,10 +379,10 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
 
 
 # Server ------------------------------------------------------------------
-server <- function(input, output) { 
+server <- function(input, output, session) { 
   
-  # Prepare data for Education Attainment tab
-  EDU_data_01 <- reactive({
+  # Prepare data for Education Attainment line plot and table
+  EDU_data_01_county <- reactive({
     # make a list of counties to plot
     my_county <-
       if(input$STATEWIDE) {
@@ -392,49 +390,84 @@ server <- function(input, output) {
       } else {
         input$COUNTY
         }
-    # calculate percentage and select county of interest 
+    # filter data 
     data_ACS %>%
-      select(fips:year, starts_with("var")) %>%
-      gather(var, value, starts_with("var")) %>%
-      mutate(married = ifelse(var %in% c(paste0("var00", 4:8)),
-                              "Married", "Unmarried")) %>%
-      filter(county %in% my_county) %>%
+      filter(group_3 == "Less than High School Graduate",
+             between(year, input$YEAR[1], input$YEAR[2]),
+             county %in% my_county) %>%
       mutate(county = factor(county, levels = my_county))
-  })
-  
-  # Prepare data for Education Attainment line plot
-  EDU_data_plot_01 <- reactive({
-    EDU_data_01() %>%
-      filter(var %in% c("var004", "var010"),
-             between(year, input$YEAR[1], input$YEAR[2])) %>%
-      select(-var) %>% 
-      spread(married, value) %>% 
-      mutate(Both = Married + Unmarried)
   })
   
   # Make line plot for Education Attainment tab
   output$EDU_plot_line_01 <- renderPlot({
-    EDU_data_plot_01() %>%
-      select(county, year, value = input$EDU_plot_line_01_toggle) %>%
-      # filter(married == input$EDU_plot_line_01_toggle) %>%
+    EDU_data_01_county() %>%
+      filter(group_2 == input$EDU_plot_line_01_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) +
       labs(
         title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        subtitle="Proportion of women with less than high schoo education",
+        subtitle="less than high schoo education",
         caption="Source: ACS 5-Year Survey Table B13014")
   })
   
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_01_table <- DT::renderDataTable({
-    EDU_data_plot_01() %>%
-      select(County = county, Year = year, Married:Both) %>% 
+    EDU_data_01_county() %>%
+      spread(group_2, value) %>%
+      select(County = county, Year = year, Married, Unmarried, Both) %>% 
       datatable() %>%
       formatPercentage(3:5, 2)
   })
   
   
+  # Prepare data for Education Attainment map and bar chart
+  EDU_data_01_averaged <- reactive({
+    data_ACS %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      group_by(fips, county, group_2, group_3) %>%
+      summarise(value = mean(value)) 
+  })
+  
+  
+  # Make map for Education Attainment tab
+  output$EDU_plot_map_01 <- renderLeaflet({
+    EDU_data_01_averaged() %>%
+      filter(group_3 == input$EDU_plot_map_01_toggle,      # chose education grade
+             group_2 == input$EDU_plot_line_01_toggle) %>% #choose marital status
+      mutate(value = value *100) %>%
+      rowwise() %>%
+      mutate(
+        popup_label = htmltools::HTML(sprintf('<b>%s</b>
+    <br><span style="padding-left: 10px;">%s: <b>%.1f%%</b>
+    <br><span style="padding-left: 10px;">Marital Status: <b>%s</b>',
+                                              county, group_3, value, group_2))) %>%
+      ungroup() %>%
+      plot_map_mean(COUNTY = input$COUNTY)
+  })
+  
+  # Make bar plot for Education Attainment tab
+  output$EDU_plot_bar_01 <- renderPlot({
+    # make a list of counties to plot
+    my_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    my_years <- c(input$YEAR[1], input$YEAR[2])
+    
+    EDU_data_01_averaged() %>%
+      filter(county %in% my_county,
+             group_2 != "Both") %>%
+      mutate(county = factor(county, levels = my_county)) %>%
+      plot_bar_mean(PERCENT = TRUE, YEARS = my_years)
+  })
+  
+  
+  
+  # TESTING  SOME FOR INFOBOXes
   output$TEST_INPUT_Statewide <- renderText({
-    input$EDU_plot_line_01_toggle
+    input$COUNTY
   }) 
   
   
@@ -477,7 +510,6 @@ server <- function(input, output) {
       separate(Description, into = c("Var", "Year"), sep = ",", convert = TRUE) %>%
       separate(Var, into = c("key","of", "var"), extra = "merge") %>%
       spread(key, value) %>%
-      # filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
       ggplot(aes(Year, Percent, col = county)) +
       geom_line(size = 1) +
       geom_point(size = 3) +
@@ -500,7 +532,6 @@ server <- function(input, output) {
       separate(Description, into = c("Var", "Year"), sep = ",", convert = TRUE) %>%
       separate(Var, into = c("key","of", "var"), extra = "merge") %>%
       spread(key, value) %>%
-      # filter(between(Year, input$YEAR[1], input$YEAR[2])) %>%
       ggplot(aes(Year, Percent, col = county)) +
       geom_line(size = 1) +
       geom_point(size = 3) +
