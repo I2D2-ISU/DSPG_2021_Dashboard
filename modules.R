@@ -33,7 +33,7 @@ plot_line_year <- function(df, PERCENT = FALSE, COUNTY_COL = "orange", STATEWIDE
     {if(PERCENT)scale_y_continuous(labels = scales::percent_format(accuracy = 0.1)) } +
     scale_color_manual(name = NULL, values = c(COUNTY_COL, STATEWIDE_COL)) +
     theme_fivethirtyeight() +
-    theme(axis.text.x = element_text(angle = 90, size=8, vjust =0.5)) 
+    theme(axis.text.x = element_text(angle = 90, size=8, vjust =0.5))
 }
 
 
@@ -110,7 +110,7 @@ plot_map_mean <- function(df, COUNTY, REVERSE = TRUE) {
                 fillColor = ~pal(value), 
                 label = ~popup_label,
                 labelOptions = labelOptions(
-                  direction = "right", 
+                  direction = "auto", 
                   textsize = "15px",
                   style = list(
                     "border-color" = "rgba(0,0,0,0.5)",
@@ -120,7 +120,8 @@ plot_map_mean <- function(df, COUNTY, REVERSE = TRUE) {
               labFormat = labelFormat(suffix = "%"),
               opacity = 0.75) %>%
     addProviderTiles(providers$CartoDB.Positron) %>% 
-    addPolylines(data = iowa_map %>% filter(county == str_to_lower(paste(COUNTY))),
+    addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(COUNTY)), "[:punct:]") 
+                                            ),
                  stroke = TRUE,
                  weight = 2.5,
                  color = "black")

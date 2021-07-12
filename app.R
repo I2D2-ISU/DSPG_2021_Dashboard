@@ -269,7 +269,7 @@ body <-
               tabsetPanel(
                 type = "tabs",
                 
-                tabPanel(h4("Educational Attainment of Women"),
+                tabPanel(h4("Educational Attainment"),
                          fluidRow(
                            br(),
                            box(width = 7, height = 500,
@@ -296,7 +296,33 @@ body <-
                            )
                          ),
                 
-                tabPanel(h4("Educational by Sex")),
+                tabPanel(h4("Education by Sex"),
+                         h3("Proportion of Women Who Has A Birth In The Past 12 Months"),
+                         fluidRow(
+                           br(),
+                           box(width = 7, height = 500,
+                               toggle_button("EDU_plot_line_02_toggle",
+                                             c("Married", "Unmarried", "Both")),
+                               plotlyOutput("EDU_plot_line_02")
+                               ),
+                           
+                           box(width = 5, height = 500,
+                               plotlyOutput("EDU_plot_bar_02", height = "480px")
+                               )
+                           ),
+                         fluidRow(
+                           box(width = 7, height = 500,
+                               pickerInput(
+                                 inputId = "EDU_plot_map_02_toggle",
+                                 label = "Select Education Level",
+                                 choices = levels(data_ACS$group_3)),  
+                               leafletOutput("EDU_plot_map_02")
+                               ),
+                           box(width = 5, height = 500,
+                               DT::dataTableOutput("EDU_plot_02_table")
+                               )
+                           )
+                         ),
                 
                 tabPanel(h4("Educational Other"),
                          fluidRow(
@@ -465,7 +491,65 @@ server <- function(input, output, session) {
   
   
   
-  # TESTING  SOME FOR INFOBOXes
+  # EDUCATION by SEX
+  
+  # Make line plot for Education Attainment tab
+  output$EDU_plot_line_02 <- renderPlotly({
+    EDU_data_01_county() %>%
+      filter(group_2 == input$EDU_plot_line_02_toggle) %>%
+      plot_line_year(df = ., PERCENT = TRUE) %>%
+      ggplotly(., tooltip = "text") %>%
+      layout(title = "less than high schoo education")
+  })
+  
+  # Make table to go with the Education Attainment line plot
+  output$EDU_plot_02_table <- DT::renderDataTable({
+    EDU_data_01_county() %>%
+      spread(group_2, value) %>%
+      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      datatable() %>%
+      formatPercentage(3:5, 2)
+  })
+  
+  # Make map for Education Attainment tab
+  output$EDU_plot_map_02 <- renderLeaflet({
+    EDU_data_01_averaged() %>%
+      filter(group_3 == input$EDU_plot_map_02_toggle,      # chose education grade
+             group_2 == input$EDU_plot_line_02_toggle) %>% #choose marital status
+      mutate(value = value *100) %>%
+      rowwise() %>%
+      mutate(
+        popup_label = htmltools::HTML(sprintf('<b>%s</b>
+    <br><span style="padding-left: 10px;">%s: <b>%.1f%%</b>
+    <br><span style="padding-left: 10px;">Marital Status: <b>%s</b>',
+                                              county, group_3, value, group_2))) %>%
+      ungroup() %>%
+      plot_map_mean(COUNTY = input$COUNTY)
+  })
+  
+  # Make bar plot for Education Attainment tab
+  output$EDU_plot_bar_02 <- renderPlotly({
+    # make a list of counties to plot
+    my_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    my_years <- c(input$YEAR[1], input$YEAR[2])
+    
+    EDU_data_01_averaged() %>%
+      filter(county %in% my_county,
+             group_2 != "Both") %>%
+      mutate(county = factor(county, levels = my_county)) %>%
+      plot_bar_mean(PERCENT = TRUE, YEARS = my_years) %>%
+      ggplotly(., tooltip = "text") 
+  })
+  
+  
+  
+  # TESTING  SOME FOR INFOBOXEs
   output$TEST_INPUT_Statewide <- renderText({
     input$COUNTY
   }) 

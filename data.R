@@ -3,10 +3,10 @@ library(ggthemes)
 # Data --------------------------------------------------------------------
 
 # read the data
-data <- readxl::read_xlsx("Data/ECI_Needs_Assessment_Data_final_GIO.xlsx") %>%
+data <- readxl::read_xlsx("data/ECI_Needs_Assessment_Data_final_GIO.xlsx") %>%
   arrange(FIPS)
 
-variables <- readxl::read_xlsx("Data/Variables.xlsx") %>%
+variables <- readxl::read_xlsx("data/Variables.xlsx") %>%
   mutate(group_3 = factor(group_3,
                            levels = c("Less than High School Graduate",
                                       "High School Graduate",
@@ -16,7 +16,7 @@ variables <- readxl::read_xlsx("Data/Variables.xlsx") %>%
 
 data_state_wide <- data %>% filter(FIPS == 19000)
 
-varnames <- readxl::read_xlsx("Data/ECI_Needs_Assessment_Data_final_GIO.xlsx", 
+varnames <- readxl::read_xlsx("data/ECI_Needs_Assessment_Data_final_GIO.xlsx", 
                               sheet = 2, range = readxl::cell_cols("A:B"))
 
 iowa_map <- sf::st_as_sf(map(database = "county", 
