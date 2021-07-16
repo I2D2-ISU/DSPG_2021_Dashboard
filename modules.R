@@ -33,7 +33,7 @@ plot_line_year <- function(df, PERCENT = FALSE, COUNTY_COL = "orange", STATEWIDE
     {if(PERCENT)scale_y_continuous(labels = scales::percent_format(accuracy = 0.1)) } +
     scale_color_manual(name = NULL, values = c(COUNTY_COL, STATEWIDE_COL)) +
     theme_fivethirtyeight() +
-    theme(axis.text.x = element_text(angle = 90, size=8, vjust =0.5))
+    theme(axis.text.x = element_text(angle = 0, size=8, vjust =0.5))
 }
 
 
@@ -50,10 +50,10 @@ plot_bar_mean <- function(df, YEARS, PERCENT = FALSE, COUNTY_COL = "orange", STA
   
   # specify data format for hover text in plotly
   if(PERCENT) {
-    plotly_hover_text <- paste0("<b>%s</b><br>Year(s): <b>",years,"</b><br>Birth less than high school: <b>%.1f%%</b>")
+    plotly_hover_text <- paste0("<b>%s</b><br>Year(s): <b>",years,"</b><br>%s: <b>%.1f%%</b>")
     m = 100
   } else {
-    plotly_hover_text <- paste0("<b>%s</b><br>Year(s): <b>",years,"</b><br>Birth less than high school: <b>%.2f</b>")
+    plotly_hover_text <- paste0("<b>%s</b><br>Year(s): <b>",years,"</b><br>%s: <b>%.2f</b>")
     m = 1
   }
   
@@ -64,7 +64,7 @@ plot_bar_mean <- function(df, YEARS, PERCENT = FALSE, COUNTY_COL = "orange", STA
                group = county,
                text = 
                  sprintf(plotly_hover_text, 
-                         county, value*m))) +
+                         county, group_3, value*m))) +
     geom_bar(stat = "summary", fun = mean, position = "dodge") +
     facet_grid(~group_2) +
     scale_x_discrete(name = NULL, 

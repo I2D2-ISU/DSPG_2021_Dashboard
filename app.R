@@ -291,9 +291,15 @@ body <-
                                leafletOutput("EDU_plot_map_01")
                            ),
                            box(width = 5, height = 500,
-                               DT::dataTableOutput("EDU_plot_01_table")
+                               DT::dataTableOutput("EDU_plot_01_table"),
+                               downloadButton("EDU_download_csv", "Download CSV"),
+                               downloadButton("EDU_download_xlsx", "Download Excel")
                                )
-                           )
+                           ),
+                         fluidRow(
+                           # downloadButton("EDU_download_csv", "Download CSV"),
+                           # downloadButton("EDU_download_xlsx", "Download Exel")
+                         )
                          ),
                 
                 tabPanel(h4("Education by Sex"),
@@ -435,15 +441,6 @@ server <- function(input, output, session) {
         caption="Source: ACS 5-Year Survey Table B13014")
   })
   
-  # Make table to go with the Education Attainment line plot
-  output$EDU_plot_01_table <- DT::renderDataTable({
-    EDU_data_01_county() %>%
-      spread(group_2, value) %>%
-      select(County = county, Year = year, Married, Unmarried, Both) %>% 
-      datatable() %>%
-      formatPercentage(3:5, 2)
-  })
-  
   
   # Prepare data for Education Attainment map and bar chart
   EDU_data_01_averaged <- reactive({
@@ -489,7 +486,35 @@ server <- function(input, output, session) {
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years)
   })
   
+  # Make table to go with the Education Attainment line plot
+  output$EDU_plot_01_table <- DT::renderDataTable({
+    EDU_data_01_county() %>%
+      spread(group_2, value) %>%
+      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      datatable() %>%
+      formatPercentage(3:5, 2)
+  })
   
+
+  # Download data as csv
+  output$EDU_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("Education", ".csv")
+    },
+    content = function(file) {
+      write.csv(EDU_data_01_county(), file, row.names = FALSE)
+    }
+  )
+  
+  # Download data as csv
+  output$EDU_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("Education", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(EDU_data_01_county(), file)
+    }
+  )
   
   # EDUCATION by SEX
   
