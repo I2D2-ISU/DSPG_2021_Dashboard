@@ -8,6 +8,7 @@ library(leaflet)
 library(maps)
 library(plotly)
 library(scales)
+library(lubridate)
 
 
 source("modules.R")
@@ -412,6 +413,38 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
 
 # Server ------------------------------------------------------------------
 server <- function(input, output, session) { 
+  
+  
+  showModal(
+    modalDialog(
+      title = h2("Welcome to I2D2 Dashboard",
+                 img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 50, align="right")),
+      easyClose = TRUE,
+      footer = modalButton("Explore the Dashboard"),
+      img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 100, align="right"),
+      tags$p(
+        "It's just that this dashboard is more fun when a conference is going on",
+        tags$strong(tags$em("Russian Doll")),
+        "than after the fact. So we're going to pretend that",
+        tags$a(href="https://i2d2.iastate.edu/", tags$strong("I2D2")), "is going on right now"),
+      tags$p(
+        "The dates in tweet previews will be correct, but everywhere else in the app:"
+      ),
+      tags$ul(
+        tags$li(
+          "First line"
+          ),
+        tags$li(
+          strftime(now() - days(), "%b %e"), "is really"),
+        tags$li("and so on...")
+      ),
+      tags$p("Come back tomorrow and relive it all over again!"),
+      # tags$p(HTML("&mdash;&commat; Garrick"),
+      #        HTML('(<a href="https://i2d2.iastate.edu/" target="_blank">I2D2</a>)'))
+    )
+  )
+  
+  
   
   # Prepare data for Education Attainment line plot and table
   EDU_data_01_county <- reactive({
