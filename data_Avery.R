@@ -7,3 +7,7 @@ ind_pup6 <- acs_inds %>% filter(year==max(year), NAME=="Statewide") %>%
 
 ind_pil <-  acs_inds %>% filter(year==max(year), NAME=="Statewide") %>%
   pull(B23008_pil)
+
+ind_plesshigh <- acs_inds %>% filter(year==max(year), NAME=="Statewide") %>%
+  pull(B13014_plesshigh)
+

@@ -9,6 +9,7 @@ library(maps)
 library(plotly)
 library(scales)
 library(lubridate)
+library(shinydashboardPlus)
 
 
 source("modules.R")
@@ -261,7 +262,25 @@ body <-
       
       # . Employment body -------------------------------------------------------
       
-      tabItem(tabName = "employment"),
+      tabItem(tabName = "employment",
+              fluidRow(
+                box(title="% in Pov",
+                    closable = FALSE,
+                    solidHeader = TRUE,
+                    collapsible = FALSE,
+                    sliderTextInput(
+                      inputId = "yrx",
+                      label = "Choose Years", 
+                      choices = 2013:2019,
+                      selected = c(2013, 2019)),
+                    selectInput(
+                      inputId = "countyx",
+                      label = strong("Select County"),
+                      choices = unique(str_to_title(iowa_map$county)),
+                      selected = NULL),
+                    leafletOutput("emp_map_1")
+                    )
+              )),
       
       
       # . Education body --------------------------------------------------------
@@ -607,34 +626,34 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       ggplotly(., tooltip = "text")
   })
 
-  # ---- % Poverty Under 6 ---------
-  # Prepare data for Education Attainment line plot and table
-  EMP_data_01_county <- reactive({
-    # make a list of counties to plot
-    my_county <-
-      if(input$STATEWIDE) {
-        c(input$COUNTY, "Statewide")
-      } else {
-        input$COUNTY
-      }
-    # filter data
-    data_ACS %>%
-      filter(group_3 == "Less than High School Graduate",
-             between(year, input$YEAR[1], input$YEAR[2]),
-             county %in% my_county) %>%
-      mutate(county = factor(county, levels = my_county))
-  })
-
-  # Make line plot for Education Attainment tab
-  output$EMP_plot_line_01 <- renderPlot({
-    EMP_data_01_county() %>%
-      filter(group_2 == input$EMP_plot_line_01_toggle) %>%
-      plot_line_year(df = ., PERCENT = TRUE) +
-      labs(
-        title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        subtitle="less than high school education",
-        caption="Source: ACS 5-Year Survey Table B13014")
-  })
+  # # ---- % Poverty Under 6 ---------
+  # # Prepare data for Education Attainment line plot and table
+  # EMP_data_01_county <- reactive({
+  #   # make a list of counties to plot
+  #   my_county <-
+  #     if(input$STATEWIDE) {
+  #       c(input$COUNTY, "Statewide")
+  #     } else {
+  #       input$COUNTY
+  #     }
+  #   # filter data
+  #   data_ACS %>%
+  #     filter(group_3 == "Less than High School Graduate",
+  #            between(year, input$YEAR[1], input$YEAR[2]),
+  #            county %in% my_county) %>%
+  #     mutate(county = factor(county, levels = my_county))
+  # })
+  # 
+  # # Make line plot for Education Attainment tab
+  # output$EMP_plot_line_01 <- renderPlot({
+  #   EMP_data_01_county() %>%
+  #     filter(group_2 == input$EMP_plot_line_01_toggle) %>%
+  #     plot_line_year(df = ., PERCENT = TRUE) +
+  #     labs(
+  #       title="Proportion of Women Who Has A Birth In The Past 12 Months",
+  #       subtitle="less than high school education",
+  #       caption="Source: ACS 5-Year Survey Table B13014")
+  # })
 
 
 
@@ -734,6 +753,55 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       addProviderTiles(providers$CartoDB.Positron)
   })
 
+  # Emp_pov_averaged <- reactive({
+  #   data_ACS %>%
+  #     filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+  #     group_by(fips, county, group_2, group_3) %>%
+  #     summarise(value = mean(value)) })
+  
+  mapfun <- reactive ({
+    acs_inds %>% 
+    select(GEOID, NAME, year, B17020_pup6) %>%
+    filter(between(year, input$yrx[1], input$yrx[2])) %>%
+    filter(NAME!= "Statewide", year>=2013) %>%
+      group_by(GEOID, NAME) %>%
+      summarise(B17020_pup6m=mean(B17020_pup6, na.rm=TRUE)) %>%
+      left_join(iowa_map, by = c("GEOID" = "fips")) %>%
+      sf::st_as_sf(.) 
+    })
+  
+  output$emp_map_1 <- renderLeaflet({
+
+    mypal <- colorNumeric("YlOrRd", mapfun()$B17020_pup6m*100)
+    mytext <- paste(
+      "County: ", mapfun()$NAME,"<br/>", 
+      "Percent: ", percent(mapfun()$B17020_pup6m), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+
+    mapfun() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(width = "100%") %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = 0, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(B17020_pup6m*100)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~B17020_pup6m*100,
+                title = "Estimate",
+                opacity = .8,
+                labFormat = labelFormat(suffix = "%")) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$countyx)), "[:punct:]")))
+  })
+  
+  
 }
 
 
