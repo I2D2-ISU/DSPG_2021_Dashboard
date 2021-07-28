@@ -13,6 +13,7 @@ library(lubridate)
 
 source("modules.R")
 source("data.R")
+source("data_Avery.R")
 
 
 
@@ -118,9 +119,9 @@ body <-
               indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
                                VALUE = .12, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+                               VALUE = ind_pup6, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+                               VALUE = ind_pil, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
                                VALUE = .12, FORMAT = "%"),
               indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
