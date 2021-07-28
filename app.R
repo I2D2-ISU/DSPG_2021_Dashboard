@@ -73,15 +73,14 @@ sidebar <-
   )
 
 
-
 # Body --------------------------------------------------------------------
 body <-
   dashboardBody(
     # set fixed height of valueBox
     tags$head(tags$style(HTML(".small-box {height: 150px}"))),
     
-
-# . Dashboard body ----------------------------------------------------------
+    
+    # . Dashboard body ----------------------------------------------------------
     tabItems(
       tabItem(tabName = "dashboard",
               h1("ECI Board Approved Indicators"),
@@ -214,7 +213,7 @@ body <-
                                  color = "fuchsia", 
                                  width = 4, 
                                  href = NULL))
-                    )),
+                )),
               
               # bsModal("modalExample", 
               #         "Name of the Table 1", 
@@ -253,20 +252,20 @@ body <-
               #         leafletOutput(outputId = "dataMap"))
               # 
       ),
-
-
-# . Child and Families body -----------------------------------------------
-
+      
+      
+      # . Child and Families body -----------------------------------------------
+      
       tabItem(tabName = "demographics"),
-
       
-# . Employment body -------------------------------------------------------
-
+      
+      # . Employment body -------------------------------------------------------
+      
       tabItem(tabName = "employment"),
-
       
-# . Education body --------------------------------------------------------
-
+      
+      # . Education body --------------------------------------------------------
+      
       tabItem(tabName = "education",
               tabsetPanel(
                 type = "tabs",
@@ -278,12 +277,12 @@ body <-
                                toggle_button("EDU_plot_line_01_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotOutput("EDU_plot_line_01")
-                               ),
+                           ),
                            
                            box(width = 5, height = 500,
                                plotOutput("EDU_plot_bar_01", height = "480px")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            box(width = 7, height = 500,
                                pickerInput(
@@ -296,13 +295,13 @@ body <-
                                DT::dataTableOutput("EDU_plot_01_table"),
                                downloadButton("EDU_download_csv", "Download CSV"),
                                downloadButton("EDU_download_xlsx", "Download Excel")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            # downloadButton("EDU_download_csv", "Download CSV"),
                            # downloadButton("EDU_download_xlsx", "Download Exel")
                          )
-                         ),
+                ),
                 
                 tabPanel(h4("Education by Sex"),
                          h3("Proportion of Women Who Has A Birth In The Past 12 Months"),
@@ -312,12 +311,12 @@ body <-
                                toggle_button("EDU_plot_line_02_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotlyOutput("EDU_plot_line_02")
-                               ),
+                           ),
                            
                            box(width = 5, height = 500,
                                plotlyOutput("EDU_plot_bar_02", height = "480px")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            box(width = 7, height = 500,
                                pickerInput(
@@ -325,12 +324,12 @@ body <-
                                  label = "Select Education Level",
                                  choices = levels(data_ACS$group_3)),  
                                leafletOutput("EDU_plot_map_02")
-                               ),
+                           ),
                            box(width = 5, height = 500,
                                DT::dataTableOutput("EDU_plot_02_table")
-                               )
                            )
-                         ),
+                         )
+                ),
                 
                 tabPanel(h4("Educational Other"),
                          fluidRow(
@@ -345,26 +344,26 @@ body <-
                            
                            column(5),
                            plotOutput("line3")
-                           )
-                         ),
+                         )
+                ),
                 
                 tabPanel(h4('Add Tab'))
-                )
-              ),
-
+              )
+      ),
       
-# . Health body------------------------------------------------------------
-
+      
+      # . Health body------------------------------------------------------------
+      
       tabItem(tabName = "health"),
-
       
-# . Community body --------------------------------------------------------
-
+      
+      # . Community body --------------------------------------------------------
+      
       tabItem(tabName = "community"),
-
       
-# . Services body ---------------------------------------------------------
-
+      
+      # . Services body ---------------------------------------------------------
+      
       tabItem(tabName = "services",
               tabsetPanel(type = "tabs",
                           tabPanel(h3("Child Health"),
@@ -402,9 +401,10 @@ body <-
                                    )
                           )
               )
-              )
+      )
     )
   )
+
 
 
 # UI - User Interface -----------------------------------------------------
@@ -413,9 +413,9 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
 
 
 # Server ------------------------------------------------------------------
-server <- function(input, output, session) { 
-  
-  
+ server <- function(input, output, session) { 
+
+
   showModal(
     modalDialog(
       title = h2("Welcome to I2D2 Dashboard",
@@ -444,9 +444,9 @@ server <- function(input, output, session) {
       #        HTML('(<a href="https://i2d2.iastate.edu/" target="_blank">I2D2</a>)'))
     )
   )
-  
-  
-  
+
+
+
   # Prepare data for Education Attainment line plot and table
   EDU_data_01_county <- reactive({
     # make a list of counties to plot
@@ -456,14 +456,14 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
         }
-    # filter data 
+    # filter data
     data_ACS %>%
       filter(group_3 == "Less than High School Graduate",
              between(year, input$YEAR[1], input$YEAR[2]),
              county %in% my_county) %>%
       mutate(county = factor(county, levels = my_county))
   })
-  
+
   # Make line plot for Education Attainment tab
   output$EDU_plot_line_01 <- renderPlot({
     EDU_data_01_county() %>%
@@ -471,20 +471,20 @@ server <- function(input, output, session) {
       plot_line_year(df = ., PERCENT = TRUE) +
       labs(
         title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        subtitle="less than high schoo education",
+        subtitle="less than high school education",
         caption="Source: ACS 5-Year Survey Table B13014")
   })
-  
-  
+
+
   # Prepare data for Education Attainment map and bar chart
   EDU_data_01_averaged <- reactive({
     data_ACS %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       group_by(fips, county, group_2, group_3) %>%
-      summarise(value = mean(value)) 
+      summarise(value = mean(value))
   })
-  
-  
+
+
   # Make map for Education Attainment tab
   output$EDU_plot_map_01 <- renderLeaflet({
     EDU_data_01_averaged() %>%
@@ -500,7 +500,7 @@ server <- function(input, output, session) {
       ungroup() %>%
       plot_map_mean(COUNTY = input$COUNTY)
   })
-  
+
   # Make bar plot for Education Attainment tab
   output$EDU_plot_bar_01 <- renderPlot({
     # make a list of counties to plot
@@ -510,25 +510,25 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
       }
-    
+
     my_years <- c(input$YEAR[1], input$YEAR[2])
-    
+
     EDU_data_01_averaged() %>%
       filter(county %in% my_county,
              group_2 != "Both") %>%
       mutate(county = factor(county, levels = my_county)) %>%
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years)
   })
-  
+
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_01_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
       spread(group_2, value) %>%
-      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      select(County = county, Year = year, Married, Unmarried, Both) %>%
       datatable() %>%
       formatPercentage(3:5, 2)
   })
-  
+
 
   # Download data as csv
   output$EDU_download_csv <- downloadHandler(
@@ -539,8 +539,8 @@ server <- function(input, output, session) {
       write.csv(EDU_data_01_county(), file, row.names = FALSE)
     }
   )
-  
-  # Download data as csv
+
+  # Download data as xlsx
   output$EDU_download_xlsx <- downloadHandler(
     filename = function() {
       paste0("Education", ".xlsx")
@@ -549,27 +549,27 @@ server <- function(input, output, session) {
       writexl::write_xlsx(EDU_data_01_county(), file)
     }
   )
-  
+
   # EDUCATION by SEX
-  
+
   # Make line plot for Education Attainment tab
   output$EDU_plot_line_02 <- renderPlotly({
     EDU_data_01_county() %>%
       filter(group_2 == input$EDU_plot_line_02_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) %>%
       ggplotly(., tooltip = "text") %>%
-      layout(title = "less than high schoo education")
+      layout(title = "less than high school education")
   })
-  
+
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_02_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
       spread(group_2, value) %>%
-      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      select(County = county, Year = year, Married, Unmarried, Both) %>%
       datatable() %>%
       formatPercentage(3:5, 2)
   })
-  
+
   # Make map for Education Attainment tab
   output$EDU_plot_map_02 <- renderLeaflet({
     EDU_data_01_averaged() %>%
@@ -585,7 +585,8 @@ server <- function(input, output, session) {
       ungroup() %>%
       plot_map_mean(COUNTY = input$COUNTY)
   })
-  
+
+
   # Make bar plot for Education Attainment tab
   output$EDU_plot_bar_02 <- renderPlotly({
     # make a list of counties to plot
@@ -595,32 +596,62 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
       }
-    
+
     my_years <- c(input$YEAR[1], input$YEAR[2])
-    
+
     EDU_data_01_averaged() %>%
       filter(county %in% my_county,
              group_2 != "Both") %>%
       mutate(county = factor(county, levels = my_county)) %>%
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years) %>%
-      ggplotly(., tooltip = "text") 
+      ggplotly(., tooltip = "text")
   })
-  
-  
-  
+
+  # ---- % Poverty Under 6 ---------
+  # Prepare data for Education Attainment line plot and table
+  EMP_data_01_county <- reactive({
+    # make a list of counties to plot
+    my_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    # filter data
+    data_ACS %>%
+      filter(group_3 == "Less than High School Graduate",
+             between(year, input$YEAR[1], input$YEAR[2]),
+             county %in% my_county) %>%
+      mutate(county = factor(county, levels = my_county))
+  })
+
+  # Make line plot for Education Attainment tab
+  output$EMP_plot_line_01 <- renderPlot({
+    EMP_data_01_county() %>%
+      filter(group_2 == input$EMP_plot_line_01_toggle) %>%
+      plot_line_year(df = ., PERCENT = TRUE) +
+      labs(
+        title="Proportion of Women Who Has A Birth In The Past 12 Months",
+        subtitle="less than high school education",
+        caption="Source: ACS 5-Year Survey Table B13014")
+  })
+
+
+
+
   # TESTING  SOME FOR INFOBOXEs
   output$TEST_INPUT_Statewide <- renderText({
     input$COUNTY
-  }) 
-  
-  
+  })
+
+
   output$table <- renderDataTable({
     head(data) %>% select(1:5)
   })
-  
-  
+
+
   output$TEST <- renderText(input$COUNTY)
-  
+
   # output$line <- renderPlot({
   #   data %>%
   #     filter(county %in% input$COUNTY) %>%
@@ -642,8 +673,8 @@ server <- function(input, output, session) {
   #     theme(panel.grid.minor.x = element_blank(),
   #           panel.grid.major.x = element_blank())
   # })
-  
-  
+
+
   output$line2 <- renderPlot({
     data %>%
       filter(county %in% c("Story", "Boone")) %>%
@@ -664,8 +695,8 @@ server <- function(input, output, session) {
       theme(panel.grid.minor.x = element_blank(),
             panel.grid.major.x = element_blank())
   })
-  
-  
+
+
   output$line3 <- renderPlot({
     data %>%
       filter(county %in% c("Story", "Dalas")) %>%
@@ -686,23 +717,23 @@ server <- function(input, output, session) {
       theme(panel.grid.minor.x = element_blank(),
             panel.grid.major.x = element_blank())
   })
-  
+
   output$dataMap <- renderLeaflet({
     pal <- colorNumeric("viridis", NULL)
-    iowa_map %>% 
+    iowa_map %>%
       left_join(select(data, fips = FIPS, label = county, value = var019),
                 "fips") %>%
-      leaflet() %>% 
+      leaflet() %>%
       addTiles() %>%
       addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 0.75,
-                  fillColor = ~pal(value), 
-                  label = ~paste0(label, ": ", scales::percent(round(value, 3)))) %>% 
-      addLegend(title = " ", pal = pal, values = ~value*100, 
+                  fillColor = ~pal(value),
+                  label = ~paste0(label, ": ", scales::percent(round(value, 3)))) %>%
+      addLegend(title = " ", pal = pal, values = ~value*100,
                 labFormat = labelFormat(suffix = "%"),
                 opacity = 0.75) %>%
       addProviderTiles(providers$CartoDB.Positron)
   })
-  
+
 }
 
 
