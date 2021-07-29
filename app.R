@@ -9,10 +9,14 @@ library(maps)
 library(plotly)
 library(scales)
 library(lubridate)
+library(shinydashboardPlus)
+library(ggrepel)
 
 
 source("modules.R")
 source("data.R")
+source("data_Avery.R")
+source("modules_Avery.R")
 
 
 
@@ -45,11 +49,11 @@ sidebar <-
                pickerInput(
                  inputId = "COUNTY",
                  label = "Select County",
-                 choices = iowa_counties,
+                 choices = data$county,
                  multiple = FALSE,
                  selected = "Story",
                  choicesOpt = list(
-                   content = iowa_counties)
+                   content = data$county)
                ),
                # whether statewide data should be included
                checkboxInput(
@@ -72,15 +76,14 @@ sidebar <-
   )
 
 
-
 # Body --------------------------------------------------------------------
 body <-
   dashboardBody(
     # set fixed height of valueBox
     tags$head(tags$style(HTML(".small-box {height: 150px}"))),
     
-
-# . Dashboard body ----------------------------------------------------------
+    
+    # . Dashboard body ----------------------------------------------------------
     tabItems(
       tabItem(tabName = "dashboard",
               h1("ECI Board Approved Indicators"),
@@ -110,40 +113,25 @@ body <-
                                VALUE = .12, FORMAT = "numeric", COLOR = "navy"),
               h2("Subgroup Name"),
               indicator_box_ui("INDICATORS", INDICATOR = "Child deaths due to unintentional injuries", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black"),
               indicator_box_ui("INDICATORS", INDICATOR = "Domestic violence rate", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black"),
               indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Percent of new mothers with less than a high school education", 
+                               VALUE = ind_plesshigh, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = ind_pup6, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = ind_pil, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
-                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%"),
               indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
-                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%"),
               indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
-                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
+                               VALUE = .12, FORMAT = "%"),
               
-              # fluidRow(
-              #   div(class = "col-lg-3 col-md-4 col-sm-6",
-              #       box(
-              #         title = "About me",
-              #         status = "danger",
-              #         # width = "col-lg-3 col-md-4 col-sm-6",
-              #         width = '100%',
-              #         collapsible = TRUE, 
-              #         collapsed = TRUE,
-              #         tags$p(
-              #           class = "text-center",
-              #           tags$img(class = "img-responsive img-rounded center-block", src = "i2d2_team_gio.jpg", style = "max-width: 150px;")
-              #         )
-              #       )
-              #   )
-              # ),
+              fluidRow(),
               fluidRow(
                 box(title = "InfoBox", 
                     width = 12,
@@ -219,15 +207,6 @@ body <-
                                  color = "red", 
                                  width = 4, 
                                  href = NULL)),
-                    div(id='click_si_Glyphicon',
-                        valueBox(tags$p(percent(data_state_wide$var042, accuracy = 0.1),
-                                        style = "font-size: 150%;"), 
-                                 subtitle = tags$p("RENTER HOUSING (under 6)", 
-                                                   style = "font-size: 150%;"), 
-                                 icon = icon("cog", lib = "glyphicon"), 
-                                 color = "red", 
-                                 width = 4, 
-                                 href = NULL)),
                     div(id='click_si_FEMALE',
                         valueBox(tags$p(format(data_state_wide$var062, big.mark = ","),
                                         style = "font-size: 150%;"), 
@@ -237,7 +216,7 @@ body <-
                                  color = "fuchsia", 
                                  width = 4, 
                                  href = NULL))
-                    )),
+                )),
               
               # bsModal("modalExample", 
               #         "Name of the Table 1", 
@@ -276,20 +255,51 @@ body <-
               #         leafletOutput(outputId = "dataMap"))
               # 
       ),
-
-
-# . Child and Families body -----------------------------------------------
-
+      
+      
+      # . Child and Families body -----------------------------------------------
+      
       tabItem(tabName = "demographics"),
-
       
-# . Employment body -------------------------------------------------------
-
-      tabItem(tabName = "employment"),
-
       
-# . Education body --------------------------------------------------------
-
+      # . Employment body -------------------------------------------------------
+      
+      tabItem(tabName = "employment",
+              tabsetPanel( type="tabs",
+                           tabPanel(h4("Child Poverty"), 
+                                    fluidRow(
+                                      box(title=strong("Percent of Children Under 6 In Poverty"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          # sliderTextInput(
+                                          #   inputId = "yrx",
+                                          #   label = "Choose Years", 
+                                          #   choices = 2013:2019,
+                                          #   selected = c(2013, 2019)),
+                                          # selectInput(
+                                          #   inputId = "countyx",
+                                          #   label = strong("Select County"),
+                                          #   choices = unique(str_to_title(iowa_map$county)),
+                                          #   selected = NULL),
+                                          leafletOutput("emp_map_1")
+                                      ),
+                                      fluidRow(
+                                        box(toggle_button("emp_min",
+                                                          c("All", "Minority", "White Alone, Not Hispanic")),
+                                            title=strong("Percent of Children Under 6 in Poverty Over Time"),
+                                            closable = FALSE,
+                                            solidHeader = TRUE,
+                                            collapsible = FALSE,
+                                            plotOutput("emp_timeser_1")
+                                        )
+                                      )
+                                    )),
+                           tabPanel(h4("Parental Workforce Participation")))),
+      
+      
+      # . Education body --------------------------------------------------------
+      
       tabItem(tabName = "education",
               tabsetPanel(
                 type = "tabs",
@@ -301,12 +311,12 @@ body <-
                                toggle_button("EDU_plot_line_01_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotOutput("EDU_plot_line_01")
-                               ),
+                           ),
                            
                            box(width = 5, height = 500,
                                plotOutput("EDU_plot_bar_01", height = "480px")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            box(width = 7, height = 500,
                                pickerInput(
@@ -319,13 +329,13 @@ body <-
                                DT::dataTableOutput("EDU_plot_01_table"),
                                downloadButton("EDU_download_csv", "Download CSV"),
                                downloadButton("EDU_download_xlsx", "Download Excel")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            # downloadButton("EDU_download_csv", "Download CSV"),
                            # downloadButton("EDU_download_xlsx", "Download Exel")
                          )
-                         ),
+                ),
                 
                 tabPanel(h4("Education by Sex"),
                          h3("Proportion of Women Who Has A Birth In The Past 12 Months"),
@@ -335,12 +345,12 @@ body <-
                                toggle_button("EDU_plot_line_02_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotlyOutput("EDU_plot_line_02")
-                               ),
+                           ),
                            
                            box(width = 5, height = 500,
                                plotlyOutput("EDU_plot_bar_02", height = "480px")
-                               )
-                           ),
+                           )
+                         ),
                          fluidRow(
                            box(width = 7, height = 500,
                                pickerInput(
@@ -348,12 +358,12 @@ body <-
                                  label = "Select Education Level",
                                  choices = levels(data_ACS$group_3)),  
                                leafletOutput("EDU_plot_map_02")
-                               ),
+                           ),
                            box(width = 5, height = 500,
                                DT::dataTableOutput("EDU_plot_02_table")
-                               )
                            )
-                         ),
+                         )
+                ),
                 
                 tabPanel(h4("Educational Other"),
                          fluidRow(
@@ -368,26 +378,26 @@ body <-
                            
                            column(5),
                            plotOutput("line3")
-                           )
-                         ),
+                         )
+                ),
                 
                 tabPanel(h4('Add Tab'))
-                )
-              ),
-
+              )
+      ),
       
-# . Health body------------------------------------------------------------
-
+      
+      # . Health body------------------------------------------------------------
+      
       tabItem(tabName = "health"),
-
       
-# . Community body --------------------------------------------------------
-
+      
+      # . Community body --------------------------------------------------------
+      
       tabItem(tabName = "community"),
-
       
-# . Services body ---------------------------------------------------------
-
+      
+      # . Services body ---------------------------------------------------------
+      
       tabItem(tabName = "services",
               tabsetPanel(type = "tabs",
                           tabPanel(h3("Child Health"),
@@ -425,9 +435,10 @@ body <-
                                    )
                           )
               )
-              )
+      )
     )
   )
+
 
 
 # UI - User Interface -----------------------------------------------------
@@ -442,8 +453,7 @@ server <- function(input, output, session) {
   showModal(
     modalDialog(
       title = h2("Welcome to I2D2 Dashboard",
-                 # img(src = 'i2d2_logo.jpg', height = 50, align="right")
-                 ),
+                 img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 50, align="right")),
       easyClose = TRUE,
       footer = modalButton("Explore the Dashboard"),
       img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 100, align="right"),
@@ -458,7 +468,7 @@ server <- function(input, output, session) {
       tags$ul(
         tags$li(
           "First line"
-          ),
+        ),
         tags$li(
           strftime(now() - days(), "%b %e"), "is really"),
         tags$li("and so on...")
@@ -479,8 +489,8 @@ server <- function(input, output, session) {
         c(input$COUNTY, "Statewide")
       } else {
         input$COUNTY
-        }
-    # filter data 
+      }
+    # filter data
     data_ACS %>%
       filter(group_3 == "Less than High School Graduate",
              between(year, input$YEAR[1], input$YEAR[2]),
@@ -495,7 +505,7 @@ server <- function(input, output, session) {
       plot_line_year(df = ., PERCENT = TRUE) +
       labs(
         title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        subtitle="less than high schoo education",
+        subtitle="less than high school education",
         caption="Source: ACS 5-Year Survey Table B13014")
   })
   
@@ -505,7 +515,7 @@ server <- function(input, output, session) {
     data_ACS %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       group_by(fips, county, group_2, group_3) %>%
-      summarise(value = mean(value)) 
+      summarise(value = mean(value))
   })
   
   
@@ -548,12 +558,12 @@ server <- function(input, output, session) {
   output$EDU_plot_01_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
       spread(group_2, value) %>%
-      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      select(County = county, Year = year, Married, Unmarried, Both) %>%
       datatable() %>%
       formatPercentage(3:5, 2)
   })
   
-
+  
   # Download data as csv
   output$EDU_download_csv <- downloadHandler(
     filename = function() {
@@ -564,7 +574,7 @@ server <- function(input, output, session) {
     }
   )
   
-  # Download data as csv
+  # Download data as xlsx
   output$EDU_download_xlsx <- downloadHandler(
     filename = function() {
       paste0("Education", ".xlsx")
@@ -582,14 +592,14 @@ server <- function(input, output, session) {
       filter(group_2 == input$EDU_plot_line_02_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) %>%
       ggplotly(., tooltip = "text") %>%
-      layout(title = "less than high schoo education")
+      layout(title = "less than high school education")
   })
   
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_02_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
       spread(group_2, value) %>%
-      select(County = county, Year = year, Married, Unmarried, Both) %>% 
+      select(County = county, Year = year, Married, Unmarried, Both) %>%
       datatable() %>%
       formatPercentage(3:5, 2)
   })
@@ -610,6 +620,7 @@ server <- function(input, output, session) {
       plot_map_mean(COUNTY = input$COUNTY)
   })
   
+  
   # Make bar plot for Education Attainment tab
   output$EDU_plot_bar_02 <- renderPlotly({
     # make a list of counties to plot
@@ -627,15 +638,16 @@ server <- function(input, output, session) {
              group_2 != "Both") %>%
       mutate(county = factor(county, levels = my_county)) %>%
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years) %>%
-      ggplotly(., tooltip = "text") 
+      ggplotly(., tooltip = "text")
   })
+  
   
   
   
   # TESTING  SOME FOR INFOBOXEs
   output$TEST_INPUT_Statewide <- renderText({
     input$COUNTY
-  }) 
+  })
   
   
   output$table <- renderDataTable({
@@ -713,19 +725,88 @@ server <- function(input, output, session) {
   
   output$dataMap <- renderLeaflet({
     pal <- colorNumeric("viridis", NULL)
-    iowa_map %>% 
+    iowa_map %>%
       left_join(select(data, fips = FIPS, label = county, value = var019),
                 "fips") %>%
-      leaflet() %>% 
+      leaflet() %>%
       addTiles() %>%
       addPolygons(stroke = FALSE, smoothFactor = 0.3, fillOpacity = 0.75,
-                  fillColor = ~pal(value), 
-                  label = ~paste0(label, ": ", scales::percent(round(value, 3)))) %>% 
-      addLegend(title = " ", pal = pal, values = ~value*100, 
+                  fillColor = ~pal(value),
+                  label = ~paste0(label, ": ", scales::percent(round(value, 3)))) %>%
+      addLegend(title = " ", pal = pal, values = ~value*100,
                 labFormat = labelFormat(suffix = "%"),
                 opacity = 0.75) %>%
       addProviderTiles(providers$CartoDB.Positron)
   })
+  
+  acs_pov_map <- reactive ({
+    acs_inds %>% 
+      select(GEOID, NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME!= "Statewide", year>=2013) %>%
+      group_by(GEOID, NAME) %>%
+      summarise(B17020_pup6_mean=mean(B17020_pup6, na.rm=TRUE),
+                B17020_pup6m_mean=mean(B17020_pup6m, na.rm=TRUE),
+                B17020_pup6wa_mean=mean(B17020_pup6wa, na.rm=TRUE)) %>%
+      left_join(iowa_map, by = c("GEOID" = "fips")) %>%
+      sf::st_as_sf(.) 
+  })
+  
+  output$emp_map_1 <- renderLeaflet({
+    
+    mypal <- colorNumeric("YlOrRd", acs_pov_map()$B17020_pup6_mean*100)
+    mytext <- paste(
+      "County: ", acs_pov_map()$NAME,"<br/>", 
+      "Percent: ", percent(acs_pov_map()$B17020_pup6_mean), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    acs_pov_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(width = "100%") %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(B17020_pup6_mean*100)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~B17020_pup6_mean*100,
+                title = "Estimate",
+                opacity = .8,
+                labFormat = labelFormat(suffix = "%")) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  acs_pov_react <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    acs_inds %>% 
+      select(NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(year>=2013, NAME%in%plotting_county)
+  })
+  
+  output$emp_timeser_1 <- renderPlot({
+    plotting_var <- 
+      if(input$emp_min == "All") {
+        "B17020_pup6"
+      } else if(input$emp_min == "Minority") {
+        "B17020_pup6m"
+      } else {"B17020_pup6wa"}
+    acs_time_ser(acs_pov_react(), plotting_var)
+  })
+  
   
 }
 
@@ -733,4 +814,6 @@ server <- function(input, output, session) {
 
 # Shiny -------------------------------------------------------------------
 shinyApp(ui, server)
+
+
 
