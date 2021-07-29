@@ -49,11 +49,11 @@ sidebar <-
                pickerInput(
                  inputId = "COUNTY",
                  label = "Select County",
-                 choices = data$county,
+                 choices = iowa_counties,
                  multiple = FALSE,
                  selected = "Story",
                  choicesOpt = list(
-                   content = data$county)
+                   content = iowa_counties)
                ),
                # whether statewide data should be included
                checkboxInput(
