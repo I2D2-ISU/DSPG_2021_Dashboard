@@ -45,11 +45,11 @@ sidebar <-
                pickerInput(
                  inputId = "COUNTY",
                  label = "Select County",
-                 choices = data$county,
+                 choices = iowa_counties,
                  multiple = FALSE,
                  selected = "Story",
                  choicesOpt = list(
-                   content = data$county)
+                   content = iowa_counties)
                ),
                # whether statewide data should be included
                checkboxInput(
@@ -110,25 +110,40 @@ body <-
                                VALUE = .12, FORMAT = "numeric", COLOR = "navy"),
               h2("Subgroup Name"),
               indicator_box_ui("INDICATORS", INDICATOR = "Child deaths due to unintentional injuries", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Domestic violence rate", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
+                               VALUE = .12, FORMAT = "%", COLOR = "black", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+                               VALUE = .12, FORMAT = "%", COLOR = "blue", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
-                               VALUE = .12, FORMAT = "%"),
+                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
-                               VALUE = .12, FORMAT = "%"),
+                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
-                               VALUE = .12, FORMAT = "%"),
+                               VALUE = .12, FORMAT = "%", WIDTH = "col-lg-3 col-md-4 col-sm-6"),
               
-              fluidRow(),
+              # fluidRow(
+              #   div(class = "col-lg-3 col-md-4 col-sm-6",
+              #       box(
+              #         title = "About me",
+              #         status = "danger",
+              #         # width = "col-lg-3 col-md-4 col-sm-6",
+              #         width = '100%',
+              #         collapsible = TRUE, 
+              #         collapsed = TRUE,
+              #         tags$p(
+              #           class = "text-center",
+              #           tags$img(class = "img-responsive img-rounded center-block", src = "i2d2_team_gio.jpg", style = "max-width: 150px;")
+              #         )
+              #       )
+              #   )
+              # ),
               fluidRow(
                 box(title = "InfoBox", 
                     width = 12,
@@ -201,6 +216,15 @@ body <-
                                  subtitle = tags$p("RENTER HOUSING (under 6)", 
                                                    style = "font-size: 150%;"), 
                                  icon = icon("house-user fa-2x"), 
+                                 color = "red", 
+                                 width = 4, 
+                                 href = NULL)),
+                    div(id='click_si_Glyphicon',
+                        valueBox(tags$p(percent(data_state_wide$var042, accuracy = 0.1),
+                                        style = "font-size: 150%;"), 
+                                 subtitle = tags$p("RENTER HOUSING (under 6)", 
+                                                   style = "font-size: 150%;"), 
+                                 icon = icon("cog", lib = "glyphicon"), 
                                  color = "red", 
                                  width = 4, 
                                  href = NULL)),
@@ -418,7 +442,8 @@ server <- function(input, output, session) {
   showModal(
     modalDialog(
       title = h2("Welcome to I2D2 Dashboard",
-                 img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 50, align="right")),
+                 # img(src = 'i2d2_logo.jpg', height = 50, align="right")
+                 ),
       easyClose = TRUE,
       footer = modalButton("Explore the Dashboard"),
       img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 100, align="right"),

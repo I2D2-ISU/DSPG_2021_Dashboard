@@ -6,6 +6,10 @@ library(ggthemes)
 data <- readxl::read_xlsx("data/ECI_Needs_Assessment_Data_final_GIO.xlsx") %>%
   arrange(FIPS)
 
+iowa_counties <- data %>%
+  filter(FIPS != 19000) %>%
+  pull(county)
+
 variables <- readxl::read_xlsx("data/Variables.xlsx") %>%
   mutate(group_3 = factor(group_3,
                            levels = c("Less than High School Graduate",
@@ -39,7 +43,7 @@ read_ACS <- function(file_path) {
 } 
 
 data_ACS <- 
-  read_ACS("data/ACS/newMomEducation5yr_acs.csv") %>%
+  read_ACS("data/RAW/ACS/newMomEducation5yr_acs.csv") %>%
   mutate(var004 = B13014_004/B13014_002,
          var005 = B13014_005/B13014_002,
          var006 = B13014_006/B13014_002,
