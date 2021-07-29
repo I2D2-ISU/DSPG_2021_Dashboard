@@ -740,24 +740,33 @@ server <- function(input, output, session) {
   })
   
   acs_pov_map <- reactive ({
+    plotting_var <- 
+      if(input$emp_min == "All") {
+        "B17020_pup6"
+      } else if(input$emp_min == "Minority") {
+        "B17020_pup6m"
+      } else {"B17020_pup6wa"}
+    
     acs_inds %>% 
       select(GEOID, NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       filter(NAME!= "Statewide", year>=2013) %>%
+      select(GEOID, NAME, value = plotting_var) %>%
       group_by(GEOID, NAME) %>%
-      summarise(B17020_pup6_mean=mean(B17020_pup6, na.rm=TRUE),
-                B17020_pup6m_mean=mean(B17020_pup6m, na.rm=TRUE),
-                B17020_pup6wa_mean=mean(B17020_pup6wa, na.rm=TRUE)) %>%
+      summarise(value=mean(value, na.rm=TRUE)) %>%
       left_join(iowa_map, by = c("GEOID" = "fips")) %>%
       sf::st_as_sf(.) 
   })
   
   output$emp_map_1 <- renderLeaflet({
     
-    mypal <- colorNumeric("YlOrRd", acs_pov_map()$B17020_pup6_mean*100)
+    
+    
+    
+    mypal <- colorNumeric("YlOrRd", acs_pov_map()$value*100)
     mytext <- paste(
       "County: ", acs_pov_map()$NAME,"<br/>", 
-      "Percent: ", percent(acs_pov_map()$B17020_pup6_mean), 
+      "Percent: ", percent(acs_pov_map()$value), 
       sep="") %>%
       lapply(htmltools::HTML)
     
@@ -773,10 +782,10 @@ server <- function(input, output, session) {
                   opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
                   color = "white", #polygon border color
                   label = mytext,
-                  fillColor = ~ mypal(B17020_pup6_mean*100)) %>% #instead of using color for fill, use fillcolor
+                  fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
       addLegend("bottomright", 
                 pal = mypal, 
-                values = ~B17020_pup6_mean*100,
+                values = ~value*100,
                 title = "Estimate",
                 opacity = .8,
                 labFormat = labelFormat(suffix = "%")) %>%
