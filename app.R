@@ -10,11 +10,13 @@ library(plotly)
 library(scales)
 library(lubridate)
 library(shinydashboardPlus)
+library(ggrepel)
 
 
 source("modules.R")
 source("data.R")
 source("data_Avery.R")
+source("modules_Avery.R")
 
 
 
@@ -116,8 +118,8 @@ body <-
                                VALUE = .12, FORMAT = "%", COLOR = "black"),
               indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
                                VALUE = .12, FORMAT = "%", COLOR = "black"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of mothers", 
-                               VALUE = .12, FORMAT = "%", COLOR = "blue"),
+              indicator_box_ui("INDICATORS", INDICATOR = "Percent of new mothers with less than a high school education", 
+                               VALUE = ind_plesshigh, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
                                VALUE = ind_pup6, FORMAT = "%", COLOR = "blue"),
               indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
@@ -263,24 +265,37 @@ body <-
       # . Employment body -------------------------------------------------------
       
       tabItem(tabName = "employment",
-              fluidRow(
-                box(title="% in Pov",
-                    closable = FALSE,
-                    solidHeader = TRUE,
-                    collapsible = FALSE,
-                    sliderTextInput(
-                      inputId = "yrx",
-                      label = "Choose Years", 
-                      choices = 2013:2019,
-                      selected = c(2013, 2019)),
-                    selectInput(
-                      inputId = "countyx",
-                      label = strong("Select County"),
-                      choices = unique(str_to_title(iowa_map$county)),
-                      selected = NULL),
-                    leafletOutput("emp_map_1")
-                    )
-              )),
+              tabsetPanel( type="tabs",
+                           tabPanel(h4("Child Poverty"), 
+                                    fluidRow(
+                                      box(title=strong("Percent of Children Under 6 In Poverty"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          # sliderTextInput(
+                                          #   inputId = "yrx",
+                                          #   label = "Choose Years", 
+                                          #   choices = 2013:2019,
+                                          #   selected = c(2013, 2019)),
+                                          # selectInput(
+                                          #   inputId = "countyx",
+                                          #   label = strong("Select County"),
+                                          #   choices = unique(str_to_title(iowa_map$county)),
+                                          #   selected = NULL),
+                                          leafletOutput("emp_map_1")
+                                      ),
+                                      fluidRow(
+                                        box(toggle_button("emp_min",
+                                                          c("All", "Minority", "White Alone, Not Hispanic")),
+                                            title=strong("Percent of Children Under 6 in Poverty Over Time"),
+                                            closable = FALSE,
+                                            solidHeader = TRUE,
+                                            collapsible = FALSE,
+                                            plotOutput("emp_timeser_1")
+                                        )
+                                      )
+                                    )),
+                           tabPanel(h4("Parental Workforce Participation")))),
       
       
       # . Education body --------------------------------------------------------
@@ -432,9 +447,9 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
 
 
 # Server ------------------------------------------------------------------
- server <- function(input, output, session) { 
-
-
+server <- function(input, output, session) { 
+  
+  
   showModal(
     modalDialog(
       title = h2("Welcome to I2D2 Dashboard",
@@ -453,7 +468,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       tags$ul(
         tags$li(
           "First line"
-          ),
+        ),
         tags$li(
           strftime(now() - days(), "%b %e"), "is really"),
         tags$li("and so on...")
@@ -463,9 +478,9 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       #        HTML('(<a href="https://i2d2.iastate.edu/" target="_blank">I2D2</a>)'))
     )
   )
-
-
-
+  
+  
+  
   # Prepare data for Education Attainment line plot and table
   EDU_data_01_county <- reactive({
     # make a list of counties to plot
@@ -474,7 +489,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
         c(input$COUNTY, "Statewide")
       } else {
         input$COUNTY
-        }
+      }
     # filter data
     data_ACS %>%
       filter(group_3 == "Less than High School Graduate",
@@ -482,7 +497,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
              county %in% my_county) %>%
       mutate(county = factor(county, levels = my_county))
   })
-
+  
   # Make line plot for Education Attainment tab
   output$EDU_plot_line_01 <- renderPlot({
     EDU_data_01_county() %>%
@@ -493,8 +508,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
         subtitle="less than high school education",
         caption="Source: ACS 5-Year Survey Table B13014")
   })
-
-
+  
+  
   # Prepare data for Education Attainment map and bar chart
   EDU_data_01_averaged <- reactive({
     data_ACS %>%
@@ -502,8 +517,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       group_by(fips, county, group_2, group_3) %>%
       summarise(value = mean(value))
   })
-
-
+  
+  
   # Make map for Education Attainment tab
   output$EDU_plot_map_01 <- renderLeaflet({
     EDU_data_01_averaged() %>%
@@ -519,7 +534,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       ungroup() %>%
       plot_map_mean(COUNTY = input$COUNTY)
   })
-
+  
   # Make bar plot for Education Attainment tab
   output$EDU_plot_bar_01 <- renderPlot({
     # make a list of counties to plot
@@ -529,16 +544,16 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       } else {
         input$COUNTY
       }
-
+    
     my_years <- c(input$YEAR[1], input$YEAR[2])
-
+    
     EDU_data_01_averaged() %>%
       filter(county %in% my_county,
              group_2 != "Both") %>%
       mutate(county = factor(county, levels = my_county)) %>%
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years)
   })
-
+  
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_01_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
@@ -547,8 +562,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       datatable() %>%
       formatPercentage(3:5, 2)
   })
-
-
+  
+  
   # Download data as csv
   output$EDU_download_csv <- downloadHandler(
     filename = function() {
@@ -558,7 +573,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       write.csv(EDU_data_01_county(), file, row.names = FALSE)
     }
   )
-
+  
   # Download data as xlsx
   output$EDU_download_xlsx <- downloadHandler(
     filename = function() {
@@ -568,9 +583,9 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       writexl::write_xlsx(EDU_data_01_county(), file)
     }
   )
-
+  
   # EDUCATION by SEX
-
+  
   # Make line plot for Education Attainment tab
   output$EDU_plot_line_02 <- renderPlotly({
     EDU_data_01_county() %>%
@@ -579,7 +594,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       ggplotly(., tooltip = "text") %>%
       layout(title = "less than high school education")
   })
-
+  
   # Make table to go with the Education Attainment line plot
   output$EDU_plot_02_table <- DT::renderDataTable({
     EDU_data_01_county() %>%
@@ -588,7 +603,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       datatable() %>%
       formatPercentage(3:5, 2)
   })
-
+  
   # Make map for Education Attainment tab
   output$EDU_plot_map_02 <- renderLeaflet({
     EDU_data_01_averaged() %>%
@@ -604,8 +619,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       ungroup() %>%
       plot_map_mean(COUNTY = input$COUNTY)
   })
-
-
+  
+  
   # Make bar plot for Education Attainment tab
   output$EDU_plot_bar_02 <- renderPlotly({
     # make a list of counties to plot
@@ -615,9 +630,9 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       } else {
         input$COUNTY
       }
-
+    
     my_years <- c(input$YEAR[1], input$YEAR[2])
-
+    
     EDU_data_01_averaged() %>%
       filter(county %in% my_county,
              group_2 != "Both") %>%
@@ -625,52 +640,23 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years) %>%
       ggplotly(., tooltip = "text")
   })
-
-  # # ---- % Poverty Under 6 ---------
-  # # Prepare data for Education Attainment line plot and table
-  # EMP_data_01_county <- reactive({
-  #   # make a list of counties to plot
-  #   my_county <-
-  #     if(input$STATEWIDE) {
-  #       c(input$COUNTY, "Statewide")
-  #     } else {
-  #       input$COUNTY
-  #     }
-  #   # filter data
-  #   data_ACS %>%
-  #     filter(group_3 == "Less than High School Graduate",
-  #            between(year, input$YEAR[1], input$YEAR[2]),
-  #            county %in% my_county) %>%
-  #     mutate(county = factor(county, levels = my_county))
-  # })
-  # 
-  # # Make line plot for Education Attainment tab
-  # output$EMP_plot_line_01 <- renderPlot({
-  #   EMP_data_01_county() %>%
-  #     filter(group_2 == input$EMP_plot_line_01_toggle) %>%
-  #     plot_line_year(df = ., PERCENT = TRUE) +
-  #     labs(
-  #       title="Proportion of Women Who Has A Birth In The Past 12 Months",
-  #       subtitle="less than high school education",
-  #       caption="Source: ACS 5-Year Survey Table B13014")
-  # })
-
-
-
-
+  
+  
+  
+  
   # TESTING  SOME FOR INFOBOXEs
   output$TEST_INPUT_Statewide <- renderText({
     input$COUNTY
   })
-
-
+  
+  
   output$table <- renderDataTable({
     head(data) %>% select(1:5)
   })
-
-
+  
+  
   output$TEST <- renderText(input$COUNTY)
-
+  
   # output$line <- renderPlot({
   #   data %>%
   #     filter(county %in% input$COUNTY) %>%
@@ -692,8 +678,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
   #     theme(panel.grid.minor.x = element_blank(),
   #           panel.grid.major.x = element_blank())
   # })
-
-
+  
+  
   output$line2 <- renderPlot({
     data %>%
       filter(county %in% c("Story", "Boone")) %>%
@@ -714,8 +700,8 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       theme(panel.grid.minor.x = element_blank(),
             panel.grid.major.x = element_blank())
   })
-
-
+  
+  
   output$line3 <- renderPlot({
     data %>%
       filter(county %in% c("Story", "Dalas")) %>%
@@ -736,7 +722,7 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
       theme(panel.grid.minor.x = element_blank(),
             panel.grid.major.x = element_blank())
   })
-
+  
   output$dataMap <- renderLeaflet({
     pal <- colorNumeric("viridis", NULL)
     iowa_map %>%
@@ -752,34 +738,30 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
                 opacity = 0.75) %>%
       addProviderTiles(providers$CartoDB.Positron)
   })
-
-  # Emp_pov_averaged <- reactive({
-  #   data_ACS %>%
-  #     filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-  #     group_by(fips, county, group_2, group_3) %>%
-  #     summarise(value = mean(value)) })
   
-  mapfun <- reactive ({
+  acs_pov_map <- reactive ({
     acs_inds %>% 
-    select(GEOID, NAME, year, B17020_pup6) %>%
-    filter(between(year, input$yrx[1], input$yrx[2])) %>%
-    filter(NAME!= "Statewide", year>=2013) %>%
+      select(GEOID, NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME!= "Statewide", year>=2013) %>%
       group_by(GEOID, NAME) %>%
-      summarise(B17020_pup6m=mean(B17020_pup6, na.rm=TRUE)) %>%
+      summarise(B17020_pup6_mean=mean(B17020_pup6, na.rm=TRUE),
+                B17020_pup6m_mean=mean(B17020_pup6m, na.rm=TRUE),
+                B17020_pup6wa_mean=mean(B17020_pup6wa, na.rm=TRUE)) %>%
       left_join(iowa_map, by = c("GEOID" = "fips")) %>%
       sf::st_as_sf(.) 
-    })
+  })
   
   output$emp_map_1 <- renderLeaflet({
-
-    mypal <- colorNumeric("YlOrRd", mapfun()$B17020_pup6m*100)
+    
+    mypal <- colorNumeric("YlOrRd", acs_pov_map()$B17020_pup6_mean*100)
     mytext <- paste(
-      "County: ", mapfun()$NAME,"<br/>", 
-      "Percent: ", percent(mapfun()$B17020_pup6m), 
+      "County: ", acs_pov_map()$NAME,"<br/>", 
+      "Percent: ", percent(acs_pov_map()$B17020_pup6_mean), 
       sep="") %>%
       lapply(htmltools::HTML)
-
-    mapfun() %>%
+    
+    acs_pov_map() %>%
       sf::st_transform(crs = "+init=epsg:4326") %>%
       leaflet(width = "100%") %>%
       addProviderTiles(provider = "CartoDB.Positron") %>%
@@ -788,17 +770,41 @@ ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blu
                   weight = 1,
                   smoothFactor = 0.3,
                   fillOpacity = 0.7,
-                  opacity = 0, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
                   color = "white", #polygon border color
                   label = mytext,
-                  fillColor = ~ mypal(B17020_pup6m*100)) %>% #instead of using color for fill, use fillcolor
+                  fillColor = ~ mypal(B17020_pup6_mean*100)) %>% #instead of using color for fill, use fillcolor
       addLegend("bottomright", 
                 pal = mypal, 
-                values = ~B17020_pup6m*100,
+                values = ~B17020_pup6_mean*100,
                 title = "Estimate",
                 opacity = .8,
                 labFormat = labelFormat(suffix = "%")) %>%
-      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$countyx)), "[:punct:]")))
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  acs_pov_react <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    acs_inds %>% 
+      select(NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(year>=2013, NAME%in%plotting_county)
+  })
+  
+  output$emp_timeser_1 <- renderPlot({
+    plotting_var <- 
+      if(input$emp_min == "All") {
+        "B17020_pup6"
+      } else if(input$emp_min == "Minority") {
+        "B17020_pup6m"
+      } else {"B17020_pup6wa"}
+    acs_time_ser(acs_pov_react(), plotting_var)
   })
   
   
