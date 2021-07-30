@@ -282,17 +282,29 @@ body <-
       tabItem(tabName = "employment",
               tabsetPanel( type="tabs",
                            tabPanel(h4("Child Poverty"), 
+                                    fluidRow(box(
+                                      pickerInput( inputId = "emp_race",
+                                                   label = "Select Race/Ethnicity Category",
+                                                   choices = c("All", "Minority", "White Alone, Not Hispanic",
+                                                               "Black or African American Alone",
+                                                               "American Indian and Alaska Native Alone",
+                                                               "Asian Alone",
+                                                               "Native Hawaiian and Other Pacific Islander Alone",
+                                                               "Some Other Race Alone",
+                                                               "Two or More Races",
+                                                               "Hispanic or Latino"),
+                                                   multiple = FALSE,
+                                                   selected = "All")
+                                    )),
                                     fluidRow(
-                                      box(title=strong("Percent of Children Under 6 in Poverty"),
+                                      box(title=strong("Percent of Children Under 6 in Poverty, Averaged Over Selected Years"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           leafletOutput("emp_map_1")
                                       ),
                                       fluidRow(
-                                        box(toggle_button("emp_min",
-                                                          c("All", "Minority", "White Alone, Not Hispanic")),
-                                            title=strong("Percent of Children Under 6 in Poverty Over Time"),
+                                        box(title=strong("Percent of Children Under 6 in Poverty Over Time"),
                                             closable = FALSE,
                                             solidHeader = TRUE,
                                             collapsible = FALSE,
@@ -307,14 +319,20 @@ body <-
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_timeser_3"))),
-                                    fluidRow(
+                                        plotOutput("emp_timeser_3")),
                                       box(
                                         title=strong("Percent of Children With No Parents in Workforce"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_timeser_4"))
+                                        plotOutput("emp_timeser_4"))),
+                                    fluidRow(
+                                      box(
+                                        title=strong("Side-by-side: Percent Parental Particiaption in Labor Force"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("emp_boxplot_1"))
                                     )),
                            tabPanel(h4("General Population Poverty"),
                                     fluidRow(
@@ -778,15 +796,45 @@ server <- function(input, output, session) {
   })
   
   acs_pov_map <- reactive ({
+    # plotting_var <- 
+    #   if(input$emp_min == "All") {
+    #     "B17020_pup6"
+    #   } else if(input$emp_min == "Minority") {
+    #     "B17020_pup6m"
+    #   } else {"B17020_pup6wa"}
     plotting_var <- 
-      if(input$emp_min == "All") {
+      if(input$emp_race == "All") {
         "B17020_pup6"
-      } else if(input$emp_min == "Minority") {
+      } else if(input$emp_race == "Minority") {
         "B17020_pup6m"
+      } else if(input$emp_race == "Black or African American Alone") {
+        "B17020_pup6b"
+      } else if(input$emp_race == "American Indian and Alaska Native Alone") {
+        "B17020_pup6n"
+      } else if(input$emp_race == "Asian Alone") {
+        "B17020_pup6a"
+      } else if(input$emp_race == "Native Hawaiian and Other Pacific Islander Alone") {
+        "B17020_pup6pci"
+      } else if(input$emp_race == "Some Other Race Alone") {
+        "B17020_pup6s"
+      } else if(input$emp_race == "Two or More Races") {
+        "B17020_pup6t"
+      }  else if(input$emp_race == "Hispanic or Latino") {
+        "B17020_pup6l"
       } else {"B17020_pup6wa"}
     
     acs_inds %>% 
-      select(GEOID, NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      select(GEOID, NAME, year, B17020_pup6,
+             B17020_pup6m, 
+             B17020_pup6wa,
+             B17020_pup6w, 
+             B17020_pup6b,
+             B17020_pup6n,
+             B17020_pup6a,
+             B17020_pup6pci,
+             B17020_pup6s,
+             B17020_pup6t,
+             B17020_pup6l) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       filter(NAME!= "Statewide", year>=2013) %>%
       select(GEOID, NAME, value = plotting_var) %>%
@@ -801,13 +849,15 @@ server <- function(input, output, session) {
     mypal <- colorNumeric("YlOrRd", acs_pov_map()$value*100)
     mytext <- paste(
       "County: ", acs_pov_map()$NAME,"<br/>", 
-      "Percent: ", percent(acs_pov_map()$value), 
+      "Percent: ", percent(acs_pov_map()$value, accuracy=0.1), 
       sep="") %>%
       lapply(htmltools::HTML)
     
     acs_pov_map() %>%
       sf::st_transform(crs = "+init=epsg:4326") %>%
-      leaflet(width = "100%") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
       addProviderTiles(provider = "CartoDB.Positron") %>%
       addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
                   stroke = TRUE,  # Set True for border color
@@ -834,20 +884,44 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
       }
-    
     acs_inds %>% 
-      select(NAME, year, B17020_pup6, B17020_pup6m, B17020_pup6wa) %>%
+      select(NAME, year, B17020_pup6,
+             B17020_pup6m, 
+             B17020_pup6wa,
+             B17020_pup6w, 
+             B17020_pup6b,
+             B17020_pup6n,
+             B17020_pup6a,
+             B17020_pup6pci,
+             B17020_pup6s,
+             B17020_pup6t,
+             B17020_pup6l) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       filter(year>=2013, NAME%in%plotting_county)
   })
   
   output$emp_timeser_1 <- renderPlot({
     plotting_var <- 
-      if(input$emp_min == "All") {
+      if(input$emp_race == "All") {
         "B17020_pup6"
-      } else if(input$emp_min == "Minority") {
+      } else if(input$emp_race == "Minority") {
         "B17020_pup6m"
+      } else if(input$emp_race == "Black or African American Alone") {
+        "B17020_pup6b"
+      } else if(input$emp_race == "American Indian and Alaska Native Alone") {
+        "B17020_pup6n"
+      } else if(input$emp_race == "Asian Alone") {
+        "B17020_pup6a"
+      } else if(input$emp_race == "Native Hawaiian and Other Pacific Islander Alone") {
+        "B17020_pup6pci"
+      } else if(input$emp_race == "Some Other Race Alone") {
+        "B17020_pup6s"
+      } else if(input$emp_race == "Two or More Races") {
+        "B17020_pup6t"
+      }  else if(input$emp_race == "Hispanic or Latino") {
+        "B17020_pup6l"
       } else {"B17020_pup6wa"}
+    
     acs_time_ser(acs_pov_react(), plotting_var)
   })
   
@@ -877,7 +951,7 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
       }
-
+    
     acs_inds %>% 
       select(NAME, year, B23008_pil, B23008_pnl) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
@@ -890,6 +964,35 @@ server <- function(input, output, session) {
   
   output$emp_timeser_4 <- renderPlot({
     acs_time_ser(acs_parental_workforce_react(), "B23008_pnl")
+  })
+  
+  acs_lf <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    acs_inds %>% 
+      select(GEOID, NAME, year, B23008_pil, B23008_pnl) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME%in%plotting_county) %>%
+      gather(lf, value, B23008_pil:B23008_pnl, factor_key=TRUE) %>%
+      group_by(GEOID, NAME, lf) %>%
+      summarise(value=mean(value, na.rm=TRUE)) %>%
+      mutate(lf=if_else(lf=="B23008_pil", "All Parents in LF", "No Parents in LF"))
+  })
+  
+  output$emp_boxplot_1 <- renderPlot({
+    ggplot(acs_lf(), aes(x=NAME, y=value, fill=lf)) + 
+      geom_col(position = "dodge") +
+      theme_fivethirtyeight() + 
+      scale_y_continuous(labels = scales::percent,limits = c(0,1.1)) +
+      theme(text = element_text(family = "Arial"), 
+            panel.background = element_rect(fill="white"),
+            plot.background = element_rect(fill="white"), legend.position="top") +
+      geom_label(aes(label = percent(value, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE) +
+      labs(fill="")
   })
   
 }
