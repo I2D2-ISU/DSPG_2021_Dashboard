@@ -285,7 +285,22 @@ body <-
                                         )
                                       )
                                     )),
-                           tabPanel(h4("Parental Workforce Participation")),
+                           tabPanel(h4("Parental Workforce Participation"),
+                                    fluidRow(
+                                      box(
+                                        title=strong("Percent of Children With All Parents in Workforce"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("emp_timeser_3"))),
+                                    fluidRow(
+                                      box(
+                                        title=strong("Percent of Children With No Parents in Workforce"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("emp_timeser_4"))
+                                    )),
                            tabPanel(h4("General Population Poverty"),
                                     fluidRow(
                                       box(title=strong("Percent of Population in Poverty Over Time"),
@@ -293,7 +308,7 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           plotOutput("emp_timeser_2")))
-                                    ))),
+                           ))),
       
       
       # . Education body --------------------------------------------------------
@@ -827,6 +842,29 @@ server <- function(input, output, session) {
   
   output$emp_timeser_2 <- renderPlot({
     acs_time_ser(acs_genpov_react(), "B17020_pup")
+  })
+  
+  
+  acs_parental_workforce_react <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+
+    acs_inds %>% 
+      select(NAME, year, B23008_pil, B23008_pnl) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME%in%plotting_county)
+  })
+  
+  output$emp_timeser_3 <- renderPlot({
+    acs_time_ser(acs_parental_workforce_react(), "B23008_pil")
+  })
+  
+  output$emp_timeser_4 <- renderPlot({
+    acs_time_ser(acs_parental_workforce_react(), "B23008_pnl")
   })
   
 }
