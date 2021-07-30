@@ -65,8 +65,8 @@ sidebar <-
                sliderTextInput(
                  inputId = "YEAR",
                  label = "Choose Years", 
-                 choices = 2010:2019,
-                 selected = c(2010, 2019)
+                 choices = 2009:2019,
+                 selected = c(2009, 2019)
                ),
                p()
       ),

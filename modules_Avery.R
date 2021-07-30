@@ -8,7 +8,7 @@ acs_time_ser <- function(df, var){
     geom_label_repel(aes(label = percent(!!(as.name(var)), accuracy = 0.1)),
                      box.padding   = 0, 
                      point.padding = 0,
-                     segment.color = 'grey50') +
+                     segment.color = 'grey50', show.legend = FALSE) +
     labs(caption = "Source: ACS 5-Year Table Estimates") +
     theme_fivethirtyeight() +
     theme(panel.background = element_rect(fill="white"),
