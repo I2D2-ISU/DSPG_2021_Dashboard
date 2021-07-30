@@ -808,12 +808,6 @@ server <- function(input, output, session) {
   })
   
   acs_pov_map <- reactive ({
-    # plotting_var <- 
-    #   if(input$emp_min == "All") {
-    #     "B17020_pup6"
-    #   } else if(input$emp_min == "Minority") {
-    #     "B17020_pup6m"
-    #   } else {"B17020_pup6wa"}
     plotting_var <- 
       if(input$emp_race == "All") {
         "B17020_pup6"
@@ -1007,6 +1001,7 @@ server <- function(input, output, session) {
       labs(fill="")
   })
   
+   
 }
 
 
