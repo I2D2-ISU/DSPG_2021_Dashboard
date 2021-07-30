@@ -87,50 +87,65 @@ body <-
     tabItems(
       tabItem(tabName = "dashboard",
               h1("ECI Board Approved Indicators"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Accredited family support programs in the state", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Quality early learning environments, QRS rating", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of programs in a quality initiative", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Availability of child care, cost" , 
-                               VALUE = 1250.145, FORMAT = "$", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare providers", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare spaces", 
-                               VALUE = 1250, FORMAT = "count", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "K students proficient by K literacy assessment", 
-                               VALUE = .12, FORMAT = "%", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Students entering K with no obvious dental problems", 
-                               VALUE = .12, FORMAT = "%", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Serious crime/100,000 population", 
-                               VALUE = 1250, FORMAT = "numeric", COLOR = "olive"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Juvenile arrests/100,000 population", 
-                               VALUE = 1250, FORMAT = "numeric", COLOR = "navy"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Unemployment rate", 
-                               VALUE = .12, FORMAT = "%", COLOR = "navy"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Incidence of child abuse/1,000 children", 
-                               VALUE = .12, FORMAT = "numeric", COLOR = "navy"),
-              h2("Subgroup Name"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Child deaths due to unintentional injuries", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Domestic violence rate", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
-                               VALUE = .12, FORMAT = "%", COLOR = "black"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Percent of new mothers with less than a high school education", 
-                               VALUE = ind_plesshigh, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
-                               VALUE = ind_pup6, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
-                               VALUE = ind_pil, FORMAT = "%", COLOR = "blue"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
-                               VALUE = .12, FORMAT = "%"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
-                               VALUE = .12, FORMAT = "%"),
-              indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
-                               VALUE = .12, FORMAT = "%"),
               
+              fluidRow(
+                h2("HEALTHY CHILDREN", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
+                                 VALUE = .068, FORMAT = "%", COLOR = "orange"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
+                                 VALUE = .749, FORMAT = "%", COLOR = "orange"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
+                                 VALUE = .499, FORMAT = "%", COLOR = "orange")
+              ),
+              fluidRow(
+                h2("CHILDREN READY TO SUCCEED IN SCHOOL", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "K students proficient by K literacy assessment", 
+                                 VALUE = .66, FORMAT = "%", COLOR = "olive"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Educational attainment of women age 15-50 (less than a high school)", 
+                                 VALUE = ind_plesshigh, FORMAT = "%", COLOR = "olive")
+              ),
+              fluidRow(
+                h2("SAFE AND SUPPORTIVE COMMUNITIES", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Child deaths due to unintentional injuries", 
+                                 VALUE = .096, FORMAT = "%", COLOR = "blue"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Serious crime rate (per 100,000 population)", 
+                                 VALUE = 4870, FORMAT = "numeric", COLOR = "blue"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Juvenile arrests rate (per 100,000 population)", 
+                                 VALUE = 1120, FORMAT = "numeric", COLOR = "blue"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Unemployment rate", 
+                                 VALUE = .027, FORMAT = "%", COLOR = "blue"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
+                                 VALUE = ind_pup6, FORMAT = "%", COLOR = "blue")
+                ),
+              fluidRow(
+                h2("SECURE AND NURTURING FAMILIES", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Incidence of child abuse (per 1,000 children)", 
+                                 VALUE = 21.9, FORMAT = "numeric", COLOR = "teal"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Domestic violence rate", 
+                                 VALUE = 186.7, FORMAT = "numeric", COLOR = "teal"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
+                                 VALUE = .039, FORMAT = "%", COLOR = "teal")
+              ),
+              fluidRow(
+                h2("SECURE AND NURTURING EARLY LEARNING ENVIRONMENTS", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Quality early learning environments", 
+                                 VALUE = 505, FORMAT = "count", COLOR = "red"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare providers", 
+                                 VALUE = 3000, FORMAT = "count", COLOR = "red"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Number of childcare spaces", 
+                                 VALUE = 130000, FORMAT = "count", COLOR = "red"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 with all parents in the workforce", 
+                                 VALUE = ind_pil, FORMAT = "%", COLOR = "red")
+              ),
+              fluidRow(
+                h2("OTHER", style="margin-left: 20px;  font-weight: bold;"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Accredited family support programs in the state", 
+                                 VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Number of programs in a quality initiative", 
+                                 VALUE = 1250, FORMAT = "count", COLOR = "olive"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Students entering K with no obvious dental problems", 
+                                 VALUE = .12, FORMAT = "%", COLOR = "olive")
+              ),
               fluidRow(),
               fluidRow(
                 box(title = "InfoBox", 
@@ -320,18 +335,24 @@ body <-
                 tabPanel(h4("Educational Attainment"),
                          fluidRow(
                            br(),
-                           box(width = 7, height = 500,
+                           h3("Proportion of Women Who Has A Birth In The Past 12 Months",
+                              style ="margin-left: 20px;  font-weight: bold;"),
+                           br(),
+                           box(width = 7, height = 500, 
+                               title = "Less than High School Education",
                                toggle_button("EDU_plot_line_01_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotOutput("EDU_plot_line_01")
                            ),
                            
                            box(width = 5, height = 500,
+                               title = "Level of Education Attained",
                                plotOutput("EDU_plot_bar_01", height = "480px")
                            )
                          ),
                          fluidRow(
-                           box(width = 7, height = 500,
+                           box(width = 7, height = 500, 
+                               title = "Education Attainment by County",
                                pickerInput(
                                  inputId = "EDU_plot_map_01_toggle",
                                  label = "Select Education Level",
@@ -339,6 +360,7 @@ body <-
                                leafletOutput("EDU_plot_map_01")
                            ),
                            box(width = 5, height = 500,
+                               title = "Data",
                                DT::dataTableOutput("EDU_plot_01_table"),
                                downloadButton("EDU_download_csv", "Download CSV"),
                                downloadButton("EDU_download_xlsx", "Download Excel")
@@ -355,17 +377,20 @@ body <-
                          fluidRow(
                            br(),
                            box(width = 7, height = 500,
+                               title = "Less than High School Education",
                                toggle_button("EDU_plot_line_02_toggle",
                                              c("Married", "Unmarried", "Both")),
                                plotlyOutput("EDU_plot_line_02")
                            ),
                            
                            box(width = 5, height = 500,
+                               title = "Level of Education Attained",
                                plotlyOutput("EDU_plot_bar_02", height = "480px")
                            )
                          ),
                          fluidRow(
                            box(width = 7, height = 500,
+                               title = "Education Attainment by County",
                                pickerInput(
                                  inputId = "EDU_plot_map_02_toggle",
                                  label = "Select Education Level",
@@ -373,28 +398,29 @@ body <-
                                leafletOutput("EDU_plot_map_02")
                            ),
                            box(width = 5, height = 500,
+                               title = "Data",
                                DT::dataTableOutput("EDU_plot_02_table")
                            )
                          )
                 ),
                 
-                tabPanel(h4("Educational Other"),
-                         fluidRow(
-                           plotOutput("line2"),
-                           column(7,
-                                  h3("Percentage own children Under 6"),
-                                  box(width = 12,
-                                      textOutput("TEST_INPUT_Statewide"),
-                                      plotOutput("dataPlot33")
-                                  )
-                           ),
-                           
-                           column(5),
-                           plotOutput("line3")
-                         )
-                ),
+                # tabPanel(h4("Educational Other"),
+                #          fluidRow(
+                #            plotOutput("line2"),
+                #            column(7,
+                #                   h3("Percentage own children Under 6"),
+                #                   box(width = 12,
+                #                       textOutput("TEST_INPUT_Statewide"),
+                #                       plotOutput("dataPlot33")
+                #                   )
+                #            ),
+                #            
+                #            column(5),
+                #            plotOutput("line3")
+                #          )
+                # ),
                 
-                tabPanel(h4('Add Tab'))
+                tabPanel(h4('New Tab'))
               )
       ),
       
@@ -471,20 +497,19 @@ server <- function(input, output, session) {
       footer = modalButton("Explore the Dashboard"),
       img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 100, align="right"),
       tags$p(
-        "It's just that this dashboard is more fun when a conference is going on",
-        tags$strong(tags$em("Russian Doll")),
-        "than after the fact. So we're going to pretend that",
-        tags$a(href="https://i2d2.iastate.edu/", tags$strong("I2D2")), "is going on right now"),
-      tags$p(
-        "The dates in tweet previews will be correct, but everywhere else in the app:"
-      ),
+        "Some general welcoming message and short background about this",
+        tags$strong(tags$em("dashboard")),
+        "can be helpful for first time commers. We can credit contributors and authors like",
+        tags$a(href="https://i2d2.iastate.edu/", tags$strong("I2D2")), ", or provide list of sources used 
+        to build this dashboard."),
       tags$ul(
         tags$li(
-          "First line"
+          "First source"
         ),
         tags$li(
-          strftime(now() - days(), "%b %e"), "is really"),
-        tags$li("and so on...")
+          "Scendo sorese (updated on:",
+          strftime(now() - days(), "%b %e"), ", 2020)"),
+        tags$li("or some other info")
       ),
       tags$p("Come back tomorrow and relive it all over again!"),
       # tags$p(HTML("&mdash;&commat; Garrick"),
@@ -517,8 +542,8 @@ server <- function(input, output, session) {
       filter(group_2 == input$EDU_plot_line_01_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) +
       labs(
-        title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        subtitle="less than high school education",
+        # title="Proportion of Women Who Has A Birth In The Past 12 Months",
+        # subtitle="less than high school education",
         caption="Source: ACS 5-Year Survey Table B13014")
   })
   
@@ -564,7 +589,7 @@ server <- function(input, output, session) {
       filter(county %in% my_county,
              group_2 != "Both") %>%
       mutate(county = factor(county, levels = my_county)) %>%
-      plot_bar_mean(PERCENT = TRUE, YEARS = my_years)
+      plot_bar_mean(PERCENT = TRUE, YEARS = my_years) 
   })
   
   # Make table to go with the Education Attainment line plot
@@ -604,8 +629,8 @@ server <- function(input, output, session) {
     EDU_data_01_county() %>%
       filter(group_2 == input$EDU_plot_line_02_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) %>%
-      ggplotly(., tooltip = "text") %>%
-      layout(title = "less than high school education")
+      ggplotly(., tooltip = "text") #%>%
+      # layout(title = "less than high school education")
   })
   
   # Make table to go with the Education Attainment line plot

@@ -73,7 +73,7 @@ plot_bar_mean <- function(df, YEARS, PERCENT = FALSE, COUNTY_COL = "orange", STA
     {if(PERCENT)scale_y_continuous(labels = scales::percent_format(accuracy = 1)) } +
     scale_fill_manual(name = NULL, values = c(COUNTY_COL, STATEWIDE_COL)) +
     coord_flip() +
-    labs(title = "Plot Title",
+    labs(#title = "Plot Title",
          subtitle = paste("Year", years)) + 
     theme_fivethirtyeight() +
     theme(axis.text.x = element_text(angle = 90, size=8, vjust =0.5),
@@ -99,7 +99,7 @@ plot_map_mean <- function(df, COUNTY, REVERSE = TRUE) {
   iowa_map["fips"] %>%
     inner_join(df, "fips") %>%
     leaflet(options = leafletOptions(zoomControl = FALSE,
-                                     minZoom = 7, maxZoom = 7,
+                                     minZoom = 6, maxZoom = 8,
                                      dragging = FALSE)) %>% 
     addTiles() %>%
     addPolygons(stroke = TRUE, 
