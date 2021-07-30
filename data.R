@@ -62,7 +62,6 @@ data_ACS <-
   mutate(Both = Married + Unmarried) %>%
   gather(group_2, value, Married:Both)
 
-
 # Read K assessment data
 k_assessment <-
   read_rds("data/CLEAN/k_assessment.rds") %>%
@@ -77,4 +76,5 @@ data_k_assessment <-
   mutate(county = "Statewide", fips = 19) %>%
   bind_rows(k_assessment) %>%
   select(names(k_assessment))
+
 
