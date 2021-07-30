@@ -268,20 +268,10 @@ body <-
               tabsetPanel( type="tabs",
                            tabPanel(h4("Child Poverty"), 
                                     fluidRow(
-                                      box(title=strong("Percent of Children Under 6 In Poverty"),
+                                      box(title=strong("Percent of Children Under 6 in Poverty"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          # sliderTextInput(
-                                          #   inputId = "yrx",
-                                          #   label = "Choose Years", 
-                                          #   choices = 2013:2019,
-                                          #   selected = c(2013, 2019)),
-                                          # selectInput(
-                                          #   inputId = "countyx",
-                                          #   label = strong("Select County"),
-                                          #   choices = unique(str_to_title(iowa_map$county)),
-                                          #   selected = NULL),
                                           leafletOutput("emp_map_1")
                                       ),
                                       fluidRow(
@@ -295,7 +285,15 @@ body <-
                                         )
                                       )
                                     )),
-                           tabPanel(h4("Parental Workforce Participation")))),
+                           tabPanel(h4("Parental Workforce Participation")),
+                           tabPanel(h4("General Population Poverty"),
+                                    fluidRow(
+                                      box(title=strong("Percent of Population in Poverty Over Time"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          plotOutput("emp_timeser_2")))
+                                    ))),
       
       
       # . Education body --------------------------------------------------------
@@ -760,9 +758,6 @@ server <- function(input, output, session) {
   
   output$emp_map_1 <- renderLeaflet({
     
-    
-    
-    
     mypal <- colorNumeric("YlOrRd", acs_pov_map()$value*100)
     mytext <- paste(
       "County: ", acs_pov_map()$NAME,"<br/>", 
@@ -816,6 +811,23 @@ server <- function(input, output, session) {
     acs_time_ser(acs_pov_react(), plotting_var)
   })
   
+  acs_genpov_react <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    acs_inds %>% 
+      select(NAME, year, B17020_pup) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(year>=2013, NAME%in%plotting_county)
+  })
+  
+  output$emp_timeser_2 <- renderPlot({
+    acs_time_ser(acs_genpov_react(), "B17020_pup")
+  })
   
 }
 
