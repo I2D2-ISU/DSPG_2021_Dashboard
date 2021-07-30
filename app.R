@@ -390,7 +390,7 @@ body <-
                          )
                 ),
                 
-                tabPanel(h4("Education by Sex"),
+                tabPanel(h4("Educational Attainmnet (Plotly Style)"),
                          h3("Proportion of Women Who Has A Birth In The Past 12 Months"),
                          fluidRow(
                            br(),
@@ -438,7 +438,19 @@ body <-
                 #          )
                 # ),
                 
-                tabPanel(h4('New Tab'))
+                tabPanel(h4('Early Literacy Skills'),
+                         h3("Beginning Reading Skills", style="margin-left:20px; font-weight:bold;"),
+                         fluidRow(
+                           box(width = 6, height = 500,
+                               title = "Percent of kindergarten students proficient by kindergarten literacy assessment",
+                               plotlyOutput("EDU_plot_line_03")),
+                           
+                           box(width = 6, height = 500,
+                               title = "Percent of kindergarten students proficient by kindergarten literacy assessment",
+                               plotlyOutput("EDU_plot_bar_03"))
+                         ),
+                         fluidRow()
+                         )
               )
       ),
       

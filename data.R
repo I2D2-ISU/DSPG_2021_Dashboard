@@ -43,7 +43,7 @@ read_ACS <- function(file_path) {
 } 
 
 data_ACS <- 
-  read_ACS("data/ACS/newMomEducation5yr_acs.csv") %>%
+  read_ACS("data/RAW/ACS/newMomEducation5yr_acs.csv") %>%
   mutate(var004 = B13014_004/B13014_002,
          var005 = B13014_005/B13014_002,
          var006 = B13014_006/B13014_002,
