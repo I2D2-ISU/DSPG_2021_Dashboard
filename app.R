@@ -1,5 +1,6 @@
 library(shiny)
 library(shinydashboard)
+library(shinydashboardPlus)
 library(shinyWidgets)
 library(shinyBS)
 library(tidyverse)
@@ -9,7 +10,6 @@ library(maps)
 library(plotly)
 library(scales)
 library(lubridate)
-library(shinydashboardPlus)
 library(ggrepel)
 
 
@@ -17,8 +17,6 @@ source("modules.R")
 source("data.R")
 source("data_Avery.R")
 source("modules_Avery.R")
-
-
 
 
 
@@ -272,6 +270,13 @@ body <-
       ),
       
       
+      # . Multicounty Analysis --------------------------------------------------
+      
+      tabItem(tabName = "one",
+              h1("UNDER DEVELOPMENT"),
+              ),
+      
+      
       # . Child and Families body -----------------------------------------------
       
       tabItem(tabName = "demographics"),
@@ -441,11 +446,7 @@ body <-
                 tabPanel(h4('Early Literacy Skills'),
                          h3("Beginning Reading Skills", style="margin-left:20px; font-weight:bold;"),
                          fluidRow(
-                           box(width = 6, height = 500,
-                               title = "Percent of kindergarten students proficient by kindergarten literacy assessment",
-                               plotlyOutput("EDU_plot_line_03")),
-                           
-                           box(width = 6, height = 500,
+                           box(width = 12, height = 500,
                                title = "Percent of kindergarten students proficient by kindergarten literacy assessment",
                                plotlyOutput("EDU_plot_bar_03"))
                          ),
@@ -708,6 +709,39 @@ server <- function(input, output, session) {
       plot_bar_mean(PERCENT = TRUE, YEARS = my_years) %>%
       ggplotly(., tooltip = "text")
   })
+  
+  
+  
+  # Make bar plot for Education Attainment tab
+  output$EDU_plot_bar_03 <- renderPlotly({
+    # make a list of counties to plot
+    my_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    my_years <- c(input$YEAR[1], input$YEAR[2])
+    
+    data_k_assessment %>%
+      filter(county %in% my_county) %>%
+      mutate(county = factor(county, levels = my_county),
+             year = factor(year)) %>% 
+      ggplot(aes(year, percent_met_benchmark, fill = county)) + 
+      geom_col(position = "dodge") +
+      scale_fill_manual(name = NULL, values = c("orange", "grey20")) +
+      scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+      theme_fivethirtyeight() +
+      theme(axis.text.x = element_text(angle = 0, size=8, vjust =0.5),
+            strip.text = element_text(size = 12)) 
+  })
+  
+  
+  
+  
+  
+  
   
   
   
