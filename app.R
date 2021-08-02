@@ -492,7 +492,38 @@ body <-
       
       # . Community body --------------------------------------------------------
       
-      tabItem(tabName = "community"),
+      tabItem(tabName = "community",
+              tabsetPanel(type="tabs",
+                          tabPanel(h4("Crime"),
+                                   fluidRow(
+                                     box(
+                                       width=12,
+                                       title=strong("Juvenile Arrests (per 100,000 population)"),
+                                       closable = FALSE,
+                                       solidHeader = TRUE,
+                                       collapsible = FALSE,
+                                       column(width=6, "Averaged over selected years",leafletOutput("juvcrime_map")),
+                                       column(width=6, "Over time", plotOutput("juvcrime_timeser"))
+                                     )
+                                   ),
+                                   fluidRow(
+                                     box(
+                                       title=strong("Serious Crime (per 100,000 population) 2019"),
+                                       closable = FALSE,
+                                       solidHeader = TRUE,
+                                       collapsible = FALSE,
+                                       leafletOutput("sercrime_map")
+                                     ),
+                                     box(
+                                       title=strong("Data"),
+                                       closable = FALSE,
+                                       solidHeader = TRUE,
+                                       collapsible = FALSE,
+                                       downloadButton("crime_download_csv", "Download CSV"),
+                                       downloadButton("crime_download_xlsx", "Download Excel"),
+                                       DT::dataTableOutput("crime_table")
+                                     ))
+                          ))),
       
       
       # . Services body ---------------------------------------------------------
@@ -1153,7 +1184,7 @@ server <- function(input, output, session) {
      
      mypal <- colorNumeric("YlOrRd", immun_rate_map()$value*100)
      mytext <- paste(
-       "County: ", immun_rate_map()$NAME,"<br/>", 
+       "County: ", str_to_title(immun_rate_map()$NAME),"<br/>", 
        "Percent: ", percent(immun_rate_map()$value, accuracy=0.1), 
        sep="") %>%
        lapply(htmltools::HTML)
@@ -1202,7 +1233,7 @@ server <- function(input, output, session) {
       })
     
     # Download data as xlsx
-    output$emp_1_download_xlsx <- downloadHandler(
+    output$immun_download_xlsx <- downloadHandler(
       filename = function() {
         paste0("child_immunization", ".xlsx")
       },
@@ -1210,6 +1241,141 @@ server <- function(input, output, session) {
         writexl::write_xlsx(immun_clean %>%
         select(name = NAME, year, percent = Percent), file)
       })
+    
+     sercrime_rate_map <- reactive ({
+       ser_crime %>%
+         filter(NAME != "Statewide") %>%
+         select(NAME, value = per100kRate) %>%
+         mutate(NAME=str_to_lower(NAME))%>%
+         left_join(iowa_map, by = c("NAME"="county")) %>%
+         sf::st_as_sf(.)
+       
+     })
+     
+     output$sercrime_map <- renderLeaflet({
+       
+       mypal <- colorNumeric("YlOrRd", sercrime_rate_map()$value)
+       mytext <- paste(
+         "County: ", str_to_title(sercrime_rate_map()$NAME),"<br/>", 
+         "Esimate Per 100k: ", round(sercrime_rate_map()$value, 1), 
+         sep="") %>%
+         lapply(htmltools::HTML)
+       
+       sercrime_rate_map() %>%
+         sf::st_transform(crs = "+init=epsg:4326") %>%
+         leaflet(options = leafletOptions(zoomControl = FALSE,
+                                          minZoom = 7, maxZoom = 7,
+                                          dragging = FALSE)) %>%
+         addProviderTiles(provider = "CartoDB.Positron") %>%
+         addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                     stroke = TRUE,  # Set True for border color
+                     weight = 1,
+                     smoothFactor = 0.3,
+                     fillOpacity = 0.7,
+                     opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                     color = "white", #polygon border color
+                     label = mytext,
+                     fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+         addLegend("bottomright", 
+                   pal = mypal, 
+                   values = ~value,
+                   title = "Estimate",
+                   opacity = .8) %>%
+         addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+     })
+     
+     juvcrime_rate_map <- reactive ({
+       juv_crime %>%
+         filter(NAME != "Statewide") %>%
+         filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+         group_by(NAME)%>%
+         summarise(value=mean(rate, na.rm=TRUE)) %>%
+         mutate(NAME=str_to_lower(NAME))%>%
+         left_join(iowa_map, by = c("NAME"="county")) %>%
+         sf::st_as_sf(.)
+     })
+     
+     output$juvcrime_map <- renderLeaflet({
+       
+       mypal <- colorNumeric("YlOrRd", juvcrime_rate_map()$value)
+       mytext <- paste(
+         "County: ", str_to_title(juvcrime_rate_map()$NAME),"<br/>", 
+         "Esimate Per 100k: ", round(juvcrime_rate_map()$value, 1), 
+         sep="") %>%
+         lapply(htmltools::HTML)
+       
+       juvcrime_rate_map() %>%
+         sf::st_transform(crs = "+init=epsg:4326") %>%
+         leaflet(options = leafletOptions(zoomControl = FALSE,
+                                          minZoom = 7, maxZoom = 7,
+                                          dragging = FALSE)) %>%
+         addProviderTiles(provider = "CartoDB.Positron") %>%
+         addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                     stroke = TRUE,  # Set True for border color
+                     weight = 1,
+                     smoothFactor = 0.3,
+                     fillOpacity = 0.7,
+                     opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                     color = "white", #polygon border color
+                     label = mytext,
+                     fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+         addLegend("bottomright", 
+                   pal = mypal, 
+                   values = ~value,
+                   title = "Estimate",
+                   opacity = .8) %>%
+         addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+     })
+     
+      juvcrime_react <- reactive ({
+        plotting_county <-
+          if(input$STATEWIDE) {
+            c(input$COUNTY, "Statewide")
+          } else {
+            input$COUNTY
+          }
+        
+        juv_crime %>% 
+          filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+          filter(NAME%in%plotting_county)
+      })
+      
+      
+      output$juvcrime_timeser <- renderPlot({
+        rate_time_ser(juvcrime_react(), "rate")
+      })
+      
+       output$crime_table <- DT::renderDataTable({
+         juv_crime %>%
+           left_join(ser_crime, by=c("NAME", "year")) %>%
+           select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate) %>%
+           mutate(serious_crime=round(serious_crime,2),
+                  juvenile_crime=round(juvenile_crime, 2)) %>%
+           datatable()
+       })
+       
+       
+       # Download data as csv
+       output$crime_download_csv <- downloadHandler(
+         filename = function() {
+           paste0("crime", ".csv")
+         },
+         content = function(file) {
+           write.csv(juv_crime %>%
+                       left_join(ser_crime, by=c("NAME", "year")) %>%
+                       select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file, row.names = FALSE)
+         })
+       
+       # Download data as xlsx
+       output$crime_download_xlsx <- downloadHandler(
+         filename = function() {
+           paste0("crime", ".xlsx")
+         },
+         content = function(file) {
+           writexl::write_xlsx(juv_crime %>%
+                                 left_join(ser_crime, by=c("NAME", "year")) %>%
+                                 select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
+         })
   
   
 }

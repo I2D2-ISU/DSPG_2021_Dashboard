@@ -2,6 +2,9 @@
 # ACS Time Series Function
 
 acs_time_ser <- function(df, var){
+  
+  df <- df %>% select(year, !!(as.name(var))) %>%
+  
   ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
     geom_line() +
     geom_point() +
@@ -16,8 +19,34 @@ acs_time_ser <- function(df, var){
           legend.title=element_blank(),
           legend.background = element_rect(fill="white", 
                                            size=0.5, linetype="solid")) +
-    scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1)) +
+    scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
+                       limits = c(min(df$year),max(df$year))) +
     scale_y_continuous(labels=scales::percent_format(), limits=c(0, 1.1))
+}
+
+
+# Rate Time Series Function
+
+rate_time_ser <- function(df, var){
+  
+  df <- df %>% select(year, !!(as.name(var))) %>%
+  
+  ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
+    geom_line() +
+    geom_point() +
+    geom_label_repel(aes(label = round(!!(as.name(var)), 1)),
+                     box.padding   = 0, 
+                     point.padding = 0,
+                     segment.color = 'grey50', show.legend = FALSE) +
+    theme_fivethirtyeight() +
+    theme(panel.background = element_rect(fill="white"),
+          plot.background = element_rect(fill="white"),
+          legend.position = "top",
+          legend.title=element_blank(),
+          legend.background = element_rect(fill="white", 
+                                           size=0.5, linetype="solid")) +
+    scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
+                       limits = c(min(df$year),max(df$year)))
 }
 
 
