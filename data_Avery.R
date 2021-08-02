@@ -21,7 +21,17 @@ ser_crime_state <- ser_crime_raw %>%
 
 ser_crime <- rbind(ser_crime_raw, ser_crime_state)
 
-vlow_bw <- read_csv("data/very_low_birthweight.csv")
+vlow_bw_raw<- read_csv("data/very_low_birthweight.csv") %>% janitor::clean_names() %>%
+  select(NAME=county, rate=very_lbw_births_percent, year) %>%
+  mutate(rate=rate/100,
+         year=2019)
+
+vlow_bw_state <- vlow_bw_raw %>%
+  group_by(year) %>%
+  summarise(rate=mean(rate, na.rm=TRUE)) %>%
+  mutate(NAME="Statewide")
+
+vlow_bw_clean <- rbind(vlow_bw_raw, vlow_bw_state)
 
 teen_moms_raw <- read_csv("data/mothers_under_20_birth_rate_per_1k.csv") %>% janitor::clean_names() %>%
   select(NAME=county, year, rate=rate_per_1k_women_15_19)
@@ -59,11 +69,14 @@ ind_immun <- immun_clean %>% filter(year==max(year), NAME=="Statewide") %>%
   pull(Percent)
 
 ind_ser_crime <- round(ser_crime %>% filter(year==max(year), NAME=="Statewide") %>%
-  pull(per100kRate), 1)
+  pull(per100kRate))
 
 ind_teen_moms <- round(teen_moms %>% filter(year==max(year), NAME=="Statewide") %>%
-                         pull(rate), 1)
+                         pull(rate))
 
 ind_juv_crime <- round(juv_crime %>% filter(year==max(year), NAME=="Statewide") %>%
-                         pull(rate), 1)
+                         pull(rate))
+
+ind_vlow_bw <- vlow_bw_clean %>% filter(year==max(year), NAME=="Statewide") %>%
+  pull(rate)
 

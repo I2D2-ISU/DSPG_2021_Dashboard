@@ -87,11 +87,12 @@ body <-
     tabItems(
       tabItem(tabName = "dashboard",
               h1("ECI Board Approved Indicators"),
+              h2("Showing Most Recent Statewide Values For Indicators"),
               
               fluidRow(
                 h2("HEALTHY CHILDREN", style="margin-left: 20px;  font-weight: bold;"),
-                indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
-                                 VALUE = .068, FORMAT = "%", COLOR = "orange"),
+                indicator_box_ui("INDICATORS", INDICATOR = "Very low birth weight", 
+                                 VALUE = ind_vlow_bw, FORMAT = "%", COLOR = "orange"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
                                  VALUE = ind_immun, FORMAT = "%", COLOR = "orange"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
@@ -283,7 +284,8 @@ body <-
               tabsetPanel( type="tabs",
                            tabPanel(h4("Child Poverty"), 
                                     fluidRow(
-                                      box(pickerInput( inputId = "emp_race",
+                                      box(width=12,
+                                        pickerInput( inputId = "emp_race",
                                                        label = "Select Race/Ethnicity Category",
                                                        choices = c("All", "Minority", "White Alone, Not Hispanic",
                                                                    "Black or African American Alone",
@@ -295,16 +297,13 @@ body <-
                                                                    "Hispanic or Latino"),
                                                        multiple = FALSE,
                                                        selected = "All"),
-                                          title=strong("Percent of Children Under 6 in Poverty, Averaged Over Selected Years"),
+                                          title=strong("Percent of Children Under 6 in Poverty"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          leafletOutput("emp_map_1")),
-                                      box(title=strong("Percent of Children Under 6 in Poverty Over Time"),
-                                          closable = FALSE,
-                                          solidHeader = TRUE,
-                                          collapsible = FALSE,
-                                          plotOutput("emp_timeser_1"))
+                                          column(width=6, "Averaged over selected years",leafletOutput("emp_map_1")),
+                                          column(width=6, "Over time", plotOutput("emp_timeser_1"))
+                                          )
                                       
                                     ),
                                     fluidRow(
@@ -320,15 +319,15 @@ body <-
                                     )),
                            tabPanel(h4("Parental Workforce Participation"),
                                     fluidRow(
-                                      box( width=12,
-                                        title=strong("Percent of Children With"),
+                                      box(width=12,
+                                        title=strong("Percent of Children By Parental Workforce Participation"),
                                         toggle_button("emp_lf_toggle",
                                                       c("All Parents in Workforce", "No Parents in Workforce")),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        column(width=6, plotOutput("emp_timeser_3")),
-                                        column(width=6, leafletOutput("emp_map_2")))
+                                        column(width=6, "Over time", plotOutput("emp_timeser_3")),
+                                        column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
                                     ),
                                     fluidRow(
                                       box(
