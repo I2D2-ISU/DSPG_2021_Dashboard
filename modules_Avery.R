@@ -3,7 +3,7 @@
 
 acs_time_ser <- function(df, var){
   
-  df <- df %>% select(year, !!(as.name(var))) %>%
+  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
   
   ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
     geom_line() +
@@ -29,7 +29,7 @@ acs_time_ser <- function(df, var){
 
 rate_time_ser <- function(df, var){
   
-  df <- df %>% select(year, !!(as.name(var))) %>%
+  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
   
   ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
     geom_line() +
