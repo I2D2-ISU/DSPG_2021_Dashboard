@@ -93,7 +93,7 @@ body <-
                 indicator_box_ui("INDICATORS", INDICATOR = "Low birth weight", 
                                  VALUE = .068, FORMAT = "%", COLOR = "orange"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Immunized children", 
-                                 VALUE = .749, FORMAT = "%", COLOR = "orange"),
+                                 VALUE = ind_immun, FORMAT = "%", COLOR = "orange"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Dental services", 
                                  VALUE = .499, FORMAT = "%", COLOR = "orange")
               ),
@@ -312,6 +312,7 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
+                                          width = 12,
                                           downloadButton("emp_1_download_csv", "Download CSV"),
                                           downloadButton("emp_1_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("emp_table_1")
@@ -475,7 +476,25 @@ body <-
       
       # . Health body------------------------------------------------------------
       
-      tabItem(tabName = "health"),
+      tabItem(tabName = "health",
+              tabsetPanel(type="tabs",
+                          tabPanel(h4("Immunized Children"),
+                                   fluidRow(
+                                     box(title=strong("Rate of Immunized Children in 2020"),
+                                         closable = FALSE,
+                                         solidHeader = TRUE,
+                                         collapsible = FALSE,
+                                         leafletOutput("immun_map")),
+                                     box(title=strong("Data"),
+                                         closable = FALSE,
+                                         solidHeader = TRUE,
+                                         collapsible = FALSE,
+                                         downloadButton("immun_download_csv", "Download CSV"),
+                                         downloadButton("immun_download_xlsx", "Download Excel"),
+                                         DT::dataTableOutput("immun_table")
+                                       
+                                     )
+                                   )))),
       
       
       # . Community body --------------------------------------------------------
@@ -1125,6 +1144,80 @@ server <- function(input, output, session) {
                 labFormat = labelFormat(suffix = "%")) %>%
       addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
   })
+  
+  
+  immun_rate_map <- reactive ({
+    immun_clean %>%
+      filter(NAME != "Statewide") %>%
+      select(NAME, value = Percent) %>%
+      mutate(NAME=str_to_lower(NAME))%>%
+      left_join(iowa_map, by = c("NAME"="county")) %>%
+      sf::st_as_sf(.)
+    
+  })
+  
+   output$immun_map <- renderLeaflet({
+     
+     mypal <- colorNumeric("YlOrRd", immun_rate_map()$value*100)
+     mytext <- paste(
+       "County: ", immun_rate_map()$NAME,"<br/>", 
+       "Percent: ", percent(immun_rate_map()$value, accuracy=0.1), 
+       sep="") %>%
+       lapply(htmltools::HTML)
+     
+     immun_rate_map() %>%
+       sf::st_transform(crs = "+init=epsg:4326") %>%
+       leaflet(options = leafletOptions(zoomControl = FALSE,
+                                        minZoom = 7, maxZoom = 7,
+                                        dragging = FALSE)) %>%
+       addProviderTiles(provider = "CartoDB.Positron") %>%
+       addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                   stroke = TRUE,  # Set True for border color
+                   weight = 1,
+                   smoothFactor = 0.3,
+                   fillOpacity = 0.7,
+                   opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                   color = "white", #polygon border color
+                   label = mytext,
+                   fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
+       addLegend("bottomright", 
+                 pal = mypal, 
+                 values = ~value*100,
+                 title = "Estimate",
+                 opacity = .8,
+                 labFormat = labelFormat(suffix = "%")) %>%
+       addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+   })
+   
+   
+    output$immun_table <- DT::renderDataTable({
+      immun_clean %>%
+        select(name = NAME, year, percent = Percent) %>%
+        datatable() %>%
+        formatPercentage(3,2)
+    })
+    
+    
+    # Download data as csv
+    output$immun_download_csv <- downloadHandler(
+      filename = function() {
+        paste0("child_immunization", ".csv")
+      },
+      content = function(file) {
+        write.csv(immun_clean %>%
+        select(name = NAME, year, percent = Percent), file, row.names = FALSE)
+      })
+    
+    # Download data as xlsx
+    output$emp_1_download_xlsx <- downloadHandler(
+      filename = function() {
+        paste0("child_immunization", ".xlsx")
+      },
+      content = function(file) {
+        writexl::write_xlsx(immun_clean %>%
+        select(name = NAME, year, percent = Percent), file)
+      })
+  
   
 }
 
