@@ -18,5 +18,19 @@ acs_time_ser <- function(df, var){
           legend.background = element_rect(fill="white", 
                                            size=0.5, linetype="solid")) +
     scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1)) +
-    scale_y_continuous(labels=scales::percent_format())
+    scale_y_continuous(labels=scales::percent_format(), limits=c(0, 1.1))
+}
+
+
+# ACS Category Function
+
+acs_cat_plot <- function(df, type, est) {
+  ggplot(df, aes(x=reorder({{type}}, {{est}}), y={{est}}, fill=NAME)) + 
+    geom_col(position = "dodge") +
+    theme_fivethirtyeight() + 
+    scale_y_continuous(labels = scales::percent,limits = c(0,1.1)) +
+    theme(text = element_text(family = "Arial"), 
+          panel.background = element_rect(fill="white"),
+          plot.background = element_rect(fill="white"), legend.position="top", legend.title=element_blank()) +
+    geom_label(aes(label = percent({{est}}, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
 }

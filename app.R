@@ -116,7 +116,7 @@ body <-
                                  VALUE = .027, FORMAT = "%", COLOR = "blue"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
                                  VALUE = ind_pup6, FORMAT = "%", COLOR = "blue")
-                ),
+              ),
               fluidRow(
                 h2("SECURE AND NURTURING FAMILIES", style="margin-left: 20px;  font-weight: bold;"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Incidence of child abuse (per 1,000 children)", 
@@ -282,58 +282,76 @@ body <-
       tabItem(tabName = "employment",
               tabsetPanel( type="tabs",
                            tabPanel(h4("Child Poverty"), 
-                                    fluidRow(box(
-                                      pickerInput( inputId = "emp_race",
-                                                   label = "Select Race/Ethnicity Category",
-                                                   choices = c("All", "Minority", "White Alone, Not Hispanic",
-                                                               "Black or African American Alone",
-                                                               "American Indian and Alaska Native Alone",
-                                                               "Asian Alone",
-                                                               "Native Hawaiian and Other Pacific Islander Alone",
-                                                               "Some Other Race Alone",
-                                                               "Two or More Races",
-                                                               "Hispanic or Latino"),
-                                                   multiple = FALSE,
-                                                   selected = "All")
-                                    )),
                                     fluidRow(
-                                      box(title=strong("Percent of Children Under 6 in Poverty, Averaged Over Selected Years"),
+                                      box(pickerInput( inputId = "emp_race",
+                                                       label = "Select Race/Ethnicity Category",
+                                                       choices = c("All", "Minority", "White Alone, Not Hispanic",
+                                                                   "Black or African American Alone",
+                                                                   "American Indian and Alaska Native Alone",
+                                                                   "Asian Alone",
+                                                                   "Native Hawaiian and Other Pacific Islander Alone",
+                                                                   "Some Other Race Alone",
+                                                                   "Two or More Races",
+                                                                   "Hispanic or Latino"),
+                                                       multiple = FALSE,
+                                                       selected = "All"),
+                                          title=strong("Percent of Children Under 6 in Poverty, Averaged Over Selected Years"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          leafletOutput("emp_map_1")
-                                      ),
-                                      fluidRow(
-                                        box(title=strong("Percent of Children Under 6 in Poverty Over Time"),
-                                            closable = FALSE,
-                                            solidHeader = TRUE,
-                                            collapsible = FALSE,
-                                            plotOutput("emp_timeser_1")
-                                        )
+                                          leafletOutput("emp_map_1")),
+                                      box(title=strong("Percent of Children Under 6 in Poverty Over Time"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          plotOutput("emp_timeser_1"))
+                                      
+                                    ),
+                                    fluidRow(
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          downloadButton("emp_1_download_csv", "Download CSV"),
+                                          downloadButton("emp_1_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("emp_table_1")
                                       )
                                     )),
                            tabPanel(h4("Parental Workforce Participation"),
                                     fluidRow(
                                       box(
-                                        title=strong("Percent of Children With All Parents in Workforce"),
+                                        title=strong("Percent of Children With"),
+                                        toggle_button("emp_lf_toggle",
+                                                      c("All Parents in Workforce", "No Parents in Workforce")),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
                                         plotOutput("emp_timeser_3")),
                                       box(
-                                        title=strong("Percent of Children With No Parents in Workforce"),
+                                        title=strong("Averaged Over Selected Years"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_timeser_4"))),
+                                        leafletOutput("emp_map_2")
+                                      )
+                                    ),
                                     fluidRow(
                                       box(
-                                        title=strong("Side-by-side: Percent Parental Particiaption in Labor Force"),
+                                        title=strong("Side-by-side: Percent Parental Particiaption in Labor Force, Averaged Over Selected Years"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_boxplot_1"))
-                                    )),
+                                        plotOutput("emp_boxplot_1")),
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          downloadButton("emp_2_download_csv", "Download CSV"),
+                                          downloadButton("emp_2_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("emp_table_2")
+                                      )
+                                    )
+                           ),
                            tabPanel(h4("General Population Poverty"),
                                     fluidRow(
                                       box(title=strong("Percent of Population in Poverty Over Time"),
@@ -450,7 +468,7 @@ body <-
                                plotlyOutput("EDU_plot_bar_03"))
                          ),
                          fluidRow()
-                         )
+                )
               )
       ),
       
@@ -660,7 +678,7 @@ server <- function(input, output, session) {
       filter(group_2 == input$EDU_plot_line_02_toggle) %>%
       plot_line_year(df = ., PERCENT = TRUE) %>%
       ggplotly(., tooltip = "text") #%>%
-      # layout(title = "less than high school education")
+    # layout(title = "less than high school education")
   })
   
   # Make table to go with the Education Attainment line plot
@@ -903,7 +921,7 @@ server <- function(input, output, session) {
              B17020_pup6t,
              B17020_pup6l) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-      filter(year>=2013, NAME%in%plotting_county)
+      filter(year>=min(year), NAME%in%plotting_county)
   })
   
   output$emp_timeser_1 <- renderPlot({
@@ -965,12 +983,11 @@ server <- function(input, output, session) {
   })
   
   output$emp_timeser_3 <- renderPlot({
-    acs_time_ser(acs_parental_workforce_react(), "B23008_pil")
+    plotting_var <- if_else(input$emp_lf_toggle == "All Parents in Workforce", "B23008_pil", "B23008_pnl")
+    
+    acs_time_ser(acs_parental_workforce_react(), plotting_var)
   })
   
-  output$emp_timeser_4 <- renderPlot({
-    acs_time_ser(acs_parental_workforce_react(), "B23008_pnl")
-  })
   
   acs_lf <- reactive ({
     plotting_county <-
@@ -990,18 +1007,125 @@ server <- function(input, output, session) {
   })
   
   output$emp_boxplot_1 <- renderPlot({
-    ggplot(acs_lf(), aes(x=NAME, y=value, fill=lf)) + 
-      geom_col(position = "dodge") +
-      theme_fivethirtyeight() + 
-      scale_y_continuous(labels = scales::percent,limits = c(0,1.1)) +
-      theme(text = element_text(family = "Arial"), 
-            panel.background = element_rect(fill="white"),
-            plot.background = element_rect(fill="white"), legend.position="top") +
-      geom_label(aes(label = percent(value, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE) +
-      labs(fill="")
+    acs_cat_plot(acs_lf(), lf, value)
   })
   
-   
+  
+  output$emp_table_1 <- DT::renderDataTable({
+    acs_inds %>%
+      select(name = NAME, year, all_under6 = B17020_pup6, minority_under6 = B17020_pup6m, black_under6 = B17020_pup6b, 
+             native_under6 = B17020_pup6n, asian_under6 = B17020_pup6a, pci_under6 = B17020_pup6pci,
+             other_under6 = B17020_pup6s, two_under6 = B17020_pup6t, hispanic_under6 = B17020_pup6l,
+             whitealone_under6 = B17020_pup6wa) %>%
+      datatable() %>%
+      formatPercentage(3:12, 2)
+  })
+  
+  # Download data as csv
+  output$emp_1_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("Child_Poverty", ".csv")
+    },
+    content = function(file) {
+      write.csv(acs_inds %>%
+                  select(name = NAME, year, all_under6 = B17020_pup6, minority_under6 = B17020_pup6m, black_under6 = B17020_pup6b, 
+                         native_under6 = B17020_pup6n, asian_under6 = B17020_pup6a, pci_under6 = B17020_pup6pci,
+                         other_under6 = B17020_pup6s, two_under6 = B17020_pup6t, hispanic_under6 = B17020_pup6l,
+                         whitealone_under6 = B17020_pup6wa), file, row.names = FALSE)
+    }
+  )
+  
+  # Download data as xlsx
+  output$emp_1_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("Child_Poverty", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(acs_inds %>%
+                            select(name = NAME, year, all_under6 = B17020_pup6, minority_under6 = B17020_pup6m, black_under6 = B17020_pup6b, 
+                                   native_under6 = B17020_pup6n, asian_under6 = B17020_pup6a, pci_under6 = B17020_pup6pci,
+                                   other_under6 = B17020_pup6s, two_under6 = B17020_pup6t, hispanic_under6 = B17020_pup6l,
+                                   whitealone_under6 = B17020_pup6wa), file)
+    }
+  )
+  
+  output$emp_table_2 <- DT::renderDataTable({
+    acs_inds %>%
+      select(name = NAME, year, all_in_LF = B23008_pil, no_in_LF = B23008_pnl) %>%
+      datatable() %>%
+      formatPercentage(3:4,2)
+  })
+  
+  
+  # Download data as csv
+  output$emp_1_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("Parents_in_LF", ".csv")
+    },
+    content = function(file) {
+      write.csv(acs_inds %>%
+                  select(name = NAME, year, all_in_LF = B23008_pil, no_in_LF = B23008_pnl), file, row.names = FALSE)
+    }
+  )
+  
+  # Download data as xlsx
+  output$emp_1_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("Parents_in_LF", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(acs_inds %>%
+                            select(name = NAME, year, all_in_LF = B23008_pil, no_in_LF = B23008_pnl), file)
+    }
+  )
+  
+  acs_lf_map <- reactive ({
+    plotting_var <- if_else(input$emp_lf_toggle == "All Parents in Workforce", "B23008_pil", "B23008_pnl")
+    
+    acs_inds %>% 
+      select(GEOID, NAME, year, B23008_pil, B23008_pnl) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME!= "Statewide") %>%
+      select(GEOID, NAME, value = plotting_var) %>%
+      group_by(GEOID, NAME) %>%
+      summarise(value=mean(value, na.rm=TRUE)) %>%
+      left_join(iowa_map, by = c("GEOID" = "fips")) %>%
+      sf::st_as_sf(.) 
+  })
+  
+  output$emp_map_2 <- renderLeaflet({
+    
+    mypal <- colorNumeric("YlOrRd", acs_lf_map()$value*100)
+    mytext <- paste(
+      "County: ", acs_lf_map()$NAME,"<br/>", 
+      "Percent: ", percent(acs_lf_map()$value, accuracy=0.1), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    acs_lf_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~value*100,
+                title = "Estimate",
+                opacity = .8,
+                labFormat = labelFormat(suffix = "%")) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
 }
 
 
