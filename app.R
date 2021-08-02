@@ -109,9 +109,9 @@ body <-
                 indicator_box_ui("INDICATORS", INDICATOR = "Child deaths due to unintentional injuries", 
                                  VALUE = .096, FORMAT = "%", COLOR = "blue"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Serious crime rate (per 100,000 population)", 
-                                 VALUE = 4870, FORMAT = "numeric", COLOR = "blue"),
+                                 VALUE = ind_ser_crime, FORMAT = "large", COLOR = "blue"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Juvenile arrests rate (per 100,000 population)", 
-                                 VALUE = 1120, FORMAT = "numeric", COLOR = "blue"),
+                                 VALUE = ind_juv_crime, FORMAT = "large", COLOR = "blue"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Unemployment rate", 
                                  VALUE = .027, FORMAT = "%", COLOR = "blue"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Children under age 6 living in poverty", 
@@ -123,8 +123,8 @@ body <-
                                  VALUE = 21.9, FORMAT = "numeric", COLOR = "teal"),
                 indicator_box_ui("INDICATORS", INDICATOR = "Domestic violence rate", 
                                  VALUE = 186.7, FORMAT = "numeric", COLOR = "teal"),
-                indicator_box_ui("INDICATORS", INDICATOR = "Teen births", 
-                                 VALUE = .039, FORMAT = "%", COLOR = "teal")
+                indicator_box_ui("INDICATORS", INDICATOR = "Teen births (per 1,000 women ages 15-19)", 
+                                 VALUE = ind_teen_moms, FORMAT = "large", COLOR = "teal")
               ),
               fluidRow(
                 h2("SECURE AND NURTURING EARLY LEARNING ENVIRONMENTS", style="margin-left: 20px;  font-weight: bold;"),
@@ -320,21 +320,15 @@ body <-
                                     )),
                            tabPanel(h4("Parental Workforce Participation"),
                                     fluidRow(
-                                      box(
+                                      box( width=12,
                                         title=strong("Percent of Children With"),
                                         toggle_button("emp_lf_toggle",
                                                       c("All Parents in Workforce", "No Parents in Workforce")),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_timeser_3")),
-                                      box(
-                                        title=strong("Averaged Over Selected Years"),
-                                        closable = FALSE,
-                                        solidHeader = TRUE,
-                                        collapsible = FALSE,
-                                        leafletOutput("emp_map_2")
-                                      )
+                                        column(width=6, plotOutput("emp_timeser_3")),
+                                        column(width=6, leafletOutput("emp_map_2")))
                                     ),
                                     fluidRow(
                                       box(
