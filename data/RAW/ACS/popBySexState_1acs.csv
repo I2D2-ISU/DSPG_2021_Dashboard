@@ -1,0 +1,23 @@
+GEOID,NAME,variable,estimate,moe,year,label,concept,func_label
+19,Iowa,B01001_003,101683,1454,2009,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,96972,1358,2009,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,100817,1653,2010,Estimate!!Total!!Male!!Under 5 years,NA,Under 5 years
+19,Iowa,B01001_027,98848,1856,2010,Estimate!!Total!!Female!!Under 5 years,NA,Under 5 years
+19,Iowa,B01001_003,100044,1665,2011,Estimate!!Total!!Male!!Under 5 years,NA,Under 5 years
+19,Iowa,B01001_027,98158,1786,2011,Estimate!!Total!!Female!!Under 5 years,NA,Under 5 years
+19,Iowa,B01001_003,99826,1965,2012,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,96171,1531,2012,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,99441,2040,2013,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,93636,1947,2013,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,99565,2018,2014,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,94006,1621,2014,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,98619,1902,2015,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,96465,1920,2015,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,101624,1663,2016,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,95863,1782,2016,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,100627,2280,2017,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,97996,2163,2017,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,101085,1958,2018,Estimate!!Total!!Male!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,96798,2426,2018,Estimate!!Total!!Female!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_003,98537,1823,2019,Estimate!!Total:!!Male:!!Under 5 years,SEX BY AGE,Under 5 years
+19,Iowa,B01001_027,92069,1824,2019,Estimate!!Total:!!Female:!!Under 5 years,SEX BY AGE,Under 5 years
