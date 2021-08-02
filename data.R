@@ -62,19 +62,7 @@ data_ACS <-
   mutate(Both = Married + Unmarried) %>%
   gather(group_2, value, Married:Both)
 
-# Read K assessment data
-k_assessment <-
-  read_rds("data/CLEAN/k_assessment.rds") %>%
-  janitor::clean_names() 
-
-data_k_assessment <-
-  k_assessment %>%
-  group_by(year) %>%
-  summarise(percent_met_benchmark = sum(number_met_benchmark, na.rm = TRUE)/
-              sum(number_tested, na.rm = TRUE)) %>%
-  ungroup() %>%
-  mutate(county = "Statewide", fips = 19) %>%
-  bind_rows(k_assessment) %>%
-  select(names(k_assessment))
+# # Read K assessment data
+# k_assessment <- read_rds("data/CLEAN/k_assessment.rds")
 
 
