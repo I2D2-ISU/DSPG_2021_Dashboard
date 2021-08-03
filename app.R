@@ -278,20 +278,20 @@ body <-
       
       tabItem(tabName = "demographics",
               tabsetPanel( type="tabs",
-                           tabPanel(h4("Childcare rate"), 
+                           tabPanel(h4("Child Care Cost"), 
                                     fluidRow(
                                       box(width=12,
-                                          pickerInput( inputId = "childcare_age",
+                                          pickerInput( inputId = "childcare_rate",
                                                        label = "Select age",
                                                        choices = childcare_rates%>% select(age)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
-                                                       selected = "All"),
-                                          title=strong("Percent of Children Under 6 in Poverty"),
+                                                       selected = "Infant (0-12 Months)"),
+                                          title=strong("Childcare cost by age of child"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Averaged over selected years",leafletOutput("emp_map_1")),
-                                          column(width=6, "Over time", plotOutput("emp_timeser_1"))
+                                          column(width=6, "Childcare Rate by Provider",leafletOutput("childcare_rate_map_1")),
+                                          column(width=6, "Childcare Rate by DHS Liencent", plotOutput("childcare_rate_timeser_1"))
                                       )
                                       
                                     ),
@@ -301,48 +301,78 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           width = 12,
-                                          downloadButton("emp_1_download_csv", "Download CSV"),
-                                          downloadButton("emp_1_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("emp_table_1")
+                                          downloadButton("childcare_rate_1_download_csv", "Download CSV"),
+                                          downloadButton("childcare_rate_1_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("childcare_rate_table_1")
                                       )
                                     )),
-                           tabPanel(h4("Parental Workforce Participation"),
+                           tabPanel(h4("Child Care Avaibility"),
                                     fluidRow(
                                       box(width=12,
-                                          title=strong("Percent of Children By Parental Workforce Participation"),
-                                          toggle_button("emp_lf_toggle",
-                                                        c("All Parents in Workforce", "No Parents in Workforce")),
+                                          title=strong("Number of ailability of child care by county"),
+                                          toggle_button("childcare_lf_toggle",
+                                                        c("Program", "Space")),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Over time", plotOutput("emp_timeser_3")),
-                                          column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
+                                          column(width=6, "Childcare Program Space", plotOutput("childcare_space_timeser_3")),
+                                          column(width=6, "Childcare avaibility", leafletOutput("childcare_space_map_2")))
                                     ),
                                     fluidRow(
                                       box(
-                                        title=strong("Side-by-side: Percent Parental Particiaption in Labor Force, Averaged Over Selected Years"),
+                                        title=strong("Number of availability of child care by county"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("emp_boxplot_1")),
+                                        plotOutput("chldcare_space_boxplot_1")),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          downloadButton("emp_2_download_csv", "Download CSV"),
-                                          downloadButton("emp_2_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("emp_table_2")
+                                          downloadButton("childcare_space_2_download_csv", "Download CSV"),
+                                          downloadButton("childcare_space_2_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("childcare_space_table_2")
                                       )
                                     )
                            ),
-                           tabPanel(h4("General Population Poverty"),
+                           tabPanel(h4("Child abuse"),
                                     fluidRow(
-                                      box(title=strong("Percent of Population in Poverty Over Time"),
+                                      box(width=12,
+                                          title=strong("incidence of child abuse per 1,000 children"),
+                                          toggle_button("childabuse_lf_toggle",
+                                                        c("under 3 years old", "4 and 5 years old", "5 years old", "under 6 years old")),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          plotOutput("emp_timeser_2")))
+                                          column(width=6, "Childabuse Program Space", plotOutput("childabuse_timeser_3")),
+                                          column(width=6, "Childabuse avaibility", leafletOutput("childabuse_map_2")))
+                                    ),
+                                    fluidRow(
+                                      box(
+                                        title=strong("incidence of child abuse per 1,000 children"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("chldabuse_boxplot_1")),
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          downloadButton("childabuse_2_download_csv", "Download CSV"),
+                                          downloadButton("childabuse_2_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("childabuse_space_table_2")
+                                      )
+                                    )
+                           ),
+                           tabPanel(h4("Child Care Provider"),
+                                    fluidRow(
+                                      box(title=strong("Child Care Provider"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          plotOutput("childabuse_timeser_2")))
                            ))),
+      
     
       
       
