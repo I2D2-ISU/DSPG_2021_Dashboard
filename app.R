@@ -17,7 +17,8 @@ source("modules.R")
 source("data.R")
 source("data_Avery.R")
 source("modules_Avery.R")
-
+source("data_Sonyta.R")
+source("modules_Sonyta.R")
 
 
 
@@ -275,7 +276,74 @@ body <-
       
       # . Child and Families body -----------------------------------------------
       
-      tabItem(tabName = "demographics"),
+      tabItem(tabName = "demographics",
+              tabsetPanel( type="tabs",
+                           tabPanel(h4("Childcare rate"), 
+                                    fluidRow(
+                                      box(width=12,
+                                          pickerInput( inputId = "childcare_age",
+                                                       label = "Select age",
+                                                       choices = childcare_rates%>% select(age)%>%distinct()%>%pull(),
+                                                       multiple = FALSE,
+                                                       selected = "All"),
+                                          title=strong("Percent of Children Under 6 in Poverty"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          column(width=6, "Averaged over selected years",leafletOutput("emp_map_1")),
+                                          column(width=6, "Over time", plotOutput("emp_timeser_1"))
+                                      )
+                                      
+                                    ),
+                                    fluidRow(
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          width = 12,
+                                          downloadButton("emp_1_download_csv", "Download CSV"),
+                                          downloadButton("emp_1_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("emp_table_1")
+                                      )
+                                    )),
+                           tabPanel(h4("Parental Workforce Participation"),
+                                    fluidRow(
+                                      box(width=12,
+                                          title=strong("Percent of Children By Parental Workforce Participation"),
+                                          toggle_button("emp_lf_toggle",
+                                                        c("All Parents in Workforce", "No Parents in Workforce")),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          column(width=6, "Over time", plotOutput("emp_timeser_3")),
+                                          column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
+                                    ),
+                                    fluidRow(
+                                      box(
+                                        title=strong("Side-by-side: Percent Parental Particiaption in Labor Force, Averaged Over Selected Years"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("emp_boxplot_1")),
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          downloadButton("emp_2_download_csv", "Download CSV"),
+                                          downloadButton("emp_2_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("emp_table_2")
+                                      )
+                                    )
+                           ),
+                           tabPanel(h4("General Population Poverty"),
+                                    fluidRow(
+                                      box(title=strong("Percent of Population in Poverty Over Time"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          plotOutput("emp_timeser_2")))
+                           ))),
+    
       
       
       # . Employment body -------------------------------------------------------
