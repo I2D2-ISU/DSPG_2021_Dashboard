@@ -1,0 +1,299 @@
+"","fips","county","year","provider_type","percent","value"
+"1",19197,"Adair",2020,"Center Based Programs","72%",0.72
+"2",19197,"Adair",2020,"Registered Child Development Homes","25%",0.25
+"3",19197,"Adair",2020,"Child Care Homes","3%",0.03
+"4",19197,"Adams",2020,"Center Based Programs","60%",0.6
+"5",19197,"Adams",2020,"Registered Child Development Homes","33%",0.33
+"6",19197,"Adams",2020,"Child Care Homes","6%",0.06
+"7",19197,"Allamakee",2020,"Center Based Programs","76%",0.76
+"8",19197,"Allamakee",2020,"Registered Child Development Homes","19%",0.19
+"9",19197,"Allamakee",2020,"Child Care Homes","5%",0.05
+"10",19197,"Appanoose",2020,"Center Based Programs","77%",0.77
+"11",19197,"Appanoose",2020,"Registered Child Development Homes","23%",0.23
+"12",19197,"Appanoose",2020,"Child Care Homes","0%",0
+"13",19197,"Audubon",2020,"Center Based Programs","50%",0.5
+"14",19197,"Audubon",2020,"Registered Child Development Homes","48%",0.48
+"15",19197,"Audubon",2020,"Child Care Homes","2%",0.02
+"16",19197,"Benton",2020,"Center Based Programs","81%",0.81
+"17",19197,"Benton",2020,"Registered Child Development Homes","19%",0.19
+"18",19197,"Benton",2020,"Child Care Homes","0%",0
+"19",19197,"Black Hawk",2020,"Center Based Programs","77%",0.77
+"20",19197,"Black Hawk",2020,"Registered Child Development Homes","20%",0.2
+"21",19197,"Black Hawk",2020,"Child Care Homes","3%",0.03
+"22",19197,"Boone",2020,"Center Based Programs","78%",0.78
+"23",19197,"Boone",2020,"Registered Child Development Homes","20%",0.2
+"24",19197,"Boone",2020,"Child Care Homes","2%",0.02
+"25",19197,"Bremer",2020,"Center Based Programs","74%",0.74
+"26",19197,"Bremer",2020,"Registered Child Development Homes","21%",0.21
+"27",19197,"Bremer",2020,"Child Care Homes","5%",0.05
+"28",19197,"Buchanan",2020,"Center Based Programs","83%",0.83
+"29",19197,"Buchanan",2020,"Registered Child Development Homes","17%",0.17
+"30",19197,"Buchanan",2020,"Child Care Homes","0%",0
+"31",19197,"Buena Vista",2020,"Center Based Programs","84%",0.84
+"32",19197,"Buena Vista",2020,"Registered Child Development Homes","14%",0.14
+"33",19197,"Buena Vista",2020,"Child Care Homes","2%",0.02
+"34",19197,"Butler",2020,"Center Based Programs","71%",0.71
+"35",19197,"Butler",2020,"Registered Child Development Homes","26%",0.26
+"36",19197,"Butler",2020,"Child Care Homes","3%",0.03
+"37",19197,"Calhoun",2020,"Center Based Programs","84%",0.84
+"38",19197,"Calhoun",2020,"Registered Child Development Homes","12%",0.12
+"39",19197,"Calhoun",2020,"Child Care Homes","4%",0.04
+"40",19197,"Carroll",2020,"Center Based Programs","63%",0.63
+"41",19197,"Carroll",2020,"Registered Child Development Homes","28%",0.28
+"42",19197,"Carroll",2020,"Child Care Homes","9%",0.09
+"43",19197,"Cass",2020,"Center Based Programs","68%",0.68
+"44",19197,"Cass",2020,"Registered Child Development Homes","28%",0.28
+"45",19197,"Cass",2020,"Child Care Homes","4%",0.04
+"46",19197,"Cedar",2020,"Center Based Programs","84%",0.84
+"47",19197,"Cedar",2020,"Registered Child Development Homes","15%",0.15
+"48",19197,"Cedar",2020,"Child Care Homes","1%",0.01
+"49",19197,"Cerro Gordo",2020,"Center Based Programs","83%",0.83
+"50",19197,"Cerro Gordo",2020,"Registered Child Development Homes","15%",0.15
+"51",19197,"Cerro Gordo",2020,"Child Care Homes","2%",0.02
+"52",19197,"Cherokee",2020,"Center Based Programs","74%",0.74
+"53",19197,"Cherokee",2020,"Registered Child Development Homes","21%",0.21
+"54",19197,"Cherokee",2020,"Child Care Homes","5%",0.05
+"55",19197,"Chickasaw",2020,"Center Based Programs","79%",0.79
+"56",19197,"Chickasaw",2020,"Registered Child Development Homes","21%",0.21
+"57",19197,"Chickasaw",2020,"Child Care Homes","0%",0
+"58",19197,"Clarke",2020,"Center Based Programs","72%",0.72
+"59",19197,"Clarke",2020,"Registered Child Development Homes","28%",0.28
+"60",19197,"Clarke",2020,"Child Care Homes","0%",0
+"61",19197,"Clay",2020,"Center Based Programs","77%",0.77
+"62",19197,"Clay",2020,"Registered Child Development Homes","17%",0.17
+"63",19197,"Clay",2020,"Child Care Homes","6%",0.06
+"64",19197,"Clayton",2020,"Center Based Programs","89%",0.89
+"65",19197,"Clayton",2020,"Registered Child Development Homes","9%",0.09
+"66",19197,"Clayton",2020,"Child Care Homes","3%",0.03
+"67",19197,"Clinton",2020,"Center Based Programs","82%",0.82
+"68",19197,"Clinton",2020,"Registered Child Development Homes","18%",0.18
+"69",19197,"Clinton",2020,"Child Care Homes","0%",0
+"70",19197,"Crawford",2020,"Center Based Programs","76%",0.76
+"71",19197,"Crawford",2020,"Registered Child Development Homes","17%",0.17
+"72",19197,"Crawford",2020,"Child Care Homes","8%",0.08
+"73",19197,"Dallas",2020,"Center Based Programs","94%",0.94
+"74",19197,"Dallas",2020,"Registered Child Development Homes","5%",0.05
+"75",19197,"Dallas",2020,"Child Care Homes","1%",0.01
+"76",19197,"Davis",2020,"Center Based Programs","97%",0.97
+"77",19197,"Davis",2020,"Registered Child Development Homes","3%",0.03
+"78",19197,"Davis",2020,"Child Care Homes","0%",0
+"79",19197,"Decatur",2020,"Center Based Programs","68%",0.68
+"80",19197,"Decatur",2020,"Registered Child Development Homes","32%",0.32
+"81",19197,"Decatur",2020,"Child Care Homes","0%",0
+"82",19197,"Delaware",2020,"Center Based Programs","92%",0.92
+"83",19197,"Delaware",2020,"Registered Child Development Homes","5%",0.05
+"84",19197,"Delaware",2020,"Child Care Homes","3%",0.03
+"85",19197,"Des Moines",2020,"Center Based Programs","64%",0.64
+"86",19197,"Des Moines",2020,"Registered Child Development Homes","34%",0.34
+"87",19197,"Des Moines",2020,"Child Care Homes","2%",0.02
+"88",19197,"Dickinson",2020,"Center Based Programs","85%",0.85
+"89",19197,"Dickinson",2020,"Registered Child Development Homes","7%",0.07
+"90",19197,"Dickinson",2020,"Child Care Homes","8%",0.08
+"91",19197,"Dubuque",2020,"Center Based Programs","87%",0.87
+"92",19197,"Dubuque",2020,"Registered Child Development Homes","11%",0.11
+"93",19197,"Dubuque",2020,"Child Care Homes","2%",0.02
+"94",19197,"Emmet",2020,"Center Based Programs","65%",0.65
+"95",19197,"Emmet",2020,"Registered Child Development Homes","29%",0.29
+"96",19197,"Emmet",2020,"Child Care Homes","6%",0.06
+"97",19197,"Fayette",2020,"Center Based Programs","88%",0.88
+"98",19197,"Fayette",2020,"Registered Child Development Homes","11%",0.11
+"99",19197,"Fayette",2020,"Child Care Homes","1%",0.01
+"100",19197,"Floyd",2020,"Center Based Programs","60%",0.6
+"101",19197,"Floyd",2020,"Registered Child Development Homes","39%",0.39
+"102",19197,"Floyd",2020,"Child Care Homes","1%",0.01
+"103",19197,"Franklin",2020,"Center Based Programs","79%",0.79
+"104",19197,"Franklin",2020,"Registered Child Development Homes","20%",0.2
+"105",19197,"Franklin",2020,"Child Care Homes","1%",0.01
+"106",19197,"Fremont",2020,"Center Based Programs","56%",0.56
+"107",19197,"Fremont",2020,"Registered Child Development Homes","44%",0.44
+"108",19197,"Fremont",2020,"Child Care Homes","0%",0
+"109",19197,"Greene",2020,"Center Based Programs","76%",0.76
+"110",19197,"Greene",2020,"Registered Child Development Homes","19%",0.19
+"111",19197,"Greene",2020,"Child Care Homes","5%",0.05
+"112",19197,"Grundy",2020,NA,NA,NA
+"113",19197,"Grundy",2020,"Center Based Programs","88%",0.88
+"114",19197,"Grundy",2020,"Registered Child Development Homes","11%",0.11
+"115",19197,"Grundy",2020,"Child Care Homes","1%",0.01
+"116",19197,"Guthrie",2020,"Center Based Programs","61%",0.61
+"117",19197,"Guthrie",2020,"Registered Child Development Homes","35%",0.35
+"118",19197,"Guthrie",2020,"Child Care Homes","4%",0.04
+"119",19197,"Hamilton",2020,"Center Based Programs","82%",0.82
+"120",19197,"Hamilton",2020,"Registered Child Development Homes","16%",0.16
+"121",19197,"Hamilton",2020,"Child Care Homes","2%",0.02
+"122",19197,"Hancock",2020,"Center Based Programs","58%",0.58
+"123",19197,"Hancock",2020,"Registered Child Development Homes","37%",0.37
+"124",19197,"Hancock",2020,"Child Care Homes","5%",0.05
+"125",19197,"Hardin",2020,"Center Based Programs","83%",0.83
+"126",19197,"Hardin",2020,"Registered Child Development Homes","13%",0.13
+"127",19197,"Hardin",2020,"Child Care Homes","4%",0.04
+"128",19197,"Harrison",2020,"Center Based Programs","83%",0.83
+"129",19197,"Harrison",2020,"Registered Child Development Homes","13%",0.13
+"130",19197,"Harrison",2020,"Child Care Homes","4%",0.04
+"131",19197,"Henry",2020,"Center Based Programs","74%",0.74
+"132",19197,"Henry",2020,"Registered Child Development Homes","26%",0.26
+"133",19197,"Henry",2020,"Child Care Homes","0%",0
+"134",19197,"Howard",2020,"Center Based Programs","74%",0.74
+"135",19197,"Howard",2020,"Registered Child Development Homes","24%",0.24
+"136",19197,"Howard",2020,"Child Care Homes","2%",0.02
+"137",19197,"Humboldt",2020,"Center Based Programs","66%",0.66
+"138",19197,"Humboldt",2020,"Registered Child Development Homes","25%",0.25
+"139",19197,"Humboldt",2020,"Child Care Homes","9%",0.09
+"140",19197,"Ida",2020,"Center Based Programs","86%",0.86
+"141",19197,"Ida",2020,"Registered Child Development Homes","5%",0.05
+"142",19197,"Ida",2020,"Child Care Homes","9%",0.09
+"143",19197,"Iowa",2020,"Center Based Programs","70%",0.7
+"144",19197,"Iowa",2020,"Registered Child Development Homes","30%",0.3
+"145",19197,"Iowa",2020,"Child Care Homes","0%",0
+"146",19197,"Jackson",2020,"Center Based Programs","96%",0.96
+"147",19197,"Jackson",2020,"Registered Child Development Homes","4%",0.04
+"148",19197,"Jackson",2020,"Child Care Homes","0%",0
+"149",19197,"Jasper",2020,"Center Based Programs","71%",0.71
+"150",19197,"Jasper",2020,"Registered Child Development Homes","28%",0.28
+"151",19197,"Jasper",2020,"Child Care Homes","1%",0.01
+"152",19197,"Jefferson",2020,"Center Based Programs","80%",0.8
+"153",19197,"Jefferson",2020,"Registered Child Development Homes","20%",0.2
+"154",19197,"Jefferson",2020,"Child Care Homes","0%",0
+"155",19197,"Johnson",2020,"Center Based Programs","90%",0.9
+"156",19197,"Johnson",2020,"Registered Child Development Homes","10%",0.1
+"157",19197,"Johnson",2020,"Child Care Homes","0%",0
+"158",19197,"Jones",2020,"Center Based Programs","73%",0.73
+"159",19197,"Jones",2020,"Registered Child Development Homes","26%",0.26
+"160",19197,"Jones",2020,"Child Care Homes","1%",0.01
+"161",19197,"Keokuk",2020,"Center Based Programs","70%",0.7
+"162",19197,"Keokuk",2020,"Registered Child Development Homes","30%",0.3
+"163",19197,"Keokuk",2020,"Child Care Homes","0%",0
+"164",19197,"Kossuth",2020,"Center Based Programs","74%",0.74
+"165",19197,"Kossuth",2020,"Registered Child Development Homes","24%",0.24
+"166",19197,"Kossuth",2020,"Child Care Homes","2%",0.02
+"167",19197,"Lee",2020,"Center Based Programs","83%",0.83
+"168",19197,"Lee",2020,"Registered Child Development Homes","17%",0.17
+"169",19197,"Lee",2020,"Child Care Homes","1%",0.01
+"170",19197,"Linn",2020,"Center Based Programs","89%",0.89
+"171",19197,"Linn",2020,"Registered Child Development Homes","10%",0.1
+"172",19197,"Linn",2020,"Child Care Homes","1%",0.01
+"173",19197,"Louisa",2020,"Center Based Programs","92%",0.92
+"174",19197,"Louisa",2020,"Registered Child Development Homes","8%",0.08
+"175",19197,"Louisa",2020,"Child Care Homes","0%",0
+"176",19197,"Lucas",2020,"Center Based Programs","76%",0.76
+"177",19197,"Lucas",2020,"Registered Child Development Homes","21%",0.21
+"178",19197,"Lucas",2020,"Child Care Homes","3%",0.03
+"179",19197,"Lyon",2020,"Center Based Programs","75%",0.75
+"180",19197,"Lyon",2020,"Registered Child Development Homes","23%",0.23
+"181",19197,"Lyon",2020,"Child Care Homes","2%",0.02
+"182",19197,"Madison",2020,"Center Based Programs","75%",0.75
+"183",19197,"Madison",2020,"Registered Child Development Homes","22%",0.22
+"184",19197,"Madison",2020,"Child Care Homes","2%",0.02
+"185",19197,"Mahaska",2020,"Center Based Programs","81%",0.81
+"186",19197,"Mahaska",2020,"Registered Child Development Homes","17%",0.17
+"187",19197,"Mahaska",2020,"Child Care Homes","2%",0.02
+"188",19197,"Marion",2020,"Center Based Programs","86%",0.86
+"189",19197,"Marion",2020,"Registered Child Development Homes","14%",0.14
+"190",19197,"Marion",2020,"Child Care Homes","0%",0
+"191",19197,"Marshall",2020,"Center Based Programs","66%",0.66
+"192",19197,"Marshall",2020,"Registered Child Development Homes","32%",0.32
+"193",19197,"Marshall",2020,"Child Care Homes","2%",0.02
+"194",19197,"Mills",2020,"Center Based Programs","84%",0.84
+"195",19197,"Mills",2020,"Registered Child Development Homes","13%",0.13
+"196",19197,"Mills",2020,"Child Care Homes","3%",0.03
+"197",19197,"Mitchell",2020,"Center Based Programs","72%",0.72
+"198",19197,"Mitchell",2020,"Registered Child Development Homes","27%",0.27
+"199",19197,"Mitchell",2020,"Child Care Homes","1%",0.01
+"200",19197,"Monona",2020,"Center Based Programs","66%",0.66
+"201",19197,"Monona",2020,"Registered Child Development Homes","24%",0.24
+"202",19197,"Monona",2020,"Child Care Homes","10%",0.1
+"203",19197,"Monroe",2020,"Center Based Programs","69%",0.69
+"204",19197,"Monroe",2020,"Registered Child Development Homes","28%",0.28
+"205",19197,"Monroe",2020,"Child Care Homes","3%",0.03
+"206",19197,"Montgomery",2020,"Center Based Programs","75%",0.75
+"207",19197,"Montgomery",2020,"Registered Child Development Homes","21%",0.21
+"208",19197,"Montgomery",2020,"Child Care Homes","4%",0.04
+"209",19197,"Muscatine",2020,"Center Based Programs","76%",0.76
+"210",19197,"Muscatine",2020,"Registered Child Development Homes","23%",0.23
+"211",19197,"Muscatine",2020,"Child Care Homes","1%",0.01
+"212",19197,"O'Brien",2020,"Center Based Programs","86%",0.86
+"213",19197,"O'Brien",2020,"Registered Child Development Homes","10%",0.1
+"214",19197,"O'Brien",2020,"Child Care Homes","3%",0.03
+"215",19197,"Osceola",2020,"Center Based Programs","85%",0.85
+"216",19197,"Osceola",2020,"Registered Child Development Homes","10%",0.1
+"217",19197,"Osceola",2020,"Child Care Homes","5%",0.05
+"218",19197,"Page",2020,"Center Based Programs","82%",0.82
+"219",19197,"Page",2020,"Registered Child Development Homes","16%",0.16
+"220",19197,"Page",2020,"Child Care Homes","2%",0.02
+"221",19197,"Palo Alto",2020,"Center Based Programs","79%",0.79
+"222",19197,"Palo Alto",2020,"Registered Child Development Homes","15%",0.15
+"223",19197,"Palo Alto",2020,"Child Care Homes","5%",0.05
+"224",19197,"Plymouth",2020,"Center Based Programs","81%",0.81
+"225",19197,"Plymouth",2020,"Registered Child Development Homes","12%",0.12
+"226",19197,"Plymouth",2020,"Child Care Homes","7%",0.07
+"227",19197,"Pocahontas",2020,"Center Based Programs","92%",0.92
+"228",19197,"Pocahontas",2020,"Registered Child Development Homes","5%",0.05
+"229",19197,"Pocahontas",2020,"Child Care Homes","4%",0.04
+"230",19197,"Polk",2020,"Center Based Programs","84%",0.84
+"231",19197,"Polk",2020,"Registered Child Development Homes","15%",0.15
+"232",19197,"Polk",2020,"Child Care Homes","1%",0.01
+"233",19197,"Pottawattamie",2020,"Center Based Programs","81%",0.81
+"234",19197,"Pottawattamie",2020,"Registered Child Development Homes","15%",0.15
+"235",19197,"Pottawattamie",2020,"Child Care Homes","4%",0.04
+"236",19197,"Poweshiek",2020,"Center Based Programs","76%",0.76
+"237",19197,"Poweshiek",2020,"Registered Child Development Homes","22%",0.22
+"238",19197,"Poweshiek",2020,"Child Care Homes","2%",0.02
+"239",19197,"Ringgold",2020,"Center Based Programs","81%",0.81
+"240",19197,"Ringgold",2020,"Registered Child Development Homes","17%",0.17
+"241",19197,"Ringgold",2020,"Child Care Homes","2%",0.02
+"242",19197,"Sac",2020,"Center Based Programs","81%",0.81
+"243",19197,"Sac",2020,"Registered Child Development Homes","5%",0.05
+"244",19197,"Sac",2020,"Child Care Homes","14%",0.14
+"245",19197,"Scott",2020,"Center Based Programs","78%",0.78
+"246",19197,"Scott",2020,"Registered Child Development Homes","21%",0.21
+"247",19197,"Scott",2020,"Child Care Homes","1%",0.01
+"248",19197,"Shelby",2020,"Center Based Programs","68%",0.68
+"249",19197,"Shelby",2020,"Registered Child Development Homes","19%",0.19
+"250",19197,"Shelby",2020,"Child Care Homes","13%",0.13
+"251",19197,"Sioux",2020,"Center Based Programs","86%",0.86
+"252",19197,"Sioux",2020,"Registered Child Development Homes","10%",0.1
+"253",19197,"Sioux",2020,"Child Care Homes","4%",0.04
+"254",19197,"Story",2020,"Center Based Programs","83%",0.83
+"255",19197,"Story",2020,"Registered Child Development Homes","15%",0.15
+"256",19197,"Story",2020,"Child Care Homes","2%",0.02
+"257",19197,"Tama",2020,"Center Based Programs","75%",0.75
+"258",19197,"Tama",2020,"Registered Child Development Homes","25%",0.25
+"259",19197,"Tama",2020,"Child Care Homes","0%",0
+"260",19197,"Taylor",2020,"Center Based Programs","85%",0.85
+"261",19197,"Taylor",2020,"Registered Child Development Homes","14%",0.14
+"262",19197,"Taylor",2020,"Child Care Homes","1%",0.01
+"263",19197,"Union",2020,"Center Based Programs","66%",0.66
+"264",19197,"Union",2020,"Registered Child Development Homes","31%",0.31
+"265",19197,"Union",2020,"Child Care Homes","2%",0.02
+"266",19197,"Van Buren",2020,"Center Based Programs","85%",0.85
+"267",19197,"Van Buren",2020,"Registered Child Development Homes","15%",0.15
+"268",19197,"Van Buren",2020,"Child Care Homes","0%",0
+"269",19197,"Wapello",2020,"Center Based Programs","87%",0.87
+"270",19197,"Wapello",2020,"Registered Child Development Homes","11%",0.11
+"271",19197,"Wapello",2020,"Child Care Homes","1%",0.01
+"272",19197,"Warren",2020,"Center Based Programs","82%",0.82
+"273",19197,"Warren",2020,"Registered Child Development Homes","16%",0.16
+"274",19197,"Warren",2020,"Child Care Homes","2%",0.02
+"275",19197,"Washington",2020,"Center Based Programs","89%",0.89
+"276",19197,"Washington",2020,"Registered Child Development Homes","10%",0.1
+"277",19197,"Washington",2020,"Child Care Homes","1%",0.01
+"278",19197,"Wayne",2020,"Center Based Programs","79%",0.79
+"279",19197,"Wayne",2020,"Registered Child Development Homes","19%",0.19
+"280",19197,"Wayne",2020,"Child Care Homes","2%",0.02
+"281",19197,"Webster",2020,"Center Based Programs","77%",0.77
+"282",19197,"Webster",2020,"Registered Child Development Homes","18%",0.18
+"283",19197,"Webster",2020,"Child Care Homes","4%",0.04
+"284",19197,"Winnebago",2020,"Center Based Programs","83%",0.83
+"285",19197,"Winnebago",2020,"Registered Child Development Homes","14%",0.14
+"286",19197,"Winnebago",2020,"Child Care Homes","3%",0.03
+"287",19197,"Winneshiek",2020,"Center Based Programs","73%",0.73
+"288",19197,"Winneshiek",2020,"Registered Child Development Homes","25%",0.25
+"289",19197,"Winneshiek",2020,"Child Care Homes","2%",0.02
+"290",19197,"Woodbury",2020,"Center Based Programs","86%",0.86
+"291",19197,"Woodbury",2020,"Registered Child Development Homes","11%",0.11
+"292",19197,"Woodbury",2020,"Child Care Homes","3%",0.03
+"293",19197,"Worth",2020,"Center Based Programs","46%",0.46
+"294",19197,"Worth",2020,"Registered Child Development Homes","51%",0.51
+"295",19197,"Worth",2020,"Child Care Homes","3%",0.03
+"296",19197,"Wright",2020,"Center Based Programs","67%",0.67
+"297",19197,"Wright",2020,"Registered Child Development Homes","30%",0.3
+"298",19197,"Wright",2020,"Child Care Homes","3%",0.03

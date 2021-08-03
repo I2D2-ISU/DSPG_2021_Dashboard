@@ -1,0 +1,1387 @@
+"","fips","county","year","provider_type","age","cost_average_per_week","cost"
+"1",19001,"Adair",2020,"Registered Child Development Homes","Infant (0-12 Months)","$125.00",125
+"2",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$140.00",140
+"3",19001,"Adair",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.00",125
+"4",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$140.00",140
+"5",19001,"Adair",2020,"Registered Child Development Homes","Two Year Olds","$116.67",116.67
+"6",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$130.00",130
+"7",19001,"Adair",2020,"Registered Child Development Homes","Three Year Olds","$116.67",116.67
+"8",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$120.00",120
+"9",19001,"Adair",2020,"Registered Child Development Homes","Four & Five Year Olds","$116.67",116.67
+"10",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$120.00",120
+"11",19001,"Adair",2020,"Registered Child Development Homes","Before & After School","$50.00",50
+"12",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Before & After School","$70.00",70
+"13",19001,"Adair",2020,"Registered Child Development Homes","Full Time School-Age","$125.00",125
+"14",19001,"Adair",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$120.00",120
+"15",19003,"Adams",2020,"Registered Child Development Homes","Infant (0-12 Months)","$130.00",130
+"16",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.00",150
+"17",19003,"Adams",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$130.00",130
+"18",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.00",150
+"19",19003,"Adams",2020,"Registered Child Development Homes","Two Year Olds","$122.50",122.5
+"20",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$150.00",150
+"21",19003,"Adams",2020,"Registered Child Development Homes","Three Year Olds","$116.25",116.25
+"22",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.00",150
+"23",19003,"Adams",2020,"Registered Child Development Homes","Four & Five Year Olds","$116.25",116.25
+"24",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$150.00",150
+"25",19003,"Adams",2020,"Registered Child Development Homes","Before & After School","$51.25",51.25
+"26",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Before & After School","$60.00",60
+"27",19003,"Adams",2020,"Registered Child Development Homes","Full Time School-Age","$108.75",108.75
+"28",19003,"Adams",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$150.00",150
+"29",19005,"Allamakee",2020,"Registered Child Development Homes","Infant (0-12 Months)","$129.15",129.15
+"30",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"31",19005,"Allamakee",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$127.80",127.8
+"32",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"33",19005,"Allamakee",2020,"Registered Child Development Homes","Two Year Olds","$127.80",127.8
+"34",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$156.00",156
+"35",19005,"Allamakee",2020,"Registered Child Development Homes","Three Year Olds","$127.80",127.8
+"36",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$148.00",148
+"37",19005,"Allamakee",2020,"Registered Child Development Homes","Four & Five Year Olds","$127.80",127.8
+"38",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$148.00",148
+"39",19005,"Allamakee",2020,"Registered Child Development Homes","Before & After School","$57.50",57.5
+"40",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Before & After School","$45.00",45
+"41",19005,"Allamakee",2020,"Registered Child Development Homes","Full Time School-Age","$127.80",127.8
+"42",19005,"Allamakee",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$138.00",138
+"43",19007,"Appanoose",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.60",126.6
+"44",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$187.50",187.5
+"45",19007,"Appanoose",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$126.60",126.6
+"46",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$187.50",187.5
+"47",19007,"Appanoose",2020,"Registered Child Development Homes","Two Year Olds","$126.60",126.6
+"48",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$187.50",187.5
+"49",19007,"Appanoose",2020,"Registered Child Development Homes","Three Year Olds","$125.00",125
+"50",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$155.00",155
+"51",19007,"Appanoose",2020,"Registered Child Development Homes","Four & Five Year Olds","$125.00",125
+"52",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$155.00",155
+"53",19007,"Appanoose",2020,"Registered Child Development Homes","Before & After School","$77.05",77.05
+"54",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Before & After School","$54.00",54
+"55",19007,"Appanoose",2020,"Registered Child Development Homes","Full Time School-Age","$119.40",119.4
+"56",19007,"Appanoose",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$108.00",108
+"57",19009,"Audubon",2020,"Registered Child Development Homes","Infant (0-12 Months)","$124.31",124.31
+"58",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.00",150
+"59",19009,"Audubon",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$124.31",124.31
+"60",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.00",150
+"61",19009,"Audubon",2020,"Registered Child Development Homes","Two Year Olds","$147.75",147.75
+"62",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$150.00",150
+"63",19009,"Audubon",2020,"Registered Child Development Homes","Three Year Olds","$123.75",123.75
+"64",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.00",150
+"65",19009,"Audubon",2020,"Registered Child Development Homes","Four & Five Year Olds","$121.53",121.53
+"66",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$150.00",150
+"67",19009,"Audubon",2020,"Registered Child Development Homes","Before & After School","$54.44",54.44
+"68",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Before & After School","N/A",NA
+"69",19009,"Audubon",2020,"Registered Child Development Homes","Full Time School-Age","$121.53",121.53
+"70",19009,"Audubon",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","N/A",NA
+"71",19011,"Benton",2020,"Registered Child Development Homes","Infant (0-12 Months)","$145.71",145.71
+"72",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$172.50",172.5
+"73",19011,"Benton",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$142.86",142.86
+"74",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$170.00",170
+"75",19011,"Benton",2020,"Registered Child Development Homes","Two Year Olds","$141.43",141.43
+"76",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$157.50",157.5
+"77",19011,"Benton",2020,"Registered Child Development Homes","Three Year Olds","$140.00",140
+"78",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$147.00",147
+"79",19011,"Benton",2020,"Registered Child Development Homes","Four & Five Year Olds","$133.57",133.57
+"80",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$142.00",142
+"81",19011,"Benton",2020,"Registered Child Development Homes","Before & After School","$65.00",65
+"82",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Before & After School","$59.50",59.5
+"83",19011,"Benton",2020,"Registered Child Development Homes","Full Time School-Age","$118.33",118.33
+"84",19011,"Benton",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$130.50",130.5
+"85",19013,"Black Hawk",2020,"Registered Child Development Homes","Infant (0-12 Months)","$141.45",141.45
+"86",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$195.30",195.3
+"87",19013,"Black Hawk",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$137.74",137.74
+"88",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$195.30",195.3
+"89",19013,"Black Hawk",2020,"Registered Child Development Homes","Two Year Olds","$136.97",136.97
+"90",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$175.50",175.5
+"91",19013,"Black Hawk",2020,"Registered Child Development Homes","Three Year Olds","$135.80",135.8
+"92",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$166.95",166.95
+"93",19013,"Black Hawk",2020,"Registered Child Development Homes","Four & Five Year Olds","$136.09",136.09
+"94",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$163.35",163.35
+"95",19013,"Black Hawk",2020,"Registered Child Development Homes","Before & After School","$69.21",69.21
+"96",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Before & After School","$80.40",80.4
+"97",19013,"Black Hawk",2020,"Registered Child Development Homes","Full Time School-Age","$131.65",131.65
+"98",19013,"Black Hawk",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$169.20",169.2
+"99",19015,"Boone",2020,"Registered Child Development Homes","Infant (0-12 Months)","$136.93",136.93
+"100",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"101",19015,"Boone",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$136.20",136.2
+"102",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$158.03",158.03
+"103",19015,"Boone",2020,"Registered Child Development Homes","Two Year Olds","$134.87",134.87
+"104",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$153.03",153.03
+"105",19015,"Boone",2020,"Registered Child Development Homes","Three Year Olds","$134.20",134.2
+"106",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.53",150.53
+"107",19015,"Boone",2020,"Registered Child Development Homes","Four & Five Year Olds","$131.87",131.87
+"108",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$148.03",148.03
+"109",19015,"Boone",2020,"Registered Child Development Homes","Before & After School","$59.19",59.19
+"110",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.33",63.33
+"111",19015,"Boone",2020,"Registered Child Development Homes","Full Time School-Age","$129.08",129.08
+"112",19015,"Boone",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$138.03",138.03
+"113",19017,"Bremer",2020,"Registered Child Development Homes","Infant (0-12 Months)","$142.20",142.2
+"114",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$243.00",243
+"115",19017,"Bremer",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"116",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$243.00",243
+"117",19017,"Bremer",2020,"Registered Child Development Homes","Two Year Olds","$135.00",135
+"118",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$231.75",231.75
+"119",19017,"Bremer",2020,"Registered Child Development Homes","Three Year Olds","$135.00",135
+"120",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$178.65",178.65
+"121",19017,"Bremer",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.00",135
+"122",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$178.65",178.65
+"123",19017,"Bremer",2020,"Registered Child Development Homes","Before & After School","$55.00",55
+"124",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Before & After School","$73.00",73
+"125",19017,"Bremer",2020,"Registered Child Development Homes","Full Time School-Age","$123.75",123.75
+"126",19017,"Bremer",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$184.50",184.5
+"127",19019,"Buchanan",2020,"Registered Child Development Homes","Infant (0-12 Months)","$136.80",136.8
+"128",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$154.80",154.8
+"129",19019,"Buchanan",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$136.80",136.8
+"130",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$154.80",154.8
+"131",19019,"Buchanan",2020,"Registered Child Development Homes","Two Year Olds","$136.80",136.8
+"132",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$148.05",148.05
+"133",19019,"Buchanan",2020,"Registered Child Development Homes","Three Year Olds","$136.80",136.8
+"134",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$145.80",145.8
+"135",19019,"Buchanan",2020,"Registered Child Development Homes","Four & Five Year Olds","$136.80",136.8
+"136",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$145.80",145.8
+"137",19019,"Buchanan",2020,"Registered Child Development Homes","Before & After School","$60.80",60.8
+"138",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.60",62.6
+"139",19019,"Buchanan",2020,"Registered Child Development Homes","Full Time School-Age","$136.80",136.8
+"140",19019,"Buchanan",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$135.90",135.9
+"141",19021,"Buena Vista",2020,"Registered Child Development Homes","Infant (0-12 Months)","$142.65",142.65
+"142",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$168.75",168.75
+"143",19021,"Buena Vista",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$142.65",142.65
+"144",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"145",19021,"Buena Vista",2020,"Registered Child Development Homes","Two Year Olds","$142.65",142.65
+"146",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$153.75",153.75
+"147",19021,"Buena Vista",2020,"Registered Child Development Homes","Three Year Olds","$142.65",142.65
+"148",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$153.75",153.75
+"149",19021,"Buena Vista",2020,"Registered Child Development Homes","Four & Five Year Olds","$142.65",142.65
+"150",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$157.50",157.5
+"151",19021,"Buena Vista",2020,"Registered Child Development Homes","Before & After School","$63.40",63.4
+"152",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Before & After School","$70.00",70
+"153",19021,"Buena Vista",2020,"Registered Child Development Homes","Full Time School-Age","$120.15",120.15
+"154",19021,"Buena Vista",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$157.50",157.5
+"155",19023,"Butler",2020,"Registered Child Development Homes","Infant (0-12 Months)","$142.65",142.65
+"156",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$170.10",170.1
+"157",19023,"Butler",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$142.65",142.65
+"158",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$170.10",170.1
+"159",19023,"Butler",2020,"Registered Child Development Homes","Two Year Olds","$142.65",142.65
+"160",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$161.10",161.1
+"161",19023,"Butler",2020,"Registered Child Development Homes","Three Year Olds","$142.65",142.65
+"162",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$152.10",152.1
+"163",19023,"Butler",2020,"Registered Child Development Homes","Four & Five Year Olds","$142.65",142.65
+"164",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$152.10",152.1
+"165",19023,"Butler",2020,"Registered Child Development Homes","Before & After School","$47.60",47.6
+"166",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Before & After School","$67.60",67.6
+"167",19023,"Butler",2020,"Registered Child Development Homes","Full Time School-Age","$107.10",107.1
+"168",19023,"Butler",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$152.10",152.1
+"169",19025,"Calhoun",2020,"Registered Child Development Homes","Infant (0-12 Months)","$157.00",157
+"170",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$145.00",145
+"171",19025,"Calhoun",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$157.00",157
+"172",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$145.00",145
+"173",19025,"Calhoun",2020,"Registered Child Development Homes","Two Year Olds","$135.00",135
+"174",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$140.00",140
+"175",19025,"Calhoun",2020,"Registered Child Development Homes","Three Year Olds","$135.00",135
+"176",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$140.00",140
+"177",19025,"Calhoun",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.00",135
+"178",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$137.50",137.5
+"179",19025,"Calhoun",2020,"Registered Child Development Homes","Before & After School","$60.00",60
+"180",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Before & After School","$61.12",61.12
+"181",19025,"Calhoun",2020,"Registered Child Development Homes","Full Time School-Age","$135.00",135
+"182",19025,"Calhoun",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$137.50",137.5
+"183",19027,"Carroll",2020,"Registered Child Development Homes","Infant (0-12 Months)","$139.09",139.09
+"184",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$164.50",164.5
+"185",19027,"Carroll",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$138.46",138.46
+"186",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$164.50",164.5
+"187",19027,"Carroll",2020,"Registered Child Development Homes","Two Year Olds","$138.46",138.46
+"188",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$156.69",156.69
+"189",19027,"Carroll",2020,"Registered Child Development Homes","Three Year Olds","$138.46",138.46
+"190",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$156.69",156.69
+"191",19027,"Carroll",2020,"Registered Child Development Homes","Four & Five Year Olds","$138.27",138.27
+"192",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$156.69",156.69
+"193",19027,"Carroll",2020,"Registered Child Development Homes","Before & After School","$55.60",55.6
+"194",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Before & After School","$58.05",58.05
+"195",19027,"Carroll",2020,"Registered Child Development Homes","Full Time School-Age","$140.00",140
+"196",19027,"Carroll",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$143.15",143.15
+"197",19029,"Cass",2020,"Registered Child Development Homes","Infant (0-12 Months)","$133.60",133.6
+"198",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$155.00",155
+"199",19029,"Cass",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$133.60",133.6
+"200",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$155.00",155
+"201",19029,"Cass",2020,"Registered Child Development Homes","Two Year Olds","$133.60",133.6
+"202",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$150.00",150
+"203",19029,"Cass",2020,"Registered Child Development Homes","Three Year Olds","$133.60",133.6
+"204",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$148.75",148.75
+"205",19029,"Cass",2020,"Registered Child Development Homes","Four & Five Year Olds","$133.60",133.6
+"206",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$144.75",144.75
+"207",19029,"Cass",2020,"Registered Child Development Homes","Before & After School","$60.88",60.88
+"208",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Before & After School","$57.25",57.25
+"209",19029,"Cass",2020,"Registered Child Development Homes","Full Time School-Age","$134.99",134.99
+"210",19029,"Cass",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$117.08",117.08
+"211",19031,"Cedar",2020,"Registered Child Development Homes","Infant (0-12 Months)","$131.25",131.25
+"212",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$171.67",171.67
+"213",19031,"Cedar",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$131.25",131.25
+"214",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$171.67",171.67
+"215",19031,"Cedar",2020,"Registered Child Development Homes","Two Year Olds","$131.25",131.25
+"216",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$165.17",165.17
+"217",19031,"Cedar",2020,"Registered Child Development Homes","Three Year Olds","$131.25",131.25
+"218",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$160.83",160.83
+"219",19031,"Cedar",2020,"Registered Child Development Homes","Four & Five Year Olds","$130.00",130
+"220",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$154.17",154.17
+"221",19031,"Cedar",2020,"Registered Child Development Homes","Before & After School","$50.00",50
+"222",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Before & After School","$66.50",66.5
+"223",19031,"Cedar",2020,"Registered Child Development Homes","Full Time School-Age","$122.50",122.5
+"224",19031,"Cedar",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$132.50",132.5
+"225",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Infant (0-12 Months)","$151.20",151.2
+"226",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$180.00",180
+"227",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$152.10",152.1
+"228",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$180.00",180
+"229",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Two Year Olds","$149.40",149.4
+"230",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$153.00",153
+"231",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Three Year Olds","$145.80",145.8
+"232",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$153.00",153
+"233",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Four & Five Year Olds","$144.90",144.9
+"234",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$153.00",153
+"235",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Before & After School","$71.80",71.8
+"236",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Before & After School","$45.00",45
+"237",19033,"Cerro Gordo",2020,"Registered Child Development Homes","Full Time School-Age","$144.45",144.45
+"238",19033,"Cerro Gordo",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$153.00",153
+"239",19035,"Cherokee",2020,"Registered Child Development Homes","Infant (0-12 Months)","$129.60",129.6
+"240",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$161.00",161
+"241",19035,"Cherokee",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$132.75",132.75
+"242",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$161.00",161
+"243",19035,"Cherokee",2020,"Registered Child Development Homes","Two Year Olds","$130.50",130.5
+"244",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$148.13",148.13
+"245",19035,"Cherokee",2020,"Registered Child Development Homes","Three Year Olds","$130.50",130.5
+"246",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$143.13",143.13
+"247",19035,"Cherokee",2020,"Registered Child Development Homes","Four & Five Year Olds","$130.50",130.5
+"248",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$143.13",143.13
+"249",19035,"Cherokee",2020,"Registered Child Development Homes","Before & After School","$58.00",58
+"250",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.61",63.61
+"251",19035,"Cherokee",2020,"Registered Child Development Homes","Full Time School-Age","$128.25",128.25
+"252",19035,"Cherokee",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$133.13",133.13
+"253",19037,"Chickasaw",2020,"Registered Child Development Homes","Infant (0-12 Months)","$137.70",137.7
+"254",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"255",19037,"Chickasaw",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$137.70",137.7
+"256",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"257",19037,"Chickasaw",2020,"Registered Child Development Homes","Two Year Olds","$137.70",137.7
+"258",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"259",19037,"Chickasaw",2020,"Registered Child Development Homes","Three Year Olds","$137.25",137.25
+"260",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Three Year Olds",NA,NA
+"261",19037,"Chickasaw",2020,"Registered Child Development Homes","Four & Five Year Olds","$132.75",132.75
+"262",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds",NA,NA
+"263",19037,"Chickasaw",2020,"Registered Child Development Homes","Before & After School","$61.20",61.2
+"264",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"265",19037,"Chickasaw",2020,"Registered Child Development Homes","Full Time School-Age","$132.75",132.75
+"266",19037,"Chickasaw",2020,"DHS Licensed Centers/Preschools","Full Time School-Age",NA,NA
+"267",19039,"Clarke",2020,"Registered Child Development Homes","Infant (0-12 Months)","$129.55",129.55
+"268",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$145.00",145
+"269",19039,"Clarke",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.45",125.45
+"270",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$145.00",145
+"271",19039,"Clarke",2020,"Registered Child Development Homes","Two Year Olds","$122.27",122.27
+"272",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$135.00",135
+"273",19039,"Clarke",2020,"Registered Child Development Homes","Three Year Olds","$120.00",120
+"274",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$125.00",125
+"275",19039,"Clarke",2020,"Registered Child Development Homes","Four & Five Year Olds","$119.09",119.09
+"276",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$120.00",120
+"277",19039,"Clarke",2020,"Registered Child Development Homes","Before & After School","$64.44",64.44
+"278",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Before & After School","$105.00",105
+"279",19039,"Clarke",2020,"Registered Child Development Homes","Full Time School-Age","$117.50",117.5
+"280",19039,"Clarke",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$110.00",110
+"281",19041,"Clay",2020,"Registered Child Development Homes","Infant (0-12 Months)","$131.00",131
+"282",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$229.50",229.5
+"283",19041,"Clay",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$130.00",130
+"284",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$184.50",184.5
+"285",19041,"Clay",2020,"Registered Child Development Homes","Two Year Olds","$130.00",130
+"286",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$180.90",180.9
+"287",19041,"Clay",2020,"Registered Child Development Homes","Three Year Olds","$130.00",130
+"288",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$170.10",170.1
+"289",19041,"Clay",2020,"Registered Child Development Homes","Four & Five Year Olds","$130.00",130
+"290",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$170.10",170.1
+"291",19041,"Clay",2020,"Registered Child Development Homes","Before & After School","$57.78",57.78
+"292",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Before & After School","$75.60",75.6
+"293",19041,"Clay",2020,"Registered Child Development Homes","Full Time School-Age","$135.00",135
+"294",19041,"Clay",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$135.90",135.9
+"295",19043,"Clayton",2020,"Registered Child Development Homes","Infant (0-12 Months)","$125.00",125
+"296",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$152.10",152.1
+"297",19043,"Clayton",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.00",125
+"298",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$149.40",149.4
+"299",19043,"Clayton",2020,"Registered Child Development Homes","Two Year Olds","$125.00",125
+"300",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$144.90",144.9
+"301",19043,"Clayton",2020,"Registered Child Development Homes","Three Year Olds","$125.00",125
+"302",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$144.90",144.9
+"303",19043,"Clayton",2020,"Registered Child Development Homes","Four & Five Year Olds","$125.00",125
+"304",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$144.00",144
+"305",19043,"Clayton",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"306",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Before & After School","$59.60",59.6
+"307",19043,"Clayton",2020,"Registered Child Development Homes","Full Time School-Age","$125.00",125
+"308",19043,"Clayton",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$133.65",133.65
+"309",19045,"Clinton",2020,"Registered Child Development Homes","Infant (0-12 Months)","$131.40",131.4
+"310",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$180.50",180.5
+"311",19045,"Clinton",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$131.40",131.4
+"312",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$180.50",180.5
+"313",19045,"Clinton",2020,"Registered Child Development Homes","Two Year Olds","$124.20",124.2
+"314",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$167.20",167.2
+"315",19045,"Clinton",2020,"Registered Child Development Homes","Three Year Olds","$124.20",124.2
+"316",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$166.20",166.2
+"317",19045,"Clinton",2020,"Registered Child Development Homes","Four & Five Year Olds","$124.20",124.2
+"318",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$165.20",165.2
+"319",19045,"Clinton",2020,"Registered Child Development Homes","Before & After School","$61.67",61.67
+"320",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Before & After School","$95.00",95
+"321",19045,"Clinton",2020,"Registered Child Development Homes","Full Time School-Age","$118.35",118.35
+"322",19045,"Clinton",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$143.33",143.33
+"323",19047,"Crawford",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.67",126.67
+"324",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$157.50",157.5
+"325",19047,"Crawford",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$126.25",126.25
+"326",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$157.50",157.5
+"327",19047,"Crawford",2020,"Registered Child Development Homes","Two Year Olds","$126.25",126.25
+"328",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$157.50",157.5
+"329",19047,"Crawford",2020,"Registered Child Development Homes","Three Year Olds","$126.25",126.25
+"330",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$141.75",141.75
+"331",19047,"Crawford",2020,"Registered Child Development Homes","Four & Five Year Olds","$126.25",126.25
+"332",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$141.75",141.75
+"333",19047,"Crawford",2020,"Registered Child Development Homes","Before & After School","$56.11",56.11
+"334",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.00",63
+"335",19047,"Crawford",2020,"Registered Child Development Homes","Full Time School-Age","$126.25",126.25
+"336",19047,"Crawford",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$155.25",155.25
+"337",19049,"Dallas",2020,"Registered Child Development Homes","Infant (0-12 Months)","$169.30",169.3
+"338",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$235.09",235.09
+"339",19049,"Dallas",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$167.53",167.53
+"340",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$233.05",233.05
+"341",19049,"Dallas",2020,"Registered Child Development Homes","Two Year Olds","$164.84",164.84
+"342",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$207.75",207.75
+"343",19049,"Dallas",2020,"Registered Child Development Homes","Three Year Olds","$163.44",163.44
+"344",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$192.33",192.33
+"345",19049,"Dallas",2020,"Registered Child Development Homes","Four & Five Year Olds","$162.90",162.9
+"346",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$185.74",185.74
+"347",19049,"Dallas",2020,"Registered Child Development Homes","Before & After School","$68.32",68.32
+"348",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Before & After School","$84.97",84.97
+"349",19049,"Dallas",2020,"Registered Child Development Homes","Full Time School-Age","$141.84",141.84
+"350",19049,"Dallas",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$157.54",157.54
+"351",19051,"Davis",2020,"Registered Child Development Homes","Infant (0-12 Months)","$129.80",129.8
+"352",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$125.00",125
+"353",19051,"Davis",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$129.80",129.8
+"354",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$125.00",125
+"355",19051,"Davis",2020,"Registered Child Development Homes","Two Year Olds","$129.80",129.8
+"356",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$125.00",125
+"357",19051,"Davis",2020,"Registered Child Development Homes","Three Year Olds","$125.00",125
+"358",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$125.00",125
+"359",19051,"Davis",2020,"Registered Child Development Homes","Four & Five Year Olds","$125.00",125
+"360",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$125.00",125
+"361",19051,"Davis",2020,"Registered Child Development Homes","Before & After School","$54.10",54.1
+"362",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Before & After School","$50.00",50
+"363",19051,"Davis",2020,"Registered Child Development Homes","Full Time School-Age","$108.20",108.2
+"364",19051,"Davis",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$125.00",125
+"365",19053,"Decatur",2020,"Registered Child Development Homes","Infant (0-12 Months)","$120.00",120
+"366",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.00",150
+"367",19053,"Decatur",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$120.00",120
+"368",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.00",150
+"369",19053,"Decatur",2020,"Registered Child Development Homes","Two Year Olds","$120.00",120
+"370",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$135.00",135
+"371",19053,"Decatur",2020,"Registered Child Development Homes","Three Year Olds","$120.00",120
+"372",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$125.00",125
+"373",19053,"Decatur",2020,"Registered Child Development Homes","Four & Five Year Olds","$120.00",120
+"374",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$125.00",125
+"375",19053,"Decatur",2020,"Registered Child Development Homes","Before & After School","$43.33",43.33
+"376",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Before & After School","$30.00",30
+"377",19053,"Decatur",2020,"Registered Child Development Homes","Full Time School-Age","$111.67",111.67
+"378",19053,"Decatur",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$115.00",115
+"379",19055,"Delaware",2020,"Registered Child Development Homes","Infant (0-12 Months)",NA,NA
+"380",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$194.85",194.85
+"381",19055,"Delaware",2020,"Registered Child Development Homes","Toddler (13-23 Months)",NA,NA
+"382",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$194.85",194.85
+"383",19055,"Delaware",2020,"Registered Child Development Homes","Two Year Olds",NA,NA
+"384",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$182.25",182.25
+"385",19055,"Delaware",2020,"Registered Child Development Homes","Three Year Olds",NA,NA
+"386",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$182.25",182.25
+"387",19055,"Delaware",2020,"Registered Child Development Homes","Four & Five Year Olds",NA,NA
+"388",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$182.25",182.25
+"389",19055,"Delaware",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"390",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Before & After School","$80.00",80
+"391",19055,"Delaware",2020,"Registered Child Development Homes","Full Time School-Age",NA,NA
+"392",19055,"Delaware",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$144.00",144
+"393",19057,"Des Moines",2020,"Registered Child Development Homes","Infant (0-12 Months)","$120.10",120.1
+"394",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"395",19057,"Des Moines",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$117.80",117.8
+"396",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"397",19057,"Des Moines",2020,"Registered Child Development Homes","Two Year Olds","$112.15",112.15
+"398",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$160.00",160
+"399",19057,"Des Moines",2020,"Registered Child Development Homes","Three Year Olds","$112.15",112.15
+"400",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$155.00",155
+"401",19057,"Des Moines",2020,"Registered Child Development Homes","Four & Five Year Olds","$112.15",112.15
+"402",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$135.00",135
+"403",19057,"Des Moines",2020,"Registered Child Development Homes","Before & After School","$60.00",60
+"404",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Before & After School","$50.00",50
+"405",19057,"Des Moines",2020,"Registered Child Development Homes","Full Time School-Age","$103.70",103.7
+"406",19057,"Des Moines",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$135.00",135
+"407",19059,"Dickinson",2020,"Registered Child Development Homes","Infant (0-12 Months)","$140.00",140
+"408",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$210.00",210
+"409",19059,"Dickinson",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$140.00",140
+"410",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$210.00",210
+"411",19059,"Dickinson",2020,"Registered Child Development Homes","Two Year Olds","$140.00",140
+"412",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$210.00",210
+"413",19059,"Dickinson",2020,"Registered Child Development Homes","Three Year Olds","$140.00",140
+"414",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$165.00",165
+"415",19059,"Dickinson",2020,"Registered Child Development Homes","Four & Five Year Olds","$90.00",90
+"416",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$165.00",165
+"417",19059,"Dickinson",2020,"Registered Child Development Homes","Before & After School","$40.00",40
+"418",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Before & After School","$73.33",73.33
+"419",19059,"Dickinson",2020,"Registered Child Development Homes","Full Time School-Age","$140.00",140
+"420",19059,"Dickinson",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$165.00",165
+"421",19061,"Dubuque",2020,"Registered Child Development Homes","Infant (0-12 Months)","$146.70",146.7
+"422",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$204.30",204.3
+"423",19061,"Dubuque",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$144.90",144.9
+"424",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$204.30",204.3
+"425",19061,"Dubuque",2020,"Registered Child Development Homes","Two Year Olds","$143.55",143.55
+"426",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$192.60",192.6
+"427",19061,"Dubuque",2020,"Registered Child Development Homes","Three Year Olds","$143.10",143.1
+"428",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$188.10",188.1
+"429",19061,"Dubuque",2020,"Registered Child Development Homes","Four & Five Year Olds","$142.65",142.65
+"430",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$182.25",182.25
+"431",19061,"Dubuque",2020,"Registered Child Development Homes","Before & After School","$66.20",66.2
+"432",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Before & After School","$80.00",80
+"433",19061,"Dubuque",2020,"Registered Child Development Homes","Full Time School-Age","$142.65",142.65
+"434",19061,"Dubuque",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$177.30",177.3
+"435",19063,"Emmet",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"436",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$132.50",132.5
+"437",19063,"Emmet",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"438",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$132.50",132.5
+"439",19063,"Emmet",2020,"Registered Child Development Homes","Two Year Olds","$135.00",135
+"440",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$130.00",130
+"441",19063,"Emmet",2020,"Registered Child Development Homes","Three Year Olds","$135.00",135
+"442",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$130.00",130
+"443",19063,"Emmet",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.00",135
+"444",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$130.00",130
+"445",19063,"Emmet",2020,"Registered Child Development Homes","Before & After School","$60.00",60
+"446",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Before & After School","$60.00",60
+"447",19063,"Emmet",2020,"Registered Child Development Homes","Full Time School-Age","$135.00",135
+"448",19063,"Emmet",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$135.00",135
+"449",19065,"Fayette",2020,"Registered Child Development Homes","Infant (0-12 Months)","$140.40",140.4
+"450",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$168.75",168.75
+"451",19065,"Fayette",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$129.60",129.6
+"452",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$168.75",168.75
+"453",19065,"Fayette",2020,"Registered Child Development Homes","Two Year Olds","$129.60",129.6
+"454",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$157.50",157.5
+"455",19065,"Fayette",2020,"Registered Child Development Homes","Three Year Olds","$129.60",129.6
+"456",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$157.50",157.5
+"457",19065,"Fayette",2020,"Registered Child Development Homes","Four & Five Year Olds","$129.60",129.6
+"458",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$157.50",157.5
+"459",19065,"Fayette",2020,"Registered Child Development Homes","Before & After School","$57.60",57.6
+"460",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Before & After School","$65.00",65
+"461",19065,"Fayette",2020,"Registered Child Development Homes","Full Time School-Age","$129.60",129.6
+"462",19065,"Fayette",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$146.25",146.25
+"463",19067,"Floyd",2020,"Registered Child Development Homes","Infant (0-12 Months)","$132.00",132
+"464",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"465",19067,"Floyd",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$132.00",132
+"466",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"467",19067,"Floyd",2020,"Registered Child Development Homes","Two Year Olds","$122.00",122
+"468",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"469",19067,"Floyd",2020,"Registered Child Development Homes","Three Year Olds","$122.00",122
+"470",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Three Year Olds",NA,NA
+"471",19067,"Floyd",2020,"Registered Child Development Homes","Four & Five Year Olds","$122.00",122
+"472",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds",NA,NA
+"473",19067,"Floyd",2020,"Registered Child Development Homes","Before & After School","$36.67",36.67
+"474",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"475",19067,"Floyd",2020,"Registered Child Development Homes","Full Time School-Age","$85.00",85
+"476",19067,"Floyd",2020,"DHS Licensed Centers/Preschools","Full Time School-Age",NA,NA
+"477",19069,"Franklin",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.45",126.45
+"478",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$153.00",153
+"479",19069,"Franklin",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.10",125.1
+"480",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$153.00",153
+"481",19069,"Franklin",2020,"Registered Child Development Homes","Two Year Olds","$122.40",122.4
+"482",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$141.75",141.75
+"483",19069,"Franklin",2020,"Registered Child Development Homes","Three Year Olds","$122.40",122.4
+"484",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$141.75",141.75
+"485",19069,"Franklin",2020,"Registered Child Development Homes","Four & Five Year Olds","$116.55",116.55
+"486",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$141.75",141.75
+"487",19069,"Franklin",2020,"Registered Child Development Homes","Before & After School","$53.00",53
+"488",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.00",63
+"489",19069,"Franklin",2020,"Registered Child Development Homes","Full Time School-Age","$114.30",114.3
+"490",19069,"Franklin",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$141.75",141.75
+"491",19071,"Fremont",2020,"Registered Child Development Homes","Infant (0-12 Months)","$131.75",131.75
+"492",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","N/A",NA
+"493",19071,"Fremont",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$131.75",131.75
+"494",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","N/A",NA
+"495",19071,"Fremont",2020,"Registered Child Development Homes","Two Year Olds","$131.75",131.75
+"496",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Two Year Olds","N/A",NA
+"497",19071,"Fremont",2020,"Registered Child Development Homes","Three Year Olds","$131.75",131.75
+"498",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Three Year Olds","N/A",NA
+"499",19071,"Fremont",2020,"Registered Child Development Homes","Four & Five Year Olds","$126.75",126.75
+"500",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","N/A",NA
+"501",19071,"Fremont",2020,"Registered Child Development Homes","Before & After School","$68.00",68
+"502",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Before & After School","N/A",NA
+"503",19071,"Fremont",2020,"Registered Child Development Homes","Full Time School-Age","$131.75",131.75
+"504",19071,"Fremont",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","N/A",NA
+"505",19073,"Greene",2020,"Registered Child Development Homes","Infant (0-12 Months)","$120.94",120.94
+"506",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$169.00",169
+"507",19073,"Greene",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$120.94",120.94
+"508",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$169.00",169
+"509",19073,"Greene",2020,"Registered Child Development Homes","Two Year Olds","$120.94",120.94
+"510",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$143.00",143
+"511",19073,"Greene",2020,"Registered Child Development Homes","Three Year Olds","$120.94",120.94
+"512",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$143.00",143
+"513",19073,"Greene",2020,"Registered Child Development Homes","Four & Five Year Olds","$120.94",120.94
+"514",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$143.00",143
+"515",19073,"Greene",2020,"Registered Child Development Homes","Before & After School","$46.67",46.67
+"516",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Before & After School","$82.50",82.5
+"517",19073,"Greene",2020,"Registered Child Development Homes","Full Time School-Age","$119.58",119.58
+"518",19073,"Greene",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$169.00",169
+"519",19075,"Grundy",2020,"Registered Child Development Homes","Infant (0-12 Months)","$158.35",158.35
+"520",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$175.50",175.5
+"521",19075,"Grundy",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$158.35",158.35
+"522",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$175.50",175.5
+"523",19075,"Grundy",2020,"Registered Child Development Homes","Two Year Olds","$148.35",148.35
+"524",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$176.85",176.85
+"525",19075,"Grundy",2020,"Registered Child Development Homes","Three Year Olds","$148.35",148.35
+"526",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$176.85",176.85
+"527",19075,"Grundy",2020,"Registered Child Development Homes","Four & Five Year Olds","$148.35",148.35
+"528",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$176.85",176.85
+"529",19075,"Grundy",2020,"Registered Child Development Homes","Before & After School","$55.00",55
+"530",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Before & After School","$100.00",100
+"531",19075,"Grundy",2020,"Registered Child Development Homes","Full Time School-Age","$150.00",150
+"532",19075,"Grundy",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$225.00",225
+"533",19077,"Guthrie",2020,"Registered Child Development Homes","Infant (0-12 Months)","$141.67",141.67
+"534",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$162.50",162.5
+"535",19077,"Guthrie",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$137.50",137.5
+"536",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$162.50",162.5
+"537",19077,"Guthrie",2020,"Registered Child Development Homes","Two Year Olds","$125.83",125.83
+"538",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$152.50",152.5
+"539",19077,"Guthrie",2020,"Registered Child Development Homes","Three Year Olds","$125.83",125.83
+"540",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$148.50",148.5
+"541",19077,"Guthrie",2020,"Registered Child Development Homes","Four & Five Year Olds","$119.17",119.17
+"542",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$143.50",143.5
+"543",19077,"Guthrie",2020,"Registered Child Development Homes","Before & After School","$50.83",50.83
+"544",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Before & After School","$90.00",90
+"545",19077,"Guthrie",2020,"Registered Child Development Homes","Full Time School-Age","$121.25",121.25
+"546",19077,"Guthrie",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$135.67",135.67
+"547",19079,"Hamilton",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"548",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$158.10",158.1
+"549",19079,"Hamilton",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"550",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$158.10",158.1
+"551",19079,"Hamilton",2020,"Registered Child Development Homes","Two Year Olds","$133.75",133.75
+"552",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$144.40",144.4
+"553",19079,"Hamilton",2020,"Registered Child Development Homes","Three Year Olds","$133.75",133.75
+"554",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$126.90",126.9
+"555",19079,"Hamilton",2020,"Registered Child Development Homes","Four & Five Year Olds","$133.75",133.75
+"556",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$126.90",126.9
+"557",19079,"Hamilton",2020,"Registered Child Development Homes","Before & After School","$59.44",59.44
+"558",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Before & After School","$56.40",56.4
+"559",19079,"Hamilton",2020,"Registered Child Development Homes","Full Time School-Age","$133.75",133.75
+"560",19079,"Hamilton",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$126.90",126.9
+"561",19081,"Hancock",2020,"Registered Child Development Homes","Infant (0-12 Months)","$127.35",127.35
+"562",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"563",19081,"Hancock",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$127.35",127.35
+"564",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"565",19081,"Hancock",2020,"Registered Child Development Homes","Two Year Olds","$127.35",127.35
+"566",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"567",19081,"Hancock",2020,"Registered Child Development Homes","Three Year Olds","$127.35",127.35
+"568",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Three Year Olds",NA,NA
+"569",19081,"Hancock",2020,"Registered Child Development Homes","Four & Five Year Olds","$127.35",127.35
+"570",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds",NA,NA
+"571",19081,"Hancock",2020,"Registered Child Development Homes","Before & After School","$56.60",56.6
+"572",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"573",19081,"Hancock",2020,"Registered Child Development Homes","Full Time School-Age","$127.35",127.35
+"574",19081,"Hancock",2020,"DHS Licensed Centers/Preschools","Full Time School-Age",NA,NA
+"575",19083,"Hardin",2020,"Registered Child Development Homes","Infant (0-12 Months)","$133.92",133.92
+"576",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$160.65",160.65
+"577",19083,"Hardin",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$129.92",129.92
+"578",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$160.65",160.65
+"579",19083,"Hardin",2020,"Registered Child Development Homes","Two Year Olds","$124.92",124.92
+"580",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$140.40",140.4
+"581",19083,"Hardin",2020,"Registered Child Development Homes","Three Year Olds","$123.00",123
+"582",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$139.50",139.5
+"583",19083,"Hardin",2020,"Registered Child Development Homes","Four & Five Year Olds","$123.00",123
+"584",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$139.50",139.5
+"585",19083,"Hardin",2020,"Registered Child Development Homes","Before & After School","$51.07",51.07
+"586",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Before & After School","$60.20",60.2
+"587",19083,"Hardin",2020,"Registered Child Development Homes","Full Time School-Age","$114.10",114.1
+"588",19083,"Hardin",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$137.25",137.25
+"589",19085,"Harrison",2020,"Registered Child Development Homes","Infant (0-12 Months)","$157.00",157
+"590",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$131.70",131.7
+"591",19085,"Harrison",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$157.00",157
+"592",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$131.70",131.7
+"593",19085,"Harrison",2020,"Registered Child Development Homes","Two Year Olds","$152.00",152
+"594",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$126.07",126.07
+"595",19085,"Harrison",2020,"Registered Child Development Homes","Three Year Olds","$152.00",152
+"596",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$130.93",130.93
+"597",19085,"Harrison",2020,"Registered Child Development Homes","Four & Five Year Olds","$152.00",152
+"598",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$130.93",130.93
+"599",19085,"Harrison",2020,"Registered Child Development Homes","Before & After School","$80.00",80
+"600",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Before & After School","$53.00",53
+"601",19085,"Harrison",2020,"Registered Child Development Homes","Full Time School-Age","$153.33",153.33
+"602",19085,"Harrison",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$130.93",130.93
+"603",19087,"Henry",2020,"Registered Child Development Homes","Infant (0-12 Months)","$148.33",148.33
+"604",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$175.00",175
+"605",19087,"Henry",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$148.33",148.33
+"606",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"607",19087,"Henry",2020,"Registered Child Development Homes","Two Year Olds","$141.67",141.67
+"608",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$155.00",155
+"609",19087,"Henry",2020,"Registered Child Development Homes","Three Year Olds","$141.67",141.67
+"610",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$145.00",145
+"611",19087,"Henry",2020,"Registered Child Development Homes","Four & Five Year Olds","$141.67",141.67
+"612",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$135.00",135
+"613",19087,"Henry",2020,"Registered Child Development Homes","Before & After School","$70.00",70
+"614",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"615",19087,"Henry",2020,"Registered Child Development Homes","Full Time School-Age","$136.67",136.67
+"616",19087,"Henry",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$110.00",110
+"617",19089,"Howard",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.90",126.9
+"618",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$148.50",148.5
+"619",19089,"Howard",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$126.90",126.9
+"620",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$148.50",148.5
+"621",19089,"Howard",2020,"Registered Child Development Homes","Two Year Olds","$126.90",126.9
+"622",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$140.85",140.85
+"623",19089,"Howard",2020,"Registered Child Development Homes","Three Year Olds","$126.90",126.9
+"624",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$140.85",140.85
+"625",19089,"Howard",2020,"Registered Child Development Homes","Four & Five Year Olds","$126.90",126.9
+"626",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$139.50",139.5
+"627",19089,"Howard",2020,"Registered Child Development Homes","Before & After School","$56.40",56.4
+"628",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Before & After School","$64.60",64.6
+"629",19089,"Howard",2020,"Registered Child Development Homes","Full Time School-Age","$126.90",126.9
+"630",19089,"Howard",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$138.60",138.6
+"631",19091,"Humboldt",2020,"Registered Child Development Homes","Infant (0-12 Months)","$125.00",125
+"632",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$154.00",154
+"633",19091,"Humboldt",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$118.75",118.75
+"634",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$154.00",154
+"635",19091,"Humboldt",2020,"Registered Child Development Homes","Two Year Olds","$118.00",118
+"636",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$139.75",139.75
+"637",19091,"Humboldt",2020,"Registered Child Development Homes","Three Year Olds","$118.00",118
+"638",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$139.75",139.75
+"639",19091,"Humboldt",2020,"Registered Child Development Homes","Four & Five Year Olds","$118.00",118
+"640",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$117.25",117.25
+"641",19091,"Humboldt",2020,"Registered Child Development Homes","Before & After School","$52.44",52.44
+"642",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Before & After School","$52.11",52.11
+"643",19091,"Humboldt",2020,"Registered Child Development Homes","Full Time School-Age","$100.00",100
+"644",19091,"Humboldt",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$112.75",112.75
+"645",19093,"Ida",2020,"Registered Child Development Homes","Infant (0-12 Months)",NA,NA
+"646",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$153.90",153.9
+"647",19093,"Ida",2020,"Registered Child Development Homes","Toddler (13-23 Months)",NA,NA
+"648",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$153.90",153.9
+"649",19093,"Ida",2020,"Registered Child Development Homes","Two Year Olds",NA,NA
+"650",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$147.60",147.6
+"651",19093,"Ida",2020,"Registered Child Development Homes","Three Year Olds",NA,NA
+"652",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$147.60",147.6
+"653",19093,"Ida",2020,"Registered Child Development Homes","Four & Five Year Olds",NA,NA
+"654",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$123.75",123.75
+"655",19093,"Ida",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"656",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Before & After School","$55.00",55
+"657",19093,"Ida",2020,"Registered Child Development Homes","Full Time School-Age",NA,NA
+"658",19093,"Ida",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$147.60",147.6
+"659",19095,"Iowa",2020,"Registered Child Development Homes","Infant (0-12 Months)","$145.00",145
+"660",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$155.00",155
+"661",19095,"Iowa",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$146.00",146
+"662",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$155.00",155
+"663",19095,"Iowa",2020,"Registered Child Development Homes","Two Year Olds","$146.00",146
+"664",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$150.00",150
+"665",19095,"Iowa",2020,"Registered Child Development Homes","Three Year Olds","$146.00",146
+"666",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.00",150
+"667",19095,"Iowa",2020,"Registered Child Development Homes","Four & Five Year Olds","$146.00",146
+"668",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$150.00",150
+"669",19095,"Iowa",2020,"Registered Child Development Homes","Before & After School","$62.50",62.5
+"670",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Before & After School","$80.00",80
+"671",19095,"Iowa",2020,"Registered Child Development Homes","Full Time School-Age","$138.75",138.75
+"672",19095,"Iowa",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$150.00",150
+"673",19097,"Jackson",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"674",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$153.90",153.9
+"675",19097,"Jackson",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"676",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$153.90",153.9
+"677",19097,"Jackson",2020,"Registered Child Development Homes","Two Year Olds","$135.00",135
+"678",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$146.25",146.25
+"679",19097,"Jackson",2020,"Registered Child Development Homes","Three Year Olds","$135.00",135
+"680",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$137.70",137.7
+"681",19097,"Jackson",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.00",135
+"682",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$137.70",137.7
+"683",19097,"Jackson",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"684",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"685",19097,"Jackson",2020,"Registered Child Development Homes","Full Time School-Age","$135.00",135
+"686",19097,"Jackson",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$131.40",131.4
+"687",19099,"Jasper",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.87",135.87
+"688",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$179.33",179.33
+"689",19099,"Jasper",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$131.96",131.96
+"690",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$179.33",179.33
+"691",19099,"Jasper",2020,"Registered Child Development Homes","Two Year Olds","$127.60",127.6
+"692",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$162.71",162.71
+"693",19099,"Jasper",2020,"Registered Child Development Homes","Three Year Olds","$126.60",126.6
+"694",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$156.14",156.14
+"695",19099,"Jasper",2020,"Registered Child Development Homes","Four & Five Year Olds","$124.40",124.4
+"696",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$145.86",145.86
+"697",19099,"Jasper",2020,"Registered Child Development Homes","Before & After School","$68.65",68.65
+"698",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Before & After School","$85.00",85
+"699",19099,"Jasper",2020,"Registered Child Development Homes","Full Time School-Age","$118.57",118.57
+"700",19099,"Jasper",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$131.71",131.71
+"701",19101,"Jefferson",2020,"Registered Child Development Homes","Infant (0-12 Months)","$125.00",125
+"702",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$142.50",142.5
+"703",19101,"Jefferson",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.00",125
+"704",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$142.50",142.5
+"705",19101,"Jefferson",2020,"Registered Child Development Homes","Two Year Olds","$125.00",125
+"706",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$132.50",132.5
+"707",19101,"Jefferson",2020,"Registered Child Development Homes","Three Year Olds","$125.00",125
+"708",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$132.50",132.5
+"709",19101,"Jefferson",2020,"Registered Child Development Homes","Four & Five Year Olds","$125.00",125
+"710",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$132.50",132.5
+"711",19101,"Jefferson",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"712",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"713",19101,"Jefferson",2020,"Registered Child Development Homes","Full Time School-Age","$125.00",125
+"714",19101,"Jefferson",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$132.50",132.5
+"715",19103,"Johnson",2020,"Registered Child Development Homes","Infant (0-12 Months)","$167.45",167.45
+"716",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$253.09",253.09
+"717",19103,"Johnson",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$165.90",165.9
+"718",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$253.09",253.09
+"719",19103,"Johnson",2020,"Registered Child Development Homes","Two Year Olds","$162.52",162.52
+"720",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$229.63",229.63
+"721",19103,"Johnson",2020,"Registered Child Development Homes","Three Year Olds","$161.33",161.33
+"722",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$209.56",209.56
+"723",19103,"Johnson",2020,"Registered Child Development Homes","Four & Five Year Olds","$159.58",159.58
+"724",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$203.00",203
+"725",19103,"Johnson",2020,"Registered Child Development Homes","Before & After School","$62.55",62.55
+"726",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Before & After School","$79.64",79.64
+"727",19103,"Johnson",2020,"Registered Child Development Homes","Full Time School-Age","$151.33",151.33
+"728",19103,"Johnson",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$186.47",186.47
+"729",19105,"Jones",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"730",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"731",19105,"Jones",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"732",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"733",19105,"Jones",2020,"Registered Child Development Homes","Two Year Olds","$112.50",112.5
+"734",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$156.67",156.67
+"735",19105,"Jones",2020,"Registered Child Development Homes","Three Year Olds","$112.50",112.5
+"736",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$153.33",153.33
+"737",19105,"Jones",2020,"Registered Child Development Homes","Four & Five Year Olds","$100.00",100
+"738",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$145.00",145
+"739",19105,"Jones",2020,"Registered Child Development Homes","Before & After School","$75.00",75
+"740",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Before & After School","$60.00",60
+"741",19105,"Jones",2020,"Registered Child Development Homes","Full Time School-Age","$112.50",112.5
+"742",19105,"Jones",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$125.00",125
+"743",19107,"Keokuk",2020,"Registered Child Development Homes","Infant (0-12 Months)",NA,NA
+"744",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"745",19107,"Keokuk",2020,"Registered Child Development Homes","Toddler (13-23 Months)",NA,NA
+"746",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"747",19107,"Keokuk",2020,"Registered Child Development Homes","Two Year Olds",NA,NA
+"748",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"749",19107,"Keokuk",2020,"Registered Child Development Homes","Three Year Olds",NA,NA
+"750",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Three Year Olds",NA,NA
+"751",19107,"Keokuk",2020,"Registered Child Development Homes","Four & Five Year Olds",NA,NA
+"752",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds",NA,NA
+"753",19107,"Keokuk",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"754",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"755",19107,"Keokuk",2020,"Registered Child Development Homes","Full Time School-Age",NA,NA
+"756",19107,"Keokuk",2020,"DHS Licensed Centers/Preschools","Full Time School-Age",NA,NA
+"757",19109,"Kossuth",2020,"Registered Child Development Homes","Infant (0-12 Months)","$139.05",139.05
+"758",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$159.75",159.75
+"759",19109,"Kossuth",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$139.05",139.05
+"760",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$159.75",159.75
+"761",19109,"Kossuth",2020,"Registered Child Development Homes","Two Year Olds","$139.05",139.05
+"762",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$152.10",152.1
+"763",19109,"Kossuth",2020,"Registered Child Development Homes","Three Year Olds","$139.05",139.05
+"764",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$143.10",143.1
+"765",19109,"Kossuth",2020,"Registered Child Development Homes","Four & Five Year Olds","$139.05",139.05
+"766",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$143.10",143.1
+"767",19109,"Kossuth",2020,"Registered Child Development Homes","Before & After School","$61.80",61.8
+"768",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.60",63.6
+"769",19109,"Kossuth",2020,"Registered Child Development Homes","Full Time School-Age","$139.05",139.05
+"770",19109,"Kossuth",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$143.10",143.1
+"771",19111,"Lee",2020,"Registered Child Development Homes","Infant (0-12 Months)","$130.00",130
+"772",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"773",19111,"Lee",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$130.00",130
+"774",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"775",19111,"Lee",2020,"Registered Child Development Homes","Two Year Olds","$130.00",130
+"776",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$155.00",155
+"777",19111,"Lee",2020,"Registered Child Development Homes","Three Year Olds","$130.00",130
+"778",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.00",150
+"779",19111,"Lee",2020,"Registered Child Development Homes","Four & Five Year Olds","$130.00",130
+"780",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$142.50",142.5
+"781",19111,"Lee",2020,"Registered Child Development Homes","Before & After School","$50.00",50
+"782",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Before & After School","$53.75",53.75
+"783",19111,"Lee",2020,"Registered Child Development Homes","Full Time School-Age","$127.50",127.5
+"784",19111,"Lee",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$130.00",130
+"785",19113,"Linn",2020,"Registered Child Development Homes","Infant (0-12 Months)","$148.46",148.46
+"786",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$213.13",213.13
+"787",19113,"Linn",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$147.38",147.38
+"788",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$210.84",210.84
+"789",19113,"Linn",2020,"Registered Child Development Homes","Two Year Olds","$141.19",141.19
+"790",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$190.98",190.98
+"791",19113,"Linn",2020,"Registered Child Development Homes","Three Year Olds","$140.48",140.48
+"792",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$178.91",178.91
+"793",19113,"Linn",2020,"Registered Child Development Homes","Four & Five Year Olds","$137.93",137.93
+"794",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$172.70",172.7
+"795",19113,"Linn",2020,"Registered Child Development Homes","Before & After School","$71.33",71.33
+"796",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Before & After School","$87.37",87.37
+"797",19113,"Linn",2020,"Registered Child Development Homes","Full Time School-Age","$134.62",134.62
+"798",19113,"Linn",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$157.59",157.59
+"799",19115,"Louisa",2020,"Registered Child Development Homes","Infant (0-12 Months)","$129.80",129.8
+"800",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.00",150
+"801",19115,"Louisa",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$129.80",129.8
+"802",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.00",150
+"803",19115,"Louisa",2020,"Registered Child Development Homes","Two Year Olds","$121.80",121.8
+"804",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$140.00",140
+"805",19115,"Louisa",2020,"Registered Child Development Homes","Three Year Olds","$121.80",121.8
+"806",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$135.00",135
+"807",19115,"Louisa",2020,"Registered Child Development Homes","Four & Five Year Olds","$121.80",121.8
+"808",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$135.00",135
+"809",19115,"Louisa",2020,"Registered Child Development Homes","Before & After School","$54.10",54.1
+"810",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Before & After School","$65.00",65
+"811",19115,"Louisa",2020,"Registered Child Development Homes","Full Time School-Age","$108.00",108
+"812",19115,"Louisa",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$125.00",125
+"813",19117,"Lucas",2020,"Registered Child Development Homes","Infant (0-12 Months)","$117.50",117.5
+"814",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$180.00",180
+"815",19117,"Lucas",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$117.50",117.5
+"816",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$180.00",180
+"817",19117,"Lucas",2020,"Registered Child Development Homes","Two Year Olds","$117.50",117.5
+"818",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$151.00",151
+"819",19117,"Lucas",2020,"Registered Child Development Homes","Three Year Olds","$117.50",117.5
+"820",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$147.00",147
+"821",19117,"Lucas",2020,"Registered Child Development Homes","Four & Five Year Olds","$117.50",117.5
+"822",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$144.00",144
+"823",19117,"Lucas",2020,"Registered Child Development Homes","Before & After School","$61.25",61.25
+"824",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Before & After School","$70.00",70
+"825",19117,"Lucas",2020,"Registered Child Development Homes","Full Time School-Age","$117.50",117.5
+"826",19117,"Lucas",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$141.00",141
+"827",19119,"Lyon",2020,"Registered Child Development Homes","Infant (0-12 Months)","$127.35",127.35
+"828",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$159.33",159.33
+"829",19119,"Lyon",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$127.35",127.35
+"830",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$159.33",159.33
+"831",19119,"Lyon",2020,"Registered Child Development Homes","Two Year Olds","$131.85",131.85
+"832",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$155.33",155.33
+"833",19119,"Lyon",2020,"Registered Child Development Homes","Three Year Olds","$131.85",131.85
+"834",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$148.58",148.58
+"835",19119,"Lyon",2020,"Registered Child Development Homes","Four & Five Year Olds","$122.85",122.85
+"836",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$145.58",145.58
+"837",19119,"Lyon",2020,"Registered Child Development Homes","Before & After School","$54.60",54.6
+"838",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Before & After School","$64.70",64.7
+"839",19119,"Lyon",2020,"Registered Child Development Homes","Full Time School-Age","$122.85",122.85
+"840",19119,"Lyon",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$122.40",122.4
+"841",19121,"Madison",2020,"Registered Child Development Homes","Infant (0-12 Months)","$150.83",150.83
+"842",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$190.67",190.67
+"843",19121,"Madison",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$148.83",148.83
+"844",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$190.67",190.67
+"845",19121,"Madison",2020,"Registered Child Development Homes","Two Year Olds","$146.83",146.83
+"846",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$182.67",182.67
+"847",19121,"Madison",2020,"Registered Child Development Homes","Three Year Olds","$146.83",146.83
+"848",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$156.25",156.25
+"849",19121,"Madison",2020,"Registered Child Development Homes","Four & Five Year Olds","$144.83",144.83
+"850",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$150.00",150
+"851",19121,"Madison",2020,"Registered Child Development Homes","Before & After School","$77.92",77.92
+"852",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Before & After School","$96.67",96.67
+"853",19121,"Madison",2020,"Registered Child Development Homes","Full Time School-Age","$139.77",139.77
+"854",19121,"Madison",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$158.75",158.75
+"855",19123,"Mahaska",2020,"Registered Child Development Homes","Infant (0-12 Months)","$137.28",137.28
+"856",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$162.88",162.88
+"857",19123,"Mahaska",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$136.40",136.4
+"858",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$159.75",159.75
+"859",19123,"Mahaska",2020,"Registered Child Development Homes","Two Year Olds","$134.61",134.61
+"860",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$148.25",148.25
+"861",19123,"Mahaska",2020,"Registered Child Development Homes","Three Year Olds","$133.93",133.93
+"862",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$143.05",143.05
+"863",19123,"Mahaska",2020,"Registered Child Development Homes","Four & Five Year Olds","$123.93",123.93
+"864",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$135.85",135.85
+"865",19123,"Mahaska",2020,"Registered Child Development Homes","Before & After School","$55.68",55.68
+"866",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Before & After School","$52.18",52.18
+"867",19123,"Mahaska",2020,"Registered Child Development Homes","Full Time School-Age","$123.42",123.42
+"868",19123,"Mahaska",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$131.50",131.5
+"869",19125,"Marion",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.88",126.88
+"870",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$200.60",200.6
+"871",19125,"Marion",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$126.46",126.46
+"872",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$200.60",200.6
+"873",19125,"Marion",2020,"Registered Child Development Homes","Two Year Olds","$126.46",126.46
+"874",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$176.50",176.5
+"875",19125,"Marion",2020,"Registered Child Development Homes","Three Year Olds","$123.75",123.75
+"876",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$170.85",170.85
+"877",19125,"Marion",2020,"Registered Child Development Homes","Four & Five Year Olds","$122.92",122.92
+"878",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$160.65",160.65
+"879",19125,"Marion",2020,"Registered Child Development Homes","Before & After School","$72.75",72.75
+"880",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.21",62.21
+"881",19125,"Marion",2020,"Registered Child Development Homes","Full Time School-Age","$118.00",118
+"882",19125,"Marion",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$140.12",140.12
+"883",19127,"Marshall",2020,"Registered Child Development Homes","Infant (0-12 Months)","$136.52",136.52
+"884",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$181.50",181.5
+"885",19127,"Marshall",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$134.97",134.97
+"886",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$181.50",181.5
+"887",19127,"Marshall",2020,"Registered Child Development Homes","Two Year Olds","$134.63",134.63
+"888",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$157.50",157.5
+"889",19127,"Marshall",2020,"Registered Child Development Homes","Three Year Olds","$133.67",133.67
+"890",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$135.58",135.58
+"891",19127,"Marshall",2020,"Registered Child Development Homes","Four & Five Year Olds","$133.50",133.5
+"892",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$127.25",127.25
+"893",19127,"Marshall",2020,"Registered Child Development Homes","Before & After School","$61.50",61.5
+"894",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Before & After School","$57.50",57.5
+"895",19127,"Marshall",2020,"Registered Child Development Homes","Full Time School-Age","$130.23",130.23
+"896",19127,"Marshall",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$147.50",147.5
+"897",19129,"Mills",2020,"Registered Child Development Homes","Infant (0-12 Months)","$153.33",153.33
+"898",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$210.00",210
+"899",19129,"Mills",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$145.00",145
+"900",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$210.00",210
+"901",19129,"Mills",2020,"Registered Child Development Homes","Two Year Olds","$143.33",143.33
+"902",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$190.00",190
+"903",19129,"Mills",2020,"Registered Child Development Homes","Three Year Olds","$143.33",143.33
+"904",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$190.00",190
+"905",19129,"Mills",2020,"Registered Child Development Homes","Four & Five Year Olds","$137.50",137.5
+"906",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$190.00",190
+"907",19129,"Mills",2020,"Registered Child Development Homes","Before & After School","$53.20",53.2
+"908",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Before & After School","$71.80",71.8
+"909",19129,"Mills",2020,"Registered Child Development Homes","Full Time School-Age","$138.00",138
+"910",19129,"Mills",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$167.50",167.5
+"911",19131,"Mitchell",2020,"Registered Child Development Homes","Infant (0-12 Months)","$126.90",126.9
+"912",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$156.60",156.6
+"913",19131,"Mitchell",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$126.90",126.9
+"914",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$156.60",156.6
+"915",19131,"Mitchell",2020,"Registered Child Development Homes","Two Year Olds","$126.90",126.9
+"916",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$144.90",144.9
+"917",19131,"Mitchell",2020,"Registered Child Development Homes","Three Year Olds","$126.90",126.9
+"918",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$144.90",144.9
+"919",19131,"Mitchell",2020,"Registered Child Development Homes","Four & Five Year Olds","$126.90",126.9
+"920",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$144.90",144.9
+"921",19131,"Mitchell",2020,"Registered Child Development Homes","Before & After School","$56.40",56.4
+"922",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.60",63.6
+"923",19131,"Mitchell",2020,"Registered Child Development Homes","Full Time School-Age","$126.90",126.9
+"924",19131,"Mitchell",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$143.10",143.1
+"925",19133,"Monona",2020,"Registered Child Development Homes","Infant (0-12 Months)","$123.68",123.68
+"926",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$144.00",144
+"927",19133,"Monona",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$123.68",123.68
+"928",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$144.00",144
+"929",19133,"Monona",2020,"Registered Child Development Homes","Two Year Olds","$123.68",123.68
+"930",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$144.00",144
+"931",19133,"Monona",2020,"Registered Child Development Homes","Three Year Olds","$123.68",123.68
+"932",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$139.50",139.5
+"933",19133,"Monona",2020,"Registered Child Development Homes","Four & Five Year Olds","$123.68",123.68
+"934",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$139.50",139.5
+"935",19133,"Monona",2020,"Registered Child Development Homes","Before & After School","$57.83",57.83
+"936",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.00",62
+"937",19133,"Monona",2020,"Registered Child Development Homes","Full Time School-Age","$123.68",123.68
+"938",19133,"Monona",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$139.50",139.5
+"939",19135,"Monroe",2020,"Registered Child Development Homes","Infant (0-12 Months)","$128.46",128.46
+"940",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$160.00",160
+"941",19135,"Monroe",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$128.46",128.46
+"942",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$160.00",160
+"943",19135,"Monroe",2020,"Registered Child Development Homes","Two Year Olds","$128.46",128.46
+"944",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$150.00",150
+"945",19135,"Monroe",2020,"Registered Child Development Homes","Three Year Olds","$128.12",128.12
+"946",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$140.00",140
+"947",19135,"Monroe",2020,"Registered Child Development Homes","Four & Five Year Olds","$128.12",128.12
+"948",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$130.00",130
+"949",19135,"Monroe",2020,"Registered Child Development Homes","Before & After School","$50.00",50
+"950",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Before & After School","$52.50",52.5
+"951",19135,"Monroe",2020,"Registered Child Development Homes","Full Time School-Age","$128.12",128.12
+"952",19135,"Monroe",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$130.00",130
+"953",19137,"Montgomery",2020,"Registered Child Development Homes","Infant (0-12 Months)","$120.94",120.94
+"954",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$143.00",143
+"955",19137,"Montgomery",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$120.94",120.94
+"956",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$140.50",140.5
+"957",19137,"Montgomery",2020,"Registered Child Development Homes","Two Year Olds","$120.31",120.31
+"958",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$126.50",126.5
+"959",19137,"Montgomery",2020,"Registered Child Development Homes","Three Year Olds","$120.31",120.31
+"960",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$124.00",124
+"961",19137,"Montgomery",2020,"Registered Child Development Homes","Four & Five Year Olds","$120.31",120.31
+"962",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$121.00",121
+"963",19137,"Montgomery",2020,"Registered Child Development Homes","Before & After School","$48.33",48.33
+"964",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Before & After School","$63.00",63
+"965",19137,"Montgomery",2020,"Registered Child Development Homes","Full Time School-Age","$119.58",119.58
+"966",19137,"Montgomery",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$111.00",111
+"967",19139,"Muscatine",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.83",135.83
+"968",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$177.14",177.14
+"969",19139,"Muscatine",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.83",135.83
+"970",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$176.43",176.43
+"971",19139,"Muscatine",2020,"Registered Child Development Homes","Two Year Olds","$130.83",130.83
+"972",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$167.86",167.86
+"973",19139,"Muscatine",2020,"Registered Child Development Homes","Three Year Olds","$130.83",130.83
+"974",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$162.86",162.86
+"975",19139,"Muscatine",2020,"Registered Child Development Homes","Four & Five Year Olds","$130.00",130
+"976",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$157.14",157.14
+"977",19139,"Muscatine",2020,"Registered Child Development Homes","Before & After School","$58.86",58.86
+"978",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Before & After School","$73.71",73.71
+"979",19139,"Muscatine",2020,"Registered Child Development Homes","Full Time School-Age","$126.25",126.25
+"980",19139,"Muscatine",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$137.14",137.14
+"981",19141,"O'Brien",2020,"Registered Child Development Homes","Infant (0-12 Months)","$118.80",118.8
+"982",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$144.90",144.9
+"983",19141,"O'Brien",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$121.50",121.5
+"984",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$144.90",144.9
+"985",19141,"O'Brien",2020,"Registered Child Development Homes","Two Year Olds","$117.90",117.9
+"986",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$141.30",141.3
+"987",19141,"O'Brien",2020,"Registered Child Development Homes","Three Year Olds","$117.90",117.9
+"988",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$145.80",145.8
+"989",19141,"O'Brien",2020,"Registered Child Development Homes","Four & Five Year Olds","$117.90",117.9
+"990",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$145.80",145.8
+"991",19141,"O'Brien",2020,"Registered Child Development Homes","Before & After School","$52.40",52.4
+"992",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Before & After School","$64.80",64.8
+"993",19141,"O'Brien",2020,"Registered Child Development Homes","Full Time School-Age","$115.20",115.2
+"994",19141,"O'Brien",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$145.80",145.8
+"995",19143,"Osceola",2020,"Registered Child Development Homes","Infant (0-12 Months)","$119.75",119.75
+"996",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$155.25",155.25
+"997",19143,"Osceola",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$119.75",119.75
+"998",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$155.25",155.25
+"999",19143,"Osceola",2020,"Registered Child Development Homes","Two Year Olds","$119.75",119.75
+"1000",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$146.25",146.25
+"1001",19143,"Osceola",2020,"Registered Child Development Homes","Three Year Olds","$119.75",119.75
+"1002",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$146.25",146.25
+"1003",19143,"Osceola",2020,"Registered Child Development Homes","Four & Five Year Olds","$119.75",119.75
+"1004",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$139.50",139.5
+"1005",19143,"Osceola",2020,"Registered Child Development Homes","Before & After School","$53.22",53.22
+"1006",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.00",62
+"1007",19143,"Osceola",2020,"Registered Child Development Homes","Full Time School-Age","$119.75",119.75
+"1008",19143,"Osceola",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$139.50",139.5
+"1009",19145,"Page",2020,"Registered Child Development Homes","Infant (0-12 Months)","$130.00",130
+"1010",19145,"Page",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$137.50",137.5
+"1011",19145,"Page",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$130.00",130
+"1012",19145,"Page",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$135.00",135
+"1013",19145,"Page",2020,"Registered Child Development Homes","Two Year Olds","$127.78",127.78
+"1014",19145,"Page",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$133.75",133.75
+"1015",19145,"Page",2020,"Registered Child Development Homes","Three Year Olds","$127.78",127.78
+"1016",19145,"Page",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$126.25",126.25
+"1017",19145,"Page",2020,"Registered Child Development Homes","Four & Five Year Olds","$127.78",127.78
+"1018",19145,"Page",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$126.25",126.25
+"1019",19145,"Page",2020,"Registered Child Development Homes","Before & After School","$54.38",54.38
+"1020",19145,"Page",2020,"DHS Licensed Centers/Preschools","Before & After School","$40.00",40
+"1021",19145,"Page",2020,"Registered Child Development Homes","Full Time School-Age","$127.78",127.78
+"1022",19145,"Page",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$115.00",115
+"1023",19147,"Palo Alto",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"1024",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$141.75",141.75
+"1025",19147,"Palo Alto",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"1026",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$135.00",135
+"1027",19147,"Palo Alto",2020,"Registered Child Development Homes","Two Year Olds","$123.75",123.75
+"1028",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$135.00",135
+"1029",19147,"Palo Alto",2020,"Registered Child Development Homes","Three Year Olds","$123.75",123.75
+"1030",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$135.00",135
+"1031",19147,"Palo Alto",2020,"Registered Child Development Homes","Four & Five Year Olds","$123.75",123.75
+"1032",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$132.75",132.75
+"1033",19147,"Palo Alto",2020,"Registered Child Development Homes","Before & After School","$55.00",55
+"1034",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Before & After School","$59.00",59
+"1035",19147,"Palo Alto",2020,"Registered Child Development Homes","Full Time School-Age","$112.50",112.5
+"1036",19147,"Palo Alto",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$132.75",132.75
+"1037",19149,"Plymouth",2020,"Registered Child Development Homes","Infant (0-12 Months)","$133.20",133.2
+"1038",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$135.00",135
+"1039",19149,"Plymouth",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$133.20",133.2
+"1040",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$135.00",135
+"1041",19149,"Plymouth",2020,"Registered Child Development Homes","Two Year Olds","$131.40",131.4
+"1042",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$125.00",125
+"1043",19149,"Plymouth",2020,"Registered Child Development Homes","Three Year Olds","$131.40",131.4
+"1044",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$125.00",125
+"1045",19149,"Plymouth",2020,"Registered Child Development Homes","Four & Five Year Olds","$131.40",131.4
+"1046",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$125.00",125
+"1047",19149,"Plymouth",2020,"Registered Child Development Homes","Before & After School","$58.40",58.4
+"1048",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Before & After School","$55.56",55.56
+"1049",19149,"Plymouth",2020,"Registered Child Development Homes","Full Time School-Age","$131.40",131.4
+"1050",19149,"Plymouth",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$90.00",90
+"1051",19151,"Pocahontas",2020,"Registered Child Development Homes","Infant (0-12 Months)","$150.00",150
+"1052",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$193.75",193.75
+"1053",19151,"Pocahontas",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$150.00",150
+"1054",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$188.75",188.75
+"1055",19151,"Pocahontas",2020,"Registered Child Development Homes","Two Year Olds","$150.00",150
+"1056",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$162.50",162.5
+"1057",19151,"Pocahontas",2020,"Registered Child Development Homes","Three Year Olds","$150.00",150
+"1058",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$162.50",162.5
+"1059",19151,"Pocahontas",2020,"Registered Child Development Homes","Four & Five Year Olds","$150.00",150
+"1060",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$162.50",162.5
+"1061",19151,"Pocahontas",2020,"Registered Child Development Homes","Before & After School","$66.67",66.67
+"1062",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Before & After School","$72.22",72.22
+"1063",19151,"Pocahontas",2020,"Registered Child Development Homes","Full Time School-Age","$150.00",150
+"1064",19151,"Pocahontas",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$162.50",162.5
+"1065",19153,"Polk",2020,"Registered Child Development Homes","Infant (0-12 Months)","$144.63",144.63
+"1066",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$245.98",245.98
+"1067",19153,"Polk",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$143.62",143.62
+"1068",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$245.70",245.7
+"1069",19153,"Polk",2020,"Registered Child Development Homes","Two Year Olds","$141.70",141.7
+"1070",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$223.31",223.31
+"1071",19153,"Polk",2020,"Registered Child Development Homes","Three Year Olds","$139.19",139.19
+"1072",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$209.26",209.26
+"1073",19153,"Polk",2020,"Registered Child Development Homes","Four & Five Year Olds","$137.76",137.76
+"1074",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$200.90",200.9
+"1075",19153,"Polk",2020,"Registered Child Development Homes","Before & After School","$65.46",65.46
+"1076",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Before & After School","$89.47",89.47
+"1077",19153,"Polk",2020,"Registered Child Development Homes","Full Time School-Age","$119.49",119.49
+"1078",19153,"Polk",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$163.72",163.72
+"1079",19155,"Pottawattamie",2020,"Registered Child Development Homes","Infant (0-12 Months)","$141.98",141.98
+"1080",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$192.21",192.21
+"1081",19155,"Pottawattamie",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$141.34",141.34
+"1082",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$189.38",189.38
+"1083",19155,"Pottawattamie",2020,"Registered Child Development Homes","Two Year Olds","$137.18",137.18
+"1084",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$167.80",167.8
+"1085",19155,"Pottawattamie",2020,"Registered Child Development Homes","Three Year Olds","$133.71",133.71
+"1086",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$156.65",156.65
+"1087",19155,"Pottawattamie",2020,"Registered Child Development Homes","Four & Five Year Olds","$134.76",134.76
+"1088",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$154.55",154.55
+"1089",19155,"Pottawattamie",2020,"Registered Child Development Homes","Before & After School","$77.11",77.11
+"1090",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Before & After School","$64.33",64.33
+"1091",19155,"Pottawattamie",2020,"Registered Child Development Homes","Full Time School-Age","$126.68",126.68
+"1092",19155,"Pottawattamie",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$125.61",125.61
+"1093",19157,"Poweshiek",2020,"Registered Child Development Homes","Infant (0-12 Months)","$127.17",127.17
+"1094",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$191.38",191.38
+"1095",19157,"Poweshiek",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$125.91",125.91
+"1096",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$191.38",191.38
+"1097",19157,"Poweshiek",2020,"Registered Child Development Homes","Two Year Olds","$120.91",120.91
+"1098",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$176.00",176
+"1099",19157,"Poweshiek",2020,"Registered Child Development Homes","Three Year Olds","$118.64",118.64
+"1100",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$167.62",167.62
+"1101",19157,"Poweshiek",2020,"Registered Child Development Homes","Four & Five Year Olds","$118.50",118.5
+"1102",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$167.62",167.62
+"1103",19157,"Poweshiek",2020,"Registered Child Development Homes","Before & After School","$45.56",45.56
+"1104",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.50",62.5
+"1105",19157,"Poweshiek",2020,"Registered Child Development Homes","Full Time School-Age","$115.56",115.56
+"1106",19157,"Poweshiek",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$146.33",146.33
+"1107",19159,"Ringgold",2020,"Registered Child Development Homes","Infant (0-12 Months)","$137.50",137.5
+"1108",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.00",150
+"1109",19159,"Ringgold",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$137.50",137.5
+"1110",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.00",150
+"1111",19159,"Ringgold",2020,"Registered Child Development Homes","Two Year Olds","$137.50",137.5
+"1112",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$145.50",145.5
+"1113",19159,"Ringgold",2020,"Registered Child Development Homes","Three Year Olds","$137.50",137.5
+"1114",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$142.50",142.5
+"1115",19159,"Ringgold",2020,"Registered Child Development Homes","Four & Five Year Olds","$137.50",137.5
+"1116",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$141.50",141.5
+"1117",19159,"Ringgold",2020,"Registered Child Development Homes","Before & After School","$50.00",50
+"1118",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Before & After School","$71.50",71.5
+"1119",19159,"Ringgold",2020,"Registered Child Development Homes","Full Time School-Age","$137.50",137.5
+"1120",19159,"Ringgold",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$139.00",139
+"1121",19161,"Sac",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.00",135
+"1122",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$158.40",158.4
+"1123",19161,"Sac",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$135.00",135
+"1124",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$158.40",158.4
+"1125",19161,"Sac",2020,"Registered Child Development Homes","Two Year Olds","$135.00",135
+"1126",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$152.10",152.1
+"1127",19161,"Sac",2020,"Registered Child Development Homes","Three Year Olds","$135.00",135
+"1128",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$152.10",152.1
+"1129",19161,"Sac",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.00",135
+"1130",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$152.10",152.1
+"1131",19161,"Sac",2020,"Registered Child Development Homes","Before & After School","$60.00",60
+"1132",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Before & After School","$67.60",67.6
+"1133",19161,"Sac",2020,"Registered Child Development Homes","Full Time School-Age","$135.00",135
+"1134",19161,"Sac",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$152.10",152.1
+"1135",19163,"Scott",2020,"Registered Child Development Homes","Infant (0-12 Months)","$145.54",145.54
+"1136",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$227.27",227.27
+"1137",19163,"Scott",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$144.70",144.7
+"1138",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$224.67",224.67
+"1139",19163,"Scott",2020,"Registered Child Development Homes","Two Year Olds","$141.50",141.5
+"1140",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$195.40",195.4
+"1141",19163,"Scott",2020,"Registered Child Development Homes","Three Year Olds","$139.71",139.71
+"1142",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$185.63",185.63
+"1143",19163,"Scott",2020,"Registered Child Development Homes","Four & Five Year Olds","$135.95",135.95
+"1144",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$183.02",183.02
+"1145",19163,"Scott",2020,"Registered Child Development Homes","Before & After School","$63.74",63.74
+"1146",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Before & After School","$93.78",93.78
+"1147",19163,"Scott",2020,"Registered Child Development Homes","Full Time School-Age","$130.96",130.96
+"1148",19163,"Scott",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$170.91",170.91
+"1149",19165,"Shelby",2020,"Registered Child Development Homes","Infant (0-12 Months)","$145.18",145.18
+"1150",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$140.62",140.62
+"1151",19165,"Shelby",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$145.18",145.18
+"1152",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$140.62",140.62
+"1153",19165,"Shelby",2020,"Registered Child Development Homes","Two Year Olds","$145.18",145.18
+"1154",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$137.25",137.25
+"1155",19165,"Shelby",2020,"Registered Child Development Homes","Three Year Olds","$145.18",145.18
+"1156",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$140.62",140.62
+"1157",19165,"Shelby",2020,"Registered Child Development Homes","Four & Five Year Olds","$152.32",152.32
+"1158",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$151.88",151.88
+"1159",19165,"Shelby",2020,"Registered Child Development Homes","Before & After School","$66.43",66.43
+"1160",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Before & After School","$62.50",62.5
+"1161",19165,"Shelby",2020,"Registered Child Development Homes","Full Time School-Age","$152.32",152.32
+"1162",19165,"Shelby",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$151.88",151.88
+"1163",19167,"Sioux",2020,"Registered Child Development Homes","Infant (0-12 Months)","$139.05",139.05
+"1164",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$163.02",163.02
+"1165",19167,"Sioux",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$139.05",139.05
+"1166",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$163.02",163.02
+"1167",19167,"Sioux",2020,"Registered Child Development Homes","Two Year Olds","$139.05",139.05
+"1168",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$159.84",159.84
+"1169",19167,"Sioux",2020,"Registered Child Development Homes","Three Year Olds","$139.05",139.05
+"1170",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$153.76",153.76
+"1171",19167,"Sioux",2020,"Registered Child Development Homes","Four & Five Year Olds","$139.05",139.05
+"1172",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$148.85",148.85
+"1173",19167,"Sioux",2020,"Registered Child Development Homes","Before & After School","$61.80",61.8
+"1174",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Before & After School","$66.16",66.16
+"1175",19167,"Sioux",2020,"Registered Child Development Homes","Full Time School-Age","$135.45",135.45
+"1176",19167,"Sioux",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$146.60",146.6
+"1177",19169,"Story",2020,"Registered Child Development Homes","Infant (0-12 Months)","$148.45",148.45
+"1178",19169,"Story",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$265.78",265.78
+"1179",19169,"Story",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$148.02",148.02
+"1180",19169,"Story",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$268.49",268.49
+"1181",19169,"Story",2020,"Registered Child Development Homes","Two Year Olds","$145.68",145.68
+"1182",19169,"Story",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$239.87",239.87
+"1183",19169,"Story",2020,"Registered Child Development Homes","Three Year Olds","$144.95",144.95
+"1184",19169,"Story",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$220.90",220.9
+"1185",19169,"Story",2020,"Registered Child Development Homes","Four & Five Year Olds","$142.93",142.93
+"1186",19169,"Story",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$203.74",203.74
+"1187",19169,"Story",2020,"Registered Child Development Homes","Before & After School","$65.27",65.27
+"1188",19169,"Story",2020,"DHS Licensed Centers/Preschools","Before & After School","$94.55",94.55
+"1189",19169,"Story",2020,"Registered Child Development Homes","Full Time School-Age","$134.62",134.62
+"1190",19169,"Story",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$184.52",184.52
+"1191",19171,"Tama",2020,"Registered Child Development Homes","Infant (0-12 Months)","$141.65",141.65
+"1192",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$165.00",165
+"1193",19171,"Tama",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$141.65",141.65
+"1194",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$165.00",165
+"1195",19171,"Tama",2020,"Registered Child Development Homes","Two Year Olds","$141.65",141.65
+"1196",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$155.00",155
+"1197",19171,"Tama",2020,"Registered Child Development Homes","Three Year Olds","$141.65",141.65
+"1198",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$147.50",147.5
+"1199",19171,"Tama",2020,"Registered Child Development Homes","Four & Five Year Olds","$134.15",134.15
+"1200",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$137.50",137.5
+"1201",19171,"Tama",2020,"Registered Child Development Homes","Before & After School","$58.12",58.12
+"1202",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Before & After School","$78.33",78.33
+"1203",19171,"Tama",2020,"Registered Child Development Homes","Full Time School-Age","$130.00",130
+"1204",19171,"Tama",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$130.00",130
+"1205",19173,"Taylor",2020,"Registered Child Development Homes","Infant (0-12 Months)","$121.25",121.25
+"1206",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$138.00",138
+"1207",19173,"Taylor",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$121.25",121.25
+"1208",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$138.00",138
+"1209",19173,"Taylor",2020,"Registered Child Development Homes","Two Year Olds","$121.25",121.25
+"1210",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$128.00",128
+"1211",19173,"Taylor",2020,"Registered Child Development Homes","Three Year Olds","$121.25",121.25
+"1212",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$118.00",118
+"1213",19173,"Taylor",2020,"Registered Child Development Homes","Four & Five Year Olds","$121.25",121.25
+"1214",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$118.00",118
+"1215",19173,"Taylor",2020,"Registered Child Development Homes","Before & After School","$52.08",52.08
+"1216",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Before & After School","$32.00",32
+"1217",19173,"Taylor",2020,"Registered Child Development Homes","Full Time School-Age","$121.25",121.25
+"1218",19173,"Taylor",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$102.00",102
+"1219",19175,"Union",2020,"Registered Child Development Homes","Infant (0-12 Months)","$133.89",133.89
+"1220",19175,"Union",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$158.00",158
+"1221",19175,"Union",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$133.42",133.42
+"1222",19175,"Union",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$158.00",158
+"1223",19175,"Union",2020,"Registered Child Development Homes","Two Year Olds","$127.37",127.37
+"1224",19175,"Union",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$137.00",137
+"1225",19175,"Union",2020,"Registered Child Development Homes","Three Year Olds","$134.21",134.21
+"1226",19175,"Union",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$137.00",137
+"1227",19175,"Union",2020,"Registered Child Development Homes","Four & Five Year Olds","$132.63",132.63
+"1228",19175,"Union",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$133.00",133
+"1229",19175,"Union",2020,"Registered Child Development Homes","Before & After School","$75.00",75
+"1230",19175,"Union",2020,"DHS Licensed Centers/Preschools","Before & After School","$75.50",75.5
+"1231",19175,"Union",2020,"Registered Child Development Homes","Full Time School-Age","$138.00",138
+"1232",19175,"Union",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$129.00",129
+"1233",19177,"Van Buren",2020,"Registered Child Development Homes","Infant (0-12 Months)","$140.00",140
+"1234",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$157.00",157
+"1235",19177,"Van Buren",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$140.00",140
+"1236",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$157.00",157
+"1237",19177,"Van Buren",2020,"Registered Child Development Homes","Two Year Olds","$140.00",140
+"1238",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$145.00",145
+"1239",19177,"Van Buren",2020,"Registered Child Development Homes","Three Year Olds","$140.00",140
+"1240",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$160.00",160
+"1241",19177,"Van Buren",2020,"Registered Child Development Homes","Four & Five Year Olds","$140.00",140
+"1242",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$140.00",140
+"1243",19177,"Van Buren",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"1244",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"1245",19177,"Van Buren",2020,"Registered Child Development Homes","Full Time School-Age","$70.00",70
+"1246",19177,"Van Buren",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$140.00",140
+"1247",19179,"Wapello",2020,"Registered Child Development Homes","Infant (0-12 Months)","$135.16",135.16
+"1248",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$179.17",179.17
+"1249",19179,"Wapello",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$133.08",133.08
+"1250",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$179.17",179.17
+"1251",19179,"Wapello",2020,"Registered Child Development Homes","Two Year Olds","$130.34",130.34
+"1252",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$154.17",154.17
+"1253",19179,"Wapello",2020,"Registered Child Development Homes","Three Year Olds","$129.23",129.23
+"1254",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$154.17",154.17
+"1255",19179,"Wapello",2020,"Registered Child Development Homes","Four & Five Year Olds","$128.85",128.85
+"1256",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$153.75",153.75
+"1257",19179,"Wapello",2020,"Registered Child Development Homes","Before & After School","$57.34",57.34
+"1258",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Before & After School","$56.25",56.25
+"1259",19179,"Wapello",2020,"Registered Child Development Homes","Full Time School-Age","$100.82",100.82
+"1260",19179,"Wapello",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$102.83",102.83
+"1261",19181,"Warren",2020,"Registered Child Development Homes","Infant (0-12 Months)","$147.37",147.37
+"1262",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$212.40",212.4
+"1263",19181,"Warren",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$145.62",145.62
+"1264",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$212.40",212.4
+"1265",19181,"Warren",2020,"Registered Child Development Homes","Two Year Olds","$143.11",143.11
+"1266",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$189.40",189.4
+"1267",19181,"Warren",2020,"Registered Child Development Homes","Three Year Olds","$142.47",142.47
+"1268",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$177.00",177
+"1269",19181,"Warren",2020,"Registered Child Development Homes","Four & Five Year Olds","$141.54",141.54
+"1270",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$169.50",169.5
+"1271",19181,"Warren",2020,"Registered Child Development Homes","Before & After School","$75.57",75.57
+"1272",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Before & After School","$81.25",81.25
+"1273",19181,"Warren",2020,"Registered Child Development Homes","Full Time School-Age","$136.64",136.64
+"1274",19181,"Warren",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$143.85",143.85
+"1275",19183,"Washington",2020,"Registered Child Development Homes","Infant (0-12 Months)","$140.00",140
+"1276",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$175.00",175
+"1277",19183,"Washington",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$140.00",140
+"1278",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$175.00",175
+"1279",19183,"Washington",2020,"Registered Child Development Homes","Two Year Olds","$140.00",140
+"1280",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$159.75",159.75
+"1281",19183,"Washington",2020,"Registered Child Development Homes","Three Year Olds","$140.00",140
+"1282",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$157.25",157.25
+"1283",19183,"Washington",2020,"Registered Child Development Homes","Four & Five Year Olds","$140.00",140
+"1284",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$141.33",141.33
+"1285",19183,"Washington",2020,"Registered Child Development Homes","Before & After School",NA,NA
+"1286",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Before & After School","$73.70",73.7
+"1287",19183,"Washington",2020,"Registered Child Development Homes","Full Time School-Age","$125.00",125
+"1288",19183,"Washington",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$136.00",136
+"1289",19185,"Wayne",2020,"Registered Child Development Homes","Infant (0-12 Months)","$117.50",117.5
+"1290",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$125.00",125
+"1291",19185,"Wayne",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$117.50",117.5
+"1292",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$125.00",125
+"1293",19185,"Wayne",2020,"Registered Child Development Homes","Two Year Olds","$117.50",117.5
+"1294",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$115.00",115
+"1295",19185,"Wayne",2020,"Registered Child Development Homes","Three Year Olds","$117.50",117.5
+"1296",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$115.00",115
+"1297",19185,"Wayne",2020,"Registered Child Development Homes","Four & Five Year Olds","$105.00",105
+"1298",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$110.00",110
+"1299",19185,"Wayne",2020,"Registered Child Development Homes","Before & After School","$62.50",62.5
+"1300",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Before & After School","$65.00",65
+"1301",19185,"Wayne",2020,"Registered Child Development Homes","Full Time School-Age","$105.00",105
+"1302",19185,"Wayne",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$110.00",110
+"1303",19187,"Webster",2020,"Registered Child Development Homes","Infant (0-12 Months)","$130.00",130
+"1304",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$135.00",135
+"1305",19187,"Webster",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$128.57",128.57
+"1306",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$135.00",135
+"1307",19187,"Webster",2020,"Registered Child Development Homes","Two Year Olds","$128.57",128.57
+"1308",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$132.50",132.5
+"1309",19187,"Webster",2020,"Registered Child Development Homes","Three Year Olds","$126.43",126.43
+"1310",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$132.50",132.5
+"1311",19187,"Webster",2020,"Registered Child Development Homes","Four & Five Year Olds","$120.00",120
+"1312",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$102.50",102.5
+"1313",19187,"Webster",2020,"Registered Child Development Homes","Before & After School","$53.33",53.33
+"1314",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Before & After School","$45.56",45.56
+"1315",19187,"Webster",2020,"Registered Child Development Homes","Full Time School-Age","$120.00",120
+"1316",19187,"Webster",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$102.50",102.5
+"1317",19189,"Winnebago",2020,"Registered Child Development Homes","Infant (0-12 Months)","$121.25",121.25
+"1318",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$149.45",149.45
+"1319",19189,"Winnebago",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$121.25",121.25
+"1320",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$149.45",149.45
+"1321",19189,"Winnebago",2020,"Registered Child Development Homes","Two Year Olds","$121.25",121.25
+"1322",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$131.95",131.95
+"1323",19189,"Winnebago",2020,"Registered Child Development Homes","Three Year Olds","$121.25",121.25
+"1324",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$128.58",128.58
+"1325",19189,"Winnebago",2020,"Registered Child Development Homes","Four & Five Year Olds","$121.25",121.25
+"1326",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$128.58",128.58
+"1327",19189,"Winnebago",2020,"Registered Child Development Homes","Before & After School","$53.89",53.89
+"1328",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Before & After School","$57.15",57.15
+"1329",19189,"Winnebago",2020,"Registered Child Development Homes","Full Time School-Age","$121.25",121.25
+"1330",19189,"Winnebago",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$116.50",116.5
+"1331",19191,"Winneshiek",2020,"Registered Child Development Homes","Infant (0-12 Months)","$125.55",125.55
+"1332",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"1333",19191,"Winneshiek",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$123.75",123.75
+"1334",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"1335",19191,"Winneshiek",2020,"Registered Child Development Homes","Two Year Olds","$123.75",123.75
+"1336",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"1337",19191,"Winneshiek",2020,"Registered Child Development Homes","Three Year Olds","$123.75",123.75
+"1338",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$150.00",150
+"1339",19191,"Winneshiek",2020,"Registered Child Development Homes","Four & Five Year Olds","$123.75",123.75
+"1340",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$150.00",150
+"1341",19191,"Winneshiek",2020,"Registered Child Development Homes","Before & After School","$56.40",56.4
+"1342",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"1343",19191,"Winneshiek",2020,"Registered Child Development Homes","Full Time School-Age","$123.75",123.75
+"1344",19191,"Winneshiek",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$119.76",119.76
+"1345",19193,"Woodbury",2020,"Registered Child Development Homes","Infant (0-12 Months)","$136.67",136.67
+"1346",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$189.00",189
+"1347",19193,"Woodbury",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$133.00",133
+"1348",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$183.43",183.43
+"1349",19193,"Woodbury",2020,"Registered Child Development Homes","Two Year Olds","$129.06",129.06
+"1350",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$158.60",158.6
+"1351",19193,"Woodbury",2020,"Registered Child Development Homes","Three Year Olds","$129.06",129.06
+"1352",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$154.10",154.1
+"1353",19193,"Woodbury",2020,"Registered Child Development Homes","Four & Five Year Olds","$129.29",129.29
+"1354",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$149.30",149.3
+"1355",19193,"Woodbury",2020,"Registered Child Development Homes","Before & After School","$57.46",57.46
+"1356",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Before & After School","$66.36",66.36
+"1357",19193,"Woodbury",2020,"Registered Child Development Homes","Full Time School-Age","$128.18",128.18
+"1358",19193,"Woodbury",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$142.38",142.38
+"1359",19195,"Worth",2020,"Registered Child Development Homes","Infant (0-12 Months)","$121.05",121.05
+"1360",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)",NA,NA
+"1361",19195,"Worth",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$121.05",121.05
+"1362",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)",NA,NA
+"1363",19195,"Worth",2020,"Registered Child Development Homes","Two Year Olds","$121.05",121.05
+"1364",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Two Year Olds",NA,NA
+"1365",19195,"Worth",2020,"Registered Child Development Homes","Three Year Olds","$121.05",121.05
+"1366",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Three Year Olds",NA,NA
+"1367",19195,"Worth",2020,"Registered Child Development Homes","Four & Five Year Olds","$121.05",121.05
+"1368",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds",NA,NA
+"1369",19195,"Worth",2020,"Registered Child Development Homes","Before & After School","$63.40",63.4
+"1370",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Before & After School",NA,NA
+"1371",19195,"Worth",2020,"Registered Child Development Homes","Full Time School-Age","$137.70",137.7
+"1372",19195,"Worth",2020,"DHS Licensed Centers/Preschools","Full Time School-Age",NA,NA
+"1373",19197,"Wright",2020,"Registered Child Development Homes","Infant (0-12 Months)","$120.45",120.45
+"1374",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Infant (0-12 Months)","$150.75",150.75
+"1375",19197,"Wright",2020,"Registered Child Development Homes","Toddler (13-23 Months)","$120.45",120.45
+"1376",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Toddler (13-23 Months)","$150.75",150.75
+"1377",19197,"Wright",2020,"Registered Child Development Homes","Two Year Olds","$117.95",117.95
+"1378",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Two Year Olds","$139.05",139.05
+"1379",19197,"Wright",2020,"Registered Child Development Homes","Three Year Olds","$116.95",116.95
+"1380",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Three Year Olds","$139.05",139.05
+"1381",19197,"Wright",2020,"Registered Child Development Homes","Four & Five Year Olds","$115.95",115.95
+"1382",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Four & Five Year Olds","$139.05",139.05
+"1383",19197,"Wright",2020,"Registered Child Development Homes","Before & After School","$51.54",51.54
+"1384",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Before & After School","$61.80",61.8
+"1385",19197,"Wright",2020,"Registered Child Development Homes","Full Time School-Age","$115.95",115.95
+"1386",19197,"Wright",2020,"DHS Licensed Centers/Preschools","Full Time School-Age","$139.05",139.05
