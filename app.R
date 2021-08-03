@@ -444,6 +444,7 @@ body <-
                                       )
                                     )
                            ),
+                         
                            tabPanel(h4("General Population Poverty"),
                                     fluidRow(
                                       box(title=strong("Percent of Population in Poverty Over Time"),
@@ -451,7 +452,43 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           plotOutput("emp_timeser_2")))
-                           ))),
+                           ),
+                           
+                           tabPanel(h4("Unemployment Rate"),
+                                    fluidRow(
+                                      box(width=12,
+                                          title=strong("Unemployment Rate by Year"),
+                                          toggle_button("unemp_lf_toggle",
+                                                        c("By County", "Statewide")),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          column(width=6, "Unemployment Rate", plotOutput("unemp_timeser_3")),
+                                          column(width=6, "Unemployment Rate", leafletOutput("unemp_map_2")))
+                                    ),
+                                    fluidRow(
+                                      box(
+                                        title=strong("Unemployment Rate by Year"),
+                                        closable = FALSE,
+                                        solidHeader = TRUE,
+                                        collapsible = FALSE,
+                                        plotOutput("unemp_boxplot_1")),
+                                      box(title=strong("Data"),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          downloadButton("unemp_2_download_csv", "Download CSV"),
+                                          downloadButton("unemp_2_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("unemp_table_2")
+                                      )
+                                    )
+                           )
+                           
+                           
+                           
+                           )),
+                          
+      
       
       
       # . Education body --------------------------------------------------------
