@@ -273,7 +273,7 @@ body <-
               # 
       ),
       
-      
+####################################################################################################################################################################################################      
       # . Child and Families body -----------------------------------------------
       
       tabItem(tabName = "demographics",
@@ -281,7 +281,7 @@ body <-
                            tabPanel(h4("Child Care Cost"), 
                                     fluidRow(
                                       box(width=12,
-                                          pickerInput( inputId = "childcare_rate",
+                                          pickerInput( inputId = "childcare_rates",
                                                        label = "Select age",
                                                        choices = childcare_rates%>% select(age)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
@@ -290,8 +290,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Rate by Provider",leafletOutput("childcare_rate_map_1")),
-                                          column(width=6, "Childcare Rate by DHS Liencent", plotOutput("childcare_rate_timeser_1"))
+                                          column(width=6, "Childcare Rate by Provider Type",leafletOutput("childcare_rate_map")),
+                                          column(width=6, "Childcare Rate", plotOutput("childcare_rate_timeser"))
                                       )
                                       
                                     ),
@@ -303,7 +303,7 @@ body <-
                                           width = 12,
                                           downloadButton("childcare_rate_1_download_csv", "Download CSV"),
                                           downloadButton("childcare_rate_1_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("childcare_rate_table_1")
+                                          DT::dataTableOutput("childcare_rate_table")
                                       )
                                     )),
                            tabPanel(h4("Child Care Avaibility"),
@@ -315,8 +315,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Program Space", plotOutput("childcare_space_timeser_3")),
-                                          column(width=6, "Childcare avaibility", leafletOutput("childcare_space_map_2")))
+                                          column(width=6, "Childcare Program Space", plotOutput("childcare_space_timeser")),
+                                          column(width=6, "Childcare avaibility", leafletOutput("childcare_space_map")))
                                     ),
                                     fluidRow(
                                       box(
@@ -329,9 +329,9 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          downloadButton("childcare_space_2_download_csv", "Download CSV"),
-                                          downloadButton("childcare_space_2_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("childcare_space_table_2")
+                                          downloadButton("childcare_space_download_csv", "Download CSV"),
+                                          downloadButton("childcare_space_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("childcare_space_table")
                                       )
                                     )
                            ),
@@ -344,8 +344,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childabuse Program Space", plotOutput("childabuse_timeser_3")),
-                                          column(width=6, "Childabuse avaibility", leafletOutput("childabuse_map_2")))
+                                          column(width=6, "Childabuse Program Space", plotOutput("childabuse_timeser")),
+                                          column(width=6, "Childabuse avaibility", leafletOutput("childabuse_map")))
                                     ),
                                     fluidRow(
                                       box(
@@ -358,12 +358,13 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          downloadButton("childabuse_2_download_csv", "Download CSV"),
-                                          downloadButton("childabuse_2_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("childabuse_space_table_2")
+                                          downloadButton("childabuse_download_csv", "Download CSV"),
+                                          downloadButton("childabuse_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("childabuse_space_table")
                                       )
                                     )
                            ),
+                           
                            tabPanel(h4("Child Care Provider"),
                                     fluidRow(
                                       box(title=strong("Child Care Provider"),
@@ -371,7 +372,9 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           plotOutput("childabuse_timeser_2")))
-                           ))),
+                           )
+                  )
+      ),
       
     
       
@@ -457,39 +460,45 @@ body <-
                            tabPanel(h4("Unemployment Rate"),
                                     fluidRow(
                                       box(width=12,
+                                          pickerInput( inputId = "Unemp_year",
+                                                       label = "Select year",
+                                                       choices = unemployment_rate_by_year%>% select(year)%>%distinct()%>%pull(),,
+                                                       multiple = FALSE,
+                                                       selected = "2021"),
                                           title=strong("Unemployment Rate by Year"),
-                                          toggle_button("unemp_lf_toggle",
-                                                        c("By County", "Statewide")),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Unemployment Rate", plotOutput("unemp_timeser_3")),
-                                          column(width=6, "Unemployment Rate", leafletOutput("unemp_map_2")))
+                                          column(width=6, "Unemployment Rate by Year",leafletOutput("unemp_map")),
+                                          column(width=6, "Unemployment Rate Time Series by County", plotOutput("unemp_timeser"))
+                                      )
+                                      
                                     ),
+                                    
                                     fluidRow(
                                       box(
-                                        title=strong("Unemployment Rate by Year"),
+                                        title=strong("Unemployment Rate Data"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("unemp_boxplot_1")),
+                                        plotOutput("unemp_boxplot")),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          downloadButton("unemp_2_download_csv", "Download CSV"),
-                                          downloadButton("unemp_2_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("unemp_table_2")
+                                          downloadButton("unemp_download_csv", "Download CSV"),
+                                          downloadButton("unemp_download_xlsx", "Download Excel"),
+                                          DT::dataTableOutput("unemp_table")
                                       )
-                                    )
+                                    ),
+                                    
                            )
-                           
-                           
-                           
-                           )),
-                          
+                    )
+      ),
+        
+
       
-      
+     ################################################################################################################################################################################################ 
       
       # . Education body --------------------------------------------------------
       
@@ -1511,7 +1520,275 @@ server <- function(input, output, session) {
                                  left_join(ser_crime, by=c("NAME", "year")) %>%
                                  select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
          })
-  
+       
+####################################################################################################################################################################################################
+       #unemployment rate map reactive  WORK
+       unemp_map <- reactive ({
+         unemployment_rate_by_year %>%
+             filter(year == input$Unemp_year)  %>%
+             mutate(county=str_to_lower(name))%>%
+             left_join(iowa_map, by= "county") %>%
+             sf::st_as_sf(.)
+         })
+       #unemployment map
+       output$unemp_map <- renderLeaflet({
+           mypal <- colorNumeric("YlOrRd", unemp_map()$unemprate)
+           mytext <- paste(
+             "County: ", str_to_title(unemp_map()$name),"<br/>",
+             "Per Year: ", round(unemp_map()$unemprate, 1),
+             sep="") %>%
+             lapply(htmltools::HTML)
+
+           unemp_map() %>%
+             sf::st_transform(crs = "+init=epsg:4326") %>%
+             leaflet(options = leafletOptions(zoomControl = FALSE,
+                                              minZoom = 7, maxZoom = 7,
+                                              dragging = FALSE)) %>%
+             addProviderTiles(provider = "CartoDB.Positron") %>%
+             addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
+                         stroke = TRUE,  # Set True for border color
+                         weight = 1,
+                         smoothFactor = 0.3,
+                         fillOpacity = 0.7,
+                         opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                         color = "white", #polygon border color
+                         label = mytext,
+                         fillColor = ~ mypal(unemprate)) %>% #instead of using color for fill, use fillcolor
+             addLegend("bottomright",
+                       pal = mypal,
+                       values = ~unemprate,
+                       title = "Estimate",
+                       opacity = .8)# %>%
+             #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
+         })
+       
+       
+       unemp_rate_statewide <- reactive({
+         unemployment_rate_by_year %>%
+           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+           group_by(year) %>%
+           summarise(value = mean(unemprate, na.rm=TRUE))%>%
+           mutate(name = "Statewide")
+       })
+       
+       output$unemp_timeser <- renderPlot({
+         unemp_timeser(unemp_rate_statewide())
+       })
+# 
+#        output$unemp_boxplot <- renderPlot({
+#          unemp_cat_plot(acs_lf(), lf, unemprate)
+#        })
+       
+       
+       
+       # employment status by age group
+       # show(rate_licien_provider <- childcare_rates %>%
+       #        group_by(provider_type="2020 DHS Licensed Centers/Preschools " ) %>%
+       #        ggplot(aes(y = age, x = cost,fill = age)) +
+       #        labs(y = "Age", 
+       #             x = "Cost($)", 
+       #             title = "Childcare Rate by DHS licensed Centers",
+       #             subtitle = "By County in Iowa",
+       #             caption="Source: Department of Human and Service") +
+       #        geom_bar(stat = "identity")) 
+       # ggsave("2020 Childcare by licensed provider Rate.png", path="Data/Plot/")
+       # 
+       
+       output$unemp_table <- DT::renderDataTable({
+         unemployment_rate_by_year %>%
+           select(name, year, unemprate) %>%
+           datatable() %>%
+           formatPercentage(3:12, 2)
+       })
+       
+       output$unemp_table <- DT::renderDataTable({
+         unemployment_rate_by_year %>%
+           select(name, year, percent = umemprate) %>%
+           datatable() %>%
+           formatPercentage(3,2)
+       })
+       
+       
+       # Download data as csv
+       output$unemp_download_csv <- downloadHandler(
+         filename = function() {
+           paste0("unemployment_rate", ".csv")
+         },
+         content = function(file) {
+           write.csv(unemployment_rate_by_year %>%
+                       select(name, year, percent = unemprate), file, row.names = FALSE)
+         })
+       
+       # Download data as xlsx
+       output$unemp_download_xlsx <- downloadHandler(
+         filename = function() {
+           paste0("unemployment_rate", ".xlsx")
+         },
+         content = function(file) {
+           writexl::write_xlsx(unemployment_rate_by_year %>%
+                                 select(name, year, percent = unemprate), file)
+         })
+       
+       
+       
+       
+####################################################################################################################################################################################################       
+       
+       
+       
+       #Childcare rate map
+       childcare_rate_map <- reactive ({
+         childcare_rates %>%
+           filter(name != "statewide") %>%
+           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+           group_by(age)%>%  #county
+           summarise(value=mean(cost, na.rm=TRUE)) %>%
+           mutate(county=str_to_lower(county))%>%
+           left_join(iowa_map, by(coun)) %>%
+           sf::st_as_sf(.)
+       })
+
+       output$childcare_rate_map <- renderLeaflet({
+
+         mypal <- colorNumeric("YlOrRd", childcare_rate_map()$value)
+         mytext <- paste(
+           "County: ", str_to_title(childcare_rate_map()$county),"<br/>",
+           "Esimate Per 100k: ", round(childcare_rate_map()$value, 1),
+           sep="") %>%
+           lapply(htmltools::HTML)
+
+         childcare_rate_map() %>%
+           sf::st_transform(crs = "+init=epsg:4326") %>%
+           leaflet(options = leafletOptions(zoomControl = FALSE,
+                                            minZoom = 7, maxZoom = 7,
+                                            dragging = FALSE)) %>%
+           addProviderTiles(provider = "CartoDB.Positron") %>%
+           addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                       stroke = TRUE,  # Set True for border color
+                       weight = 1,
+                       smoothFactor = 0.3,
+                       fillOpacity = 0.7,
+                       opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                       color = "white", #polygon border color
+                       label = mytext,
+                       fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+           addLegend("bottomright",
+                     pal = mypal,
+                     values = ~value,
+                     title = "Childcare Cost",
+                     opacity = .8) %>%
+           addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$county)), "[:punct:]")))
+       })
+
+
+       
+       
+       
+  #############################################################################################################################################################################################################     
+       #child abuse
+       # Prepare data for Childabuse line plot and table
+       childabuse <- reactive({
+         # make a list of counties to plot
+         abuse_county <-
+           if(input$statewide) {
+             c(input$name, "Statewide")
+           } else {
+             input$name
+           }
+         # filter data
+         child_abuse_county_state %>%
+           filter(group_3 == child_abuse_under_6,
+                  between(year, input$YEAR[1], input$YEAR[2]),
+                  name %in% abuse_county) %>%
+           mutate(county = factor(name, levels = abuse_county))
+       })
+       
+       # Make line plot for Education Attainment tab
+       output$childabuse_plot_line <- renderPlot({
+         childabuse() %>%
+           filter(group_2 == input$childabuse_plot_line_toggle) %>%
+           plot_line_year(df = ., PERCENT = TRUE) +
+           labs(
+             # title="Proportion of Women Who Has A Birth In The Past 12 Months",
+             # subtitle="less than high school education",
+             caption="Source: Department of Human and Services")
+       })
+       
+       
+       # Prepare data for Childabuse map and bar chart
+       childabuse_data_averaged <- reactive({
+         child_abuse_county_state %>%
+           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+           group_by(county, group_2, group_3) %>%
+           summarise(value = mean(child_abuse_under_6))
+       })
+       
+       
+       # Make map for Education Attainment tab
+       output$childabuse_plot_map <- renderLeaflet({
+         childabuse_data_01_averaged() %>%
+           filter(group_3 == input$childabuse_plot_map_toggle,      # chose education grade
+                  group_2 == input$childabuse_plot_line_toggle) %>% #choose marital status
+           mutate(value = value *100) %>%
+           rowwise() %>%
+           mutate(
+             popup_label = htmltools::HTML(sprintf('<b>%s</b>
+    <br><span style="padding-left: 10px;">%s: <b>%.1f%%</b>
+    <br><span style="padding-left: 10px;">Marital Status: <b>%s</b>',
+                                                   county, group_3, value, group_2))) %>%
+           ungroup() %>%
+           plot_map_mean(county = input$name)
+       })
+       
+       # Make bar plot for Education Attainment tab
+       output$childabuse_plot_bar_01 <- renderPlot({
+         # make a list of counties to plot
+         my_county <-
+           if(input$statewide) {
+             c(input$name, "Statewide")
+           } else {
+             input$name
+           }
+         
+         my_years <- c(input$YEAR[1], input$YEAR[2])
+         
+         childabuse_data_averaged() %>%
+           filter(county %in% my_county,
+                  group_2 != "Both") %>%
+           mutate(county = factor(county, levels = my_county)) %>%
+           plot_bar_mean(PERCENT = TRUE, YEARS = my_years) 
+       })
+       
+       # Make table to go with the Education Attainment line plot
+       output$childabuse_plot_table <- DT::renderDataTable({
+         childabuse_data_county() %>%
+           spread(group_2, value) %>%
+           select(name, year, Both) %>%
+           datatable() %>%
+           formatPercentage(3:5, 2)
+       })
+       
+       
+       # Download data as csv
+       output$childabuse_download_csv <- downloadHandler(
+         filename = function() {
+           paste0("Childabuse", ".csv")
+         },
+         content = function(file) {
+           write.csv(Childabuse_data_county(), file, row.names = FALSE)
+         }
+       )
+       
+       # Download data as xlsx
+       output$childabuse_download_xlsx <- downloadHandler(
+         filename = function() {
+           paste0("Childabuse", ".xlsx")
+         },
+         content = function(file) {
+           writexl::write_xlsx(childabuse_data_county(), file)
+         }
+       )
+       
   
 }
 

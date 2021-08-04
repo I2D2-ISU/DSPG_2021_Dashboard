@@ -21,24 +21,33 @@ unemploy_state <- unemployment_rate_by_year %>%                  #same
 
 child_abuse <- read_csv("data/child_abuse/child_abuse.csv") %>% 
   select(-X1) %>%
-  group_by(year)
+  group_by(year) %>%
+  mutate(child_abuse_under_6 = child_abuse_under_3 + child_abuse_3_and_4 + child_abuse_5)
 
-child_abuse_under3 <- child_abuse %>% 
-  summarise(abuse=mean(child_abuse_under_3, na.rm=TRUE)) %>%
+child_abuse_under_3 <- child_abuse %>% 
+  summarise(child_abuse_under_3=mean(child_abuse_under_3, na.rm=TRUE)) %>%
   mutate(name="Statewide") %>%
-  filter(year =="2019")
+  filter(year =="2019") %>%
+  select(name, year, child_abuse_under_3)
 
 child_abuse_3_and_4 <- child_abuse %>% 
-  summarise(abuse=mean(child_abuse_3_and_4, na.rm=TRUE)) %>%
+  summarise(child_abuse_3_and_4=mean(child_abuse_3_and_4, na.rm=TRUE)) %>%
   mutate(name="Statewide") %>%
-  filter(year =="2019")
+  filter(year =="2019")%>%
+  select(name, year, child_abuse_3_and_4)
 
 child_abuse_5 <- child_abuse %>% 
-  summarise(abuse=mean(child_abuse_5, na.rm=TRUE)) %>%
+  summarise(child_abuse_5=mean(child_abuse_5, na.rm=TRUE)) %>%
   mutate(name="Statewide") %>%
-  filter(year =="2019")
+  filter(year =="2019")%>%
+  select(name, year, child_abuse_5)
 
-child_abuse_under_6 <- child_abuse_under3$abuse + child_abuse_3_and_4$abuse + child_abuse_5$abuse 
+
+
+child_abuse_statewide <- left_join(left_join(child_abuse_under_3, child_abuse_3_and_4), child_abuse_5) %>%
+  mutate(child_abuse_under_6 = child_abuse_under_3 + child_abuse_3_and_4 + child_abuse_5)
+
+child_abuse_county_state <- rbind(child_abuse, child_abuse_statewide)
 
 
 childcare_program_services <- read_csv("data/childcare/childcare_program_services.csv") %>%

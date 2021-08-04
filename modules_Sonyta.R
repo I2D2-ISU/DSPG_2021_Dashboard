@@ -1,14 +1,14 @@
 
 # Unemployment Time Series Function
 
-unemploy_time_ser <- function(df, var){
+unemp_timeser <- function(df){
   
-  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
+  df <- na.omit(df %>% select(year, value, name))
   
-  ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
+  ggplot(df, aes(x=year, y = value/100 , color=name)) +
     geom_line() +
     geom_point() +
-    geom_label_repel(aes(label = percent(!!(as.name(var)), accuracy = 0.1)),
+    geom_label_repel(aes(label = percent(value/100, accuracy = 0.1)),
                      box.padding   = 0, 
                      point.padding = 0,
                      segment.color = 'grey50', show.legend = FALSE) +
@@ -21,14 +21,14 @@ unemploy_time_ser <- function(df, var){
                                            size=0.5, linetype="solid")) +
     scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
                        limits = c(min(df$year),max(df$year))) +
-    scale_y_continuous(labels=scales::percent_format(), limits=c(0, 1.1))
+    scale_y_continuous(labels=scales::percent_format(), limits=c(0, 0.1))
 }
 
 
 
 # unemployment Category Function
 
-unemploy_cat_plot <- function(df, type, est) {
+unemp_cat_plot <- function(df, type, est) {
   ggplot(df, aes(x=reorder({{type}}, {{est}}), y={{est}}, fill=NAME)) + 
     geom_col(position = "dodge") +
     theme_fivethirtyeight() + 
@@ -41,7 +41,7 @@ unemploy_cat_plot <- function(df, type, est) {
 
 # Childabuse Time Series Function
 
-childabuse_time_ser <- function(df, var){
+childabuse_timeser <- function(df, var){
   
   df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
   
@@ -63,9 +63,33 @@ childabuse_time_ser <- function(df, var){
                        limits = c(min(df$year),max(df$year)))
 }
 
-# Childabuse Time Series Function
+# Childcare rate Time Series Function
 
-childcare_time_ser <- function(df, var){
+childcare_rate_timeser <- function(df, var){
+  
+  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
+  
+  ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
+    geom_line() +
+    geom_point() +
+    geom_label_repel(aes(label = round(!!(as.name(var)), 1)),
+                     box.padding   = 0, 
+                     point.padding = 0,
+                     segment.color = 'grey50', show.legend = FALSE) +
+    theme_fivethirtyeight() +
+    theme(panel.background = element_rect(fill="white"),
+          plot.background = element_rect(fill="white"),
+          legend.position = "top",
+          legend.title=element_blank(),
+          legend.background = element_rect(fill="white", 
+                                           size=0.5, linetype="solid")) +
+    scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
+                       limits = c(min(df$year),max(df$year)))
+}
+
+# Childcare_space Time Series Function
+
+childcare_space_timeser <- function(df, var){
   
   df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
   
