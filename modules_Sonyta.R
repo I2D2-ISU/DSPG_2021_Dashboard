@@ -5,7 +5,8 @@ unemp_timeser <- function(df){
   
   df <- na.omit(df %>% select(year, value, name))
   
-  ggplot(df, aes(x=year, y = value/100 , color=name)) +
+  df %>% 
+    ggplot(aes(x=year, y = value/100 , color=name)) +
     geom_line() +
     geom_point() +
     geom_label_repel(aes(label = percent(value/100, accuracy = 0.1)),
@@ -28,15 +29,15 @@ unemp_timeser <- function(df){
 
 # unemployment Category Function
 
-unemp_cat_plot <- function(df, type, est) {
-  ggplot(df, aes(x=reorder({{type}}, {{est}}), y={{est}}, fill=NAME)) + 
+unemp_cat_plot <- function(df) {
+  ggplot(df, aes(x = year, value/100, fill=name)) + 
     geom_col(position = "dodge") +
     theme_fivethirtyeight() + 
-    scale_y_continuous(labels = scales::percent,limits = c(0,1.1)) +
+    scale_y_continuous(labels = scales::percent,limits = c(0,0.1)) +
     theme(text = element_text(family = "Arial"), 
           panel.background = element_rect(fill="white"),
           plot.background = element_rect(fill="white"), legend.position="top", legend.title=element_blank()) +
-    geom_label(aes(label = percent({{est}}, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
+    geom_label(aes(label = percent(value/100, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
 }
 
 # Childabuse Time Series Function

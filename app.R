@@ -273,7 +273,7 @@ body <-
               # 
       ),
       
-####################################################################################################################################################################################################      
+      ####################################################################################################################################################################################################      
       # . Child and Families body -----------------------------------------------
       
       tabItem(tabName = "demographics",
@@ -373,10 +373,10 @@ body <-
                                           collapsible = FALSE,
                                           plotOutput("childabuse_timeser_2")))
                            )
-                  )
+              )
       ),
       
-    
+      
       
       
       # . Employment body -------------------------------------------------------
@@ -386,7 +386,7 @@ body <-
                            tabPanel(h4("Child Poverty"), 
                                     fluidRow(
                                       box(width=12,
-                                        pickerInput( inputId = "emp_race",
+                                          pickerInput( inputId = "emp_race",
                                                        label = "Select Race/Ethnicity Category",
                                                        choices = c("All", "Minority", "White Alone, Not Hispanic",
                                                                    "Black or African American Alone",
@@ -404,7 +404,7 @@ body <-
                                           collapsible = FALSE,
                                           column(width=6, "Averaged over selected years",leafletOutput("emp_map_1")),
                                           column(width=6, "Over time", plotOutput("emp_timeser_1"))
-                                          )
+                                      )
                                       
                                     ),
                                     fluidRow(
@@ -421,14 +421,14 @@ body <-
                            tabPanel(h4("Parental Workforce Participation"),
                                     fluidRow(
                                       box(width=12,
-                                        title=strong("Percent of Children By Parental Workforce Participation"),
-                                        toggle_button("emp_lf_toggle",
-                                                      c("All Parents in Workforce", "No Parents in Workforce")),
-                                        closable = FALSE,
-                                        solidHeader = TRUE,
-                                        collapsible = FALSE,
-                                        column(width=6, "Over time", plotOutput("emp_timeser_3")),
-                                        column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
+                                          title=strong("Percent of Children By Parental Workforce Participation"),
+                                          toggle_button("emp_lf_toggle",
+                                                        c("All Parents in Workforce", "No Parents in Workforce")),
+                                          closable = FALSE,
+                                          solidHeader = TRUE,
+                                          collapsible = FALSE,
+                                          column(width=6, "Over time", plotOutput("emp_timeser_3")),
+                                          column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
                                     ),
                                     fluidRow(
                                       box(
@@ -447,7 +447,7 @@ body <-
                                       )
                                     )
                            ),
-                         
+                           
                            tabPanel(h4("General Population Poverty"),
                                     fluidRow(
                                       box(title=strong("Percent of Population in Poverty Over Time"),
@@ -493,12 +493,12 @@ body <-
                                     ),
                                     
                            )
-                    )
+              )
       ),
-        
-
       
-     ################################################################################################################################################################################################ 
+      
+      
+      ################################################################################################################################################################################################ 
       
       # . Education body --------------------------------------------------------
       
@@ -629,7 +629,7 @@ body <-
                                          downloadButton("immun_download_csv", "Download CSV"),
                                          downloadButton("immun_download_xlsx", "Download Excel"),
                                          DT::dataTableOutput("immun_table")
-                                       
+                                         
                                      )
                                    )))),
       
@@ -1324,471 +1324,457 @@ server <- function(input, output, session) {
     
   })
   
-   output$immun_map <- renderLeaflet({
-     
-     mypal <- colorNumeric("YlOrRd", immun_rate_map()$value*100)
-     mytext <- paste(
-       "County: ", str_to_title(immun_rate_map()$NAME),"<br/>", 
-       "Percent: ", percent(immun_rate_map()$value, accuracy=0.1), 
-       sep="") %>%
-       lapply(htmltools::HTML)
-     
-     immun_rate_map() %>%
-       sf::st_transform(crs = "+init=epsg:4326") %>%
-       leaflet(options = leafletOptions(zoomControl = FALSE,
-                                        minZoom = 7, maxZoom = 7,
-                                        dragging = FALSE)) %>%
-       addProviderTiles(provider = "CartoDB.Positron") %>%
-       addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
-                   stroke = TRUE,  # Set True for border color
-                   weight = 1,
-                   smoothFactor = 0.3,
-                   fillOpacity = 0.7,
-                   opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
-                   color = "white", #polygon border color
-                   label = mytext,
-                   fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
-       addLegend("bottomright", 
-                 pal = mypal, 
-                 values = ~value*100,
-                 title = "Estimate",
-                 opacity = .8,
-                 labFormat = labelFormat(suffix = "%")) %>%
-       addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
-   })
-   
-   
-    output$immun_table <- DT::renderDataTable({
-      immun_clean %>%
-        select(name = NAME, year, percent = Percent) %>%
-        datatable() %>%
-        formatPercentage(3,2)
+  output$immun_map <- renderLeaflet({
+    
+    mypal <- colorNumeric("YlOrRd", immun_rate_map()$value*100)
+    mytext <- paste(
+      "County: ", str_to_title(immun_rate_map()$NAME),"<br/>", 
+      "Percent: ", percent(immun_rate_map()$value, accuracy=0.1), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    immun_rate_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~value*100,
+                title = "Estimate",
+                opacity = .8,
+                labFormat = labelFormat(suffix = "%")) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  
+  output$immun_table <- DT::renderDataTable({
+    immun_clean %>%
+      select(name = NAME, year, percent = Percent) %>%
+      datatable() %>%
+      formatPercentage(3,2)
+  })
+  
+  
+  # Download data as csv
+  output$immun_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("child_immunization", ".csv")
+    },
+    content = function(file) {
+      write.csv(immun_clean %>%
+                  select(name = NAME, year, percent = Percent), file, row.names = FALSE)
     })
+  
+  # Download data as xlsx
+  output$immun_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("child_immunization", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(immun_clean %>%
+                            select(name = NAME, year, percent = Percent), file)
+    })
+  
+  sercrime_rate_map <- reactive ({
+    ser_crime %>%
+      filter(NAME != "Statewide") %>%
+      select(NAME, value = per100kRate) %>%
+      mutate(NAME=str_to_lower(NAME))%>%
+      left_join(iowa_map, by = c("NAME"="county")) %>%
+      sf::st_as_sf(.)
     
+  })
+  
+  output$sercrime_map <- renderLeaflet({
     
-    # Download data as csv
-    output$immun_download_csv <- downloadHandler(
-      filename = function() {
-        paste0("child_immunization", ".csv")
-      },
-      content = function(file) {
-        write.csv(immun_clean %>%
-        select(name = NAME, year, percent = Percent), file, row.names = FALSE)
-      })
+    mypal <- colorNumeric("YlOrRd", sercrime_rate_map()$value)
+    mytext <- paste(
+      "County: ", str_to_title(sercrime_rate_map()$NAME),"<br/>", 
+      "Esimate Per 100k: ", round(sercrime_rate_map()$value, 1), 
+      sep="") %>%
+      lapply(htmltools::HTML)
     
-    # Download data as xlsx
-    output$immun_download_xlsx <- downloadHandler(
-      filename = function() {
-        paste0("child_immunization", ".xlsx")
-      },
-      content = function(file) {
-        writexl::write_xlsx(immun_clean %>%
-        select(name = NAME, year, percent = Percent), file)
-      })
+    sercrime_rate_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~value,
+                title = "Estimate",
+                opacity = .8) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  juvcrime_rate_map <- reactive ({
+    juv_crime %>%
+      filter(NAME != "Statewide") %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      group_by(NAME)%>%
+      summarise(value=mean(rate, na.rm=TRUE)) %>%
+      mutate(NAME=str_to_lower(NAME))%>%
+      left_join(iowa_map, by = c("NAME"="county")) %>%
+      sf::st_as_sf(.)
+  })
+  
+  output$juvcrime_map <- renderLeaflet({
     
-     sercrime_rate_map <- reactive ({
-       ser_crime %>%
-         filter(NAME != "Statewide") %>%
-         select(NAME, value = per100kRate) %>%
-         mutate(NAME=str_to_lower(NAME))%>%
-         left_join(iowa_map, by = c("NAME"="county")) %>%
-         sf::st_as_sf(.)
-       
-     })
-     
-     output$sercrime_map <- renderLeaflet({
-       
-       mypal <- colorNumeric("YlOrRd", sercrime_rate_map()$value)
-       mytext <- paste(
-         "County: ", str_to_title(sercrime_rate_map()$NAME),"<br/>", 
-         "Esimate Per 100k: ", round(sercrime_rate_map()$value, 1), 
-         sep="") %>%
-         lapply(htmltools::HTML)
-       
-       sercrime_rate_map() %>%
-         sf::st_transform(crs = "+init=epsg:4326") %>%
-         leaflet(options = leafletOptions(zoomControl = FALSE,
-                                          minZoom = 7, maxZoom = 7,
-                                          dragging = FALSE)) %>%
-         addProviderTiles(provider = "CartoDB.Positron") %>%
-         addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
-                     stroke = TRUE,  # Set True for border color
-                     weight = 1,
-                     smoothFactor = 0.3,
-                     fillOpacity = 0.7,
-                     opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
-                     color = "white", #polygon border color
-                     label = mytext,
-                     fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
-         addLegend("bottomright", 
-                   pal = mypal, 
-                   values = ~value,
-                   title = "Estimate",
-                   opacity = .8) %>%
-         addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
-     })
-     
-     juvcrime_rate_map <- reactive ({
-       juv_crime %>%
-         filter(NAME != "Statewide") %>%
-         filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-         group_by(NAME)%>%
-         summarise(value=mean(rate, na.rm=TRUE)) %>%
-         mutate(NAME=str_to_lower(NAME))%>%
-         left_join(iowa_map, by = c("NAME"="county")) %>%
-         sf::st_as_sf(.)
-     })
-     
-     output$juvcrime_map <- renderLeaflet({
-       
-       mypal <- colorNumeric("YlOrRd", juvcrime_rate_map()$value)
-       mytext <- paste(
-         "County: ", str_to_title(juvcrime_rate_map()$NAME),"<br/>", 
-         "Esimate Per 100k: ", round(juvcrime_rate_map()$value, 1), 
-         sep="") %>%
-         lapply(htmltools::HTML)
-       
-       juvcrime_rate_map() %>%
-         sf::st_transform(crs = "+init=epsg:4326") %>%
-         leaflet(options = leafletOptions(zoomControl = FALSE,
-                                          minZoom = 7, maxZoom = 7,
-                                          dragging = FALSE)) %>%
-         addProviderTiles(provider = "CartoDB.Positron") %>%
-         addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
-                     stroke = TRUE,  # Set True for border color
-                     weight = 1,
-                     smoothFactor = 0.3,
-                     fillOpacity = 0.7,
-                     opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
-                     color = "white", #polygon border color
-                     label = mytext,
-                     fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
-         addLegend("bottomright", 
-                   pal = mypal, 
-                   values = ~value,
-                   title = "Estimate",
-                   opacity = .8) %>%
-         addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
-     })
-     
-      juvcrime_react <- reactive ({
-        plotting_county <-
-          if(input$STATEWIDE) {
-            c(input$COUNTY, "Statewide")
-          } else {
-            input$COUNTY
-          }
-        
-        juv_crime %>% 
-          filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-          filter(NAME%in%plotting_county)
-      })
-      
-      
-      output$juvcrime_timeser <- renderPlot({
-        rate_time_ser(juvcrime_react(), "rate")
-      })
-      
-       output$crime_table <- DT::renderDataTable({
-         juv_crime %>%
-           left_join(ser_crime, by=c("NAME", "year")) %>%
-           select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate) %>%
-           mutate(serious_crime=round(serious_crime,2),
-                  juvenile_crime=round(juvenile_crime, 2)) %>%
-           datatable()
-       })
-       
-       
-       # Download data as csv
-       output$crime_download_csv <- downloadHandler(
-         filename = function() {
-           paste0("crime", ".csv")
-         },
-         content = function(file) {
-           write.csv(juv_crime %>%
-                       left_join(ser_crime, by=c("NAME", "year")) %>%
-                       select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file, row.names = FALSE)
-         })
-       
-       # Download data as xlsx
-       output$crime_download_xlsx <- downloadHandler(
-         filename = function() {
-           paste0("crime", ".xlsx")
-         },
-         content = function(file) {
-           writexl::write_xlsx(juv_crime %>%
-                                 left_join(ser_crime, by=c("NAME", "year")) %>%
-                                 select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
-         })
-       
-####################################################################################################################################################################################################
-       #unemployment rate map reactive  WORK
-       unemp_map <- reactive ({
-         unemployment_rate_by_year %>%
-             filter(year == input$Unemp_year)  %>%
-             mutate(county=str_to_lower(name))%>%
-             left_join(iowa_map, by= "county") %>%
-             sf::st_as_sf(.)
-         })
-       #unemployment map
-       output$unemp_map <- renderLeaflet({
-           mypal <- colorNumeric("YlOrRd", unemp_map()$unemprate)
-           mytext <- paste(
-             "County: ", str_to_title(unemp_map()$name),"<br/>",
-             "Per Year: ", round(unemp_map()$unemprate, 1),
-             sep="") %>%
-             lapply(htmltools::HTML)
-
-           unemp_map() %>%
-             sf::st_transform(crs = "+init=epsg:4326") %>%
-             leaflet(options = leafletOptions(zoomControl = FALSE,
-                                              minZoom = 7, maxZoom = 7,
-                                              dragging = FALSE)) %>%
-             addProviderTiles(provider = "CartoDB.Positron") %>%
-             addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
-                         stroke = TRUE,  # Set True for border color
-                         weight = 1,
-                         smoothFactor = 0.3,
-                         fillOpacity = 0.7,
-                         opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
-                         color = "white", #polygon border color
-                         label = mytext,
-                         fillColor = ~ mypal(unemprate)) %>% #instead of using color for fill, use fillcolor
-             addLegend("bottomright",
-                       pal = mypal,
-                       values = ~unemprate,
-                       title = "Estimate",
-                       opacity = .8)# %>%
-             #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
-         })
-       
-       
-       unemp_rate_statewide <- reactive({
-         unemployment_rate_by_year %>%
-           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-           group_by(year) %>%
-           summarise(value = mean(unemprate, na.rm=TRUE))%>%
-           mutate(name = "Statewide")
-       })
-       
-       output$unemp_timeser <- renderPlot({
-         unemp_timeser(unemp_rate_statewide())
-       })
-# 
-#        output$unemp_boxplot <- renderPlot({
-#          unemp_cat_plot(acs_lf(), lf, unemprate)
-#        })
-       
-       
-       
-       # employment status by age group
-       # show(rate_licien_provider <- childcare_rates %>%
-       #        group_by(provider_type="2020 DHS Licensed Centers/Preschools " ) %>%
-       #        ggplot(aes(y = age, x = cost,fill = age)) +
-       #        labs(y = "Age", 
-       #             x = "Cost($)", 
-       #             title = "Childcare Rate by DHS licensed Centers",
-       #             subtitle = "By County in Iowa",
-       #             caption="Source: Department of Human and Service") +
-       #        geom_bar(stat = "identity")) 
-       # ggsave("2020 Childcare by licensed provider Rate.png", path="Data/Plot/")
-       # 
-       
-       output$unemp_table <- DT::renderDataTable({
-         unemployment_rate_by_year %>%
-           select(name, year, unemprate) %>%
-           datatable() %>%
-           formatPercentage(3:12, 2)
-       })
-       
-       output$unemp_table <- DT::renderDataTable({
-         unemployment_rate_by_year %>%
-           select(name, year, percent = umemprate) %>%
-           datatable() %>%
-           formatPercentage(3,2)
-       })
-       
-       
-       # Download data as csv
-       output$unemp_download_csv <- downloadHandler(
-         filename = function() {
-           paste0("unemployment_rate", ".csv")
-         },
-         content = function(file) {
-           write.csv(unemployment_rate_by_year %>%
-                       select(name, year, percent = unemprate), file, row.names = FALSE)
-         })
-       
-       # Download data as xlsx
-       output$unemp_download_xlsx <- downloadHandler(
-         filename = function() {
-           paste0("unemployment_rate", ".xlsx")
-         },
-         content = function(file) {
-           writexl::write_xlsx(unemployment_rate_by_year %>%
-                                 select(name, year, percent = unemprate), file)
-         })
-       
-       
-       
-       
-####################################################################################################################################################################################################       
-       
-       
-       
-       #Childcare rate map
-       childcare_rate_map <- reactive ({
-         childcare_rates %>%
-           filter(name != "statewide") %>%
-           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-           group_by(age)%>%  #county
-           summarise(value=mean(cost, na.rm=TRUE)) %>%
-           mutate(county=str_to_lower(county))%>%
-           left_join(iowa_map, by(coun)) %>%
-           sf::st_as_sf(.)
-       })
-
-       output$childcare_rate_map <- renderLeaflet({
-
-         mypal <- colorNumeric("YlOrRd", childcare_rate_map()$value)
-         mytext <- paste(
-           "County: ", str_to_title(childcare_rate_map()$county),"<br/>",
-           "Esimate Per 100k: ", round(childcare_rate_map()$value, 1),
-           sep="") %>%
-           lapply(htmltools::HTML)
-
-         childcare_rate_map() %>%
-           sf::st_transform(crs = "+init=epsg:4326") %>%
-           leaflet(options = leafletOptions(zoomControl = FALSE,
-                                            minZoom = 7, maxZoom = 7,
-                                            dragging = FALSE)) %>%
-           addProviderTiles(provider = "CartoDB.Positron") %>%
-           addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
-                       stroke = TRUE,  # Set True for border color
-                       weight = 1,
-                       smoothFactor = 0.3,
-                       fillOpacity = 0.7,
-                       opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
-                       color = "white", #polygon border color
-                       label = mytext,
-                       fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
-           addLegend("bottomright",
-                     pal = mypal,
-                     values = ~value,
-                     title = "Childcare Cost",
-                     opacity = .8) %>%
-           addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$county)), "[:punct:]")))
-       })
-
-
-       
-       
-       
+    mypal <- colorNumeric("YlOrRd", juvcrime_rate_map()$value)
+    mytext <- paste(
+      "County: ", str_to_title(juvcrime_rate_map()$NAME),"<br/>", 
+      "Esimate Per 100k: ", round(juvcrime_rate_map()$value, 1), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    juvcrime_rate_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~value,
+                title = "Estimate",
+                opacity = .8) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  juvcrime_react <- reactive ({
+    plotting_county <-
+      if(input$STATEWIDE) {
+        c(input$COUNTY, "Statewide")
+      } else {
+        input$COUNTY
+      }
+    
+    juv_crime %>% 
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(NAME%in%plotting_county)
+  })
+  
+  
+  output$juvcrime_timeser <- renderPlot({
+    rate_time_ser(juvcrime_react(), "rate")
+  })
+  
+  output$crime_table <- DT::renderDataTable({
+    juv_crime %>%
+      left_join(ser_crime, by=c("NAME", "year")) %>%
+      select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate) %>%
+      mutate(serious_crime=round(serious_crime,2),
+             juvenile_crime=round(juvenile_crime, 2)) %>%
+      datatable()
+  })
+  
+  
+  # Download data as csv
+  output$crime_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("crime", ".csv")
+    },
+    content = function(file) {
+      write.csv(juv_crime %>%
+                  left_join(ser_crime, by=c("NAME", "year")) %>%
+                  select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file, row.names = FALSE)
+    })
+  
+  # Download data as xlsx
+  output$crime_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("crime", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(juv_crime %>%
+                            left_join(ser_crime, by=c("NAME", "year")) %>%
+                            select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
+    })
+  
+  ####################################################################################################################################################################################################
+  #unemployment rate map reactive  WORK
+  unemp_map <- reactive ({
+    unemployment_rate_by_year %>%
+      filter(year == input$Unemp_year)  %>%
+      mutate(county=str_to_lower(name))%>%
+      left_join(iowa_map, by= "county") %>%
+      sf::st_as_sf(.)
+  })
+  #unemployment map
+  output$unemp_map <- renderLeaflet({
+    mypal <- colorNumeric("YlOrRd", unemp_map()$unemprate)
+    mytext <- paste(
+      "County: ", str_to_title(unemp_map()$name),"<br/>",
+      "Per Year: ", round(unemp_map()$unemprate, 1),
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    unemp_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(unemprate)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright",
+                pal = mypal,
+                values = ~unemprate,
+                title = "Estimate",
+                opacity = .8)# %>%
+    #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
+  })
+  
+  
+  unemp_rate_statewide <- reactive({
+    unemployment_rate_by_year %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      group_by(year) %>%
+      summarise(value = mean(unemprate, na.rm=TRUE))%>%
+      mutate(name = "Statewide")
+  })
+  
+  output$unemp_timeser <- renderPlot({
+    unemp_timeser(unemp_rate_statewide())
+  })
+   
+  output$unemp_boxplot <- renderPlot({
+    unemp_cat_plot(unemp_rate_statewide())
+  })
+  
+  
+  output$unemp_table <- DT::renderDataTable({
+    unemployment_rate_by_year %>%
+      select(name, year, unemprate) %>%
+      datatable() %>%
+      formatPercentage(3:12, 2)
+  })
+  
+  output$unemp_table <- DT::renderDataTable({
+    unemployment_rate_by_year %>%
+      select(name, year, percent = unemprate) %>%
+      datatable() %>%
+      formatPercentage(3,2)
+  })
+  
+  
+  # Download data as csv
+  output$unemp_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("unemployment_rate", ".csv")
+    },
+    content = function(file) {
+      write.csv(unemployment_rate_by_year %>%
+                  select(name, year, percent = unemprate), file, row.names = FALSE)
+    })
+  
+  # Download data as xlsx
+  output$unemp_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("unemployment_rate", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(unemployment_rate_by_year %>%
+                            select(name, year, percent = unemprate), file)
+    })
+  
+  
+  
+  
+  ####################################################################################################################################################################################################       
+  
+  
+  
+  #Childcare rate map WORK
+  childcare_rate_map <- reactive ({
+    childcare_rates %>%
+      filter(name != "statewide") %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      group_by(age)%>%  #county
+      summarise(value=mean(cost, na.rm=TRUE)) %>%
+      mutate(county=str_to_lower(county))%>%
+      left_join(iowa_map, by(coun)) %>%
+      sf::st_as_sf(.)
+  })
+  
+  output$childcare_rate_map <- renderLeaflet({
+    
+    mypal <- colorNumeric("YlOrRd", childcare_rate_map()$value)
+    mytext <- paste(
+      "County: ", str_to_title(childcare_rate_map()$county),"<br/>",
+      "Esimate Per 100k: ", round(childcare_rate_map()$value, 1),
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    childcare_rate_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright",
+                pal = mypal,
+                values = ~value,
+                title = "Childcare Cost",
+                opacity = .8) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$county)), "[:punct:]")))
+  })
+  
+  
+  
+  
+  
   #############################################################################################################################################################################################################     
-       #child abuse
-       # Prepare data for Childabuse line plot and table
-       childabuse <- reactive({
-         # make a list of counties to plot
-         abuse_county <-
-           if(input$statewide) {
-             c(input$name, "Statewide")
-           } else {
-             input$name
-           }
-         # filter data
-         child_abuse_county_state %>%
-           filter(group_3 == child_abuse_under_6,
-                  between(year, input$YEAR[1], input$YEAR[2]),
-                  name %in% abuse_county) %>%
-           mutate(county = factor(name, levels = abuse_county))
-       })
-       
-       # Make line plot for Education Attainment tab
-       output$childabuse_plot_line <- renderPlot({
-         childabuse() %>%
-           filter(group_2 == input$childabuse_plot_line_toggle) %>%
-           plot_line_year(df = ., PERCENT = TRUE) +
-           labs(
-             # title="Proportion of Women Who Has A Birth In The Past 12 Months",
-             # subtitle="less than high school education",
-             caption="Source: Department of Human and Services")
-       })
-       
-       
-       # Prepare data for Childabuse map and bar chart
-       childabuse_data_averaged <- reactive({
-         child_abuse_county_state %>%
-           filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-           group_by(county, group_2, group_3) %>%
-           summarise(value = mean(child_abuse_under_6))
-       })
-       
-       
-       # Make map for Education Attainment tab
-       output$childabuse_plot_map <- renderLeaflet({
-         childabuse_data_01_averaged() %>%
-           filter(group_3 == input$childabuse_plot_map_toggle,      # chose education grade
-                  group_2 == input$childabuse_plot_line_toggle) %>% #choose marital status
-           mutate(value = value *100) %>%
-           rowwise() %>%
-           mutate(
-             popup_label = htmltools::HTML(sprintf('<b>%s</b>
+  #child abuse
+  # Prepare data for Childabuse line plot and table
+  childabuse <- reactive({
+    # make a list of counties to plot
+    abuse_county <-
+      if(input$statewide) {
+        c(input$name, "Statewide")
+      } else {
+        input$name
+      }
+    # filter data
+    child_abuse_county_state %>%
+      filter(group_3 == child_abuse_under_6,
+             between(year, input$YEAR[1], input$YEAR[2]),
+             name %in% abuse_county) %>%
+      mutate(county = factor(name, levels = abuse_county))
+  })
+  
+  # Make line plot for Education Attainment tab
+  output$childabuse_plot_line <- renderPlot({
+    childabuse() %>%
+      filter(group_2 == input$childabuse_plot_line_toggle) %>%
+      plot_line_year(df = ., PERCENT = TRUE) +
+      labs(
+        # title="Proportion of Women Who Has A Birth In The Past 12 Months",
+        # subtitle="less than high school education",
+        caption="Source: Department of Human and Services")
+  })
+  
+  
+  # Prepare data for Childabuse map and bar chart
+  childabuse_data_averaged <- reactive({
+    child_abuse_county_state %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      group_by(county, group_2, group_3) %>%
+      summarise(value = mean(child_abuse_under_6))
+  })
+  
+  
+  # Make map for Education Attainment tab
+  output$childabuse_plot_map <- renderLeaflet({
+    childabuse_data_01_averaged() %>%
+      filter(group_3 == input$childabuse_plot_map_toggle,      # chose education grade
+             group_2 == input$childabuse_plot_line_toggle) %>% #choose marital status
+      mutate(value = value *100) %>%
+      rowwise() %>%
+      mutate(
+        popup_label = htmltools::HTML(sprintf('<b>%s</b>
     <br><span style="padding-left: 10px;">%s: <b>%.1f%%</b>
     <br><span style="padding-left: 10px;">Marital Status: <b>%s</b>',
-                                                   county, group_3, value, group_2))) %>%
-           ungroup() %>%
-           plot_map_mean(county = input$name)
-       })
-       
-       # Make bar plot for Education Attainment tab
-       output$childabuse_plot_bar_01 <- renderPlot({
-         # make a list of counties to plot
-         my_county <-
-           if(input$statewide) {
-             c(input$name, "Statewide")
-           } else {
-             input$name
-           }
-         
-         my_years <- c(input$YEAR[1], input$YEAR[2])
-         
-         childabuse_data_averaged() %>%
-           filter(county %in% my_county,
-                  group_2 != "Both") %>%
-           mutate(county = factor(county, levels = my_county)) %>%
-           plot_bar_mean(PERCENT = TRUE, YEARS = my_years) 
-       })
-       
-       # Make table to go with the Education Attainment line plot
-       output$childabuse_plot_table <- DT::renderDataTable({
-         childabuse_data_county() %>%
-           spread(group_2, value) %>%
-           select(name, year, Both) %>%
-           datatable() %>%
-           formatPercentage(3:5, 2)
-       })
-       
-       
-       # Download data as csv
-       output$childabuse_download_csv <- downloadHandler(
-         filename = function() {
-           paste0("Childabuse", ".csv")
-         },
-         content = function(file) {
-           write.csv(Childabuse_data_county(), file, row.names = FALSE)
-         }
-       )
-       
-       # Download data as xlsx
-       output$childabuse_download_xlsx <- downloadHandler(
-         filename = function() {
-           paste0("Childabuse", ".xlsx")
-         },
-         content = function(file) {
-           writexl::write_xlsx(childabuse_data_county(), file)
-         }
-       )
-       
+                                              county, group_3, value, group_2))) %>%
+      ungroup() %>%
+      plot_map_mean(county = input$name)
+  })
+  
+  # Make bar plot for Education Attainment tab
+  output$childabuse_plot_bar_01 <- renderPlot({
+    # make a list of counties to plot
+    my_county <-
+      if(input$statewide) {
+        c(input$name, "Statewide")
+      } else {
+        input$name
+      }
+    
+    my_years <- c(input$YEAR[1], input$YEAR[2])
+    
+    childabuse_data_averaged() %>%
+      filter(county %in% my_county,
+             group_2 != "Both") %>%
+      mutate(county = factor(county, levels = my_county)) %>%
+      plot_bar_mean(PERCENT = TRUE, YEARS = my_years) 
+  })
+  
+  # Make table to go with the Education Attainment line plot
+  output$childabuse_plot_table <- DT::renderDataTable({
+    childabuse_data_county() %>%
+      spread(group_2, value) %>%
+      select(name, year, Both) %>%
+      datatable() %>%
+      formatPercentage(3:5, 2)
+  })
+  
+  
+  # Download data as csv
+  output$childabuse_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("Childabuse", ".csv")
+    },
+    content = function(file) {
+      write.csv(Childabuse_data_county(), file, row.names = FALSE)
+    }
+  )
+  
+  # Download data as xlsx
+  output$childabuse_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("Childabuse", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(childabuse_data_county(), file)
+    }
+  )
+  
   
 }
 
