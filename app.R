@@ -310,27 +310,27 @@ body <-
                            tabPanel(h4("Child Care Avaibility"),
                                     fluidRow(
                                       box(width=12,
-                                          pickerInput( inputId = "select_county",
-                                                       label = "Select County",
-                                                       choices = childcare_spaces%>% select(county)%>%distinct()%>%pull(),
+                                          pickerInput( inputId = "select_year",
+                                                       label = "Select Year",
+                                                       choices = childcare_spaces%>% select(year)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
                                                        selected = "Infant (0-12 Months)"),
-                                          title=strong("Childcare Program Space"),
+                                          title=strong("Childcare Program Spaces"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Program Space",leafletOutput("childcare_space_map")),
-                                          column(width=6, "Childcare Space Time Series", plotOutput("childcare_space_timeser"))
+                                          column(width=6, "Childcare Program Space",leafletOutput("childcare_space_map"))#,
+                                          #column(width=6, "Childcare Space Time Series", plotOutput("childcare_space_timeser"))
                                       )
                                       
                                     ),
                                     fluidRow(
-                                      box(
-                                        title=strong("Number of availability of child care by county"),
-                                        closable = FALSE,
-                                        solidHeader = TRUE,
-                                        collapsible = FALSE,
-                                        plotOutput("chldcare_space_boxplot_1")),
+                                      # box(
+                                      #   title=strong("Number of availability of child care by county"),
+                                      #   closable = FALSE,
+                                      #   solidHeader = TRUE,
+                                      #   collapsible = FALSE,
+                                      #   plotOutput("chldcare_space_boxplot")),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
@@ -503,8 +503,6 @@ body <-
       ),
       
       
-      
-     ############################################################################################################################################## 
       
       # . Education body --------------------------------------------------------
       
@@ -1527,7 +1525,6 @@ server <- function(input, output, session) {
                             select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
     })
   
-  #################################################################################################################################################
   #unemployment rate map reactive  WORK
   unemp_map <- reactive ({
     unemployment_rate_by_year %>%
@@ -1622,10 +1619,6 @@ server <- function(input, output, session) {
     })
   
   
-  
-  
-  ####################################################################################################################################################################################################       
- 
   #childcare_rate_map_by provider 1 WORK
   childcare_rate_map_1 <- reactive ({
     childcare_rates_provider1 %>%
@@ -1761,9 +1754,107 @@ server <- function(input, output, session) {
                             select(county, year,provider_type, age, cost), file)
     })
   
+  ################################################################################################################################################
+  
+  #Childcare avaiblity  Childcare Program spaces map reactive 
+  childcare_space_map <- reactive ({
+    childcare_spaces %>%
+      filter(year == input$select_year)  %>%
+      mutate(county=str_to_lower(county))%>%
+      left_join(iowa_map, by= "county") %>%
+      sf::st_as_sf(.)
+  })
+  #Childcare Avaibility map
+  output$childcare_space_map <- renderLeaflet({
+    mypal <- colorNumeric("YlOrRd", childcare_space_map()$spaces)
+    mytext <- paste(
+      "County: ", str_to_title(childcare_space_map()$county),"<br/>",
+      "Program: ", round(childcare_space_map()$programs, 1),"<br/>",
+      "Space: ", round(childcare_space_map()$spaces, 1),
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    childcare_space_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(county, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(spaces)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright",
+                pal = mypal,
+                values = ~spaces,
+                title = "Childcare Available",
+                opacity = .8)# %>%
+    #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
+  })
   
   
-  #############################################################################################################################################################################################################     
+  # unemp_rate_statewide <- reactive({
+  #   unemployment_rate_by_year %>%
+  #     filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+  #     group_by(year) %>%
+  #     summarise(value = mean(unemprate, na.rm=TRUE))%>%
+  #     mutate(name = "Statewide")
+  # })
+  
+  # output$unemp_timeser <- renderPlot({
+  #   unemp_timeser(unemp_rate_statewide())  #allow to select different county
+  # })
+  # 
+  # output$unemp_boxplot <- renderPlot({
+  #   unemp_box_plot(unemp_rate_statewide())
+  # })
+  
+  
+  output$childcare_space_table <- DT::renderDataTable({
+    childcare_spaces %>%
+      select(county, year, programs, spaces) %>%
+      datatable() %>%
+      formatPercentage(3:12, 2)
+  })
+  
+  output$childcare_space_table <- DT::renderDataTable({
+    childcare_spaces %>%
+      select(county, year, programs, spaces) %>%
+      datatable() %>%
+      formatPercentage(3,2)
+  })
+  
+  
+  # Download data as csv
+  output$childcare_space_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("childcare_program_space", ".csv")
+    },
+    content = function(file) {
+      write.csv(childcare_spaces %>%
+                  select(county, year, programs, spaces), file, row.names = FALSE)
+    })
+  
+  # Download data as xlsx
+  output$childcare_space_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("childcare_program_space", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(childcare_spaces %>%
+                            select(county, year, programs, spaces), file)
+    })
+  
+  
+  
+  
+  
+  
   #child abuse
   # Prepare data for Childabuse line plot and table
   childabuse <- reactive({
