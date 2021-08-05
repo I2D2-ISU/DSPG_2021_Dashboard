@@ -50,23 +50,26 @@ child_abuse_statewide <- left_join(left_join(child_abuse_under_3, child_abuse_3_
 child_abuse_county_state <- rbind(child_abuse, child_abuse_statewide)
 
 
-childcare_program_services <- read_csv("data/childcare/childcare_program_services.csv") %>%
+childcare_services <- read_csv("data/childcare/childcare_program_services.csv") %>%
   select(-X1, -fips)
 childcare_program_services
 
-childcare_program_spaces_percent <- read_csv("data/childcare/childcare_program_spaces_percent.csv") %>%
+childcare_spaces_percent <- read_csv("data/childcare/childcare_program_spaces_percent.csv") %>%
   select(-X1, -fips)
 childcare_program_spaces_percent
 
-childcare_program_spaces_total <- read_csv("data/childcare/childcare_program_spaces_total.csv") %>%
+childcare_spaces <- read_csv("data/childcare/childcare_program_spaces_total.csv") %>%
   select(-X1, -fips)
-childcare_program_spaces_total
+
 
 childcare_rates <- read_csv("data/childcare/childcare_rates.csv") %>%
   select(-X1, -fips, -`cost_average_per_week`)
-childcare_rates
 
+childcare_rates_provider1 <- childcare_rates %>%
+  filter (provider_type == "Registered Child Development Homes")
 
+childcare_rates_provider2 <- childcare_rates %>%
+  filter (provider_type == "DHS Licensed Centers/Preschools")
 
 
 

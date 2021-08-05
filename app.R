@@ -290,8 +290,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Rate by Provider Type",leafletOutput("childcare_rate_map")),
-                                          column(width=6, "Childcare Rate Time Series", plotOutput("childcare_rate_timeser"))
+                                          column(width=6, "Childcare Rate By Registered Child Development Homes Provider",leafletOutput("childcare_rate_map_1")),
+                                          column(width=6, "Childcare Rate By DHS Licensed Centers/Preschools Provider", leafletOutput("childcare_rate_map_2"))
                                       )
                                       
                                     ),
@@ -301,7 +301,7 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           width = 12,
-                                          plotOutput("childcare_rate_boxplot"),
+                                          #plotOutput("childcare_rate_boxplot"),
                                           downloadButton("childcare_rate_download_csv", "Download CSV"),
                                           downloadButton("childcare_rate_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("childcare_rate_table")
@@ -310,14 +310,19 @@ body <-
                            tabPanel(h4("Child Care Avaibility"),
                                     fluidRow(
                                       box(width=12,
-                                          title=strong("Number of ailability of child care by county"),
-                                          toggle_button("childcare_lf_toggle",
-                                                        c("Program", "Space")),
+                                          pickerInput( inputId = "select_county",
+                                                       label = "Select County",
+                                                       choices = childcare_spaces%>% select(county)%>%distinct()%>%pull(),
+                                                       multiple = FALSE,
+                                                       selected = "Infant (0-12 Months)"),
+                                          title=strong("Childcare Program Space"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Program Space", plotOutput("childcare_space_timeser")),
-                                          column(width=6, "Childcare avaibility", leafletOutput("childcare_space_map")))
+                                          column(width=6, "Childcare Program Space",leafletOutput("childcare_space_map")),
+                                          column(width=6, "Childcare Space Time Series", plotOutput("childcare_space_timeser"))
+                                      )
+                                      
                                     ),
                                     fluidRow(
                                       box(
@@ -1621,24 +1626,64 @@ server <- function(input, output, session) {
   
   ####################################################################################################################################################################################################       
  
-  #childcare_rate_map WORK
-  childcare_rate_map <- reactive ({
-    childcare_rates %>%
+  #childcare_rate_map_by provider 1 WORK
+  childcare_rate_map_1 <- reactive ({
+    childcare_rates_provider1 %>%
       filter(age == input$child_age)  %>%
       mutate(county=str_to_lower(county))%>%
       left_join(iowa_map, by= "county") %>%
       sf::st_as_sf(.)
   })
-  #unemployment map
-  output$childcare_rate_map <- renderLeaflet({
-    mypal <- colorNumeric("YlOrRd", childcare_rate_map()$cost)
+  #childcare rate by provider 1 map
+  output$childcare_rate_map_1 <- renderLeaflet({
+    mypal <- colorNumeric("YlOrRd", childcare_rate_map_1()$cost)
     mytext <- paste(
-      "County: ", str_to_title(childcare_rate_map()$county),"<br/>",
-      "Per Week: ", round(childcare_rate_map()$cost, 1),
+      "County: ", str_to_title(childcare_rate_map_1()$county),"<br/>",
+      "Per Week: ", round(childcare_rate_map_1()$cost, 1),
       sep="") %>%
       lapply(htmltools::HTML)
     
-    childcare_rate_map() %>%
+    childcare_rate_map_1() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(county, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(cost)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright",
+                pal = mypal,
+                values = ~cost,
+                title = "Cost Per Week",
+                opacity = .8) # %>%
+    #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
+  })
+  
+  #childcare_rate_map_by provider 2 WORK
+  childcare_rate_map_2 <- reactive ({
+    childcare_rates_provider2 %>%
+      filter(age == input$child_age)  %>%
+      mutate(county=str_to_lower(county))%>%
+      left_join(iowa_map, by= "county") %>%
+      sf::st_as_sf(.)
+  })
+  #childcare rate map by provider 2
+  output$childcare_rate_map_2 <- renderLeaflet({
+    mypal <- colorNumeric("YlGn", childcare_rate_map_2()$cost)
+    mytext <- paste(
+      "County: ", str_to_title(childcare_rate_map_2()$county),"<br/>",
+      "Per Week: ", round(childcare_rate_map_2()$cost, 1),
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    childcare_rate_map_2() %>%
       sf::st_transform(crs = "+init=epsg:4326") %>%
       leaflet(options = leafletOptions(zoomControl = FALSE,
                                        minZoom = 7, maxZoom = 7,
@@ -1664,7 +1709,7 @@ server <- function(input, output, session) {
   
   
   #Childcare rate per week
-  
+
   rate <- reactive({
     childcare_rates %>%
       filter(age, input$age) %>%
@@ -1672,48 +1717,49 @@ server <- function(input, output, session) {
       summarise(value = mean(cost, na.rm=TRUE))
   })
   
-  output$childcare_rate_timeser <- renderPlot({
-    unemp_timeser(rate())  #allow to select different county
-  })
-
-  output$unemp_boxplot <- renderPlot({
-    unemp_cat_plot(rate())
-  })
-  
-  
-  # output$childcare_table <- DT::renderDataTable({
-  #   childcare_rates %>%
-  #     select(county, year, cost) %>%
-  #     datatable() %>%
-  #     formatPercentage(3:12, 2)
+  # output$childcare_rate_timeser <- renderPlot({
+  #   unemp_timeser(rate())  #allow to select different county
   # })
-  
-  # output$childcare_rate_table <- DT::renderDataTable({
-  #   childcare_rates %>%
-  #     select(county, year, cost) %>%
-  #     datatable() %>%
-  #     formatPercentage(3,2)
-  # })
-  
-  # # Download data as csv
-  # output$childcare_rate_download_csv <- downloadHandler(
-  #   filename = function() {
-  #     paste0("childcare_rate", ".csv")
-  #   },
-  #   content = function(file) {
-  #     write.csv(child_care_rates %>%
-  #                 select(county, year, percent = cost), file, row.names = FALSE)
-  #   })
   # 
-  # # Download data as xlsx
-  # output$childcare_rate_download_xlsx <- downloadHandler(
-  #   filename = function() {
-  #     paste0("childcare_rate", ".xlsx")
-  #   },
-  #   content = function(file) {
-  #     writexl::write_xlsx(childcare_rates %>%
-  #                           select(name, year, percent = cost), file)
-  #   })
+  # output$unemp_boxplot <- renderPlot({
+  #   unemp_cat_plot(rate())
+  # })
+  
+  
+  #Table Peovider type don't show ?????????
+  output$childcare_rate_table <- DT::renderDataTable({
+    childcare_rates %>%
+      select(county, year, provider_type, age, cost) %>%
+      datatable() %>%
+      formatPercentage(3:12, 2)
+  })
+  
+  output$childcare_rate_table <- DT::renderDataTable({
+    childcare_rates %>%
+      select(county, year, provider_type, age, cost) %>%
+      datatable() %>%
+      formatPercentage(3,2)
+  })
+  
+  # Download data as csv
+  output$childcare_rate_download_csv <- downloadHandler(
+    filename = function() {
+      paste0("childcare_rate", ".csv")
+    },
+    content = function(file) {
+      write.csv(child_care_rates %>%
+                  select(county, year,provider_type, age, cost), file, row.names = FALSE)
+    })
+
+  # Download data as xlsx
+  output$childcare_rate_download_xlsx <- downloadHandler(
+    filename = function() {
+      paste0("childcare_rate", ".xlsx")
+    },
+    content = function(file) {
+      writexl::write_xlsx(childcare_rates %>%
+                            select(county, year,provider_type, age, cost), file)
+    })
   
   
   
