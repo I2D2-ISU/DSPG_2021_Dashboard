@@ -11,6 +11,7 @@ library(plotly)
 library(scales)
 library(lubridate)
 library(ggrepel)
+library(mapview)
 
 
 source("modules.R")
@@ -408,8 +409,12 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Averaged over selected years",leafletOutput("emp_map_1")),
-                                          column(width=6, "Over time", plotOutput("emp_timeser_1"))
+                                          column(width=6, "Averaged over selected years",
+                                                 leafletOutput("emp_map_1"),
+                                                 downloadButton("emp_map_1_png", "Download PNG")),
+                                          column(width=6, "Over time", 
+                                                 plotOutput("emp_timeser_1"),
+                                                 downloadButton("emp_timeser_1_png", "Download PNG"))
                                       )
                                       
                                     ),
@@ -1092,6 +1097,50 @@ server <- function(input, output, session) {
       addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
   })
   
+  plotInput_emp_map_1 <- reactive ({
+    mypal <- colorNumeric("YlOrRd", acs_pov_map()$value*100)
+    mytext <- paste(
+      "County: ", acs_pov_map()$NAME,"<br/>", 
+      "Percent: ", percent(acs_pov_map()$value, accuracy=0.1), 
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    acs_pov_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(value*100)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright", 
+                pal = mypal, 
+                values = ~value*100,
+                title = "Estimate",
+                opacity = .8,
+                labFormat = labelFormat(suffix = "%")) %>%
+      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
+  })
+  
+  output$emp_map_1_png <- downloadHandler(
+    filename = paste("ChildPoverty_", input$COUNTY, "_Map.png", sep = ""),
+    content = function(file) {
+      device <- function(..., width, height) {
+        grDevices::png(..., width = width, height = height,
+                       res = 300, units = "in")
+      }
+      mapshot(plotInput_emp_map_1(), file = file)
+    })
+  
+  
+  
   acs_pov_react <- reactive ({
     plotting_county <-
       if(input$STATEWIDE) {
@@ -1099,23 +1148,6 @@ server <- function(input, output, session) {
       } else {
         input$COUNTY
       }
-    acs_inds %>% 
-      select(NAME, year, B17020_pup6,
-             B17020_pup6m, 
-             B17020_pup6wa,
-             B17020_pup6w, 
-             B17020_pup6b,
-             B17020_pup6n,
-             B17020_pup6a,
-             B17020_pup6pci,
-             B17020_pup6s,
-             B17020_pup6t,
-             B17020_pup6l) %>%
-      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-      filter(year>=min(year), NAME%in%plotting_county)
-  })
-  
-  output$emp_timeser_1 <- renderPlot({
     plotting_var <- 
       if(input$emp_race == "All") {
         "B17020_pup6"
@@ -1137,8 +1169,29 @@ server <- function(input, output, session) {
         "B17020_pup6l"
       } else {"B17020_pup6wa"}
     
-    acs_time_ser(acs_pov_react(), plotting_var)
+    acs_inds %>% 
+      select(NAME, year, value = !!as.name(plotting_var)) %>%
+      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(year>=min(year), NAME%in%plotting_county)
   })
+  
+  output$emp_timeser_1 <- renderPlot({
+    acs_time_ser(acs_pov_react(), "value")
+  })
+  
+  plotInput_emp_timeser_1_png <- reactive({
+    acs_time_ser(acs_pov_react(), "value")
+    })
+     
+  output$emp_timeser_1_png <- downloadHandler(
+    filename = paste("ChildPoverty_", input$COUNTY, "_TimeSeries.png", sep = ""),
+    content = function(file) {
+      device <- function(..., width, height) {
+        grDevices::png(..., width = width, height = height,
+                       res = 300, units = "in")
+      }
+      ggsave(file, plot = plotInput_emp_timeser_1_png(), device = "png")
+    })
   
   acs_genpov_react <- reactive ({
     plotting_county <-
