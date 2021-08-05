@@ -291,8 +291,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Rate By Registered Child Development Homes Provider",leafletOutput("childcare_rate_map_1")),
-                                          column(width=6, "Childcare Rate By DHS Licensed Centers/Preschools Provider", leafletOutput("childcare_rate_map_2"))
+                                          column(width=6, strong("Childcare Rate By Registered Child Development Homes Provider"),leafletOutput("childcare_rate_map_1")),
+                                          column(width=6, strong("Childcare Rate By DHS Licensed Centers/Preschools Provider"), leafletOutput("childcare_rate_map_2"))
                                       )
                                       
                                     ),
@@ -345,12 +345,13 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childabuse By County Timeseries", plotOutput("childabuse_timeser")),
-                                          column(width=6, "Childabuse By Year Map", leafletOutput("childabuse_map")))
+                                          column(width=6, strong("Child Abuse By Year"), leafletOutput("childabuse_map")),
+                                          column(width=6, strong("Child Abuse Statewide Timeseries"), plotOutput("childabuse_timeser"))
+                                          )
                                     ),
                                     fluidRow(
                                       box(
-                                        title=strong("incidence of child abuse per 1,000 children"),
+                                        title=strong("Incidence of child abuse per 1,000 children"),
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
@@ -465,8 +466,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Unemployment Rate by Year",leafletOutput("unemp_map")),
-                                          column(width=6, "Unemployment Rate Time Series by County", plotOutput("unemp_timeser"))
+                                          column(width=6, strong("Unemployment Rate by Year"),leafletOutput("unemp_map")),
+                                          column(width=6, strong("Unemployment Rate Time Series by County"), plotOutput("unemp_timeser"))
                                       )
                                       
                                     ),
