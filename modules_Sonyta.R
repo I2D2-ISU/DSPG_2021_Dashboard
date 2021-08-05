@@ -40,16 +40,53 @@ unemp_box_plot <- function(df) {
     geom_label(aes(label = percent(value/100, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
 }
 
+# Childcare Cost Box Plot Function
+
+childcare_rate_boxplot <- function(df) {
+  ggplot(df, aes(x = year, cost, fill=county)) + 
+    geom_col(position = "dodge") +
+    theme_fivethirtyeight() + 
+    scale_y_continuous(labels = scales::percent,limits = c(0,0.1)) +
+    theme(text = element_text(family = "Arial"), 
+          panel.background = element_rect(fill="white"),
+          plot.background = element_rect(fill="white"), legend.position="top", legend.title=element_blank()) +
+    geom_label(aes(label = percent(value/100, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
+}
+
+
+
+# Childcare Cost Box Plot Function
+
+childabuse_barplot <- function(df) {
+  ggplot(df, aes(x = abuse_type, value, fill=abuse_type)) + 
+    geom_col(position = "dodge") +
+    theme_fivethirtyeight() + 
+    scale_y_continuous(labels = scales::percent,limits = c(0,0.1)) +
+    theme(text = element_text(family = "Arial"), 
+          panel.background = element_rect(fill="white"),
+          plot.background = element_rect(fill="white"), legend.position="top", legend.title=element_blank()) +
+    geom_label(aes(label = percent(value/100, accuracy = .1)), position = position_dodge(0.9), size=5, color="white", show.legend = FALSE)
+}
+
+
+
+
+
+
+
+
+
 # Childabuse Time Series Function
 
-childabuse_timeser <- function(df, var){
+childabuse_timeser <- function(df){
   
-  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
+  df <- na.omit(df %>% select(name, year, value))
   
-  ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
+  df %>% 
+    ggplot(aes(x=year, y = value/100 , color=name)) +
     geom_line() +
     geom_point() +
-    geom_label_repel(aes(label = round(!!(as.name(var)), 1)),
+    geom_label_repel(aes(label = percent(value/100, accuracy = 0.1)),
                      box.padding   = 0, 
                      point.padding = 0,
                      segment.color = 'grey50', show.legend = FALSE) +
@@ -61,12 +98,14 @@ childabuse_timeser <- function(df, var){
           legend.background = element_rect(fill="white", 
                                            size=0.5, linetype="solid")) +
     scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
-                       limits = c(min(df$year),max(df$year)))
+                       limits = c(min(df$year),max(df$year))) +
+    scale_y_continuous(labels=scales::percent_format(), limits=c(0, 0.1))
 }
+
 
 # Childcare rate Time Series Function
 
-childcare_rate_timeser <- function(df){
+childcare_rate_timeser <- function(df, var){
   
   df <- na.omit(df %>% select(age, value, county))
   

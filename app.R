@@ -337,13 +337,16 @@ body <-
                                     fluidRow(
                                       box(width=12,
                                           title=strong("incidence of child abuse per 1,000 children"),
-                                          toggle_button("childabuse_lf_toggle",
-                                                        c("under 3 years old", "4 and 5 years old", "5 years old", "under 6 years old")),
+                                          pickerInput(inputId = "abuse_year",
+                                                        label = "Select Year",
+                                                        choices = child_abuse_county_state%>% select(year)%>%distinct()%>%pull(),
+                                                        multiple = FALSE,
+                                                        selected = "2019"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childabuse Program Space", plotOutput("childabuse_timeser")),
-                                          column(width=6, "Childabuse avaibility", leafletOutput("childabuse_map")))
+                                          column(width=6, "Childabuse By County Timeseries", plotOutput("childabuse_timeser")),
+                                          column(width=6, "Childabuse By Year Map", leafletOutput("childabuse_map")))
                                     ),
                                     fluidRow(
                                       box(
@@ -351,25 +354,16 @@ body <-
                                         closable = FALSE,
                                         solidHeader = TRUE,
                                         collapsible = FALSE,
-                                        plotOutput("chldabuse_boxplot_1")),
+                                        plotOutput("chldabuse_barplot")),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           downloadButton("childabuse_download_csv", "Download CSV"),
                                           downloadButton("childabuse_download_xlsx", "Download Excel"),
-                                          DT::dataTableOutput("childabuse_space_table")
+                                          DT::dataTableOutput("childabuse_table")
                                       )
                                     )
-                           ),
-                           
-                           tabPanel(h4("Child Care Provider"),
-                                    fluidRow(
-                                      box(title=strong("Child Care Provider"),
-                                          closable = FALSE,
-                                          solidHeader = TRUE,
-                                          collapsible = FALSE,
-                                          plotOutput("childabuse_timeser_2")))
                            )
               )
       ),
@@ -1630,15 +1624,15 @@ server <- function(input, output, session) {
   output$unemp_table <- DT::renderDataTable({
     unemployment_rate_by_year %>%
       select(name, year, unemprate) %>%
-      datatable() %>%
-      formatPercentage(3:12, 2)
+      datatable() #%>%
+      #formatPercentage(3:12, 2)
   })
   
   output$unemp_table <- DT::renderDataTable({
     unemployment_rate_by_year %>%
       select(name, year, percent = unemprate) %>%
-      datatable() %>%
-      formatPercentage(3,2)
+      datatable() #%>%
+      #formatPercentage(3,2)
   })
   
   
@@ -1758,8 +1752,8 @@ server <- function(input, output, session) {
   #   unemp_timeser(rate())  #allow to select different county
   # })
   # 
-  # output$unemp_boxplot <- renderPlot({
-  #   unemp_cat_plot(rate())
+  # output$childcare_rate_boxplot <- renderPlot({
+  #   childcare_rate_boxplot(rate())
   # })
   
   
@@ -1767,15 +1761,15 @@ server <- function(input, output, session) {
   output$childcare_rate_table <- DT::renderDataTable({
     childcare_rates %>%
       select(county, year, provider_type, age, cost) %>%
-      datatable() %>%
-      formatPercentage(3:12, 2)
+      datatable()
+      #formatPercentage(3:12, 2)
   })
   
   output$childcare_rate_table <- DT::renderDataTable({
     childcare_rates %>%
       select(county, year, provider_type, age, cost) %>%
-      datatable() %>%
-      formatPercentage(3,2)
+      datatable() #%>%
+     # formatPercentage(3,2)
   })
   
   # Download data as csv
@@ -1798,7 +1792,6 @@ server <- function(input, output, session) {
                             select(county, year,provider_type, age, cost), file)
     })
   
-  ################################################################################################################################################
   
   #Childcare avaiblity  Childcare Program spaces map reactive 
   childcare_space_map <- reactive ({
@@ -1862,15 +1855,15 @@ server <- function(input, output, session) {
   output$childcare_space_table <- DT::renderDataTable({
     childcare_spaces %>%
       select(county, year, programs, spaces) %>%
-      datatable() %>%
-      formatPercentage(3:12, 2)
+      datatable() #%>%
+      #formatPercentage(3:12, 2)
   })
   
   output$childcare_space_table <- DT::renderDataTable({
     childcare_spaces %>%
       select(county, year, programs, spaces) %>%
-      datatable() %>%
-      formatPercentage(3,2)
+      datatable() #%>%
+      #formatPercentage(3,2)
   })
   
   
@@ -1898,111 +1891,118 @@ server <- function(input, output, session) {
   
   
   
-  
-  #child abuse
-  # Prepare data for Childabuse line plot and table
-  childabuse <- reactive({
-    # make a list of counties to plot
-    abuse_county <-
-      if(input$statewide) {
-        c(input$name, "Statewide")
-      } else {
-        input$name
-      }
-    # filter data
+  ############################################################################################################################################
+  #child abuse map reactive  WORK
+  childabuse_map <- reactive ({
     child_abuse_county_state %>%
-      filter(group_3 == child_abuse_under_6,
-             between(year, input$YEAR[1], input$YEAR[2]),
-             name %in% abuse_county) %>%
-      mutate(county = factor(name, levels = abuse_county))
+      filter(year == input$abuse_year)  %>%
+      mutate(county=str_to_lower(name))%>%
+      left_join(iowa_map, by= "county") %>%
+      sf::st_as_sf(.)
+  })
+  #unemployment map
+  output$childabuse_map <- renderLeaflet({
+    mypal <- colorNumeric("YlOrRd", childabuse_map()$child_abuse_under_6)
+    mytext <- paste(
+      "County: ", str_to_title(childabuse_map()$name),"<br/>",
+      "Under 6: ", round(childabuse_map()$child_abuse_under_6, 1),
+      sep="") %>%
+      lapply(htmltools::HTML)
+    
+    childabuse_map() %>%
+      sf::st_transform(crs = "+init=epsg:4326") %>%
+      leaflet(options = leafletOptions(zoomControl = FALSE,
+                                       minZoom = 7, maxZoom = 7,
+                                       dragging = FALSE)) %>%
+      addProviderTiles(provider = "CartoDB.Positron") %>%
+      addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
+                  stroke = TRUE,  # Set True for border color
+                  weight = 1,
+                  smoothFactor = 0.3,
+                  fillOpacity = 0.7,
+                  opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
+                  color = "white", #polygon border color
+                  label = mytext,
+                  fillColor = ~ mypal(child_abuse_under_6)) %>% #instead of using color for fill, use fillcolor
+      addLegend("bottomright",
+                pal = mypal,
+                values = ~child_abuse_under_6,
+                title = "Childabuse",
+                opacity = .8)# %>%
+    #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
   })
   
-  # Make line plot for Education Attainment tab
-  output$childabuse_plot_line <- renderPlot({
-    childabuse() %>%
-      filter(group_2 == input$childabuse_plot_line_toggle) %>%
-      plot_line_year(df = ., PERCENT = TRUE) +
-      labs(
-        # title="Proportion of Women Who Has A Birth In The Past 12 Months",
-        # subtitle="less than high school education",
-        caption="Source: Department of Human and Services")
-  })
-  
-  
-  # Prepare data for Childabuse map and bar chart
-  childabuse_data_averaged <- reactive({
+  abuse_bar_plot <- reactive({
     child_abuse_county_state %>%
-      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-      group_by(county, group_2, group_3) %>%
-      summarise(value = mean(child_abuse_under_6))
+      filter(name== input$name)%>%
+      filter(year== input$abuse_year) %>%
+      pivot_longer(child_abuse_under_3: child_abuse_under_6, abuse_type, value)
+      
+  })
+  
+  county_statewide <- reactive({
+    child_abuse_county_state %>%
+      filter(name== input$name)%>%
+      filter(year== input$abuse_year) 
+  })
+  
+  output$chldabuse_barplot <- renderPlot({
+    childabuse_barplot(abuse_bar_plot(name, year))
+  })
+  
+  #Gina test
+  #child_abuse_county_state %>%  pivot_longer(child_abuse_under_3: child_abuse_under_6, names_repair ="minimal" )
+  #child_abuse_county_state %>% filter(year == 2019) %>%filter(name =="Adair" ) %>% pivot_longer(child_abuse_under_3: child_abuse_under_6 )
+  # child_abuse_county_state %>% filter(year == 2019) %>%filter(name =="Adair" ) %>% pivot_longer(3:6 )
+  
+  # 
+  
+  #Childabuse time series
+  output$childabuse_timeser <- renderPlot({
+    childabuse_timeser(unemp_rate_statewide())  #allow to select different county
   })
   
   
-  # Make map for Education Attainment tab
-  output$childabuse_plot_map <- renderLeaflet({
-    childabuse_data_01_averaged() %>%
-      filter(group_3 == input$childabuse_plot_map_toggle,      # chose education grade
-             group_2 == input$childabuse_plot_line_toggle) %>% #choose marital status
-      mutate(value = value *100) %>%
-      rowwise() %>%
-      mutate(
-        popup_label = htmltools::HTML(sprintf('<b>%s</b>
-    <br><span style="padding-left: 10px;">%s: <b>%.1f%%</b>
-    <br><span style="padding-left: 10px;">Marital Status: <b>%s</b>',
-                                              county, group_3, value, group_2))) %>%
-      ungroup() %>%
-      plot_map_mean(county = input$name)
+  
+  
+  output$childabuse_table <- DT::renderDataTable({
+    child_abuse_county_state %>%
+      select(county =name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
+             age_5 = child_abuse_5, age_under_6 =child_abuse_under_6) %>%
+      datatable() #%>%
+      #formatPercentage(3:12, 2)
   })
   
-  # Make bar plot for Education Attainment tab
-  output$childabuse_plot_bar_01 <- renderPlot({
-    # make a list of counties to plot
-    my_county <-
-      if(input$statewide) {
-        c(input$name, "Statewide")
-      } else {
-        input$name
-      }
-    
-    my_years <- c(input$YEAR[1], input$YEAR[2])
-    
-    childabuse_data_averaged() %>%
-      filter(county %in% my_county,
-             group_2 != "Both") %>%
-      mutate(county = factor(county, levels = my_county)) %>%
-      plot_bar_mean(PERCENT = TRUE, YEARS = my_years) 
+  output$childabuse_table <- DT::renderDataTable({
+    child_abuse_county_state %>%
+      select(county = name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
+             age_5 = child_abuse_5, age_under_6 =child_abuse_under_6) %>%
+      datatable() #%>%
+      #formatPercentage(3,2)
   })
-  
-  # Make table to go with the Education Attainment line plot
-  output$childabuse_plot_table <- DT::renderDataTable({
-    childabuse_data_county() %>%
-      spread(group_2, value) %>%
-      select(name, year, Both) %>%
-      datatable() %>%
-      formatPercentage(3:5, 2)
-  })
-  
   
   # Download data as csv
   output$childabuse_download_csv <- downloadHandler(
     filename = function() {
-      paste0("Childabuse", ".csv")
+      paste0("child abuse", ".csv")
     },
     content = function(file) {
-      write.csv(Childabuse_data_county(), file, row.names = FALSE)
-    }
-  )
-  
+      write.csv(child_abuse_county_state %>%
+                  select(county = name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
+                         age_5 = child_abuse_5, age_under_6 =child_abuse_under_6), file, row.names = FALSE)
+    })
+
   # Download data as xlsx
   output$childabuse_download_xlsx <- downloadHandler(
     filename = function() {
-      paste0("Childabuse", ".xlsx")
+      paste0("child abuse", ".xlsx")
     },
     content = function(file) {
-      writexl::write_xlsx(childabuse_data_county(), file)
-    }
-  )
-  
+      writexl::write_xlsx(child_abuse_county_state %>%
+                            select(county = name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
+                                   age_5 = child_abuse_5, age_under_6 =child_abuse_under_6), file)
+    })
+
   
 }
 
