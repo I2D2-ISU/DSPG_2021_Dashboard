@@ -310,8 +310,7 @@ body <-
                                     )),
                            tabPanel(h4("Child Care Avaibility"),
                                     fluidRow(
-                                      box(width=12,
-                                          pickerInput( inputId = "select_year",
+                                      box(pickerInput( inputId = "select_year",
                                                        label = "Select Year",
                                                        choices = childcare_spaces%>% select(year)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
@@ -320,18 +319,7 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, "Childcare Program Space",leafletOutput("childcare_space_map"))#,
-                                          #column(width=6, "Childcare Space Time Series", plotOutput("childcare_space_timeser"))
-                                      )
-                                      
-                                    ),
-                                    fluidRow(
-                                      # box(
-                                      #   title=strong("Number of availability of child care by county"),
-                                      #   closable = FALSE,
-                                      #   solidHeader = TRUE,
-                                      #   collapsible = FALSE,
-                                      #   plotOutput("chldcare_space_boxplot")),
+                                          leafletOutput("childcare_space_map")),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
@@ -340,8 +328,11 @@ body <-
                                           downloadButton("childcare_space_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("childcare_space_table")
                                       )
+                                      
                                     )
+                                   
                            ),
+                          
                            tabPanel(h4("Child abuse"),
                                     fluidRow(
                                       box(width=12,

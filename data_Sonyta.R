@@ -52,11 +52,11 @@ child_abuse_county_state <- rbind(child_abuse, child_abuse_statewide)
 
 childcare_services <- read_csv("data/childcare/childcare_program_services.csv") %>%
   select(-X1, -fips)
-childcare_program_services
+#childcare_program_services
 
 childcare_spaces_percent <- read_csv("data/childcare/childcare_program_spaces_percent.csv") %>%
   select(-X1, -fips)
-childcare_program_spaces_percent
+#childcare_program_spaces_percent
 
 childcare_spaces <- read_csv("data/childcare/childcare_program_spaces_total.csv") %>%
   select(-X1, -fips)
