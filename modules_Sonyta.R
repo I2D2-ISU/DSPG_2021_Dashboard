@@ -27,9 +27,9 @@ unemp_timeser <- function(df){
 
 
 
-# unemployment Category Function
+# unemployment Box Plot Function
 
-unemp_cat_plot <- function(df) {
+unemp_box_plot <- function(df) {
   ggplot(df, aes(x = year, value/100, fill=name)) + 
     geom_col(position = "dodge") +
     theme_fivethirtyeight() + 
@@ -66,14 +66,15 @@ childabuse_timeser <- function(df, var){
 
 # Childcare rate Time Series Function
 
-childcare_rate_timeser <- function(df, var){
+childcare_rate_timeser <- function(df){
   
-  df <- na.omit(df %>% select(year, !!(as.name(var)), NAME))
+  df <- na.omit(df %>% select(age, value, county))
   
-  ggplot(df, aes(x=year, y=!!(as.name(var)) , color=NAME)) +
+  df %>% 
+    ggplot(aes(x=year, y = value , color=county)) +
     geom_line() +
     geom_point() +
-    geom_label_repel(aes(label = round(!!(as.name(var)), 1)),
+    geom_label_repel(aes(label = percent(value, accuracy = 0.1)),
                      box.padding   = 0, 
                      point.padding = 0,
                      segment.color = 'grey50', show.legend = FALSE) +
@@ -84,8 +85,9 @@ childcare_rate_timeser <- function(df, var){
           legend.title=element_blank(),
           legend.background = element_rect(fill="white", 
                                            size=0.5, linetype="solid")) +
-    scale_x_continuous(breaks=seq(min(df$year),max(df$year)+.9,by=1),
-                       limits = c(min(df$year),max(df$year)))
+    scale_x_continuous(breaks=seq(min(df$age),max(df$age)+.9,by=1),
+                       limits = c(min(df$age),max(df$age))) +
+    scale_y_continuous(labels=scales::percent_format(), limits=c(0, 500))
 }
 
 # Childcare_space Time Series Function

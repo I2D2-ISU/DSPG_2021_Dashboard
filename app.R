@@ -278,20 +278,20 @@ body <-
       
       tabItem(tabName = "demographics",
               tabsetPanel( type="tabs",
-                           tabPanel(h4("Child Care Cost"), 
+                           tabPanel(h4("Child Care Rate"), 
                                     fluidRow(
                                       box(width=12,
-                                          pickerInput( inputId = "childcare_rates",
-                                                       label = "Select age",
+                                          pickerInput( inputId = "child_age",
+                                                       label = "Select Age",
                                                        choices = childcare_rates%>% select(age)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
                                                        selected = "Infant (0-12 Months)"),
-                                          title=strong("Childcare cost by age of child"),
+                                          title=strong("Childcare Average Cost Per Week"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           column(width=6, "Childcare Rate by Provider Type",leafletOutput("childcare_rate_map")),
-                                          column(width=6, "Childcare Rate", plotOutput("childcare_rate_timeser"))
+                                          column(width=6, "Childcare Rate Time Series", plotOutput("childcare_rate_timeser"))
                                       )
                                       
                                     ),
@@ -301,8 +301,9 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           width = 12,
-                                          downloadButton("childcare_rate_1_download_csv", "Download CSV"),
-                                          downloadButton("childcare_rate_1_download_xlsx", "Download Excel"),
+                                          plotOutput("childcare_rate_boxplot"),
+                                          downloadButton("childcare_rate_download_csv", "Download CSV"),
+                                          downloadButton("childcare_rate_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("childcare_rate_table")
                                       )
                                     )),
@@ -462,7 +463,7 @@ body <-
                                       box(width=12,
                                           pickerInput( inputId = "Unemp_year",
                                                        label = "Select year",
-                                                       choices = unemployment_rate_by_year%>% select(year)%>%distinct()%>%pull(),,
+                                                       choices = unemployment_rate_by_year%>% select(year)%>%distinct()%>%pull(),
                                                        multiple = FALSE,
                                                        selected = "2021"),
                                           title=strong("Unemployment Rate by Year"),
@@ -498,7 +499,7 @@ body <-
       
       
       
-      ################################################################################################################################################################################################ 
+     ############################################################################################################################################## 
       
       # . Education body --------------------------------------------------------
       
@@ -1521,7 +1522,7 @@ server <- function(input, output, session) {
                             select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
     })
   
-  ####################################################################################################################################################################################################
+  #################################################################################################################################################
   #unemployment rate map reactive  WORK
   unemp_map <- reactive ({
     unemployment_rate_by_year %>%
@@ -1572,11 +1573,11 @@ server <- function(input, output, session) {
   })
   
   output$unemp_timeser <- renderPlot({
-    unemp_timeser(unemp_rate_statewide())
+    unemp_timeser(unemp_rate_statewide())  #allow to select different county
   })
    
   output$unemp_boxplot <- renderPlot({
-    unemp_cat_plot(unemp_rate_statewide())
+    unemp_box_plot(unemp_rate_statewide())
   })
   
   
@@ -1619,27 +1620,21 @@ server <- function(input, output, session) {
   
   
   ####################################################################################################################################################################################################       
-  
-  
-  
-  #Childcare rate map WORK
+ 
+  #childcare_rate_map WORK
   childcare_rate_map <- reactive ({
     childcare_rates %>%
-      filter(name != "statewide") %>%
-      filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
-      group_by(age)%>%  #county
-      summarise(value=mean(cost, na.rm=TRUE)) %>%
+      filter(age == input$child_age)  %>%
       mutate(county=str_to_lower(county))%>%
-      left_join(iowa_map, by(coun)) %>%
+      left_join(iowa_map, by= "county") %>%
       sf::st_as_sf(.)
   })
-  
+  #unemployment map
   output$childcare_rate_map <- renderLeaflet({
-    
-    mypal <- colorNumeric("YlOrRd", childcare_rate_map()$value)
+    mypal <- colorNumeric("YlOrRd", childcare_rate_map()$cost)
     mytext <- paste(
       "County: ", str_to_title(childcare_rate_map()$county),"<br/>",
-      "Esimate Per 100k: ", round(childcare_rate_map()$value, 1),
+      "Per Week: ", round(childcare_rate_map()$cost, 1),
       sep="") %>%
       lapply(htmltools::HTML)
     
@@ -1649,7 +1644,7 @@ server <- function(input, output, session) {
                                        minZoom = 7, maxZoom = 7,
                                        dragging = FALSE)) %>%
       addProviderTiles(provider = "CartoDB.Positron") %>%
-      addPolygons(popup = ~ str_extract(NAME, "^([^,]*)"),
+      addPolygons(popup = ~ str_extract(county, "^([^,]*)"),
                   stroke = TRUE,  # Set True for border color
                   weight = 1,
                   smoothFactor = 0.3,
@@ -1657,16 +1652,68 @@ server <- function(input, output, session) {
                   opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
                   color = "white", #polygon border color
                   label = mytext,
-                  fillColor = ~ mypal(value)) %>% #instead of using color for fill, use fillcolor
+                  fillColor = ~ mypal(cost)) %>% #instead of using color for fill, use fillcolor
       addLegend("bottomright",
                 pal = mypal,
-                values = ~value,
-                title = "Childcare Cost",
-                opacity = .8) %>%
-      addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$county)), "[:punct:]")))
+                values = ~cost,
+                title = "Cost Per Week",
+                opacity = .8) # %>%
+    #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
   })
   
   
+  
+  #Childcare rate per week
+  
+  rate <- reactive({
+    childcare_rates %>%
+      filter(age, input$age) %>%
+      group_by(year) %>%
+      summarise(value = mean(cost, na.rm=TRUE))
+  })
+  
+  output$childcare_rate_timeser <- renderPlot({
+    unemp_timeser(rate())  #allow to select different county
+  })
+
+  output$unemp_boxplot <- renderPlot({
+    unemp_cat_plot(rate())
+  })
+  
+  
+  # output$childcare_table <- DT::renderDataTable({
+  #   childcare_rates %>%
+  #     select(county, year, cost) %>%
+  #     datatable() %>%
+  #     formatPercentage(3:12, 2)
+  # })
+  
+  # output$childcare_rate_table <- DT::renderDataTable({
+  #   childcare_rates %>%
+  #     select(county, year, cost) %>%
+  #     datatable() %>%
+  #     formatPercentage(3,2)
+  # })
+  
+  # # Download data as csv
+  # output$childcare_rate_download_csv <- downloadHandler(
+  #   filename = function() {
+  #     paste0("childcare_rate", ".csv")
+  #   },
+  #   content = function(file) {
+  #     write.csv(child_care_rates %>%
+  #                 select(county, year, percent = cost), file, row.names = FALSE)
+  #   })
+  # 
+  # # Download data as xlsx
+  # output$childcare_rate_download_xlsx <- downloadHandler(
+  #   filename = function() {
+  #     paste0("childcare_rate", ".xlsx")
+  #   },
+  #   content = function(file) {
+  #     writexl::write_xlsx(childcare_rates %>%
+  #                           select(name, year, percent = cost), file)
+  #   })
   
   
   

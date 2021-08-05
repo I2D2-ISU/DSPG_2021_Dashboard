@@ -63,7 +63,7 @@ childcare_program_spaces_total <- read_csv("data/childcare/childcare_program_spa
 childcare_program_spaces_total
 
 childcare_rates <- read_csv("data/childcare/childcare_rates.csv") %>%
-  select(-X1, -fips)
+  select(-X1, -fips, -`cost_average_per_week`)
 childcare_rates
 
 
