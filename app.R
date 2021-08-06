@@ -22,8 +22,6 @@ source("data_Sonyta.R")
 source("modules_Sonyta.R")
 
 
-
-
 # Header ------------------------------------------------------------------
 header <-  dashboardHeader(title = "DSPG Dashboard")
 
@@ -319,7 +317,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          leafletOutput("childcare_space_map")),
+                                          leafletOutput("childcare_space_map")
+                                          ),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
@@ -335,8 +334,7 @@ body <-
                           
                            tabPanel(h4("Child abuse"),
                                     fluidRow(
-                                      box(width=12,
-                                          title=strong("incidence of child abuse per 1,000 children"),
+                                      box(title=strong("Incidence of Child Abuse Under 6 Per 1,000 Children By Year"),
                                           pickerInput(inputId = "abuse_year",
                                                         label = "Select Year",
                                                         choices = child_abuse_county_state%>% select(year)%>%distinct()%>%pull(),
@@ -345,17 +343,8 @@ body <-
                                           closable = FALSE,
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
-                                          column(width=6, strong("Child Abuse By Year"), leafletOutput("childabuse_map")),
-                                          column(width=6, strong("Child Abuse Statewide Timeseries"), plotOutput("childabuse_timeser"))
-                                          )
-                                    ),
-                                    fluidRow(
-                                      box(
-                                        title=strong("Incidence of child abuse per 1,000 children"),
-                                        closable = FALSE,
-                                        solidHeader = TRUE,
-                                        collapsible = FALSE,
-                                        plotOutput("chldabuse_barplot")),
+                                          leafletOutput("childabuse_map")
+                                          ),
                                       box(title=strong("Data"),
                                           closable = FALSE,
                                           solidHeader = TRUE,
@@ -364,7 +353,24 @@ body <-
                                           downloadButton("childabuse_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("childabuse_table")
                                       )
-                                    )
+                                    )#,
+                                    #fluidRow(
+                                      # box(
+                                      #   title=strong("Incidence of child abuse per 1,000 children"),
+                                      #   closable = FALSE,
+                                      #   solidHeader = TRUE,
+                                      #   collapsible = FALSE,
+                                      #   plotOutput("chldabuse_barplot")
+                                      #   ),
+                                      # box(title=strong("Data"),
+                                      #     closable = FALSE,
+                                      #     solidHeader = TRUE,
+                                      #     collapsible = FALSE,
+                                      #     downloadButton("childabuse_download_csv", "Download CSV"),
+                                      #     downloadButton("childabuse_download_xlsx", "Download Excel"),
+                                      #     DT::dataTableOutput("childabuse_table")
+                                      # )
+                                    #)
                            )
               )
       ),
@@ -1564,7 +1570,7 @@ server <- function(input, output, session) {
                             select(name = NAME, year, serious_crime = per100kRate, juvenile_crime = rate), file)
     })
   
-  #unemployment rate map reactive  WORK
+  #unemployment rate map reactive 
   unemp_map <- reactive ({
     unemployment_rate_by_year %>%
       filter(year == input$Unemp_year)  %>%
@@ -1658,7 +1664,7 @@ server <- function(input, output, session) {
     })
   
   
-  #childcare_rate_map_by provider 1 WORK
+  #childcare_rate_map_by provider 1 
   childcare_rate_map_1 <- reactive ({
     childcare_rates_provider1 %>%
       filter(age == input$child_age)  %>%
@@ -1698,7 +1704,7 @@ server <- function(input, output, session) {
     #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
   })
   
-  #childcare_rate_map_by provider 2 WORK
+  #childcare_rate_map_by provider 2
   childcare_rate_map_2 <- reactive ({
     childcare_rates_provider2 %>%
       filter(age == input$child_age)  %>%
@@ -1933,12 +1939,14 @@ server <- function(input, output, session) {
     #addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$name)), "[:punct:]")))
   })
   
+  
+  #bad name
   abuse_bar_plot <- reactive({
     child_abuse_county_state %>%
       filter(name== input$name)%>%
       filter(year== input$abuse_year) %>%
       pivot_longer(child_abuse_under_3: child_abuse_under_6, abuse_type, value)
-      
+
   })
   
   county_statewide <- reactive({
@@ -1948,7 +1956,7 @@ server <- function(input, output, session) {
   })
   
   output$chldabuse_barplot <- renderPlot({
-    childabuse_barplot(abuse_bar_plot(name, year))
+    childabuse_barplot(county_statewide(name, year))
   })
   
   #Gina test

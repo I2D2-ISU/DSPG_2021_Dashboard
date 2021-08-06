@@ -78,12 +78,12 @@ childabuse_barplot <- function(df) {
 
 # Childabuse Time Series Function
 
-childabuse_timeser <- function(df){
+childabuse_timeser <- function(df, var){ #var = year
   
-  df <- na.omit(df %>% select(name, year, value))
+  df <- na.omit(df %>% select(name, var, value))
   
   df %>% 
-    ggplot(aes(x=year, y = value/100 , color=name)) +
+    ggplot(aes(x=var, y = value/100 , color=name)) +
     geom_line() +
     geom_point() +
     geom_label_repel(aes(label = percent(value/100, accuracy = 0.1)),
