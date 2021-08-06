@@ -1580,7 +1580,7 @@ server <- function(input, output, session) {
   })
   #unemployment map
   output$unemp_map <- renderLeaflet({
-    mypal <- colorNumeric("YlOrRd", unemp_map()$unemprate)
+    mypal <- colorNumeric("viridis", unemp_map()$unemprate)
     mytext <- paste(
       "County: ", str_to_title(unemp_map()$name),"<br/>",
       "Per Year: ", round(unemp_map()$unemprate, 1),
@@ -1714,7 +1714,7 @@ server <- function(input, output, session) {
   })
   #childcare rate map by provider 2
   output$childcare_rate_map_2 <- renderLeaflet({
-    mypal <- colorNumeric("YlGn", childcare_rate_map_2()$cost)
+    mypal <- colorNumeric("viridis", childcare_rate_map_2()$cost)
     mytext <- paste(
       "County: ", str_to_title(childcare_rate_map_2()$county),"<br/>",
       "Per Week: ", round(childcare_rate_map_2()$cost, 1),
@@ -1810,7 +1810,7 @@ server <- function(input, output, session) {
   })
   #Childcare Avaibility map
   output$childcare_space_map <- renderLeaflet({
-    mypal <- colorNumeric("YlOrRd", childcare_space_map()$spaces)
+    mypal <- colorNumeric("viridis", childcare_space_map()$spaces)
     mytext <- paste(
       "County: ", str_to_title(childcare_space_map()$county),"<br/>",
       "Program: ", round(childcare_space_map()$programs, 1),"<br/>",
