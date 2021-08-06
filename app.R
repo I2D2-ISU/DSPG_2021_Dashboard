@@ -272,7 +272,7 @@ body <-
               # 
       ),
       
-      ####################################################################################################################################################################################################      
+
       # . Child and Families body -----------------------------------------------
       
       tabItem(tabName = "demographics",
@@ -353,24 +353,23 @@ body <-
                                           downloadButton("childabuse_download_xlsx", "Download Excel"),
                                           DT::dataTableOutput("childabuse_table")
                                       )
-                                    )#,
-                                    #fluidRow(
-                                      # box(
-                                      #   title=strong("Incidence of child abuse per 1,000 children"),
-                                      #   closable = FALSE,
-                                      #   solidHeader = TRUE,
-                                      #   collapsible = FALSE,
-                                      #   plotOutput("chldabuse_barplot")
-                                      #   ),
-                                      # box(title=strong("Data"),
-                                      #     closable = FALSE,
-                                      #     solidHeader = TRUE,
-                                      #     collapsible = FALSE,
-                                      #     downloadButton("childabuse_download_csv", "Download CSV"),
-                                      #     downloadButton("childabuse_download_xlsx", "Download Excel"),
-                                      #     DT::dataTableOutput("childabuse_table")
-                                      # )
-                                    #)
+                                    )
+                                    # fluidRow(
+                                    #   box(
+                                    #       title=strong("Incidence of child abuse per 1,000 children"),
+                                    #       closable = FALSE,
+                                    #       solidHeader = TRUE,
+                                    #       collapsible = FALSE,
+                                    #       plotOutput("chldabuse_barplot")
+                                    #   ),
+                                    #   box(
+                                    #     title=strong("Child Abuse Time Series"),
+                                    #     closable = FALSE,
+                                    #     solidHeader = TRUE,
+                                    #     collapsible = FALSE,
+                                    #     plotOutput("childabuse_timeser")
+                                    #     )
+                                    # )
                            )
               )
       ),
@@ -1894,11 +1893,6 @@ server <- function(input, output, session) {
                             select(county, year, programs, spaces), file)
     })
   
-  
-  
-  
-  
-  ############################################################################################################################################
   #child abuse map reactive  WORK
   childabuse_map <- reactive ({
     child_abuse_county_state %>%
@@ -1949,26 +1943,30 @@ server <- function(input, output, session) {
 
   })
   
+  #Not work
   county_statewide <- reactive({
     child_abuse_county_state %>%
-      filter(name== input$name)%>%
-      filter(year== input$abuse_year) 
+      filter(name =="Statewide") %>%
+      #filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
+      filter(year==2019) %>%
+      summarise(child_abuse_under_6, na.rm=TRUE)
   })
   
+  #not work
   output$chldabuse_barplot <- renderPlot({
-    childabuse_barplot(county_statewide(name, year))
+    childabuse_bar_plot(county_statewide())
   })
   
-  #Gina test
+  #test, but still have a bad name error
   #child_abuse_county_state %>%  pivot_longer(child_abuse_under_3: child_abuse_under_6, names_repair ="minimal" )
   #child_abuse_county_state %>% filter(year == 2019) %>%filter(name =="Adair" ) %>% pivot_longer(child_abuse_under_3: child_abuse_under_6 )
   # child_abuse_county_state %>% filter(year == 2019) %>%filter(name =="Adair" ) %>% pivot_longer(3:6 )
   
   # 
   
-  #Childabuse time series
+  #Childabuse time series, doesn't work
   output$childabuse_timeser <- renderPlot({
-    childabuse_timeser(unemp_rate_statewide())  #allow to select different county
+    childabuse_timeser(county_statewide())  #allow to select different county
   })
   
   
