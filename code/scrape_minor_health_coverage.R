@@ -8,6 +8,19 @@ library(censusapi)
 
 
 
+# FUNCTIONS ---------------------------------------------------------------
+  
+  # Function to standardize text for merging
+  standardize_string <- function(x) {
+    x %>%
+      str_squish() %>%
+      str_remove_all("[:punct:]") %>%
+      str_remove_all(" ") %>%
+      str_to_upper()
+  }
+
+  
+
 # READ AUXILIARY DATA -----------------------------------------------------
 
 # Read county fips codes
