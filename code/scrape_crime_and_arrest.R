@@ -3,7 +3,11 @@
 # URL: https://ucr.fbi.gov/crime-in-the-u.s
 # File is cleaned and indicators calculated
 
+# https://ucr.fbi.gov/nibrs/2011/tables/data-tables
+
+
 library(tidyverse)
+library(readxl)
 library(rvest)
 library(xml2)
 
@@ -37,66 +41,172 @@ standardize_county <- function(df) {
 county_population <- read_csv("data/RAW/ACS/pop5yr_acs.csv")
 
 
-# Calculate population of children under 6 years
-county_population_under_6 <-
-  county_population %>%
-  filter(variable %in% c("B09001_003", "B09001_004", "B09001_005")) %>%
-  group_by(fips = GEOID, county_name = NAME, year) %>%
-  summarise(population_under_6 = sum(estimate)) %>%
-  mutate(county_name = ifelse(fips == 19, "Statewide", county_name)) %>%
-  mutate(county_CAP = standardize_string(county_name)) %>%
-  ungroup()
-
 # Create standardize IA County list
 ia_counties <- 
-  county_population_under_6 %>%
-  distinct(county_name, fips, county_CAP)
+  county_population %>%
+  distinct(fips = GEOID, county_name = NAME) %>%
+  mutate(county_CAP = standardize_string(county_name))
 
 
-# SCRAPE QRS DATA ---------------------------------------------------------
+# SCRAPE CRIME DATA -------------------------------------------------------
 
-# Function to extract tables with QRS providers 
-scrape_QRS_provider_list <- function(URL) {
-  scrape_date <- 
-    xml2::read_html(URL) %>%
-    rvest::html_nodes("div.field-items h2") %>%
-    rvest::html_text()
+# # Function to extract tables with QRS providers 
+# scrape_QRS_provider_list <- function(URL) {
+#   scrape_date <- 
+#     xml2::read_html(URL) %>%
+#     rvest::html_nodes("div.field-items h2") %>%
+#     rvest::html_text()
+#   
+#   df <- 
+#     xml2::read_html(URL) %>%
+#     rvest::html_node("tbody") %>%
+#     rvest::html_table() %>%
+#     janitor::row_to_names(1) %>%
+#     janitor::clean_names() %>%
+#     mutate(month = str_extract(scrape_date, "[:alpha:]+"),
+#            year = str_extract(scrape_date, "[:number:]+"))
+#   
+#   return(df)
+# }
+# 
+# 
+# # Read Certified Child Development Homes List
+# QRS_provider_home <- scrape_QRS_provider_list("https://dhs.iowa.gov/iqrs/providers/homes")
+# 
+# 
+# # Save Raw data
+# write_csv(QRS_provider_list, "data/RAW/QRS/qrs_iowa_monthly.csv")
+
+
+
+
+# READ DATA ---------------------------------------------------------------
+
+# Read Arrest Tables
+
+file_path <- "data/RAW/crime/arrests_statewide/table-69_Arrests-by-State_1999.xls"
+
+df <- read_xls(file_path, range = cell_cols(1), col_names = FALSE) 
+first_row <- which(df[1] == 'State')
+col_names <-
+  read_xls(file_path, range = cell_rows(first_row), col_names = FALSE) %>%
+  mutate_all(function(x) {x %>% 
+      str_remove_all("[:number:]") %>%
+      str_remove_all("-\\s*") %>%
+      str_squish() %>%
+      str_to_lower()
+    })  %>% 
+  unlist(., use.names = FALSE) %>%
+  str_replace("^state$", "age") %>%
+  janitor::make_clean_names()
+
+df <-
+  read_xls(file_path, skip = first_row, col_names = col_names,
+           range = cell_cols(1:length(col_names))) %>%
+  mutate(state = str_extract(age, "[:upper:]{3,}")) %>%
+  fill(state, .direction = "down") %>%
+  filter(state == "IOWA") 
+
+population <- 
+  df %>% 
+  filter(is.na(total_all_classes)) %>%
+  janitor::remove_empty("cols") %>%
+  mutate(value = parse_number(age),
+         variable = str_remove(age, state) %>%
+           str_remove_all("[:punct:]") %>%
+           str_remove_all("[0-9]*") %>%
+           str_squish()) %>%
+  select(value, variable) %>%
+  spread(variable, value)
+
+data <- filter(df, !is.na(total_all_classes)) %>%
+  mutate(state = str_to_sentence(state),
+         year = str_extract(basename(file_path), "\\d{4}"))  %>% 
+  bind_cols(population) %>%
+  select(state, year, 
+         estimated_population = population, 
+         number_of_agencies  = agencies, 
+         age, everything())
+
+meta <-
+  read_xls(file_path, range = cell_rows(first_row), col_name = col_names) %>%
+  gather(variable, value) %>%
+  filter(str_detect(value, "\\d")) %>%
+  mutate(footnote_number = str_extract(value, "[:number:]"))
+
+footnote_numbers <- paste0("^[1-", max(meta$footnote_number), "] ")
+
+footnotes <-
+  read_xls(file_path, range = cell_cols(1), col_name = "footnote") %>%
+  filter(str_detect(footnote, footnote_numbers)) %>%
+  mutate(footnote_number = str_extract(footnote, "[:number:]")) %>%
+  right_join(meta) %>%
+  select(variable, footnote)
   
-  df <- 
-    xml2::read_html(URL) %>%
-    rvest::html_node("tbody") %>%
-    rvest::html_table() %>%
-    janitor::row_to_names(1) %>%
-    janitor::clean_names() %>%
-    mutate(month = str_extract(scrape_date, "[:alpha:]+"),
-           year = str_extract(scrape_date, "[:number:]+"))
-  
-  return(df)
-}
 
 
-# Read Certified Child Development Homes List
-QRS_provider_home <- scrape_QRS_provider_list("https://dhs.iowa.gov/iqrs/providers/homes")
+# read from 2005 forward
 
-# Read Certified Child Development Centers List
-QRS_provider_center <- scrape_QRS_provider_list("https://dhs.iowa.gov/iqrs/providers/centers")
+file_path <- "data/RAW/crime/arrests_statewide/table-69_Arrests-by-State_2005.xls"
 
+df <- read_xls(file_path, range = cell_cols(1), col_names = FALSE) 
 
-# Combine List of Certified Child Development Centers and Homes
-QRS_provider_list <- 
-  bind_rows(QRS_provider_center, QRS_provider_home) %>%
-  mutate(provider_type = ifelse(is.na(provider_last_name), "Centers", "Homes"),
-         provider_name = ifelse(is.na(provider_last_name), 
-                                provider_name, 
-                                paste0(provider_last_name, ", ", provider_first_name)),
-         certificate_expiration_date = lubridate::mdy(certificate_expiration_date)) %>%
-  select(provider_name, provider_type, county, city, 
-         report_year = year, report_month = month,
-         qrs_level = current_qrs_level, certificate_expiration_date)
+first_row <- which(df[1] == 'State')
+col_names <-
+  read_xls(file_path, range = cell_rows(first_row), col_names = FALSE) %>%
+  mutate_all(function(x) {x %>% 
+      str_remove_all("[:number:]") %>%
+      str_remove_all("-\\s*") %>%
+      str_squish() %>%
+      str_to_lower()
+  })  %>% 
+  unlist(., use.names = FALSE) %>%
+  janitor::make_clean_names() %>%
+  str_replace("^na$", "age")
 
+df <-
+  read_xls(file_path, skip = first_row, col_names = col_names, 
+           range = cell_cols(1:length(col_names))) %>%
+  # mutate(state = str_extract(age, "[:upper:]{3,}")) %>%
+  fill(state, .direction = "down") %>%
+  filter(state == "IOWA") 
 
-# Save Raw data
-write_csv(QRS_provider_list, "data/RAW/QRS/qrs_iowa_monthly.csv")
+# population <- 
+#   df %>% 
+#   filter(is.na(total_all_classes)) %>%
+#   janitor::remove_empty("cols") %>%
+#   mutate(value = parse_number(age),
+#          variable = str_remove(age, state) %>%
+#            str_remove_all("[:punct:]") %>%
+#            str_remove_all("[0-9]*") %>%
+#            str_squish()) %>%
+#   select(value, variable) %>%
+#   spread(variable, value)
+
+data <- 
+  df %>%
+  # filter(!is.na(total_all_classes)) %>%
+  mutate(state = str_to_sentence(state),
+         year = str_extract(basename(file_path), "\\d{4}"))  %>% 
+  # bind_cols(population) %>%
+  select(state, year, estimated_population, number_of_agencies, age, everything()) %>%
+  fill(estimated_population, number_of_agencies)
+
+meta <-
+  read_xls(file_path, range = cell_rows(first_row), col_name = col_names) %>%
+  gather(variable, value) %>%
+  filter(str_detect(value, "\\d")) %>%
+  mutate(footnote_number = str_extract(value, "[:number:]"))
+
+footnote_numbers <- paste0("^[1-", max(meta$footnote_number), "] ")
+
+footnotes <-
+  read_xls(file_path, range = cell_cols(1), col_name = "footnote") %>%
+  filter(str_detect(footnote, footnote_numbers)) %>%
+  mutate(footnote_number = str_extract(footnote, "[:number:]")) %>%
+  right_join(meta) %>%
+  select(variable, footnote)
+
 
 
 
