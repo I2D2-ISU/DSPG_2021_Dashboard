@@ -431,7 +431,9 @@ body <-
                                           solidHeader = TRUE,
                                           collapsible = FALSE,
                                           column(width=6, "Over time", plotOutput("emp_timeser_3")),
-                                          column(width=6, "Averaged over selected years", leafletOutput("emp_map_2")))
+                                          column(width=6, "Averaged over selected years", 
+                                                 leafletOutput("emp_map_2"),
+                                                 downloadButton("emp_map_2_png", "Download PNG")))
                                     ),
                                     fluidRow(
                                       box(
@@ -1124,13 +1126,14 @@ server <- function(input, output, session) {
   output$emp_map_1_png <- downloadHandler(
     filename = paste("ChildPoverty_", input$COUNTY, "_Map.png", sep = ""),
     content = function(file) {
-      device <- function(..., width, height) {
-        grDevices::png(..., width = width, height = height,
-                       res = 300, units = "in")
-      }
+      # device <- function(..., width, height) {
+      #   grDevices::png(..., width = width, height = height,
+      #                  res = 300, units = "in")
+      # }
       mapshot(plotInput_emp_map_1(), file = file)
     })
   
+ 
   
   
   acs_pov_react <- reactive ({
@@ -1361,6 +1364,7 @@ server <- function(input, output, session) {
                 labFormat = labelFormat(suffix = "%")) %>%
       addPolylines(data = iowa_map %>% filter(county == str_remove(str_to_lower(paste(input$COUNTY)), "[:punct:]")))
   })
+  
   
   
   immun_rate_map <- reactive ({
