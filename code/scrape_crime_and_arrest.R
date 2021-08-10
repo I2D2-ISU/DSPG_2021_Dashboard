@@ -5,6 +5,29 @@
 
 # https://ucr.fbi.gov/nibrs/2011/tables/data-tables
 
+# # NIBRS
+# website: https://rpubs.com/johnbradford/interracial-violence
+# https://s3-us-gov-west-1.amazonaws.com/cg-d3f0433b-a53e-4934-8b94-c678aa2cbaf3/2000/IA-2000.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d3f0433b-a53e-4934-8b94-c678aa2cbaf3/2005/IA-2005.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d3f0433b-a53e-4934-8b94-c678aa2cbaf3/2009/IA-2009.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d3f0433b-a53e-4934-8b94-c678aa2cbaf3/2013/IA-2013.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d3f0433b-a53e-4934-8b94-c678aa2cbaf3/2015/IA-2015.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d4b776d0-d898-4153-90c8-8336f86bdfec/2016/IA-2016.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d4b776d0-d898-4153-90c8-8336f86bdfec/2018/IA-2018.zip
+# https://s3-us-gov-west-1.amazonaws.com/cg-d4b776d0-d898-4153-90c8-8336f86bdfec/2019/IA-2019.zip
+
+
+# API
+# Tutorial: https://youtu.be/lV3u6Dc93T0
+# FBI API: https://crime-data-explorer.fr.cloud.gov/pages/docApi
+# FBI package: https://github.com/jacobkap/fbi/blob/master/R/ucr_arrest.R
+# Other example about data.gov: https://data.library.virginia.edu/using-data-gov-apis-in-r/
+
+# DB
+# Presentation about FBI dbs: http://washstat.org/presentations/20190923/Thomas_Ian.pdf
+
+
+
 
 library(tidyverse)
 library(readxl)
