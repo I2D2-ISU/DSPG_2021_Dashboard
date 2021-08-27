@@ -77,7 +77,7 @@ population_under_18 <-
 base_url <- "https://api.usa.gov/crime/fbi/sapi/"
 
 # Get API Key for data.gov
-api_key <- sprintf("?API_KEY=%s", Sys.getenv("FBI_KEY"))
+api_key <- sprintf("?API_KEY=%s", Sys.getenv("FBI_API_KEY"))
 
 
 # Get Agency Participation data

@@ -78,7 +78,6 @@ base_url <- "https://api.usa.gov/crime/fbi/sapi/"
 
 # Get API Key for data.gov
 api_key <- sprintf("?API_KEY=%s", Sys.getenv("FBI_API_KEY"))
-api_key <- sprintf("?API_KEY=%s", Sys.getenv("FBI_KEY"))
 
 
 # Get list of UCR Agencies in Iowa
@@ -96,13 +95,13 @@ for (i in c("violent-crime", "property-crime")) {
   df <- list()
   for (j in iowa_agencies$ori) {
     url_section <- sprintf("api/nibrs/%s/victim/agencies/%s/%s",
-                           j, i, "relationship")
+                           i, j, "relationship")
     response <- GET(paste0(base_url, url_section, api_key))
     if (response$status_code == 200) {
-      response <- jsonlite::fromJSON(rawToChar(response$content))
-      if (!is_empty(results)) {
+      results <- jsonlite::fromJSON(rawToChar(response$content))
+      if (!is_empty(results$data)) {
         df[[j]] <-
-          response$data %>%
+          results$data %>%
           mutate(offense = i,
                  ori = j)
       }
@@ -112,49 +111,14 @@ for (i in c("violent-crime", "property-crime")) {
 }
 
 
-
 # Save raw data
-bind_rows(data) %>%
-  write_csv("data/RAW/domestic_violence/violent_crime_by_relationship.csv")
+bind_rows(data) %>% 
+  select(ori, year = data_year, offense, relationship = key, value) %>%
+  write_csv("data/RAW/crime/crime_by_relationship.csv")
 
 
 
 # CALCULATE INDICATORS ----------------------------------------------------
-
-# UNDER DEVELOPMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>
-bind_rows(data) %>%
-  tibble() %>%
-  spread(offense, value) %>%
-  janitor::clean_names() %>%
-  filter(data_year == 2015) %>%
-  mutate(cat = recode(key,
-                      "Acquaintance" = "Otherwise known",
-                      'Babysittee' = 'Otherwise known',
-                      'Boyfriend/Girlfriend' = '?',
-                      'Child' = 'Family',
-                      'Child of Boyfriend/Girlfriend' =	'?',
-                      'Common Law Spouse' = 'Family',
-                      'Employee' = 'Otherwise known',
-                      'Employer' = 'Otherwise known',
-                      'Ex Spouse' = '?',
-                      'Friend' = 'Otherwise known',
-                      'Grandchild' = 'Family',
-                      'Grandparent' = 'Family',
-                      'Homosexual Relationship' = '?',
-                      'In-Law' = 'Family',
-                      'Neighbor' = 'Otherwise known',
-                      'Offender' = 'Offender',
-                      'Other Family Member' = 'Family',
-                      'Otherwise Known' = 'Otherwise known',
-                      'Parent' = 'Family',
-                      'Relationship Unknown' = 'Unknown',
-                      'Sibling' = 'Family',
-                      'Spouse' = 'Family',
-                      'Stepchild' = 'Family',
-                      'Stepparent' = 'Family',
-                      'Stepsibling' = 'Family',
-                      'Stranger' = 'Stranger'))
-
 
 # Standardize County Names for Agencies
 iowa_agencies_by_county <-
@@ -166,6 +130,50 @@ iowa_agencies_by_county <-
   filter(!is.na(fips)) %>%
   select(ori, fips, county)
 
+
+# UNDER DEVELOPMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>
+bind_rows(data) %>%
+  select(ori, year = data_year, offense, relationship = key, value) %>%
+  tibble() %>%
+  mutate(relationship_cat = 
+           recode(relationship,
+                  "Acquaintance" = "Otherwise known",
+                  'Babysittee' = 'Otherwise known',
+                  'Boyfriend/Girlfriend' = "Otherwise known",
+                  'Child' = 'Family',
+                  'Child of Boyfriend/Girlfriend' =	"Otherwise known",
+                  'Common Law Spouse' = 'Family',
+                  'Employee' = 'Otherwise known',
+                  'Employer' = 'Otherwise known',
+                  'Ex Spouse' = "Otherwise known",   # ???
+                  'Friend' = 'Otherwise known',
+                  'Grandchild' = 'Family',
+                  'Grandparent' = 'Family',
+                  'Homosexual Relationship' = "Otherwise known",
+                  'In-Law' = 'Family',
+                  'Neighbor' = 'Otherwise known',
+                  'Offender' = 'Offender',
+                  'Other Family Member' = 'Family',
+                  'Otherwise Known' = 'Otherwise known',
+                  'Parent' = 'Family',
+                  'Relationship Unknown' = 'Unknown',
+                  'Sibling' = 'Family',
+                  'Spouse' = 'Family',
+                  'Stepchild' = 'Family',
+                  'Stepparent' = 'Family',
+                  'Stepsibling' = 'Family',
+                  'Stranger' = 'Stranger')) %>%
+  left_join(iowa_agencies_by_county) %>%
+  group_by(fips, county, year, offense, relationship, relationship_cat) %>%
+  summarise(value = sum(value)) #%>%
+  spread(offense, value) %>%
+  janitor::clean_names() %>%
+  mutate(serious_crime = property_crime + violent_crime) %>%
+  head()
+  select(-rest) %>%
+  left_join(population_under_18 %>% 
+              select(-population_under_18_household)) %>%
+  ungroup()
 
 # Combine Juvenile Arrest Data by County
 juvenile_arrests_county <-

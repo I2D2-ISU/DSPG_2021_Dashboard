@@ -23,9 +23,86 @@
 # FBI package: https://github.com/jacobkap/fbi/blob/master/R/ucr_arrest.R
 # Other example about data.gov: https://data.library.virginia.edu/using-data-gov-apis-in-r/
 
+
+a <- "https://api.usa.gov/crime/fbi/sapi/"
+k <- "?API_KEY=pqNgV7sonRNr1qyFZVz6v11tejcRMlwSxZZd5hdM"
+# ORI
+# Agency level Arrest Demographic Count By Offense Endpoint
+b1 <-  "api/data/arrest/agencies/IA0010000/all-other-offenses/offense/2018/2019" # variables = male, female, offense, race, monthly
+# Agency level Arrest Demographic Count Endpoint
+b2 <-  "api/data/arrest/agencies/offense/IA0010000/all/2018/2019" # variables = all, monthly
+# STATE
+# State level Arrest Demographic Count By Offense Endpoint
+b3 <-  "api/data/arrest/states/IA/all-other-offenses/offense/2018/2019" # variables = male, female, offense, race, monthly
+# State level Arrest Demographic Count Endpoint
+b4 <-  "api/data/arrest/states/offense/IA/all/2018/2019"  # variables = all, monthly
+paste0(a,b1,k)
+paste0(a,b2,k)
+paste0(a,b3,k)
+paste0(a,b4,k)
+
+# FOOTNOTES 
+"https://api.usa.gov/crime/fbi/sapi/api/footnotes/states/IA/estimated?API_KEY=pqNgV7sonRNr1qyFZVz6v11tejcRMlwSxZZd5hdM"
+# PARTICIPATION
+"https://api.usa.gov/crime/fbi/sapi/api/participation/states/IA?API_KEY=pqNgV7sonRNr1qyFZVz6v11tejcRMlwSxZZd5hdM"
+# PARTICIPATION Downloadable CSV
+"https://api.usa.gov/crime/fbi/sapi/api/participation/dl/states/IA?API_KEY=pqNgV7sonRNr1qyFZVz6v11tejcRMlwSxZZd5hdM"
+# LOOKUPS - IA UCR Agency Data
+"https://api.usa.gov/crime/fbi/sapi/api/agencies/byStateAbbr/IA?API_KEY=pqNgV7sonRNr1qyFZVz6v11tejcRMlwSxZZd5hdM"
+
+library(httr)
+# /api/data/arrest/agencies/{ori}/{offense}/{variable}/{since}/{until}
+
+data <- list()
+for (i in c("male", "female")) {
+  df <- list()
+  for (j in iowa_agencies$ori[1:5]) {
+    b1 <- paste0("api/data/arrest/agencies/", j, "/all/", i, "/2015/2017")
+    response <- GET(paste0(a,b1,k))
+    if (response$status_code == 200) {
+      response <- jsonlite::fromJSON(rawToChar(response$content))
+      response <- response$results
+      if (!is_empty(response)) {
+        df[[j]] <-
+          response %>%
+          gather("age", "arrests", starts_with("range")) %>%
+          mutate(sex = i,
+                 ori = j) %>%
+          select(ori, sex, year = data_year, age, arrests) 
+      }
+    }
+  }
+  data[[i]] <- bind_rows(df)
+}
+
+data
+
+b1 <-  "api/data/arrest/agencies/IA0900400/all/female/1985/2019" # variables = male, female, offense, race, monthly
+response <- GET(paste0(a,b1,k))
+if (response$status_code == 200) {
+  response <- jsonlite::fromJSON(rawToChar(response$content))
+  response <- response$results
+}
+response %>%
+  gather("age", "arrests", starts_with("range")) %>%
+  mutate(sex = "male",
+         ori = "ORI") %>%
+  select(ori, sex, year = data_year, age, arrests)
+
+
+
+
+
+
+
+get_arrest_demographics(
+  # ori = "IA0010000",
+  state_abb = "IA",
+  # region = "Midwest",
+  offense = "all",
+  key = get_api_key())
 # DB
 # Presentation about FBI dbs: http://washstat.org/presentations/20190923/Thomas_Ian.pdf
-
 
 
 
@@ -235,37 +312,7 @@ footnotes <-
 
 # CALCULATE INDICATORS ----------------------------------------------------
 
-# Calculate Number of Childcare Providers by County
-childcare_providers_county <-
-  QRS_provider_list %>%
-  # calculate number of providers per county
-  mutate(qrs_45 = ifelse(qrs_level %in% 4:5, 1, 0)) %>%
-  group_by(county, report_year, report_month, provider_type) %>%
-  summarise(number_of_childcare_providers = n(),
-            qrs_level_4_5_providers = sum(qrs_45)) 
 
-
-# Calculate Statewide Number of Providers
-childcare_providers_statewide <-
-  childcare_providers_county %>%
-  group_by(report_year, report_month, provider_type) %>%
-  summarise_if(is.numeric, sum) %>%
-  ungroup() %>%
-  mutate(county = "Statewide")
-
-
-# Combine Statewide and County data
-childcare_providers_number <-
-  bind_rows(childcare_providers_county, childcare_providers_statewide) %>%
-  # standardize county names
-  standardize_county() %>%
-  # create report date (for plotting)
-  mutate(report_date = lubridate::ymd(paste(report_year, report_month, 1))) %>%
-  select(fips, county, report_year, report_month, report_date, everything())
-
-
-# Save Data
-write_rds(childcare_providers_number, "data/CLEAN/childcare_number_monthly.rds", compress = "xz")
 
 
 
