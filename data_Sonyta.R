@@ -20,7 +20,7 @@ unemploy_state <- unemployment_rate_by_year %>%                  #same
 
 
 child_abuse <- read_csv("data/child_abuse/child_abuse.csv") %>% 
-  select(-X1) %>%
+  select(-1) %>%
   group_by(year) %>%
   mutate(child_abuse_under_6 = child_abuse_under_3 + child_abuse_3_and_4 + child_abuse_5)
 
@@ -58,19 +58,19 @@ child_abuse_county_state <- rbind(child_abuse, child_abuse_combine)
 
 
 childcare_services <- read_csv("data/childcare/childcare_program_services.csv") %>%
-  select(-X1, -fips)
+  select(-1, -fips)
 #childcare_program_services
 
 childcare_spaces_percent <- read_csv("data/childcare/childcare_program_spaces_percent.csv") %>%
-  select(-X1, -fips)
+  select(-1, -fips)
 #childcare_program_spaces_percent
 
 childcare_spaces <- read_csv("data/childcare/childcare_program_spaces_total.csv") %>%
-  select(-X1, -fips)
+  select(-1, -fips)
 
 
 childcare_rates <- read_csv("data/childcare/childcare_rates.csv") %>%
-  select(-X1, -fips, -`cost_average_per_week`)
+  select(-1, -fips, -`cost_average_per_week`)
 
 childcare_rates_provider1 <- childcare_rates %>%
   filter (provider_type == "Registered Child Development Homes")
