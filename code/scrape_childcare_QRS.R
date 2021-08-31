@@ -96,7 +96,7 @@ QRS_provider_list <-
 
 
 # Save Raw data
-write_csv(QRS_provider_list, "data/RAW/QRS/qrs_iowa_monthly.csv")
+write_csv(QRS_provider_list, sprintf("data/RAW/QRS/qrs_iowa_monthly_%s.csv", Sys.Date()))
 
 
 

@@ -5,9 +5,10 @@ account: giorgichi
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4378109
-bundleId: 4872365
+bundleId: 4972655
 url: https://giorgichi.shinyapps.io/I2D2_Dashboard/
-when: 1627656612.78317
-lastSyncTime: 1627656612.78317
+when: 1630088655.6253
+lastSyncTime: 1630088655.6253
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: code
