@@ -183,3 +183,26 @@ toggle_button <- function(ID, CHOICE, LABEL = "") {
   )
 }
 
+
+
+# Flip Box ----------------------------------------------------------------
+
+myFlipBox <-
+  function (id, front, back, bcolor = "white", fcolor = "white",
+            trigger = c("click", "hover"),  width = 4) {
+    if (is.null(id) || missing(id)) 
+      stop("card id cannot be null or missing!")
+    trigger <- match.arg(trigger)
+    shiny::column(width = width, 
+                  shiny::tags$div(style = "height:350px; position: relative; padding:20px;",
+                                  class = "flipbox", 
+                                  id = id, `data-rotate` = trigger, 
+                                  shiny::tags$div(class = "card-front active", 
+                                                  style = paste0("background-color: ", fcolor, "; padding:10px;"), 
+                                                  front), 
+                                  shiny::tags$div(class = "card-back",
+                                                  style = "background-color: white;", 
+                                                  back)))
+  }
+
+

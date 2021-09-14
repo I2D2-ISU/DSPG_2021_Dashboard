@@ -709,11 +709,251 @@ body <-
                                            "Infant Mortality")),
                                      options = list(
                                        `live-search` = TRUE)
+                                     )
                                    )
                           )
+              ),
+      tabItem(tabName = "one",
+              h1("ECI Board Approved Indicators"),
+              p("Showing Most Recent Statewide Values For Indicators"),
+              
+              fluidRow(
+                h2("HEALTHY CHILDREN", style="margin-left: 20px;  font-weight: bold;"),
+                
+                myFlipBox(
+                  id = "flipin1", 
+                  fcolor = "orange",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Low Birth Weight")),
+                    p(style = "font-size:95px;", "0.9%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Low Birth Weight")),
+                    h2("Live births of less than 2,500 grams"),
+                    br(),
+                    p("Source: Iowa Department of Public Health, Vital Statistics of Iowa Report")
+                    )
+                  ),
+                
+                
+                myFlipBox(
+                  id = "flipin2", 
+                  fcolor = "orange",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Immunized children")),
+                    p(style = "font-size:95px;", "73.6%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Immunized children")),
+                    h2("Rate of Iowa’s children immunized by age two"),
+                    br(),
+                    p("Source:", 
+                      a("Iowa Department of Public Health, Iowa Immunization Program Annual Report",
+                        href="https://tracking.idph.iowa.gov/Health/Immunization/Childhood-Immunizations/Childhood-Immunization-Data"))
+                    )
+                  ),
+                
+                
+                myFlipBox(
+                  id = "flipin3", 
+                  fcolor = "orange",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Dental Services")),
+                    p(style = "font-size:95px;", "49.9%"),
+                    h4("Year = 2019")
+                    ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Dental Services")),
+                    h2("Medicaid-enrolled children ages 0-5 who receive dental services"),
+                    br(),
+                    p("Source: Iowa Department of Public Health")
+                    )
+                  )
+                ),
+              
+              fluidRow(
+                h2("CHILDREN READY TO SUCCEED IN SCHOOL", style="margin-left: 20px;  font-weight: bold;"),
+                
+                myFlipBox(
+                  id = "flipin4", 
+                  fcolor = "olive",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("K students proficient by K literacy ")),
+                    p(style = "font-size:95px;", "66.0%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("K students proficient by K literacy ")),
+                    h2("Percent of kindergarten students proficient by kindergarten literacy assessment"),
+                    br(),
+                    p("Source: ", a("Iowa Department of Education", href="https://earlychildhood.iowa.gov/document/kindergarten-assessment-tables"))
+                  )
+                ),
+                
+                myFlipBox(
+                  id = "flipin5", 
+                  fcolor = "olive",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Educational attainment of women")),
+                    p(style = "font-size:95px;", "9.9%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Educational attainment of women")),
+                    h2("Women age 15-50 with a birth in the past 12 months by educational attainment"),
+                    br(),
+                    p("Source: U.S. Census Bureau, American Community Survey 5-Year Estimates")
+                  )
+                )
+              ),
+              
+              fluidRow(
+                h2("SAFE AND SUPPORTIVE COMMUNITIES", style="margin-left: 20px;  font-weight: bold;"),
+                
+                myFlipBox(
+                  id = "flipin6", 
+                  fcolor = "DeepSkyBlue",
+                  trigger = "click",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Child deaths due to unintentional injuries")),
+                    p(style = "font-size:95px;", "9.6%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Child deaths due to unintentional injuries")),
+                    h2("Child deaths due to unintentional injuries"),
+                    br(),
+                    p("Source: Iowa Department of Public Health, Vital Statistics of Iowa Report")
+                  )
+                ),
+                
+                myFlipBox(
+                  id = "flipin7", 
+                  fcolor = "DeepSkyBlue",
+                  trigger = "click",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Serious crime rate")),
+                    p(style = "font-size:95px;", "4,988"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Serious crime rate")),
+                    h2("Rate of serious crime per 100,000 population"),
+                    br(),
+                    p("Source: ", a("National Incidence Based Crime Reporting System",
+                                    href="https://crime-data-explorer.fr.cloud.gov/pages/explorer/crime/crime-trend"))
+                  )
+                ),
+                
+                myFlipBox(
+                  id = "flipin8", 
+                  fcolor = "DeepSkyBlue",
+                  trigger = "click",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Juvenile arrests rate")),
+                    p(style = "font-size:95px;", "2,702"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Juvenile arrests rate")),
+                    h2("Rate of juvenile arrests per 100,000 population"),
+                    br(),
+                    p("Source: ", a("National Incidence Based Crime Reporting System",
+                                    href="https://crime-data-explorer.fr.cloud.gov/pages/explorer/crime/crime-trend"))
+                  )
+                ),
+                
+                myFlipBox(
+                  id = "flipin9", 
+                  fcolor = "DeepSkyBlue",
+                  trigger = "click",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Unemployment rate")),
+                    p(style = "font-size:95px;", "2.7%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Unemployment rate")),
+                    h2("Percent of unemployed individuals"),
+                    br(),
+                    p("Source: ",
+                      a("Iowa Workforce Development, Annual Report and website",
+                        href="https://www.iowalmi.gov/local-area-unemployment-statistics"))
+                  )
+                ),
+                
+                myFlipBox(
+                  id = "flipin10", 
+                  fcolor = "DeepSkyBlue",
+                  trigger = "click",
+                  front = div(
+                    overflow = "hidden",
+                    class = "text-center",
+                    h1(strong("Children living in poverty")),
+                    p(style = "font-size:95px;", "16.0%"),
+                    h4("Year = 2019")
+                  ),
+                  back = div(
+                    class = "text-center",
+                    width = "100%", 
+                    h1(strong("Children living in poverty")),
+                    h2("Percent of children under six years old living in poverty"),
+                    br(),
+                    p("Source: U.S. Census Bureau, American Community Survey 5-year Estimates")
+                  )
+                )
+                
+                
+              ),
+              
+              fluidRow(
+                h2("SECURE AND NURTURING FAMILIES", style="margin-left: 20px;  font-weight: bold;"),
+              ),
+              
+              fluidRow(
+                h2("SECURE AND NURTURING EARLY LEARNING ENVIRONMENTS", style="margin-left: 20px;  font-weight: bold;"),
+              )
+              
               )
       )
-    )
   )
 
 
