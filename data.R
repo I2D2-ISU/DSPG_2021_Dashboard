@@ -62,8 +62,8 @@ data_ACS <-
   mutate(Both = Married + Unmarried) %>%
   gather(group_2, value, Married:Both)
 
-# # Read K assessment data
-# k_assessment <- read_rds("data/CLEAN/k_assessment.rds")
+# Read K assessment data
+data_k_assessment <- read_csv("data/k_assessment.csv")
 
 
 
