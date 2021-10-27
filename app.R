@@ -16,9 +16,7 @@ library(mapview)
 
 source("modules.R")
 source("data.R")
-source("data_Avery.R")
 source("modules_Avery.R")
-source("data_Sonyta.R")
 source("modules_Sonyta.R")
 
 
@@ -219,7 +217,7 @@ body <-
                                           title=strong("Incidence of Child Abuse Under 6 Per 1,000 Children By Year"),
                                           pickerInput(inputId = "abuse_year",
                                                         label = "Select Year",
-                                                        choices = child_abuse_county_state%>% select(year)%>%distinct()%>%pull(),
+                                                        choices = child_abuse_county_state%>% distinct(year)%>%pull(),
                                                         multiple = FALSE,
                                                         selected = "2019"),
                                           closable = FALSE,
@@ -340,7 +338,7 @@ body <-
                                       box(width=12,
                                           pickerInput( inputId = "Unemp_year",
                                                        label = "Select year",
-                                                       choices = unemployment_rate_by_year%>% select(year)%>%distinct()%>%pull(),
+                                                       choices = unemployment_rate_by_year%>% distinct(year)%>%pull(),
                                                        multiple = FALSE,
                                                        selected = "2021"),
                                           title=strong("Unemployment Rate by Year"),
@@ -1326,7 +1324,7 @@ server <- function(input, output, session) {
   output$unemp_map <- renderLeaflet({
     mypal <- colorNumeric("viridis", unemp_map()$unemprate)
     mytext <- paste(
-      "County: ", unemp_map()$name,"<br/>",
+      "County: ", unemp_map()$county,"<br/>",
       "Per Year: ", round(unemp_map()$unemprate, 1),
       sep="") %>%
       lapply(htmltools::HTML)
@@ -1337,7 +1335,7 @@ server <- function(input, output, session) {
                                        minZoom = 7, maxZoom = 7,
                                        dragging = FALSE)) %>%
       addProviderTiles(provider = "CartoDB.Positron") %>%
-      addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
+      addPolygons(popup = ~ str_extract(county, "^([^,]*)"),
                   stroke = TRUE,  # Set True for border color
                   weight = 1,
                   smoothFactor = 0.3,
@@ -1373,7 +1371,7 @@ server <- function(input, output, session) {
   
   output$unemp_table <- DT::renderDataTable({
     unemployment_rate_by_year %>%
-      select(name, year, unemprate) %>%
+      select(county, year, unemprate) %>%
       datatable()
   })
 
@@ -1385,7 +1383,7 @@ server <- function(input, output, session) {
     },
     content = function(file) {
       write.csv(unemployment_rate_by_year %>%
-                  select(name, year, percent = unemprate), file, row.names = FALSE)
+                  select(county, year, percent = unemprate), file, row.names = FALSE)
     })
   
   # Download data as xlsx
@@ -1395,7 +1393,7 @@ server <- function(input, output, session) {
     },
     content = function(file) {
       writexl::write_xlsx(unemployment_rate_by_year %>%
-                            select(name, year, percent = unemprate), file)
+                            select(county, year, percent = unemprate), file)
     })
   
   
@@ -1584,17 +1582,16 @@ server <- function(input, output, session) {
   #child abuse map reactive  WORK
   childabuse_map <- reactive ({
     child_abuse_county_state %>%
-      filter(year == input$abuse_year)  %>%
-      mutate(county=str_to_lower(name))%>%
-      left_join(iowa_map, by= "county") %>%
+      mutate(fips = as.integer(fips)) %>%
+      left_join(iowa_map[-3], by = "fips") %>%
       sf::st_as_sf(.)
   })
   #unemployment map
   output$childabuse_map <- renderLeaflet({
-    mypal <- colorNumeric("YlOrRd", childabuse_map()$child_abuse_under_6)
+    mypal <- colorNumeric("YlOrRd", childabuse_map()$age_under_6)
     mytext <- paste(
-      "County: ", str_to_title(childabuse_map()$name),"<br/>",
-      "Under 6: ", round(childabuse_map()$child_abuse_under_6, 1),
+      "County: ", childabuse_map()$county,"<br/>",
+      "Under 6: ", round(childabuse_map()$age_under_6, 1),
       sep="") %>%
       lapply(htmltools::HTML)
     
@@ -1604,7 +1601,7 @@ server <- function(input, output, session) {
                                        minZoom = 7, maxZoom = 7,
                                        dragging = FALSE)) %>%
       addProviderTiles(provider = "CartoDB.Positron") %>%
-      addPolygons(popup = ~ str_extract(name, "^([^,]*)"),
+      addPolygons(popup = ~ str_extract(county, "^([^,]*)"),
                   stroke = TRUE,  # Set True for border color
                   weight = 1,
                   smoothFactor = 0.3,
@@ -1612,10 +1609,10 @@ server <- function(input, output, session) {
                   opacity = .4, # setting opacity to 1 prevents transparent borders, you can play around with this.
                   color = "white", #polygon border color
                   label = mytext,
-                  fillColor = ~ mypal(child_abuse_under_6)) %>% #instead of using color for fill, use fillcolor
+                  fillColor = ~ mypal(age_under_6)) %>% #instead of using color for fill, use fillcolor
       addLegend("bottomright",
                 pal = mypal,
-                values = ~child_abuse_under_6,
+                values = ~age_under_6,
                 title = "Childabuse",
                 opacity = .8)
   })
@@ -1623,8 +1620,7 @@ server <- function(input, output, session) {
   
   output$childabuse_table <- DT::renderDataTable({
     child_abuse_county_state %>%
-      select(county =name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
-             age_5 = child_abuse_5, age_under_6 =child_abuse_under_6) %>%
+      select(-fips) %>%
       filter(between(year, input$YEAR[1], input$YEAR[2])) %>%
       datatable() 
   })
@@ -1636,8 +1632,7 @@ server <- function(input, output, session) {
     },
     content = function(file) {
       write.csv(child_abuse_county_state %>%
-                  select(county = name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
-                         age_5 = child_abuse_5, age_under_6 =child_abuse_under_6), file, row.names = FALSE)
+                  select(-fips), file, row.names = FALSE)
     })
 
   # Download data as xlsx
@@ -1647,8 +1642,7 @@ server <- function(input, output, session) {
     },
     content = function(file) {
       writexl::write_xlsx(child_abuse_county_state %>%
-                            select(county = name, year, age_under_3 = child_abuse_under_3, age_3_and_4 = child_abuse_3_and_4, 
-                                   age_5 = child_abuse_5, age_under_6 =child_abuse_under_6), file)
+                            select(-fips), file)
     })
 
   
