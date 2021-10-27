@@ -23,7 +23,7 @@ source("modules_Sonyta.R")
 
 
 # Header ------------------------------------------------------------------
-header <-  dashboardHeader(title = "DSPG Dashboard")
+header <-  dashboardHeader(title = div(img(src="https://earlychildhood.iowa.gov/sites/default/files/styles/400px_square_cropped/public/2020-11/I2D2_Logo_Stack_Gradient_RGB.jpg?itok=E0rc2hDR", height='60', width='60'), " DATA DRIVE"))
 
 
 
@@ -34,7 +34,7 @@ sidebar <-
     sidebarMenu(
       # freezes the side bar
       #style = "position:fixed;",
-      menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
+      menuItem("Iowa Insights", tabName = "dashboard", icon = icon("dashboard")),
       menuItem("Data by Topic", tabName = "topic", icon = icon("database"),
                # data categories to show
                p(),
@@ -946,10 +946,203 @@ body <-
               
               fluidRow(
                 h2("SECURE AND NURTURING FAMILIES", style="margin-left: 20px;  font-weight: bold;"),
+                
+                column(
+                  width = 6,
+                  uiOutput("active_side_2"),
+                  myFlipbox(
+                    id = "myflipbox2",
+                    trigger = "hover",
+                    width = 12,
+                    back = div(
+                      class = "text-center",
+                      h1("Child Abuse"),
+                      h2("Incidence of child abuse per 1,000 children")
+                    ),
+                    front = div(
+                      HTML(
+                        "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=BenchNine'>
+                        <table style='width:100%;'>
+                            <tr>
+                            <th style='font-size: 28px;font-family:BenchNine'>Child Abuse</th>
+                            <td rowspan='3' style='font-size: 80px; text-align:right; width:20%; font-family:BenchNine'>21.9</td>
+                            </tr>
+                            <tr>
+                            <td>Year: 2020</td>
+                            </tr>
+                            <tr>
+                            <td>Source: Iowa Department of Human Services</td>
+                            </tr>
+                        </table>"
+                      ),
+                      style="padding: 10px;"
+                    )
+                  )
+                ),
+
+                column(
+                  width = 6,
+                  uiOutput("active_side_3"),
+                  myFlipbox(
+                    id = "myflipbox3",
+                    trigger = "hover",
+                    width = 12,
+                    back = div(
+                      class = "text-center",
+                      height = "300px",
+                      h1("Domestic violence"),
+                      h2("Domestic abuse rate")
+                    ),
+                    front = div(
+                      HTML(
+                        "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=BenchNine'>
+                        <table style='width:100%;'>
+                            <tr>
+                            <th style='font-size: 24px;font-family:BenchNine'>Domestic Violence</th>
+                            <td rowspan='3' style='font-size: 80px; width: 20%;font-family:BenchNine'>186.7</td>
+                            </tr>
+                            <tr>
+                            <td>Year: 2020</td>
+                            </tr>
+                            <tr>
+                            <td>Source: owa Department of Public Safety</td>
+                            </tr>
+                        </table>"
+                      ),
+                      style="padding: 10px;"
+                    )
+                  )
+                ),
+
+                column(
+                  width = 6,
+                  uiOutput("active_side_4"),
+                  myFlipbox(
+                    id = "myflipbox4",
+                    trigger = "click",
+                    width = 12,
+                    back = div(
+                      class = "text-center",
+                      height = "300px",
+                      h1("Teen Births"),
+                      h2("Births to women ages 15 to 19 per 1,000 women")
+                    ),
+                    front = div(
+                      HTML(
+                        "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Saira Extra Condensed'>
+                        <table style='width:90%;'>
+                            <tr>
+                            <th style='font-size: 32px;font-family:Saira Extra Condensed'>Teen Births</th>
+                            <td rowspan='3' style='font-size: 80px; width: 20%;font-family:Saira Extra Condensed'>502</td>
+                            </tr>
+                            <tr>
+                            <td>Year: 2020</td>
+                            </tr>
+                            <tr>
+                            <td>Source: IDPH</td>
+                            </tr>
+                        </table>"
+                      ),
+                      style="padding: 10px;"
+                    )
+                  )
+                ),
+
+                column(
+                  width = 6,
+                  myFlipbox(
+                    id = "myflipbox5",
+                    trigger = "hover",
+                    width = 12,
+                    back = div(
+                      class = "text-center",
+                      height = "300px",
+                      h1("Flip on hover"),
+                      # img(
+                      #   src = "https://848090.smushcdn.com/1795165/wp-content/uploads/2021/01/Tourist-map-of-Iowa-with-cities-and-landmarks.jpg?lossy=1&strip=1&webp=1",
+                      #   height = "300px",
+                      #   width = "100%"
+                      # ),
+                      h2("25%")
+                    ),
+                    front = div(
+                      HTML(
+                        "<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=BenchNine'>
+                        <table style='width:90%;'>
+                            <tr>
+                            <th style='font-size: 32px;font-family:BenchNine'>THIS IS INDICATOR NAME TO SHOW</th>
+                            <td rowspan='3' style='font-size: 80px; width: 20%;font-family:BenchNine'>12.5%</td>
+                            </tr>
+                            <tr>
+                            <td>Year: 2020</td>
+                            </tr>
+                            <tr>
+                            <td>Source: IDPH</td>
+                            </tr>
+                        </table>"
+                      ),
+                      style="padding: 10px;"
+                    )
+                  )
+                )
               ),
               
               fluidRow(
                 h2("SECURE AND NURTURING EARLY LEARNING ENVIRONMENTS", style="margin-left: 20px;  font-weight: bold;"),
+                
+                column(
+                  width = 6,
+                  flipBox(
+                    id = "myflipbox99", 
+                    trigger = "hover",
+                    width = 12,
+                    front = div(
+                      class = "text-center",
+                      h1("CHILDREN IN SINGLE-PARENT FAMILIES"),
+                      img(
+                        src = "i2d2_logo.jpg",
+                        height = "100px",
+                        width = "100px"
+                      ),
+                      h2("25% of the time")
+                    ),
+                    back = div(
+                      class = "text-center",
+                      height = "300px",
+                      width = "100%",
+                      h1("Flip on hover"),
+                      p("More information....")
+                    )
+                  )
+                ),
+                
+                column(
+                  width = 6,
+                  uiOutput("active_side"), 
+                  flipBox(
+                    id = "myflipbox", 
+                    trigger = "hover",
+                    width = 12,
+                    front = div(
+                      class = "text-center",
+                      h1("CHILDREN IN SINGLE-PARENT FAMILIES"),
+                      img(
+                        src = "i2d2_logo.jpg",
+                        height = "100px",
+                        width = "100px"
+                      ),
+                      h2("25% of the time")
+                    ),
+                    back = div(
+                      class = "text-center",
+                      height = "300px",
+                      width = "100%",
+                      h1("Flip on hover"),
+                      p("More information....")
+                    )
+                  )
+                )
+                
               )
               
               )
