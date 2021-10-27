@@ -1,23 +1,6 @@
 library(readr)
 library(dplyr)
 
-#unemploy
-unemployment_rate_by_year <- read_csv("data/unemploy/unemployment_rate_by_year.csv") %>%
-  select(name, year, unemprate)
-
-unemploy_state_by_year <- unemployment_rate_by_year %>%          #same
-  group_by(year) %>%
-  summarise(Percent=mean(unemprate, na.rm=TRUE)) %>%
-  mutate(name="Statewide")
-
-unemployment_rate <- read_csv("data/unemploy/unemployment_rate.csv") %>%
-  select(name, year, unemprate)
-
-unemploy_state <- unemployment_rate_by_year %>%                  #same
-  group_by(year) %>%
-  summarise(Percent=mean(unemprate, na.rm=TRUE)) %>%
-  mutate(name="Statewide")
-
 
 child_abuse <- read_csv("data/child_abuse/child_abuse.csv") %>% 
   select(-1) %>%
@@ -66,11 +49,11 @@ childcare_spaces_percent <- read_csv("data/childcare/childcare_program_spaces_pe
 #childcare_program_spaces_percent
 
 childcare_spaces <- read_csv("data/childcare/childcare_program_spaces_total.csv") %>%
-  select(-1, -fips)
+  select(-1)
 
 
 childcare_rates <- read_csv("data/childcare/childcare_rates.csv") %>%
-  select(-1, -fips, -`cost_average_per_week`)
+  select(-1, -`cost_average_per_week`)
 
 childcare_rates_provider1 <- childcare_rates %>%
   filter (provider_type == "Registered Child Development Homes")
@@ -80,5 +63,22 @@ childcare_rates_provider2 <- childcare_rates %>%
 
 
 
+#unemploy
+unemployment_rate_by_year <- read_csv("data/unemploy/unemployment_rate_by_year.csv") %>%
+  select(name, year, unemprate) %>%
+  left_join(distinct(childcare_rates, fips, county), by = c("name" = "county"))
 
+unemploy_state_by_year <- unemployment_rate_by_year %>%          #same
+  group_by(year) %>%
+  summarise(Percent=mean(unemprate, na.rm=TRUE)) %>%
+  mutate(name="Statewide")
+
+unemployment_rate <- read_csv("data/unemploy/unemployment_rate.csv") %>%
+  select(name, year, unemprate) %>%
+  left_join(distinct(childcare_rates, fips, county), by = c("name" = "county"))
+
+unemploy_state <- unemployment_rate_by_year %>%                  #same
+  group_by(year) %>%
+  summarise(Percent=mean(unemprate, na.rm=TRUE)) %>%
+  mutate(name="Statewide")
 
