@@ -100,7 +100,7 @@ plot_map_mean <- function(df, COUNTY, REVERSE = TRUE) {
     inner_join(df, "fips") %>%
     leaflet(options = leafletOptions(zoomControl = FALSE,
                                      minZoom = 6, maxZoom = 8,
-                                     dragging = FALSE)) %>% 
+                                     dragging = TRUE)) %>% 
     addTiles() %>%
     addPolygons(stroke = TRUE, 
                 weight = 1,
