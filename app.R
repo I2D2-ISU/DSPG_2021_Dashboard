@@ -516,42 +516,17 @@ body <-
 
 
 # UI - User Interface -----------------------------------------------------
-ui <- dashboardPage(header, sidebar, body, title = "I2D2 Dashboard", skin = "blue")
+ui <- dashboardPage(header, sidebar, body, 
+                    footer = dashboardFooter(
+                      left = HTML("<p>I2D2 & DSPG Project"),
+                      right = HTML("<p>i2d2@iastate.edu")
+                    ),
+                    title = "I2D2 Dashboard", skin = "blue")
 
 
 
 # Server ------------------------------------------------------------------
 server <- function(input, output, session) { 
-  
-  
-  showModal(
-    modalDialog(
-      title = h2("Welcome to I2D2 Dashboard",
-                 img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 50, align="right")),
-      easyClose = TRUE,
-      footer = modalButton("Explore the Dashboard"),
-      img(src = 'https://media-exp1.licdn.com/dms/image/C4D0BAQGExeY0J4R5Pw/company-logo_200_200/0/1626097601158?e=1634774400&v=beta&t=Ucaroc-NsOEeqXWdMQdFvwRIHILza3OS3g7-wU1xLJ8', height = 100, align="right"),
-      tags$p(
-        "Some general welcoming message and short background about this",
-        tags$strong(tags$em("dashboard")),
-        "can be helpful for first time commers. We can credit contributors and authors like",
-        tags$a(href="https://i2d2.iastate.edu/", tags$strong("I2D2")), ", or provide list of sources used 
-        to build this dashboard."),
-      tags$ul(
-        tags$li(
-          "First source"
-        ),
-        tags$li(
-          "Scendo sorese (updated on:",
-          strftime(now() - days(), "%b %e"), ", 2020)"),
-        tags$li("or some other info")
-      ),
-      tags$p("Come back tomorrow and relive it all over again!"),
-      # tags$p(HTML("&mdash;&commat; Garrick"),
-      #        HTML('(<a href="https://i2d2.iastate.edu/" target="_blank">I2D2</a>)'))
-    )
-  )
-  
   
   
   # Prepare data for Education Attainment line plot and table
