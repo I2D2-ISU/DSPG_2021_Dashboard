@@ -2,7 +2,7 @@ library(readr)
 
 acs_inds <- read_csv("data/ACS_fiveYearIndicators.csv")
 
-immun <- read_csv("data/two_yr_old_immunization_rate.csv") %>% select(-X1, NAME=County, year=Year) %>%
+immun <- read_csv("data/two_yr_old_immunization_rate.csv") %>% select(-1, NAME=County, year=Year, Percent) %>%
   mutate(Percent=Percent/100)
 
 immun_state <- immun %>%
@@ -19,7 +19,8 @@ ser_crime_state <- ser_crime_raw %>%
   summarise(per100kRate=sum(per100kRate, na.rm=TRUE)) %>%
   mutate(NAME="Statewide")
 
-ser_crime <- rbind(ser_crime_raw, ser_crime_state)
+ser_crime <- rbind(ser_crime_raw, ser_crime_state) %>%
+  left_join(distinct(acs_inds, NAME, fips = GEOID))
 
 vlow_bw_raw<- read_csv("data/very_low_birthweight.csv") %>% janitor::clean_names() %>%
   select(NAME=county, rate=very_lbw_births_percent, year) %>%
@@ -51,7 +52,8 @@ juv_crime_state <-juv_crime_raw %>%
   summarise(rate=sum(rate, na.rm=TRUE)) %>%
   mutate(NAME="Statewide")
 
-juv_crime <- rbind(juv_crime_raw, juv_crime_state)
+juv_crime <- rbind(juv_crime_raw, juv_crime_state) %>%
+  left_join(distinct(acs_inds, NAME, fips = GEOID))
 
 
 # --- Numbers for Indicator Page

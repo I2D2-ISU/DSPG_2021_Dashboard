@@ -38,6 +38,28 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+<<<<<<< HEAD
 
 data/CLEAN/
 data/RAW/
+=======
+# FOLDERS
+data/RAW/crime/
+data/RAW/K_assessment/
+data/RAW/K_dental_screening/
+data/RAW/QRS/
+data/RAW/child_abuse/
+data/RAW/child_dental_service/
+data/RAW/childcare/
+data/RAW/immunization/
+data/RAW/juvenile_arrests/
+data/RAW/medicaid_doctors/
+data/RAW/teen_birth/
+data/RAW/unemployment/
+data/CLEAN/
+TEMP_old_app_code_with_both_merging_options.R
+data/ECI_Area_Codes.csv
+data/RAW/ACS_all/
+data/RAW/ACS_fiveYearIndicators.csv
+data/dental_service_variable_definition.csv
+>>>>>>> dspg
