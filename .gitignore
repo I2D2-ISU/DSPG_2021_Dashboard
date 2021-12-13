@@ -38,6 +38,11 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+<<<<<<< HEAD
+
+data/CLEAN/
+data/RAW/
+=======
 # FOLDERS
 data/RAW/crime/
 data/RAW/K_assessment/
@@ -57,3 +62,4 @@ data/ECI_Area_Codes.csv
 data/RAW/ACS_all/
 data/RAW/ACS_fiveYearIndicators.csv
 data/dental_service_variable_definition.csv
+>>>>>>> dspg

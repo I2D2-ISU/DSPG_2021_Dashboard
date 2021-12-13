@@ -1,0 +1,20 @@
+var,col_name,col_category,col_label,col_definition,formula
+var_1,county,,County Name,,
+var_2,enrollment,A,Enrollment,Number of students enrolled in Kindergarten or 9th grade,
+var_3,valid_screening_certificate,B,Valid Screening Certificates,Number of students who submitted a valid Certificate of Dental Screening form,
+var_4,no_problems,C,Treatment Needs - No Obvious Problems,Number of students with No Obvious Problems - soft and hard tissue appear healthy,
+var_5,need_dental_care,C,Treatment Needs - Require Dental Care,"Number of students who Require Dental Care - tooth decay, white spot lesion, or gum infection is suspected",
+var_6,need_urgent_dental_care,C,Treatment Needs - Require Urgent Dental Care,"Number of students who Require Urgent Dental Care - obvious tooth decay, injury, severe infection or pain",
+var_7,total_number_screened,C,Treatment Needs - Total Treatment Needs ,Total number of students with status of oral health as indicated on student’s valid Certificate of Dental Screening form,
+var_8,dentist,D,Provider Types - DDS/DMD,Number of dentists (DDS/DMD) who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_9,dental_hygienist,D,Provider Types - RDH,Number of registered dental hygienists (RDH) who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_10,physician,D,Provider Types - MD/DO,Number of physicians (MD/DO) who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_11,physician_assistant,D,Provider Types - PA,Number of physician assistants (PA) who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_12,registered_nurse,D,Provider Types - RN/ARNP,Number of registered nurses or advanced registered nurse practitioners (RN/ARNP) who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_13,total_number_providers,D,Provider Types - Total Provider Type,Total number of health care professionas who provided screening/exam as indicated on student’s valid Certificate of Dental Screening form,
+var_14,valid_exemption_religious,E,Valid Exemption Certificates - Religious,Number of students who submitted a valid Certificate of Dental Screening Exemption for Religious reasons,
+var_15,valid_exemption_financial,E,Valid Exemption Certificates - Financial Hardship,Number of students who submitted a valid Certificate of Dental Screening Exemption for Financial Hardship reasons,
+var_16,total_with_valid_screening_certificate,F,Total with Valid Certificates - Number,Number of students who submitted a valid Certificate of Dental Screening or Certificate of Dental Screening Exemption form,sum of columns B + E
+var_17,total_with_valid_screening_certificate_percent,F,Total with Valid Certificates - Percent,Percent of students who submitted a valid Certificate of Dental Screening or Certificate of Dental Screening Exemption form,
+var_18,total_without_valid_screening_certificate,G,Total without Certificates - Number,Number of students who did not submit a valid Certificate of Dental Screening or Certificate of Dental Screening Exemption form,difference between columns A – F
+var_19,total_without_valid_screening_certificate_percent,G,Total without Certificates - Percent,Percent of students who did not submit a valid Certificate of Dental Screening or Certificate of Dental Screening Exemption form,
