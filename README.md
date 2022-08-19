@@ -97,7 +97,7 @@ The indicators were computed using public data-sets obtained from different sour
 <br>
 
 ### **Code**
-Both data scraping and dashboard development was implemented in R. Corresponding code is available on:
+Both data scraping and dashboard development was implemented in R. Corresponding codes are available on:
 
 - [GitHub Public Repository](https://github.com/I2D2-ISU/I2D2_Dashboard_DSPG) (owned by Giorgi Chighladze)
 - [GitHub Private Repository](https://github.com/DSPG2021/i2d2) (owned by Adisak Sukul)
