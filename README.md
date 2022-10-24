@@ -92,7 +92,7 @@ The indicators were computed using public data-sets obtained from different sour
 |  20  |  Availability of dentists who accept medicaid by county | IDHS | Data updates daily |
 |  22  |  Homelessness | ICA | 2019-2021 |
 
-\* _ACS - American Community Survey, US Census; CJJP - Division of Criminal and Juvenile Justice Planning, Iowa Department of Human Rights; ICA - Institute for Community Alliances; IDHS - Iowa Department of Human Services; IDPH - Iowa Department of Public Health; IWD - Iowa Workforce Development; UCR - Uniform Crime Report, FBI_
+\* _ACS - American Community Survey, US Census; CJJP - Division of Criminal and Juvenile Justice Planning, Iowa Department of Human Rights; ICA - Institute for Community Alliances; IDHS - Iowa Department of Human Services; IDPH - Iowa Department of Public Health; IWD - Iowa Workforce Development; UCR - Uniform Crime Report, FBI_  
 \** _Number of available years does not always correspond to the number of data-years obtained by the project team._
 
 <br>
