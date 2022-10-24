@@ -69,30 +69,31 @@ This dashboard should serve a wide array of purposes, including providing data f
 ### **Data**
 The indicators were computed using public data-sets obtained from different sources/agencies. Number of available years and granularity of the data varied across sources. Data sources for few indicators were not identified, therefore the project team could not compute the corresponding indicators. Detailed information about sources used can be found [here](https://iastate.app.box.com/file/844461079162?s=wsb68re1hs0qgnfba6r5lupx59hdvwip).
 
-|  No. | Indicator      | Source   | Year* |
+|  No. | Indicator      | Source*   | Year** |
 | -    | -------------- | -------- | :--: |
-|  1   |  Low birth weight |  Iowa Department of Public Health | 2015-2019 |
-|  2   |  Percent of immunized children |  Iowa Department of Public Health  | 2020 |
+|  1   |  Low birth weight | IDPH | 2015-2019 |
+|  2   |  Percent of immunized children | IDPH  | 2020 |
 |  3   |  K assessment data |  FastBridge | 2020-2021 |
-|  4   |  % of students entering K with no obvious dental problems |  Iowa Department of Public Health | 2016-2019 |
-|  5   |  Educational attainment of mothers |  ACS | 2010-2019 |
-|  6   |  Serious crime/100,000 population |  Uniform Crime Report | 2019 |
-|  7   |  Juvenile arrests/100,000 population |  Iowa Division of Criminal and Juvenile Justice Planning | 2015-2018 |
-|  8   |  Unemployment rate |  Iowa Workforce Development  | 2001-2021 |
-|  9   |  % of children under age 6 living in poverty (recommended to break down by education, race, marital status, and employment)  |  ACS | 2009-2019 and 2013-2019 |
-|  10  |  % of children under age 6 with all parents in the workforce |   ACS | 2009-2019 |
-|  11  |  Incidence of child abuse/1,000 children |   Iowa Department of Human Services | 2004-2020 |
+|  4   |  % of students entering K with no obvious dental problems | IDPH | 2016-2019 |
+|  5   |  Educational attainment of mothers | ACS | 2010-2019 |
+|  6   |  Serious crime/100,000 population | UCR | 2019 |
+|  7   |  Juvenile arrests/100,000 population |  CJJP | 2015-2018 |
+|  8   |  Unemployment rate |  IWD  | 2001-2021 |
+|  9   |  % of children under age 6 living in poverty (recommended to break down by education, race, marital status, and employment)  | ACS | 2009-2019 and 2013-2019 |
+|  10  |  % of children under age 6 with all parents in the workforce | ACS | 2009-2019 |
+|  11  |  Incidence of child abuse/1,000 children | IDHS | 2004-2020 |
 |  13  |  Domestic violence rate |    |  |
-|  14  |  Teen births |   Iowa Department of Public Health  | 2000-2019 |
-|  15  |  % of accredited family support programs in the state |   Iowa Department of Human Services | 2020 |
-|  16  |  Quality early learning environments, QRS rating, # of programs in a quality initiative |   Iowa Department of Human Services | 2020 |
-|  17  |  Availability of child care, cost, # of childcare providers, # of childcare spaces |   Iowa Department of Human Services | 2020 |
-|  18  |  Possibly specifically the number of slots lost during COVID-19? |   Iowa Department of Human Services |  |
-|  19  |  Availability of pediatrics who accept medicaid by county |   Iowa Department of Human Services | Data updates daily |
-|  20  |  Availability of dentists who accept medicaid by county |   Iowa Department of Human Services | Data updates daily |
-|  22  |  Homelessness |   Institute for Community Alliances | 2019-2021 |
+|  14  |  Teen births |  IDPH  | 2000-2019 |
+|  15  |  % of accredited family support programs in the state | IDHS | 2020 |
+|  16  |  Quality early learning environments, QRS rating, # of programs in a quality initiative | IDHS | 2020 |
+|  17  |  Availability of child care, cost, # of childcare providers, # of childcare spaces | IDHS | 2020 |
+|  18  |  Possibly specifically the number of slots lost during COVID-19? | IDHS |  |
+|  19  |  Availability of pediatrics who accept medicaid by county | IDHS | Data updates daily |
+|  20  |  Availability of dentists who accept medicaid by county | IDHS | Data updates daily |
+|  22  |  Homelessness | ICA | 2019-2021 |
 
-\* _Number of available years does not always correspond to the number of data-years obtained by the project team._
+\* _ACS - American Community Survey, US Census; CJJP - Division of Criminal and Juvenile Justice Planning, Iowa Department of Human Rights; ICA - Institute for Community Alliances; IDHS - Iowa Department of Human Services; IDPH - Iowa Department of Public Health; IWD - Iowa Workforce Development; UCR - Uniform Crime Report, FBI_
+\** _Number of available years does not always correspond to the number of data-years obtained by the project team._
 
 <br>
 
@@ -101,7 +102,7 @@ Both data scraping and dashboard development was implemented in R. Corresponding
 
 - [GitHub Public Repository](https://github.com/I2D2-ISU/I2D2_Dashboard_DSPG) (owned by Giorgi Chighladze)
 - [GitHub Private Repository](https://github.com/DSPG2021/i2d2) (owned by Adisak Sukul)
-- [Iowa IDS CyBox](https://iastate.app.box.com/folder/152647528114) under `Iowa IDS` > `Projects` > `2021 Dashboard` > `Code` > `DSPG_2021` (private)
+- [Iowa IDS CyBox](https://iastate.app.box.com/folder/152647528114) under `Iowa IDS` > `Projects` > `IA Data Drive` > `Code` > `DSPG_2021` (private)
 
 The final version of the dashboard was deployed on shinyapps.io by [Giorgi Chighladze](https://github.com/giorgichi) at [https://i2d2.shinyapps.io/DSPG_2021_Dashboard/](https://i2d2.shinyapps.io/DSPG_2021_Dashboard/).
 
